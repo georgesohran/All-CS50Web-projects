@@ -2,4 +2,8 @@ def convert(em):
     em = em.replace(":)","🙂")
     em = em.replace(":(","☹️")
     return em
-face = input()
+
+def main():
+    face = input()
+    print(convert(face))
+main()
