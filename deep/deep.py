@@ -1,5 +1,5 @@
 a = input("What is the Answer to the Great Question of Life, the Universe, and Everything?")
-a = a.strip().lower().replace("-","")
+a = a.lower().replace("-","").replace(" ","")
 
 match a :
     case "42"|"fortytwo":
