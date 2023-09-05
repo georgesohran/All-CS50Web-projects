@@ -1,4 +1,4 @@
 g = input()
 g = g.lower()
 
-if g 
+if g
