@@ -1,3 +1,4 @@
 file = input()
-file = file
 
+if file.endswith("gif"):
+    print()
