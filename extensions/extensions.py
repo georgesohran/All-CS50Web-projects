@@ -1,1 +1,3 @@
 file = input()
+file = file
+
