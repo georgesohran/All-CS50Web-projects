@@ -1,18 +1,21 @@
 file = input("File name: ").replace(" ","")
 i = "image/"
+a = ""
 
 if file.endswith("gif"):
     print(i+"gif")
-if file.endswith("jpg"):
+elif file.endswith("jpg"):
     print(i+"jpg")
-if file.endswith("jpeg"):
+elif file.endswith("jpeg"):
     print(i+"jpeg")
-if file.endswith("png"):
+elif file.endswith("png"):
     print(i+"png")
-if file.endswith("pdf"):
+elif file.endswith("pdf"):
     print(i+"pdf")
-if file.endswith("txt"):
+elif file.endswith("txt"):
     print(i+"txt")
-if file.endswith("zip"):
+elif file.endswith("zip"):
     print(i+"zip")
+else:
+    print("application/octet-stream")
 
