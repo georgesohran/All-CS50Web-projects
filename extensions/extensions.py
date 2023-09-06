@@ -1,4 +1,4 @@
-file = input()
+file = input().replace(" ","")
 i = "image/"
 
 if file.endswith("gif"):
