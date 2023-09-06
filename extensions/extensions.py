@@ -1,13 +1,9 @@
 file = input("File name: ").replace(" ","")
-i = "image/"
-a = ""
 
 if file.endswith("gif"):
-    print(i+"gif")
-elif file.endswith("jpg"):
-    print(i+"jpg")
-elif file.endswith("jpeg"):
-    print(i+"jpeg")
+    print("image/gif")
+elif file.endswith("jpeg") or file.endswith("jpg"):
+    print("image/jpeg")
 elif file.endswith("png"):
     print(i+"png")
 elif file.endswith("pdf"):
