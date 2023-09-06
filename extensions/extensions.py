@@ -5,13 +5,13 @@ if file.endswith("gif"):
 elif file.endswith("jpeg") or file.endswith("jpg"):
     print("image/jpeg")
 elif file.endswith("png"):
-    print(i+"png")
+    print("image/png")
 elif file.endswith("pdf"):
-    print(i+"pdf")
+    print("application/pdf")
 elif file.endswith("txt"):
-    print(i+"txt")
+    print("text/plain")
 elif file.endswith("zip"):
-    print(i+"zip")
+    print("application/zip")
 else:
     print("application/octet-stream")
 
