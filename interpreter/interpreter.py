@@ -6,10 +6,10 @@ z = int(z)
 
 match y:
     case "/":
-        print(float(x/z))
+        print(round(float(x/z),1))
     case "+":
-        print(float(x+z))
+        print(round(float(x+z),1))
     case "-":
-        print(float(x-z))
+        print(round(float(x-z),1))
     case "*":
-        print(float(x*z))
+        print(round(float(x*z),1))
