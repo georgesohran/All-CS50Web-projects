@@ -1,5 +1,5 @@
 g = input("Greeting: ")
-g = g.lower()
+g = g.lower().replace(" ","")
 
 
 if g.find("hello",0,5) != -1:
