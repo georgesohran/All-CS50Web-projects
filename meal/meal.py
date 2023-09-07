@@ -10,7 +10,8 @@ def main():
 
 
 def convert(time):
-    if time
+    if time.endswith("p.m."):
+        
     hour,min = time.split(":")
     hour = float(hour)
     min = float(min)
