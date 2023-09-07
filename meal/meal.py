@@ -18,7 +18,7 @@ def convert(time):
     if time.endswith("a.m."):
         time.replace("a.m.","")
         hour,min = time.split(":")
-        hour = float(hour+12)
+        hour = float(hour)
         min = float(min)
     min10 = ((min*100)/60)*0.01
     return hour + min10
