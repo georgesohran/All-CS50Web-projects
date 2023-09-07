@@ -1,11 +1,11 @@
 def main():
     t = input("What time is it? ")
     t = convert(t)
-    if 7.00 < t < 8.00 :
+    if 7.00 <= t <= 8.00 :
         print("breakfast time")
-    if 12.00 < t < 13.00 :
+    if 12.00 <= t <= 13.00 :
         print("breakfast time")
-    if 18.00 < t < 19.00 :
+    if 18.00 <= t <= 19.00 :
         print("breakfast time")
 
 
