@@ -3,7 +3,8 @@ def main():
 
 
 def convert(time):
-    pass
+    hour,min = time.split(":")
+    
 
 
 if __name__ == "__main__":
