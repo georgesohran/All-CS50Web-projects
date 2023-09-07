@@ -10,6 +10,7 @@ def main():
 
 
 def convert(time):
+    if time
     hour,min = time.split(":")
     hour = float(hour)
     min = float(min)
