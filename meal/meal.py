@@ -15,13 +15,21 @@ def convert(time):
         hour,min = time.split(":")
         hour = float(hour+12)
         min = float(min)
-    if time.endswith("a.m."):
+        min10 = ((min*100)/60)*0.01
+        return hour + min10
+    elif time.endswith("a.m."):
         time.replace("a.m.","")
         hour,min = time.split(":")
         hour = float(hour)
         min = float(min)
-    min10 = ((min*100)/60)*0.01
-    return hour + min10
+        min10 = ((min*100)/60)*0.01
+        return hour + min10
+    else:
+        hour,min = time.split(":")
+        hour = float(hour)
+        min = float(min)
+        min10 = ((min*100)/60)*0.01
+        return hour + min10
 
 
 if __name__ == "__main__":
