@@ -1,7 +1,7 @@
 def camel_to_snake(cam):
     for cer in cam:
         if cer.isupper():
-            cer.replace(cer,"_"+cer.lower())
+            cam.replace(cer,"_"+cer.lower())
     snk = cam
     return snk
 
