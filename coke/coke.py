@@ -4,11 +4,11 @@ while due > 0:
     print("Amount Due:",due)
     incoin = int(input("Insert Coin: "))
     match incoin:
-        25:
+        case 25:
             due -= incoin
-        10:
+        case 10:
             due -= incoin
-        5:
+        case 5:
             due -= incoin
-        _:
+        case _:
             continue
