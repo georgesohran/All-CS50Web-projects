@@ -13,4 +13,5 @@ while True:
         case _:
             continue
     if due <= 0 :
-        print()
+        print("Change Owed:",-due)
+        break
