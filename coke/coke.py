@@ -12,4 +12,5 @@ while True:
             due -= incoin
         case _:
             continue
-    
+    if due <= 0 :
+        print()
