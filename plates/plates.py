@@ -7,7 +7,7 @@ def main():
 
 
 def is_valid(s):
-    if (2 <=cerecter_count(s)<= 6) and (s[0:2].isalpha()):
+    if (2 <=cerecter_count(s)<= 6) and (s[0:2].isalpha()) and (first_num(s)):
         return True
     else:
         return False
