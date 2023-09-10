@@ -7,7 +7,7 @@ def main():
 
 
 def is_valid(s):
-    if  (last_cer(s)):
+    if (2 <=cerecter_count(s)<= 6) and (s[0:2].isalpha()) and (first_num(s)) and (last_cer(s)):
         return True
     else:
         return False
@@ -28,7 +28,7 @@ def first_num(st):
             else:
                 return True
 def last_cer(st):
-    for i in range(10):
+    for i in range(9):
         if st.endswith(str(i)):
             return True
         else:
