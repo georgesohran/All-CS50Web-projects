@@ -38,5 +38,7 @@ def last_cer(st):
                 return False
         else:
             return True
+def symbols(st):
+    
 
 main()
