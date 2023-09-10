@@ -22,9 +22,12 @@ def first_num(st):
     dc = 0
     for c in st :
         if c.isdigit() and dc == 0:
+            dc = 1
             if int(c) == 0 :
                 return False
             else:
                 return True
+def last_cer(st):
+    if st.endswith()
 
 main()
