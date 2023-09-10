@@ -21,9 +21,10 @@ def cerecter_count(st):
 def a(st):
     dc = 0
     for c in st :
-        if c.isdigit() and dc == 0 :
-            return False
-        else:
-            return True
+        if c.isdigit() and dc == 0:
+            if int(c) == 0 :
+                return False
+            else:
+                return True
 
 main()
