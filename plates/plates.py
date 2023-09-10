@@ -39,6 +39,6 @@ def last_cer(st):
         else:
             return True
 def symbols(st):
-    
+    for i in [""]
 
 main()
