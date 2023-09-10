@@ -7,7 +7,7 @@ def main():
 
 
 def is_valid(s):
-    if (2 <=cerecter_count(s)<= 6) and (s[0:2].isalpha()) and (first_num(s)) and (last_cer(s)):
+    if symbols(s) and (2 <=cerecter_count(s)<= 6) and (s[0:2].isalpha()) and (first_num(s)) and (last_cer(s)):
         return True
     else:
         return False
@@ -39,8 +39,8 @@ def last_cer(st):
         else:
             return True
 def symbols(st):
-    for c in st:
-        if c :
+    for i in [".","!","@","#","$","%"]:
+        if st.find(i) != -1 :
             return False
         else:
             return True
