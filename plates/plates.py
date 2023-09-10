@@ -31,6 +31,7 @@ def last_cer(st):
     for i in range(9):
         if st.endswith(str(i)):
             return True
+            break
         else:
             return False
 
