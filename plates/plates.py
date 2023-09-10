@@ -28,6 +28,10 @@ def first_num(st):
             else:
                 return True
 def last_cer(st):
-    if st.endswith()
+    for i in range(9):
+        if st.endswith(str(i)):
+            return True
+        else:
+            return False
 
 main()
