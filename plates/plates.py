@@ -18,7 +18,7 @@ def cerecter_count(st):
         cc += 1
     return cc
 
-def a(st):
+def first_num(st):
     dc = 0
     for c in st :
         if c.isdigit() and dc == 0:
