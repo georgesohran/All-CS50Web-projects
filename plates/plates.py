@@ -22,6 +22,8 @@ def a(st):
     dc = 0
     for c in st :
         if c.isdigit() and dc == 0 :
-
+            return False
+        else:
+            return True
 
 main()
