@@ -39,8 +39,8 @@ def last_cer(st):
         else:
             return True
 def symbols(st):
-    for i in [".","!","@","#","$","%"]:
-        if st.find(i) != -1 :
+    for c in st:
+        if c :
             return False
         else:
             return True
