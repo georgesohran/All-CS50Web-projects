@@ -28,7 +28,6 @@ def first_num(st):
             else:
                 return True
 def last_cer(st):
-    if st.find(i)
     for i in range(9):
         if st.find(i) != -1 :
             if st.endswith(str(i)):
