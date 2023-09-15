@@ -13,7 +13,7 @@ menu = {
 total = 0
 
 while True:
-    order = input("Item:")
+    order = input("Item:").title()
     if order in menu:
         total += menu[order]
         print("Total:",total)
