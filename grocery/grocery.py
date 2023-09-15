@@ -1,5 +1,4 @@
 
-
 while True :
     try:
         item = input()
