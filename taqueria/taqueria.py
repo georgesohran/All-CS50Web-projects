@@ -18,7 +18,7 @@ while True:
         if order in menu:
             total += menu[order]
 #            total = str(round(total),2)
-            print("Total:$",total,"\n",sep="")
+            print("Total:$",total,sep="")
         elif order == "":
             break
         else:
