@@ -13,11 +13,14 @@ menu = {
 total = 0
 
 while True:
-    order = input("Item:").title()
-    if order in menu:
-        total += menu[order]
-        print("Total:",total)
-    elif order == "":
-        break
-    else:
-        pass
+    try:
+        order = input("Item:").title()
+        if order in menu:
+            total += menu[order]
+            print("Total:",total)
+        elif order == "":
+            break
+        else:
+            pass
+    except EOFError:
+        
