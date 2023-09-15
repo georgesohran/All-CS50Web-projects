@@ -10,5 +10,10 @@ menu = {
     "Tortilla Salad": 8.00
 }
 
+total = 0
+
 while True:
-    order = input()
+    order = input("Item:")
+    if order in menu:
+        total += menu[order]
+    
