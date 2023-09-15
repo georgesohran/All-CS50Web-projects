@@ -17,7 +17,6 @@ while True:
         order = input("Item:").title()
         if order in menu:
             total += menu[order]
-#            total = str(round(total),2)
             print("Total:$",total,sep="")
         elif order == "":
             break
