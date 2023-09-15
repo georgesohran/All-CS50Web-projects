@@ -23,4 +23,4 @@ while True:
         else:
             pass
     except EOFError:
-        
+        break
