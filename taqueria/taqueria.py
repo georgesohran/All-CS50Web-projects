@@ -17,10 +17,12 @@ while True:
         order = input("Item:").title()
         if order in menu:
             total += menu[order]
-            print("Total:",total)
+            print("Total:",total,"\n")
         elif order == "":
             break
         else:
             pass
     except EOFError:
         break
+    except KeyError:
+        pass
