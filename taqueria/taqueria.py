@@ -16,4 +16,8 @@ while True:
     order = input("Item:")
     if order in menu:
         total += menu[order]
-    
+        print("Total:",total)
+    elif order == "":
+        break
+    else:
+        pass
