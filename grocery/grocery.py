@@ -13,6 +13,7 @@ while True :
         item = input()
         add_item(item)
     except EOFError:
+        names = sorted(added_items.keys())
         for item in added_items:
             print(added_items[item],item.upper())
         break
