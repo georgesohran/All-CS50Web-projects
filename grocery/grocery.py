@@ -8,6 +8,7 @@ while True :
         item = input()
         if item not in added_items:
             add_item(item)
+            added_items[item]+=1
         else:
             added_items[item]+=1
     except EOFError:
