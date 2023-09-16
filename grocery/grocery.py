@@ -12,6 +12,7 @@ while True :
         else:
             added_items[item]+=1
     except EOFError:
+        added_items = sorted(added_items)
         for item in added_items:
             print(added_items[item],item.upper())
         break
