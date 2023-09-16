@@ -13,7 +13,7 @@ while True :
             added_items[item]+=1
     except EOFError:
         for item in added_items:
-            print(added_items[item],item)
+            print(added_items[item],item.upper())
         break
     except KeyError:
         break
