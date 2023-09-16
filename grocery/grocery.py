@@ -9,7 +9,7 @@ def add_item(item):
 while True :
     try:
         item = input()
-        add_item()
+        add_item(item)
     except EOFError:
         for item in added_items:
             print(added_items[item],item.upper())
