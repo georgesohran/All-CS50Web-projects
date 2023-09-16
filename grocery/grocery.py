@@ -13,6 +13,7 @@ while True :
     except EOFError:
         for item in added_items:
             print(added_items[item],item)
+        break
     except KeyError:
         break
 
