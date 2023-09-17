@@ -12,10 +12,12 @@ while True :
         item = input()
         add_item(item)
     except EOFError:
+        c = 0
         sorted_items_names = sorted(added_items.keys())
         for k in sorted_items_names:
             pv = added_items.pop(k)
-            added_items.update(k,pv)
+            added_items.update(sorted_items_names[c]=pv)
+            c += 1
         for item in added_items:
             print(added_items[item],item.upper())
         break
