@@ -14,9 +14,8 @@ while True :
     except EOFError:
         sorted_items_names = sorted(added_items.keys())
         for k in sorted_items_names:
-            pk = k
             pv = added_items.pop(k)
-            added_items.update(pk=pv)
+            added_items.update(k,pv)
         for item in added_items:
             print(added_items[item],item.upper())
         break
