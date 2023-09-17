@@ -15,7 +15,7 @@ while True :
         added_items_names = sorted(added_items.keys())
         for k in added_items_names:
             pk = added_items.pop(k)
-            added_items.update(str(k)=pk)
+            added_items.update(k=pk)
         for item in added_items:
             print(added_items[item],item.upper())
         break
