@@ -24,7 +24,7 @@ while True:
         for m in month:
             if ordate.startswith(m):
                 tmonth = month.index(m)+1
-                ordate.replace(month[tmonth],"")
+                ordate.replace("February","")
                 day,year = ordate.split(",")
                 break
         break
