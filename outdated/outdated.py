@@ -16,7 +16,8 @@ month =[
 def format_check1(s):
     try:
         a,b,c = s.split("/")
-        if s.replace("/","").isalnum():
+        sasa = s.replace("/","")
+        if sasa.isalnum():
             return True
     except ValueError:
         return False
