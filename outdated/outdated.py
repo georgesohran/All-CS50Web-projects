@@ -23,13 +23,13 @@ while True:
     except ValueError:
         for m in month:
             if ordate.startswith(m):
-                month = month.index(m)+1
-                ordate.replace(m,"")
+                tmonth = month.index(m)+1
+                ordate.replace(month[tmonth],"")
                 day,year = ordate.split(",")
                 break
-        pass
+        break
     except EOFError:
-        pass
+        break
 
 
 print(f"{year}-{month:02}-{day:02}")
