@@ -1,2 +1,4 @@
-ordate = input().replace(" ","")
 
+
+while True:
+    ordate = input().replace(" ","")
