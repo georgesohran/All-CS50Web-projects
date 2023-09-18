@@ -17,20 +17,24 @@ month =[
 while True:
     ordate = input().replace(" ","")
     try:
-        month,day,year = ordate.split("/")
-        month,day,year = int(month),int(day),int(year)
+        month1,day,year = ordate.split("/")
+        month1,day,year = int(month1),int(day),int(year)
         break
     except ValueError:
         for m in month:
             if ordate.startswith(m):
-                month = month.index(m)+1
+                month_name_check = m
+                month1 = month.index(m)+1
                 ordate = ordate.replace(m,'')
                 day,year = ordate.split(",")
                 day,year = int(day),int(year)
                 break
-        pass
+        if month_name_check in month:
+            break
+        else:
+            pass
     except EOFError:
         break
 
 
-print(f"{year}-{month:02}-{day:02}")
+print(f"{year}-{month1:02}-{day:02}")
