@@ -23,7 +23,7 @@ def format_check1(s):
 
 def format_check2(s):
     for m in month:
-        if s.startswith(m) and s.find("/") != -1:
+        if s.startswith(m) and s.find("/") == -1:
             return True
     return False
 
