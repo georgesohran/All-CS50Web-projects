@@ -14,13 +14,9 @@ month =[
 ]
 
 def format_check1(s):
-    try:
-        a,b,c = s.split("/")
-        sasa = s.replace("/","")
-        if sasa.isdigit():
-            return True
-    except ValueError:
-        return False
+    sasa = s.replace("/","")
+    if sasa.isdigit():
+        return True
 
 def format_check2(s):
     for m in month:
