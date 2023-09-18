@@ -13,7 +13,8 @@ month =[
     "December"
 ]
 
-
+def format_check1(s):
+    
 
 while True:
     ordate = input("Date: ").replace(" ","")
