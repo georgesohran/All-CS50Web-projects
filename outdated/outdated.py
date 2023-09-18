@@ -15,7 +15,7 @@ month =[
 
 def format_check1(s):
     sasa = s.replace("/","")
-    if sasa.isdigit():
+    if sasa.isdigit() and s.find("/") != -1:
         return True
 
 def format_check2(s):
