@@ -23,8 +23,8 @@ while True:
     except ValueError:
         for m in month:
             if ordate.startswith(m):
-                tmonth = month.index(m)+1
-                ordate.replace("February","")
+                month = month.index(m)+1
+                ordate = ordate.replace(m,'')
                 day,year = ordate.split(",")
                 break
         break
