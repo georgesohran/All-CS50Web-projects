@@ -24,4 +24,4 @@ while True:
     except ValueError:
         for m in month:
             if ordate.startswith(m):
-                
+                month = month.index(m)+1
