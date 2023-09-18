@@ -17,7 +17,7 @@ def format_check1(s):
     try:
         a,b,c = s.split("/")
         sasa = s.replace("/","")
-        if sasa.isalnum():
+        if sasa.isdigit():
             return True
     except ValueError:
         return False
