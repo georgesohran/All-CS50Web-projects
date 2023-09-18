@@ -27,11 +27,13 @@ while True:
                 day,year = ordate.split(",")
                 day,year = int(day),int(year)
                 break
+    except EOFError:
+        break
 
     if (0<month1<=12) and (0<day<=31):
+        print(f"{year}-{month1:02}-{day:02}")
         break
     else:
         pass
 
 
-print(f"{year}-{month1:02}-{day:02}")
