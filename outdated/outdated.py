@@ -14,7 +14,12 @@ month =[
 ]
 
 def format_check1(s):
-    
+    try:
+        a,b,c = s.split("/")
+    except ValueError:
+        return False
+    else:
+        return True
 
 while True:
     ordate = input("Date: ").replace(" ","")
