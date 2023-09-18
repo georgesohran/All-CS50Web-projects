@@ -19,7 +19,7 @@ while True:
     try:
         month1,day,year = ordate.split("/")
         month1,day,year = int(month1),int(day),int(year)
-        break
+        month_name_check = month[month1]
     except ValueError:
         for m in month:
             if ordate.startswith(m):
