@@ -15,12 +15,14 @@ month =[
 
 def is_correct_format(s):
     try:
-        month1,day,year = s.split("/")
-        for m in month:
-            if s.startswith(m):
-                month1 = month.index(m)+1
-                s.replace(m,'')
-                day,year = s.split(",")
+        try:
+            month1,day,year = s.split("/")
+        except ValueError:
+            for m in month:
+                if s.startswith(m):
+                    month1 = month.index(m)+1
+                    s.replace(m,'')
+                    day,year = s.split(",")
         return True
     except ValueError:
         return False
