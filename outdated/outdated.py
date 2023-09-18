@@ -22,4 +22,6 @@ while True:
         print(f"{year}-{month:02}-{day:02}")
         break
     except ValueError:
-        if ordate 
+        for m in month:
+            if ordate.startswith(m):
+                
