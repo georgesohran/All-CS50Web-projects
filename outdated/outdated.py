@@ -1,0 +1,2 @@
+ordate = input().replace(" ","")
+
