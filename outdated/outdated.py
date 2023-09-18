@@ -29,12 +29,13 @@ while True:
                 day,year = ordate.split(",")
                 day,year = int(day),int(year)
                 break
-        if month_name_check in month:
-            break
-        else:
-            pass
     except EOFError:
         break
+
+    if (month_name_check in month) and (0<month1<=12) and (0<day<=31):
+        break
+    else:
+        pass
 
 
 print(f"{year}-{month1:02}-{day:02}")
