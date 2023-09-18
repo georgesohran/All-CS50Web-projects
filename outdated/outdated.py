@@ -22,27 +22,34 @@ def format_check1(s):
         return True
 
 def format_check2(s):
-    if s.has()
+    for m in month:
+        if s.startswith(m) and not s.has("/"):
+            return True
+        else:
+            return False
 
 while True:
     ordate = input("Date: ").replace(" ","")
-    try:
-        month1,day,year = ordate.split("/")
-        month1,day,year = int(month1),int(day),int(year)
-    except ValueError:
-        for m in month:
-            if ordate.startswith(m):
-                month1 = month.index(m)+1
-                ordate = ordate.replace(m,'')
-                day,year = ordate.split(",")
-                day,year = int(day),int(year)
-                break
-    except EOFError:
-        break
+    if format_check1(ordate) or format_check2(ordate) :
+        try:
+            month1,day,year = ordate.split("/")
+            month1,day,year = int(month1),int(day),int(year)
+        except ValueError:
+            for m in month:
+                if ordate.startswith(m):
+                    month1 = month.index(m)+1
+                    ordate = ordate.replace(m,'')
+                    day,year = ordate.split(",")
+                    day,year = int(day),int(year)
+                    break
+        except EOFError:
+            break
 
-    if (0<month1<=12) and (0<day<=31):
-        print(f"{year}-{month1:02}-{day:02}")
-        break
+        if (0<month1<=12) and (0<day<=31):
+            print(f"{year}-{month1:02}-{day:02}")
+            break
+        else:
+            pass
     else:
         pass
 
