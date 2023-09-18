@@ -33,7 +33,7 @@ while True:
     if (month_name_check in month) and (0<month1<=12) and (0<day<=31):
         break
     else:
-        continew
+        pass
 
 
 print(f"{year}-{month1:02}-{day:02}")
