@@ -25,8 +25,7 @@ def format_check2(s):
     for m in month:
         if s.startswith(m) and not s.has("/"):
             return True
-        else:
-            return False
+    return False
 
 while True:
     ordate = input("Date: ").replace(" ","")
