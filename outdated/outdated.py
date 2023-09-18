@@ -35,11 +35,11 @@ while True:
             month1,day,year = int(month1),int(day),int(year)
         except ValueError:
             for m in month:
-                if ordate.startswith(m):
+               if ordate.startswith(m):
                     month1 = month.index(m)+1
                     ordate = ordate.replace(m,'')
                     day,year = ordate.split(",")
-                    day,year = int(day),int(year)
+                    day,year  = int(day),int(year)
                     break
         except EOFError:
             break
