@@ -26,8 +26,9 @@ while True:
                 month = month.index(m)+1
                 ordate = ordate.replace(m,'')
                 day,year = ordate.split(",")
+                day,year = int(day),int(year)
                 break
-        break
+        pass
     except EOFError:
         break
 
