@@ -29,8 +29,6 @@ while True:
                 day,year = ordate.split(",")
                 day,year = int(day),int(year)
                 break
-    except IndexError:
-        break
 
     if (month_name_check in month) and (0<month1<=12) and (0<day<=31):
         break
