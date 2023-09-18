@@ -15,8 +15,8 @@ month =[
 
 
 while True:
+    ordate = input().replace(" ","")
     try:
-        ordate = input().replace(" ","")
         month,day,year = ordate.split("/")
         month,day,year = int(month),int(day),int(year)
         break
