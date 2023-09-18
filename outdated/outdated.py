@@ -27,6 +27,7 @@ while True:
                 ordate.replace(m,"")
                 day,year = ordate.split(",")
                 break
+        pass
     except EOFError:
         pass
 
