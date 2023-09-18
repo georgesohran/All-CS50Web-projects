@@ -21,22 +21,27 @@ def format_check1(s):
     else:
         return True
 
+def format_check2(s):
+    try:
+        a,b,c = s.split("/")
+    except ValueError:
+        return False
+    else:
+        return True
+
 while True:
     ordate = input("Date: ").replace(" ","")
     try:
         month1,day,year = ordate.split("/")
         month1,day,year = int(month1),int(day),int(year)
     except ValueError:
-        try:
-            for m in month:
-                if ordate.startswith(m):
-                    month1 = month.index(m)+1
-                    ordate = ordate.replace(m,'')
-                    day,year = ordate.split(",")
-                    day,year = int(day),int(year)
-                    break
-        except ValueError:
-            pass
+        for m in month:
+            if ordate.startswith(m):
+                month1 = month.index(m)+1
+                ordate = ordate.replace(m,'')
+                day,year = ordate.split(",")
+                day,year = int(day),int(year)
+                break
     except EOFError:
         break
 
