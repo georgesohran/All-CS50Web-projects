@@ -22,12 +22,7 @@ def format_check1(s):
         return True
 
 def format_check2(s):
-    try:
-        a,b,c = s.split("/")
-    except ValueError:
-        return False
-    else:
-        return True
+    if s.has()
 
 while True:
     ordate = input("Date: ").replace(" ","")
