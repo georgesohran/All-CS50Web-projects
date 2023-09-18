@@ -21,8 +21,6 @@ def format_check1(s):
             return True
     except ValueError:
         return False
-    else:
-        return True
 
 def format_check2(s):
     for m in month:
