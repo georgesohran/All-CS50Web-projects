@@ -7,4 +7,5 @@ def main():
     word = input("Input:")
     if len(sys.argv) == 0:
         font = random.choice(figlet.getFonts())
+        figlet.setFont(font)
         print(figlet.renderText(word))
