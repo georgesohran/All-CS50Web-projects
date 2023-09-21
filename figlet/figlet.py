@@ -15,6 +15,6 @@ def main():
 
     elif len(sys.argv) > 2:
         word = input("Input:")
-        figlet.setFont(sys.argv[2])
+        figlet.setFont(font = sys.argv[3])
 
 main()
