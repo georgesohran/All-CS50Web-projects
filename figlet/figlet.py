@@ -9,5 +9,9 @@ def main():
         font = random.choice(figlet.getFonts())
         figlet.setFont(font)
         print(figlet.renderText(word))
-    if len(sys.argv) == 1:
-        
+
+    elif len(sys.argv) == 1:
+        print("Invalid usage")
+
+    elif len(sys.argv) == 2:
+        figlet.setFont(sys.argv[2])
