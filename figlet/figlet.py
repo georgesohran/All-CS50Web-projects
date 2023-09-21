@@ -15,3 +15,5 @@ def main():
 
     elif len(sys.argv) == 2:
         figlet.setFont(sys.argv[2])
+
+main()
