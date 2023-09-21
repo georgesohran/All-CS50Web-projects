@@ -5,9 +5,11 @@ figlet = Figlet()
 
 def main():
     if len(sys.argv) == 2:
+        print(sys.argv)
         sys.exit("Invalid usage")
     elif len(sys.argv) == 3:
-        if sys.argv[1] != "-f" or sys.argv[1] != "--font":
+        print(sys.argv)
+        if sys.argv[1] != '-f' or sys.argv[1] != '--font':
             sys.exit("Invalid usage")
 
     if len(sys.argv) == 1:
