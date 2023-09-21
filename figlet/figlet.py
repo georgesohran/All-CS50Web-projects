@@ -11,6 +11,8 @@ def main():
         print(sys.argv)
         if sys.argv[1] != '-f' and sys.argv[1] != '--font':
             sys.exit("Invalid usage")
+        elif sys.argv[2] not in figlet.getFonts():
+            sys.exit("Invalid usage")
 
     if len(sys.argv) == 1:
         word = input("Input:")
