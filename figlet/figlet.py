@@ -6,5 +6,5 @@ figlet = Figlet()
 def main():
     word = input("Input:")
     if len(sys.argv) == 0:
-        fliget
+        font = random.shuffle
         print(figlet.renderText(word))
