@@ -7,15 +7,8 @@ def main():
     for _ in range(10):
         x = generate_integer(lvl)
         y = generate_integer(lvl)
-        try:
-            ans = int(input(f"{x} + {y} = "))
-            if ans == x + y:
-                print(score)
-            else:
-                print("EEE")
-
-
-
+        ask(x,y)
+    print(score)
 
 def get_level():
     try:
@@ -33,6 +26,20 @@ def generate_integer(level):
         return random.randint(11,100)
     if level == 3:
         return random.randint(101,1000)
+
+def ask(a,b):
+    for _ in range(3):
+        try:
+            ans = int(input(f"{a} + {b} = "))
+            if ans == a + b:
+                score += 1
+                break
+            else:
+                print("EEE")
+        except ValueError:
+            print("EEE")
+    print(f"{a} + {b} = {a+b}")
+
 
 if __name__ == "__main__":
     main()
