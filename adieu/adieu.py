@@ -3,5 +3,8 @@ import
 names = []
 
 while True:
-    name = input("Name: ")
-    names.append(name)
+    try:
+        name = input("Name: ")
+        names.append(name)
+    except EOFError:
+        break
