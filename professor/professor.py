@@ -38,6 +38,7 @@ def ask(a,b):
         except ValueError:
             print("EEE")
     print(f"{a} + {b} = {a+b}")
+    return 0
 
 
 if __name__ == "__main__":
