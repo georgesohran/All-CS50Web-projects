@@ -3,7 +3,9 @@ import random
 while True:
     try:
         lvl = int(input("Level: "))
-        break
+        if lvl >= 0:
+            break
+        pass
     except ValueError:
         pass
 
