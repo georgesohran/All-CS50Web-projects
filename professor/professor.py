@@ -1,8 +1,7 @@
 import random
 
-score = 0
-
 def main():
+    score = 0
     lvl = get_level()
     for _ in range(10):
         x = generate_integer(lvl)
