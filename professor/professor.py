@@ -6,7 +6,7 @@ def main():
     for _ in range(10):
         x = generate_integer(lvl)
         y = generate_integer(lvl)
-        ask(x,y)
+        score += ask(x,y)
     print(score)
 
 def get_level():
@@ -32,8 +32,7 @@ def ask(a,b):
         try:
             ans = int(input(f"{a} + {b} = "))
             if ans == a + b:
-                score += 1
-                break
+                return 1
             else:
                 print("EEE")
         except ValueError:
