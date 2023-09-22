@@ -21,11 +21,11 @@ def get_level():
 
 def generate_integer(level):
     if level == 1:
-        return random.randint(0,10)
+        return random.randint(0,9)
     if level == 2:
-        return random.randint(11,100)
+        return random.randint(10,99)
     if level == 3:
-        return random.randint(101,1000)
+        return random.randint(100,999)
 
 def ask(a,b):
     for _ in range(3):
