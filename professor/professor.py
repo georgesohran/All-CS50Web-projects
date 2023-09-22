@@ -1,13 +1,25 @@
 import random
 
+score = 0
 
 def main():
-    pass
+    lvl = get_level()
+    for _ in range(10):
+        x = generate_integer(lvl)
+        y = generate_integer(lvl)
+        try:
+            ans = int(input(f"{x} + {y} = "))
+            if ans == x + y:
+                print(score)
+            else:
+                print("EEE")
+
+
 
 
 def get_level():
     try:
-        lvl = int(input())
+        lvl = int(input("Level:"))
         if 1 <= lvl <= 3 :
             return lvl
     except ValueError:
