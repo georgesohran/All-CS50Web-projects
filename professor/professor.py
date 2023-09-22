@@ -11,12 +11,13 @@ def main():
     print(score)
 
 def get_level():
-    try:
-        lvl = int(input("Level:"))
-        if 1 <= lvl <= 3 :
-            return lvl
-    except ValueError:
-        pass
+    while True:
+        try:
+            lvl = int(input("Level:"))
+            if 1 <= lvl <= 3 :
+                return lvl
+        except ValueError:
+            pass
 
 
 def generate_integer(level):
