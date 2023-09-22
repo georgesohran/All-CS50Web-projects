@@ -8,8 +8,9 @@ def main():
 def get_level():
     try:
         lvl = int(input())
-        if lvl in range(3):
-            pass
+        if 1 <= lvl <= 3 :
+            return lvl
+        
     except ValueError:
         pass
 
@@ -20,4 +21,5 @@ def generate_integer(level):
 
 if __name__ == "__main__":
     main()
-    for i in range
+    for i in range(3):
+        print(i)
