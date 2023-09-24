@@ -9,8 +9,9 @@ try:
     except ValueError:
         sys.exit("Command-line argument is not a number")
 
-    responce = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-    print(responce.json())
+    responce = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json").json()
+    price = responce["bpi"]["USD"]["rate_float"]
+    print(f"${price*bitn:,.4f}")
 
 except requests.RequestException:
-    pass
+    sys.exit("Error")
