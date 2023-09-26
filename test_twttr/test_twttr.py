@@ -12,3 +12,8 @@ def test_shorten_upper():
 
 def test_shorten_letters():
     assert shorten("AEIOU n") == " n"
+
+def test_shorten_symbols_and_numbers():
+    assert shorten("AAH!!!???") == "H!!!???"
+    assert shorten("128 results") == "128 rslts"
+
