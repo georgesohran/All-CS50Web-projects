@@ -2,7 +2,7 @@
 def main():
     g = input("Greeting: ")
     g = g.lower().replace(" ","")
-    print(f"value(g)")
+    print(f"${value(g)}")
 
 
 
