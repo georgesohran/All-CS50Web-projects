@@ -1,15 +1,15 @@
 
 def main():
     g = input("Greeting: ")
-    g = g.lower().replace(" ","")
+    g = g.replace(" ","")
     print(f"${value(g)}")
 
 
 
 def value(greeting):
-    if greeting.find("hello",0,5) != -1:
+    if greeting.lower().find("hello",0,5) != -1:
         return 0
-    elif greeting.find("h",0,1) != -1:
+    elif greeting.lower().find("h",0,1) != -1:
         return 20
     else:
         return 100
