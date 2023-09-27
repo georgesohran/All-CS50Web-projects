@@ -1,1 +1,3 @@
-from test_plates.plates
+from plates import is_valid
+
+def test
