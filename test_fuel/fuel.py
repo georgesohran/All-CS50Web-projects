@@ -12,10 +12,13 @@ def main():
 def convert(fraction):
     x, y = fraction.split("/")
     x, y = int(x), int(y)
+    result = int((x / y)*100)
+    if x > y or result > 100 or result < 0:
+        raise ValueError
     if y == 0:
         raise ZeroDivisionError
     else:
-        return int((x / y)*100)
+        return result
 
 
 def gauge(percentage):
