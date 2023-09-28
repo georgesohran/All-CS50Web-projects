@@ -1,15 +1,17 @@
 def main():
     while True:
-        a = input("Fraction: ")
-        if convert(a) == None:
-            pass
-        else:
-            a = convert(a)
-            if gauge(a) != None:
-                print(gauge(a))
-                break
-            else:
+        try:
+            a = input("Fraction: ")
+            if convert(a) == None:
                 pass
+            else:
+                a = convert(a)
+                if gauge(a) != None:
+                    print(gauge(a))
+                    break
+                else:
+                    pass
+        e
 
 
 
