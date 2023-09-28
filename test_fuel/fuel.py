@@ -11,17 +11,16 @@ def main():
                     break
                 else:
                     pass
-        e
-
+        except (ValueError, ZeroDivisionError):
+            pass
 
 
 def convert(fraction):
-    try:
-        x, y = fraction.split("/")
-        x, y = int(x), int(y)
-        return int((x / y)*100)
-    except (ValueError, ZeroDivisionError):
-        return None
+    x, y = fraction.split("/")
+    x, y = int(x), int(y)
+    if y == 0:
+        raise ZeroDivisionError
+    return int((x / y)*100)
 
 
 def gauge(percentage):
