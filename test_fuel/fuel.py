@@ -20,7 +20,7 @@ def convert(fraction):
 
 def gauge(percentage):
     if percentage > 100 or percentage < 0:
-        return ""
+        return None
     elif 0 <= percentage <= 1:
         return "E"
     elif 100 >= percentage >= 99:
