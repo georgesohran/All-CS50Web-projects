@@ -1,12 +1,15 @@
 def main():
     while True:
         a = input("Fraction: ")
-        a = convert(a)
-        if gauge(a) != None:
-            print(gauge(a))
-            break
-        else:
+        if convert(a) == None:
             pass
+        else:
+            a = convert(a)
+            if gauge(a) != None:
+                print(gauge(a))
+                break
+            else:
+                pass
 
 
 
@@ -16,7 +19,7 @@ def convert(fraction):
         x, y = int(x), int(y)
         return int((x / y)*100)
     except (ValueError, ZeroDivisionError):
-        raise
+        return None
 
 
 def gauge(percentage):
