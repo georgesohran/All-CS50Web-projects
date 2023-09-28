@@ -19,18 +19,25 @@ def main():
 
 
 def convert(fraction):
-    try:
-        x, y = a.split("/")
-        x, y = int(x), int(y)
-        out = x / y
-        out = int(out*100)
-        return out
-    except (ValueError, ZeroDivisionError):
-        pass
+    x, y = a.split("/")
+    x, y = int(x), int(y)
+    out = x / y
+    out = int(out*100)
+    return out
 
 
 def gauge(percentage):
-    ...
+    if 1 < percentage < 100:
+        return f"{percentage}%"
+    elif 0 =< out <= 1:
+        return "E"
+    elif 100 >= out > 99:
+        print("F")
+        break
+    else:
+        out = round(out,2)
+        print(f"{int(out*100)}%")
+        break
 
 
 if __name__ == "__main__":
