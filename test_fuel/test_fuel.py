@@ -8,7 +8,7 @@ def test_gauge():
     assert gauge(51) == "51%"
 
 def test_convert():
-    assert convert(1) == "E"
+    assert convert(13/10) == ""
     assert convert(100) == "F"
     assert convert(99) == "F"
     assert convert(27) == "27%"
