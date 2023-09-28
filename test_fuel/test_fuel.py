@@ -13,6 +13,7 @@ def test_gauge():
 def test_convert():
     with pytest.raises(ZeroDivisionError):
         assert convert("13/10")
+    with pytest.raises(ZeroDivisionError):
         assert convert("12/0")
     with pytest.raises(ValueError):
         assert convert("whaa")
