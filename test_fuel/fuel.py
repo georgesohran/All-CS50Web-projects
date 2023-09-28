@@ -1,10 +1,10 @@
 def main():
     while True:
         a = input("Fraction: ")
-        if convert(a) != None:
-            a = convert(a)
-        else:
+        if convert(a) == None:
             pass
+        else:
+            a = convert(a)
         if gauge(a) != None:
             print(gauge(a))
             break
