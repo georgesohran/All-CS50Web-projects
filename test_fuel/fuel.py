@@ -3,11 +3,8 @@ def main():
         try:
             a = input("Fraction: ")
             a = convert(a)
-            if gauge(a) != None:
-                print(gauge(a))
-                break
-            else:
-                pass
+            print(gauge(a))
+            break
         except (ValueError, ZeroDivisionError):
             pass
 
