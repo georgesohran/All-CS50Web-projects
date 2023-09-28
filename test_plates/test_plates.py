@@ -1,4 +1,4 @@
 from plates import is_valid
 
-def test_is_valid_():
-    pass
+def test_is_valid_cercount():
+    assert is_valid()
