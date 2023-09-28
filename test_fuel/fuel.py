@@ -5,11 +5,11 @@ def main():
             pass
         else:
             a = convert(a)
-        if gauge(a) != None:
-            print(gauge(a))
-            break
-        else:
-            pass
+            if gauge(a) != None:
+                print(gauge(a))
+                break
+            else:
+                pass
 
 
 
