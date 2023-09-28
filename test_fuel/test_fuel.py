@@ -16,5 +16,4 @@ def test_convert():
         assert convert("12/0")
     with pytest.raises(ValueError):
         assert convert("whaa")
-#    assert convert("15/20") == 75
-#    assert convert("99/100") == 99
+    assert convert("99/100") == 99
