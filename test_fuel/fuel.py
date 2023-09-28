@@ -5,6 +5,7 @@ def main():
             a = convert(a)
             if gauge(a) != None:
                 print(gauge(a))
+                break
             else:
                 pass
         except (ValueError, ZeroDivisionError):
