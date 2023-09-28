@@ -1,11 +1,7 @@
 def main():
     while True:
         a = input("Fraction: ")
-        try:
-            x, y = a.split("/")
-            x = int(x)
-            y = int(y)
-            out = x / y
+
             if out < 0 or out > 1:
                 pass
             elif 0 <= out <= 0.01:
@@ -23,7 +19,14 @@ def main():
 
 
 def convert(fraction):
-    ...
+    try:
+        x, y = a.split("/")
+        x, y = int(x), int(y)
+        out = x / y
+        out = int(out*100)
+        return out
+    except (ValueError, ZeroDivisionError):
+        pass
 
 
 def gauge(percentage):
