@@ -8,8 +8,8 @@ def test_gauge():
     assert gauge(51) == "51%"
 
 def test_convert():
-    assert convert(13/10) == ""
-    assert convert(100) == "F"
-    assert convert(99) == "F"
-    assert convert(27) == "27%"
-    assert convert(51) == "51%"
+    assert convert(13/10) == None
+    assert convert(12/0) == None
+    assert convert("whaa") == None
+    assert convert(15/20) == 75
+    assert convert(99/100) == 99
