@@ -3,6 +3,7 @@ import pytest
 
 
 def test_gauge():
+    with pytest.raise
     assert gauge(124) == None
     assert gauge(1) == "E"
     assert gauge(100) == "F"
