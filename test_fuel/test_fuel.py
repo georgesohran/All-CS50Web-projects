@@ -1,4 +1,6 @@
 from fuel import gauge, convert
+import pytest
+
 
 def test_gauge():
     assert gauge(124) == None
