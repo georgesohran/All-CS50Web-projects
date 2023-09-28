@@ -1,4 +1,4 @@
 from plates import is_valid
 
-def test_is_valid():
+def test_is_valid_():
     pass
