@@ -10,7 +10,7 @@ def test_gauge():
     assert gauge(51) == "51%"
 
 def test_convert():
-    with pytest.raises(ZeroDivisionError):
+    with pytest.raises(ValueError):
         assert convert("13/10")
 #    with pytest.raises(ZeroDivisionError):
 #        assert convert("12/0")
