@@ -11,7 +11,7 @@ def main():
         with open(before) as file:
             reader = csv.DictReader(file)
             for row in reader:
-                print(row)
+                seporate(row)
 
     except FileNotFoundError:
         sys.exit(f"Could not read {sys.argv[1]}")
@@ -27,6 +27,7 @@ def check_input():
 def seporate(row_dict):
     full = row_dict["name"]
     row_dict["last"],row_dict["first"] = full.replace(" ","").split(",")
+    print(row_dict)
 
 
 
