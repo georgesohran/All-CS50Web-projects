@@ -1,8 +1,6 @@
 import sys
 import csv
 
-rows = []
-
 def main():
     try:
         check_input()
@@ -12,12 +10,11 @@ def main():
 
         with open(before) as file:
             reader = csv.DictReader(file)
+            new_file = open(after)
+            writer = csv.DictWriter()
             for row in reader:
                 row = seporate(row)
                 print(row)
-
-        with open(after,"a") as file:
-            writer = csv.DictWriter(file, fieldnames =["first","last","house"])
 
 
     except FileNotFoundError:
