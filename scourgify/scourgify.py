@@ -1,8 +1,7 @@
 import sys
 import csv
 
-
-
+rows = []
 
 def main():
     try:
@@ -18,7 +17,7 @@ def main():
                 print(row)
 
         with open(after,"a") as file:
-            writer = csv.DictWriter(file, fieldnames = )
+            writer = csv.DictWriter(file, fieldnames =["first","last","house"])
 
 
     except FileNotFoundError:
