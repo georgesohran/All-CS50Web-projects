@@ -14,7 +14,7 @@ def main():
                 row = seporate(row)
                 print(row)
 
-        file = open(f"{sys.argv[2]}", "w")
+        file = open(f"{sys.argv[2]}", "a")
         file.write(name)
         file.close()
 
