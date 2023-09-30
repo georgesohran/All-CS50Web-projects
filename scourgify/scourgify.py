@@ -18,7 +18,7 @@ def main():
                 print(row)
 
         file = open(f"{sys.argv[2]}", "a")
-        file.write(name)
+        file.writerow(name)
         file.close()
 
     except FileNotFoundError:
