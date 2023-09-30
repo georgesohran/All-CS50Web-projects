@@ -9,7 +9,9 @@ def main():
         after = sys.argv[2]
 
         with open(before) as file:
-            reader = csv.reader(file)
+            reader = csv.DictReader(file)
+
+            print()
 
     except FileNotFoundError:
         sys.exit(f"Could not read {sys.argv[1]}")
