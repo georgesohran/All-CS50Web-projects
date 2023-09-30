@@ -17,7 +17,8 @@ try:
     with open(p) as file:
         pizza_type = f"{p.replace('.csv','')} Pizza".title()
         reader = csv.DictReader(file, fieldnames=[pizza_type,"Small", "Large"])
-        print(reader)
+        for row in reader:
+            print(row[pizza_type], row["Small"], row["Large"])
 
 except FileNotFoundError:
     sys.exit("File does not exist")
