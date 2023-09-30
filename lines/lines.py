@@ -15,7 +15,7 @@ try:
         lines = File.readlines()
 
     for line in lines:
-        line = line.replace(" ","")
+        line = line.lstrip()
         if line.startswith("#") or line == "":
             pass
         else:
