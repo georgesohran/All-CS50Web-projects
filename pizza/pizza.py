@@ -16,9 +16,11 @@ try:
 
     with open(p) as file:
         pizza_type = "Regular Pizza"
-        reader = csv.DictReader(file, fieldnames=[pizza_type,"Small", "Large"])
+        reader = csv.reader(file)
         for row in reader:
             print(row)
+
+#    print(tabulate(table, headers, tablefmt="grid"))
 
 except FileNotFoundError:
     sys.exit("File does not exist")
