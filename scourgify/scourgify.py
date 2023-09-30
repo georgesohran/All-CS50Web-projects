@@ -18,7 +18,7 @@ def main():
                 print(row)
 
         with open(after,"a") as file:
-            writer = csv.DictWriter(file, )
+            writer = csv.DictWriter(file, fieldnames = )
 
 
     except FileNotFoundError:
