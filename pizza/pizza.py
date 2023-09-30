@@ -14,7 +14,8 @@ try:
     p = sys.argv[1]
 
     with open(p) as file:
-        lines
+        for line in file:
+            print(line)
 
 except FileNotFoundError:
     sys.exit("File does not exist")
