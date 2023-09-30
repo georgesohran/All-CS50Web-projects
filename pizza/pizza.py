@@ -1,5 +1,5 @@
 import sys
-
+from tabulate import tabulate
 
 count = 0
 
@@ -12,6 +12,9 @@ try:
         sys.exit("Not a CSV file ")
 
     p = sys.argv[1]
+
+    with open(p) as file:
+        lines
 
 except FileNotFoundError:
     sys.exit("File does not exist")
