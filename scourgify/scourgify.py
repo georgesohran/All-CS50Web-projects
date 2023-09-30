@@ -27,6 +27,7 @@ def check_input():
 def seporate(row_dict):
     full = row_dict.pop("name")
     row_dict["last"],row_dict["first"] = full.replace(" ","").split(",")
+    house = row_dict.pop("house")
     print(row_dict)
 
 
