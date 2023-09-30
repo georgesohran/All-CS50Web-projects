@@ -1,4 +1,5 @@
 import sys
+import csv
 from tabulate import tabulate
 
 count = 0
@@ -14,8 +15,8 @@ try:
     p = sys.argv[1]
 
     with open(p) as file:
-        writer = csv.DictWriter(file, fieldnames=[f"{p.replace(".csv","")} Pizza".title(),"Small", "Large"])
-        writer.writerow({"name": name, "home": home})
+        reader = csv.DictReader(file, fieldnames=[f"{p.replace('.csv','')} Pizza".title(),"Small", "Large"])
+
         for line in file:
             print(line)
 
