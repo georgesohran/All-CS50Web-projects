@@ -15,10 +15,9 @@ try:
     p = sys.argv[1]
 
     with open(p) as file:
-        reader = csv.DictReader(file, fieldnames=[f"{p.replace('.csv','')} Pizza".title(),"Small", "Large"])
-
-        for line in file:
-            print(line)
+        pizza_type = f"{p.replace('.csv','')} Pizza".title()
+        reader = csv.DictReader(file, fieldnames=[pizza_type,"Small", "Large"])
+        print(reader)
 
 except FileNotFoundError:
     sys.exit("File does not exist")
