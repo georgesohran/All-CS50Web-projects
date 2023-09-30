@@ -10,11 +10,11 @@ try:
     if not sys.argv[1].endswith(".csv"):
         sys.exit("Not a CSV file ")
 
-    p = sys.argv[1]
+    before = sys.argv[1]
+    after = sys.argv[2]
 
-    with open(p) as file:
-        pizza_type = "Regular Pizza"
+    with open(before) as file:
         reader = csv.reader(file)
 
 except FileNotFoundError:
-    sys.exit("File does not exist")
+    sys.exit(f"Could not read {sys.argv[1]}")
