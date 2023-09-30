@@ -1,6 +1,9 @@
 import sys
 import csv
 
+
+
+
 def main():
     try:
         check_input()
