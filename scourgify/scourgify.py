@@ -14,6 +14,10 @@ def main():
                 row = seporate(row)
                 print(row)
 
+        file = open(f"{sys.argv[2]}", "w")
+        file.write(name)
+        file.close()
+
     except FileNotFoundError:
         sys.exit(f"Could not read {sys.argv[1]}")
 
