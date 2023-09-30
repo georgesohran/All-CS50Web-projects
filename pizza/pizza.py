@@ -15,7 +15,7 @@ try:
     p = sys.argv[1]
 
     with open(p) as file:
-        pizza_type = f"{p.replace('.csv','')} Pizza".title()
+        pizza_type = "Regular Pizza"
         reader = csv.DictReader(file, fieldnames=[pizza_type,"Small", "Large"])
         for row in reader:
             print(row[pizza_type], row["Small"], row["Large"])
