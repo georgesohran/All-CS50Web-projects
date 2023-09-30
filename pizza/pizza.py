@@ -4,6 +4,8 @@ from tabulate import tabulate
 
 count = 0
 
+table = []
+
 try:
     if len(sys.argv)>2:
         sys.exit("Too many command-line arguments")
@@ -18,9 +20,9 @@ try:
         pizza_type = "Regular Pizza"
         reader = csv.reader(file)
         for row in reader:
-            print(row)
+            table.append(row)
 
-#    print(tabulate(table, headers, tablefmt="grid"))
+    print(tabulate(table, headers, tablefmt="grid"))
 
 except FileNotFoundError:
     sys.exit("File does not exist")
