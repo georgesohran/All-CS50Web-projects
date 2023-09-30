@@ -25,7 +25,8 @@ def check_input():
         sys.exit("Not a CSV file ")
 
 def seporate(row_dict):
-    row_dict["first"], = row_dict["name"].split(",")
+    row_dict["last"],row_dict["first"] = row_dict["name"].split(",")
+    print()
 
 
 main()
