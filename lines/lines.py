@@ -14,8 +14,12 @@ try:
     with open(f) as File:
         lines = File.readlines()
 
-    for _ in lines:
-        count+=1
+    for line in lines:
+        line = line.replace(" ","")
+        if line.startswith("#") or line == "":
+            pass
+        else:
+            count += 1
 
     print(count)
 
