@@ -14,6 +14,8 @@ try:
     p = sys.argv[1]
 
     with open(p) as file:
+        writer = csv.DictWriter(file, fieldnames=[f"{p.replace(".csv","")} Pizza".title(),"Small", "Large"])
+        writer.writerow({"name": name, "home": home})
         for line in file:
             print(line)
 
