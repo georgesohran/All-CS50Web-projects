@@ -17,9 +17,9 @@ def main():
                 row = seporate(row)
                 print(row)
 
-        file = open(f"{sys.argv[2]}", "a")
-        file.writerow(name)
-        file.close()
+         with open(after,"a") as file:
+            writer = csv.DictWriter(file)
+            
 
     except FileNotFoundError:
         sys.exit(f"Could not read {sys.argv[1]}")
