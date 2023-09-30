@@ -2,7 +2,6 @@ import sys
 import csv
 from tabulate import tabulate
 
-count = 0
 
 table = []
 
@@ -22,7 +21,7 @@ try:
         for row in reader:
             table.append(row)
 
-    print(tabulate(table, headers, tablefmt="grid"))
+    print(tabulate(table[1:], table[0], tablefmt="grid"))
 
 except FileNotFoundError:
     sys.exit("File does not exist")
