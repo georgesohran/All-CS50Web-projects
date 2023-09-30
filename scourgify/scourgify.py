@@ -10,8 +10,8 @@ def main():
 
         with open(before) as file:
             reader = csv.DictReader(file)
-
-            print()
+            for row in reader:
+                print(row)
 
     except FileNotFoundError:
         sys.exit(f"Could not read {sys.argv[1]}")
@@ -23,6 +23,9 @@ def check_input():
         sys.exit("Too few command-line arguments")
     if not sys.argv[1].endswith(".csv") or not sys.argv[2].endswith(".csv"):
         sys.exit("Not a CSV file ")
+
+def seporate(row_dict):
+    row_dict["first"], = row_dict["name"].split(",")
 
 
 main()
