@@ -18,7 +18,7 @@ try:
         pizza_type = "Regular Pizza"
         reader = csv.DictReader(file, fieldnames=[pizza_type,"Small", "Large"])
         for row in reader:
-            print(row[pizza_type], row["Small"], row["Large"])
+            print(row)
 
 except FileNotFoundError:
     sys.exit("File does not exist")
