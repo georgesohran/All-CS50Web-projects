@@ -23,6 +23,7 @@ def main():
         bottom = (height + new_height)/2
 
         new_image = image.crop((left, top, right, bottom))
+        new_image.paste(shirt, shirt)
 
         new_image.save(after)
 
