@@ -15,9 +15,8 @@ def main():
 
         image = Image.open(before)
 
-        ImageOps.crop(image,)
+        new_image = ImageOps.fit(image,nsize)
 
-        new_image = image.crop((left, top, right, bottom))
         new_image.paste(shirt, shirt)
 
         new_image.save(after)
