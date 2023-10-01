@@ -11,11 +11,11 @@ def main():
         after = sys.argv[2]
 
         shirt = Image.open("shirt.png")
-        new_width,new_height = shirt.size()
+        new_width,new_height = shirt.size
 
         image = Image.open(before)
 
-        width,height = image.size()
+        width,height = image.size
 
         left = (width - new_width)/2
         top = (height - new_height)/2
