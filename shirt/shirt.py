@@ -13,10 +13,9 @@ def main():
         shirt = Image.open("shirt.png")
         nsize = shirt.size
 
-        with Image.open(before) as image:
-            ImageOps.pad(image,nsize)
-            image.paste(shirt,shirt)
-            image.save()
+        image = Image.open('myimage.jpg')
+        new_image = image.resize(nsize)
+        new_image.save('myimage_500.jpg')
 
 
 
