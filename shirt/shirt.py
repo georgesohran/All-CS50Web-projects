@@ -31,7 +31,7 @@ def check_input():
 
     if extention1 != extention2:
         sys.exit("Input and output have different extensions")
-    if extention2 == ".png" or extention2 == ".jpg" or extention2 == ".jpeg":
+    if extention2 == "png" or extention2 == "jpg" or extention2 == "jpeg":
         pass
     else:
         sys.exit("Invalid output")
