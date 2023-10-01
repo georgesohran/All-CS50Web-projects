@@ -13,9 +13,9 @@ def main():
         shirt = Image.open("shirt.png")
         nsize = shirt.size
 
-        image = Image.open('myimage.jpg')
-        new_image = image.resize(nsize)
-        new_image.save('myimage_500.jpg')
+        image = Image.open(before)
+        new_image = image.fit(nsize)
+        new_image.save(after)
 
 
 
