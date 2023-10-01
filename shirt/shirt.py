@@ -11,11 +11,12 @@ def main():
         after = sys.argv[2]
 
         shirt = Image.open("shirt.png")
-        image = Image.open(before)
+        or_image = Image.open(before)
+
         nsize = shirt.size
-        ImageOps.fit(image,nsize)
-        image.paste(shirt)
-        image.save(after)
+
+        or_image.paste(shirt)
+        or_image.save(after)
 
 
     except FileNotFoundError:
