@@ -11,10 +11,10 @@ def main():
         after = sys.argv[2]
 
         shirt = Image.open("shirt.png")
-        with Image.open(before) as image:
-            
-
         nsize = shirt.size
+
+        with Image.open(before) as image:
+            image.paste(shirt,shirt)
 
 
 
