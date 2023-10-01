@@ -11,16 +11,11 @@ def main():
         after = sys.argv[2]
 
         shirt = Image.open("shirt.png")
-        new_width,new_height = shirt.size
+        nsize = shirt.size
 
         image = Image.open(before)
 
-        width,height = image.size
-
-        left = (width - new_width)/2
-        top = (height - new_height)/2
-        right = (width + new_width)/2
-        bottom = (height + new_height)/2
+        ImageOps.crop(image,)
 
         new_image = image.crop((left, top, right, bottom))
         new_image.paste(shirt, shirt)
