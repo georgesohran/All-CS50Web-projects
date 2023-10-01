@@ -16,6 +16,7 @@ def main():
         with Image.open(before) as image:
             ImageOps.pad(image,nsize)
             image.paste(shirt,shirt)
+            image.save()
 
 
 
