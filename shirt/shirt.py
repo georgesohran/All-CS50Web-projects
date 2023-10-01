@@ -1,6 +1,6 @@
 import sys
 import os
-import PIL
+from PIL import Image
 
 def main():
     try:
@@ -9,10 +9,9 @@ def main():
         before = sys.argv[1]
         after = sys.argv[2]
 
-        shirt = PIL.Image.open("shirt.png")
-        image = PIL.Image.open(before)
+        shirt = Image.open("shirt.png")
+        image = Image.open(before)
         nsize = shirt.size
-        PIL.ImageOps.fit(image, nsize)
         image.paste(shirt)
         image.save(after)
 
