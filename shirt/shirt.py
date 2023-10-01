@@ -11,7 +11,7 @@ def main():
         after = sys.argv[2]
 
         shirt = Image.open("shirt.png")
-        new_width,new_height = shirt.size
+        new_width,new_height = shirt.size()
 
         image = Image.open(before)
 
@@ -22,7 +22,7 @@ def main():
         right = (width + new_width)/2
         bottom = (height + new_height)/2
 
-        image = image.crop((left, top, right, bottom))
+        new_image = image.crop((left, top, right, bottom))
 
         new_image.save(after)
 
