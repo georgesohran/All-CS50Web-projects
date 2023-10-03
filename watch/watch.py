@@ -9,8 +9,6 @@ def parse(s):
     mat = re.search(r'^.iframe .*src\="(.*)".*$',s)
     if mat:
         return mat.group(1)
-    else:
-        return "invalid"
 
 
 ...
