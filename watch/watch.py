@@ -6,7 +6,8 @@ def main():
 
 
 def parse(s):
-    if mat := re.search(r'^\<iframe .*scr\="(.*)".*',s):
+    mat = re.search(r'^\<iframe .*scr\="(.*)".*',s)
+    if mat:
         return mat.group(1)
 
 
