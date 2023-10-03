@@ -12,7 +12,7 @@ def parse(s):
 
 
 def reformat(s):
-    pass
+    
 
 
 if __name__ == "__main__":
