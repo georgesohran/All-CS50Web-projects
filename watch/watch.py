@@ -6,7 +6,7 @@ def main():
 
 
 def parse(s):
-    mat = re.search(r"^<iframe",s)
+    mat = re.search(r"^<iframe .*",s)
 
 
 ...
