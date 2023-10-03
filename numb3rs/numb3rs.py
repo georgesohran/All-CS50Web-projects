@@ -7,7 +7,7 @@ def main():
 
 
 def validate(ip):
-    ...
+    match1 = re.search(r"^([0-9])3")
 
 
 if __name__ == "__main__":
