@@ -12,8 +12,9 @@ def parse(s):
 
 
 def reformat(s):
-    
-
+    if "www" in s:
+        pass
+    elif
 
 if __name__ == "__main__":
     main()
