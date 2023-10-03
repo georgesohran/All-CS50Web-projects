@@ -6,12 +6,13 @@ def main():
 
 
 def parse(s):
-    mat = re.search(r'^.iframe .*src\="(.*)".*$',s)
+    mat = re.search(r'^\<iframe .*src\="(.*)".*$',s)
     if mat:
         return mat.group(1)
 
 
-...
+def reformat(s):
+    pass
 
 
 if __name__ == "__main__":
