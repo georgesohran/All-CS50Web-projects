@@ -8,7 +8,8 @@ def main():
 def parse(s):
     mat = re.search(r'^\<iframe .*src\="(.*)".*$',s)
     if mat:
-        return reformat(mat.group(1))
+        mat = reformat(mat.group(1))
+        return mat
 
 
 def reformat(s):
