@@ -14,7 +14,8 @@ def parse(s):
 def reformat(s):
     if "www" in s:
         pass
-    elif
-
+    elif "http" in s:
+        pass
+    elif "https" in s
 if __name__ == "__main__":
     main()
