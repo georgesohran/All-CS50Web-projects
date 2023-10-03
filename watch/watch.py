@@ -13,6 +13,7 @@ def parse(s):
 
 def reformat(s):
     m = re.search(r'^.*://.*/.*/(.*)$',s)
+    if m and s.has("youtube")
 
 
 
