@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    match1 = re.search(r"")
+    match1 = re.search(r"([0-9]{1-2})\:([0-9]{1-2})? to ([0-9]{1-2})\:([0-9]{1-2})?")
 
 
 ...
