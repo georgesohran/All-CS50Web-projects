@@ -6,7 +6,7 @@ def main():
 
 
 def parse(s):
-    mat = re.search(r"^\<iframe .*?src\=\"(.*?)\".*$",s)
+    mat = re.search(r"^\<iframe .*?src\=\"(.*?)\".*\<\/iframe\>$",s)
     if mat:
         return mat.group(1)
 
