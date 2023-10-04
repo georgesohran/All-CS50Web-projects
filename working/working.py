@@ -13,6 +13,8 @@ def convert(s):
     if match1 and match2:
         hours1, mins1 = match1.group(1), match1.group(2)
         APM1  = match1.group(3)
+        hours2, mins2 = match2.group(1), match2.group(2)
+        APM2  = match1.group(3)
         return "success"
 
 
