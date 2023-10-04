@@ -11,9 +11,12 @@ def convert(s):
     match1 = re.search(r"([0-9]{1,2})\:?([0-9]{1,2})? (AM)?|(PM)?",tfrom)
     match2 = re.search(r"([0-9]{1,2})\:?([0-9]{1,2})? (AM)?|(PM)?",tto)
     if match1 and match2:
-        hours1, mins1, time = match1.group(1), match1.group(2)
-
-
+        hours1, mins1 = match1.group(1), match1.group(2)
+        if match1.group(3) == None :
+            APM  = match.group(4)
+        else:
+            APM  = match.group(3)
+        
 
 
 if __name__ == "__main__":
