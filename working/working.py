@@ -17,9 +17,9 @@ def convert(s):
         APM2  = match2.group(3)
 
         if APM1 == "PM":
-            hours1 += 12
+            hours1 -= 12
         if APM2 == "PM":
-            hours2 += 12
+            hours2 -= 12
         if mins1 == None:
             mins1 = 0
         else:
