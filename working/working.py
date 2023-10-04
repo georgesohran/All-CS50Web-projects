@@ -48,7 +48,7 @@ def convert(s):
         raise ValueError
 
 
-        return f"{hours1:02}:{mins1:02} to {hours2:02}:{mins2:02}"
+    return f"{hours1:02}:{mins1:02} to {hours2:02}:{mins2:02}"
 
 
 
