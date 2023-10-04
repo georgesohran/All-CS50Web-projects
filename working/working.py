@@ -17,9 +17,21 @@ def convert(s):
         APM2  = match2.group(3)
 
         if APM1 == "PM":
-            hours1 += 12
+            if hours1 == 12:
+                pass
+            else:
+                hours1 += 12
+        elif hours1 == 12:
+                hours1 = 0
+
         if APM2 == "PM":
-            hours2 += 12
+            if hours2 == 12:
+                pass
+            else:
+                hours2 += 12
+        elif hours2 == 12:
+                hours2 = 0
+
         if mins1 == None:
             mins1 = 0
         else:
