@@ -15,11 +15,17 @@ def convert(s):
         APM1  = match1.group(3)
         hours2, mins2 = int(match2.group(1)), int(match2.group(2))
         APM2  = match2.group(3)
+
         if APM1 == "PM":
             hours1 += 12
         if APM2 == "PM":
             hours2 += 12
-        return
+        if mins1 == None:
+            mins1 = 0
+        if mins2 == None:
+            mins2 = 0
+
+        return f"{hours1:02}:{mins1:02} to {hours2:02}:{mins2:02}"
 
 
 
