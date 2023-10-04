@@ -24,10 +24,15 @@ def convert(s):
             mins1 = 0
         else:
             mins1 = int(mins1)
+            if mins1 >= 60:
+                raise ValueError
         if mins2 == None:
             mins2 = 0
         else:
             mins2 = int(mins2)
+            if mins2 >= 60:
+                raise ValueError
+
 
         return f"{hours1:02}:{mins1:02} to {hours2:02}:{mins2:02}"
 
