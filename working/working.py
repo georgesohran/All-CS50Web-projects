@@ -44,6 +44,8 @@ def convert(s):
             mins2 = int(mins2)
             if mins2 >= 60:
                 raise ValueError
+    else:
+        raise ValueError
 
 
         return f"{hours1:02}:{mins1:02} to {hours2:02}:{mins2:02}"
