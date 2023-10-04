@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    if match1 := re.search(r"([0-9]{1,2}\:?[0-9]{1,2}? (?:AM)?|(?:PM)?)",s  ):
+    if match1 := re.search(r"([0-9]{1,2}\:?[0-9]{1,2}? (AM)?|(PM)?) to ([0-9]{1,2}\:?[0-9]{1,2}? (AM)?|(PM)?)",s  ):
 
         return match1.group(1)
 
