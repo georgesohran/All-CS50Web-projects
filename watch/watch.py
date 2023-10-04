@@ -10,6 +10,9 @@ def parse(s):
     if mat:
         return mat.group(1)
 
+def reformat(s):
+    if s.find("youtube")!=-1:
+        
 
 
 if __name__ == "__main__":
