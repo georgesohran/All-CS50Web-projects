@@ -7,8 +7,8 @@ def main():
 
 
 def convert(s):
-    match1 = re.search(r"([0-9]{1-2})\:([0-9]{1-2})? to ([0-9]{1-2})\:([0-9]{1-2})?",)
-    return match1.group(1)
+    if match1 := re.search(r"([0-9]{1-2})\:([0-9]{1-2})?",s):
+        return match1.group(1)
 
 
 ...
