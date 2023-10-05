@@ -12,7 +12,7 @@ def count(s):
         words = re.split(r"\s",s)
         for word in words:
             if word == "um":
-                count+=1
+                c+=1
     return c
 
 
