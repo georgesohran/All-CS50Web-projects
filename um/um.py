@@ -7,10 +7,13 @@ def main():
 
 
 def count(s):
-    cou
+    c = 0
     if match1 := re.search(r".*\bum\b.*+",s):
-        matches = re.split(r"\s",s)
-        return matches
+        words = re.split(r"\s",s)
+        for word in words:
+            if word == "um":
+                count+=1
+    return c
 
 
 
