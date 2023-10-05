@@ -8,7 +8,8 @@ def main():
 
 def count(s):
     if match1 := re.search(r".*\bum\b.*+",s):
-        matches = re.split(r"")
+        matches = re.split(r"\b",s)
+        return matches
 
 
 
