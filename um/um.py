@@ -10,10 +10,8 @@ def count(s):
     c = 0
     if match1 := re.search(r".*\bum\b.*+",s):
         words = re.split(r"\s",s)
-        for word in words:
-            if word == "um":
-                c+=1
-    return c
+        return words
+        
 
 
 
