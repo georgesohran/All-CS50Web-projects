@@ -7,7 +7,8 @@ def main():
 
 
 def count(s):
-    ...
+    if match1 := re.search(r"(.* (um)* .*)+",s):
+        return "matched"
 
 
 
