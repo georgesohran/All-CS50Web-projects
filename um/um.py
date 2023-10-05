@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    if match1 := re.search(r".*\um\b.*+",s):
+    if match1 := re.search(r".*um\b.*+",s):
         return "matched"
 
 
