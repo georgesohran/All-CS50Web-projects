@@ -2,5 +2,8 @@ import validators
 
 def main():
     mail = input("What's your email address?")
-    
-    pass
+    if validators.email(mail):
+        print("Valid")
+    print("Invalid")
+
+main()
