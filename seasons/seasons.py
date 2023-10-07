@@ -1,4 +1,3 @@
-from datetime import timedelta
 from datetime import date
 import inflect as inf
 p = inf.engine()
