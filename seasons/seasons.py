@@ -7,7 +7,8 @@ import re
 def main():
     input_date = input("Date of Birth:")
     if match := re.search(r"([0-9]{1,4})-([0-9]{1,2})-([0-9]{1,2})",input_date):
-        print("cool")
+        input_date = date()
+        input_date.days = match.group
     else:
         print("no")
 ...
