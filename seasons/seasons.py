@@ -17,11 +17,11 @@ def convert_date(d):
             time_passed_date = current_date - d
             total_mins = time_passed_date.total_seconds()/60
             word = p.number_to_words(int(total_mins), andword="")
-            print(word,"minutes")
+            return word+" minutes"
         else:
-            print("Invalid date")
+            return "Invalid date"
     except ValueError:
-        print("Invalid date")
+        return "Invalid date"
 
 
 
