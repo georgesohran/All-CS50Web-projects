@@ -10,7 +10,7 @@ def main():
         input_date = date(int(match.group(1)),int(match.group(2)),int(match.group(3)))
         current_date = date.today()
         time_passed_date = current_date - input_date
-        print(time_passed_date)
+        print(time_passed_date.total_seconds())
     else:
         print("no")
 ...
