@@ -29,4 +29,13 @@ def test_deposit():
 
 
 def test_withdraw():
-    ...
+    jar = Jar()
+    jar._size = 10
+    jar.withdraw(1)
+    assert jar.size == 9
+    jar.withdraw(3)
+    assert jar.size == 6
+    jar.withdraw(6)
+    assert jar.size == 0
+    with pytest.raises(ValueError):
+        assert not jar.withdraw(6)
