@@ -13,8 +13,8 @@ def main():
             current_date = date.today()
             time_passed_date = current_date - input_date
             total_mins = time_passed_date.total_seconds()/60
-            words = p.number_to_words(int(total_mins), group=3)
-            print(total_mins)
+            word = p.number_to_words(int(total_mins), andword="")
+            print(word)
         else:
             print("Invalid date")
     except ValueError:
