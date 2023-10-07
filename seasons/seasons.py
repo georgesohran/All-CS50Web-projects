@@ -1,12 +1,13 @@
 from datetime import date
 import inflect as inf
+from sys import exit
 p = inf.engine()
 import re
 
 
 def main():
     input_date = input("Date of Birth:")
-    print(convert_date(input_date,get_current_date()))
+    exit(convert_date(input_date,get_current_date()))
 
 def convert_date(d,curd):
     try:
@@ -16,10 +17,9 @@ def convert_date(d,curd):
             total_mins = time_passed_date.total_seconds()/60
             word = p.number_to_words(int(total_mins), andword="")
             return word.capitalize()+" minutes"
-        else:
-            return "Invalid date"
+        exit("Invalid date")
     except ValueError:
-        return "Invalid date"
+        exit("Invalid date")
 
 
 def get_current_date():
