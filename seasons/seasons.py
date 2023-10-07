@@ -1,6 +1,7 @@
 from datetime import timedelta
 from datetime import date
 import inflect as inf
+p = inf.engine()
 import re
 
 
@@ -12,6 +13,7 @@ def main():
             current_date = date.today()
             time_passed_date = current_date - input_date
             total_mins = time_passed_date.total_seconds()/60
+            words = p.number_to_words(int(total_mins), group=3)
             print(total_mins)
         else:
             print("Invalid date")
