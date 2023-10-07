@@ -22,7 +22,10 @@ def test_str():
 
 def test_deposit():
     jar = Jar()
-    assert 
+    jar.deposit(1)
+    assert jar.size == 1
+    jar.deposit(5)
+    assert jar.size == 6
 
 
 def test_withdraw():
