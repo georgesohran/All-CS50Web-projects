@@ -9,7 +9,8 @@ def main():
     if match := re.search(r"([0-9]{1,4})-([0-9]{1,2})-([0-9]{1,2})",input_date):
         input_date = date(int(match.group(1)),int(match.group(2)),int(match.group(3)))
         current_date = date.today()
-        print(input_date)
+        time_passed_date = current_date - input_date
+        print(time_passed_date)
     else:
         print("no")
 ...
