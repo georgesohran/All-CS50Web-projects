@@ -1,6 +1,6 @@
 from datetime import date
 import inflect as inf
-from sys import exit
+import sys
 p = inf.engine()
 import re
 
@@ -19,7 +19,7 @@ def convert_date(d,curd):
             return word.capitalize()+" minutes"
         return "Invalid date"
     except ValueError:
-        exit("Invalid date")
+        sys.exit("Invalid date")
 
 
 def get_current_date():
