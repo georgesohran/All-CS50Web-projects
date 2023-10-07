@@ -15,7 +15,7 @@ def convert_date(d,curd):
             time_passed_date = curd - d
             total_mins = time_passed_date.total_seconds()/60
             word = p.number_to_words(int(total_mins), andword="")
-            return word+" minutes"
+            return word.prefix()+" minutes"
         else:
             return "Invalid date"
     except ValueError:
