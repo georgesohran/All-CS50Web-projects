@@ -1,4 +1,4 @@
-from datetime import deltatime
+from datetime import timedelta
 from datetime import date
 import inflect as inf
 import re
@@ -6,7 +6,7 @@ import re
 
 def main():
     input_date = input("Date of Birth:")
-    if match := re.search(r"([0-9]{1,4})-([0-9]{1,2})-([0-9]{1,2})")
+    if match := re.search(r"([0-9]{1,4})-([0-9]{1,2})-([0-9]{1,2})",input_date):
         print("cool")
     else:
         print("no")
