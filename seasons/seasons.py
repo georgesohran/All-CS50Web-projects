@@ -6,7 +6,7 @@ import re
 
 def main():
     input_date = input("Date of Birth:")
-    print(convert_date(input_date,get_current_date))
+    print(convert_date(input_date,get_current_date()))
 
 def convert_date(d,curd):
     try:
