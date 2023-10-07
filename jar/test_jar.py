@@ -21,7 +21,8 @@ def test_str():
 
 
 def test_deposit():
-    ...
+    jar = Jar()
+    assert 
 
 
 def test_withdraw():
