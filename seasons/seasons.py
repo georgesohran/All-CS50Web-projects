@@ -11,6 +11,7 @@ def main():
         input_date.year = match.group(1)
         input_date.month = match.group(2)
         input_date.day = match.group(3)
+        current_date = date()
     else:
         print("no")
 ...
