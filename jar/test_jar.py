@@ -2,7 +2,8 @@ from jar import Jar
 
 
 def test_init():
-    ...
+    with ValueError():
+        assert jar = Jar()
 
 
 def test_str():
