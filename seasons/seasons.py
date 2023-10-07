@@ -11,7 +11,7 @@ def main():
         current_date = date.today()
         time_passed_date = current_date - input_date
         total_mins = time_passed_date.total_seconds()/60
-        print(time_passed_date.total_seconds())
+        print(total_mins)
     else:
         print("no")
 ...
