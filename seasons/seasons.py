@@ -7,7 +7,7 @@ import re
 
 def main():
     input_date = input("Date of Birth:")
-    exit(convert_date(input_date,get_current_date()))
+    print(convert_date(input_date,get_current_date()))
 
 def convert_date(d,curd):
     try:
@@ -17,7 +17,7 @@ def convert_date(d,curd):
             total_mins = time_passed_date.total_seconds()/60
             word = p.number_to_words(int(total_mins), andword="")
             return word.capitalize()+" minutes"
-        exit("Invalid date")
+        return "Invalid date"
     except ValueError:
         exit("Invalid date")
 
