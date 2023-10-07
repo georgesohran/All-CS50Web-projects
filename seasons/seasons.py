@@ -17,7 +17,8 @@ def convert_date(d,curd):
             total_mins = time_passed_date.total_seconds()/60
             word = p.number_to_words(int(total_mins), andword="")
             return word.capitalize()+" minutes"
-        return "Invalid date"
+        else:
+            sys.exit("Invalid date")
     except ValueError:
         sys.exit("Invalid date")
 
