@@ -19,7 +19,7 @@ def main():
     shirt = Image.open("shirtificate.png")
     width,hight = shirt.size
 
-    pdf.image("shirtificate.png", 105-width/2, 148.5-hight/2,80)
+    pdf.image("shirtificate.png", 105, 148.5,80)
     pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
 
