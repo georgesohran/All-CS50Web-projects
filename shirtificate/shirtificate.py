@@ -23,7 +23,7 @@ class PDF(FPDF):
 def main():
     pdf = PDF()
     pdf.add_page()
-    pdf.image()
+    pdf.image("shirtificate.png")
     pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
 
