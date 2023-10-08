@@ -2,13 +2,15 @@ from fpdf import FPDF
 from PIL import Image
 
 class PDF(FPDF):
-    def header(self):
-        self.set_font("helvetica", "B", 15)
+    def __innit__():
+        self.
 
-        # Moving cursor to the right:
+
+    def header(self):
+        self.set_font("helvetica", "B", 30)
         self.cell(30)
         # Printing title:
-        self.cell(30, 10, "Title", border=1, align="C")
+        self.cell(30, 10, "Title", align="C")
 
 
 
