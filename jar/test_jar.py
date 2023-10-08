@@ -7,8 +7,6 @@ def test_init():
         assert Jar(-5)
     with pytest.raises(ValueError):
         assert Jar(0)
-    with pytest.raises(ValueError):
-        assert not Jar(5)
 
 
 def test_str():
