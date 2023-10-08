@@ -3,6 +3,7 @@ from fpdf import FPDF
 
 class PDF(FPDF):
     def header(self):
+        self.set_font("helvetica", "B", 15)
         # Moving cursor to the right:
         self.cell(80)
         # Printing title:
@@ -22,7 +23,7 @@ class PDF(FPDF):
 def main():
     pdf = PDF()
     pdf.add_page()
-    pdf.add_title("CS50 Shirtificate")
+    pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
 
 main()
