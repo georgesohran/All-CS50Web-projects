@@ -2,8 +2,8 @@ from fpdf import FPDF
 from PIL import Image
 
 class PDF(FPDF):
-    def __innit__():
-        self.image("shirtificate.png", 105, 148.5, w = self.)
+    def __innit__(self):
+        self.image("shirtificate.png", w = self.pdf.epw)
 
 
     def header(self):
