@@ -24,5 +24,8 @@ class PDF(FPDF):
 
 
 def main():
-    pdf = FPDF()
+    pdf = PDF()
     pdf.add_page()
+    pdf.output("test.pdf")
+
+main()
