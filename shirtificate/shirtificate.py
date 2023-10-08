@@ -22,6 +22,7 @@ class PDF(FPDF):
 def main():
     pdf = PDF()
     pdf.add_page()
+    pdf.add_title("CS50 Shirtificate")
     pdf.output("test.pdf")
 
 main()
