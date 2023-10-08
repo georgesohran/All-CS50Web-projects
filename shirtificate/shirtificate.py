@@ -1,5 +1,5 @@
 from fpdf import FPDF
-import PIL
+from PIL import Image
 
 class PDF(FPDF):
     def header(self):
@@ -24,6 +24,9 @@ class PDF(FPDF):
 def main():
     pdf = PDF()
     pdf.add_page()
+    shirt = Image()
+    width = shirt.
+
     pdf.image("shirtificate.png", 105, 148.5, 80)
     pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
