@@ -4,6 +4,7 @@ from PIL import ImageOps
 class PDF(FPDF):
     def header(self):
         self.set_font("helvetica", "B", 15)
+
         # Moving cursor to the right:
         self.cell(30)
         # Printing title:
@@ -23,7 +24,7 @@ class PDF(FPDF):
 def main():
     pdf = PDF()
     pdf.add_page()
-    pdf.image("shirtificate.png", 0, 0, 33)
+    pdf.image("shirtificate.png", 0, 0)
     pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
 
