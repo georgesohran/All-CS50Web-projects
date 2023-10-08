@@ -12,8 +12,6 @@ class Jar:
         self.size += n
 
     def withdraw(self, n):
-        if self.size - n < 0:
-            raise ValueError
         self.size -= n
 
     @property
@@ -23,4 +21,14 @@ class Jar:
     @property
     def size(self):
         return self._size
+
+    @capacity.setter
+    def capacity(self,capacity):
+        self._capacity = capacity
+        if capacity<=0:
+            raise ValueError
+
+    @size.setter
+    def size(self,size):
+        
 
