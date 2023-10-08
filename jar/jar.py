@@ -30,5 +30,6 @@ class Jar:
 
     @size.setter
     def size(self,size):
-        
+        self._size = size
+
 
