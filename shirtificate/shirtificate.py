@@ -4,7 +4,10 @@ from PIL import Image
 class PDF(FPDF):
     def __innit__(self):
         super().__innit__()
-        self._pdf = FPDF()
+
+
+        self.image("shirtificate.png",h = self.eph, w = self.epw)
+
 
 
 
@@ -12,9 +15,7 @@ class PDF(FPDF):
     def header(self):
         self.set_font("helvetica", "B", 30)
         self.cell(30)
-        self.image("shirtificate.png", w = self.epw)
         self.cell(30, 10, "Title", align="C")
-
 
 
 
