@@ -4,12 +4,11 @@ from PIL import Image
 class PDF(FPDF):
     def __innit__(self):
         super().__innit__()
+        self.add_page()
 
 
+    def chapter_body(self):
         self.image("shirtificate.png",h = self.eph, w = self.epw)
-
-
-
 
 
     def header(self):
@@ -21,9 +20,6 @@ class PDF(FPDF):
 
 def main():
     pdf = PDF()
-    pdf.add_page()
-
-
     pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
 
