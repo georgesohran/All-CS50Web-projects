@@ -2,9 +2,6 @@ from fpdf import FPDF
 from PIL import Image
 
 class PDF(FPDF):
-    def __innit__(self):
-        super().__innit__()
-
     def header(self):
         self.set_font("helvetica", "B", 15)
         width = self.get_string_width(self.title) + 6
