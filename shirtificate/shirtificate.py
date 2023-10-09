@@ -13,10 +13,11 @@ class PDF(FPDF):
 
 
 def main():
-    pdf = PDF()
+    pdf = PDF(orientation="landscape")
+    pdf.set_margin(0)
     pdf.add_page()
     pdf.image("shirtificate.png",h = pdf.eph, w = pdf.epw)
-    pdf.set_title("CS50 Shirtificate")
+
     pdf.output("test.pdf")
 
 main()
