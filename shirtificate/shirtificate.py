@@ -14,8 +14,11 @@ class PDF(FPDF):
             align="C",
         )
         self.ln(10)
+
+
     def footer(self):
-        
+        self.set_y(-15)
+        self.image("shirtificate.png", w = self.epw)
 
 
 
@@ -23,7 +26,7 @@ def main():
     pdf = PDF()
     pdf.set_margin(0)
     pdf.add_page()
-    pdf.image("shirtificate.png", w = pdf.epw)
+
     pdf.output("test.pdf")
 
 main()
