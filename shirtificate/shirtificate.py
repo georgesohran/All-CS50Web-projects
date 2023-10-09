@@ -29,6 +29,7 @@ def main():
     name = input("Name: ")
     pdf = PDF()
     pdf.set_margin(0)
+    pdf.add_page()
     pdf.render_text(name)
     pdf.output("test.pdf")
 
