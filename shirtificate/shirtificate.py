@@ -34,7 +34,6 @@ def main():
     pdf = PDF(name)
     pdf.set_margin(0)
     pdf.add_page()
-    pdf.render_text(name)
     pdf.output("test.pdf")
 
 main()
