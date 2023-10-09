@@ -4,17 +4,15 @@ from PIL import Image
 class PDF(FPDF):
     def header(self):
         self.set_font("helvetica", "B", 15)
-        width = self.get_string_width(self.title) + 6
         self.set_x((210 - width) / 2)
         self.cell(
-            width,
+            2,
             9,
             self.title,
             border=1,
             new_x="LMARGIN",
             new_y="NEXT",
             align="C",
-            fill=True,
         )
         self.ln(10)
 
