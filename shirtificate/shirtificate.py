@@ -3,6 +3,7 @@ from PIL import Image
 
 class PDF(FPDF):
     def __innit__(self):
+        super().__innit__()
         self._pdf = FPDF()
 
 
