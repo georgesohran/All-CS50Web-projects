@@ -24,6 +24,7 @@ def main():
     pdf = PDF()
     pdf.set_margin(0)
     pdf.add_page()
+    pdf.set_text_color(255,255,255)
     pdf.cell(0, pdf.text_hight*2, f"{name}took CS50")
     pdf.output("test.pdf")
 
