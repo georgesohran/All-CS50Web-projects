@@ -3,6 +3,9 @@ from PIL import Image
 
 class PDF(FPDF):
     text_hight = 30
+    def __innit__(self,name):
+        self.name = name
+
     def header(self):
         self.set_font("helvetica", "B", 36)
         self.set_x(210 / 2)
@@ -15,19 +18,20 @@ class PDF(FPDF):
             align="C",
         )
         self.ln(10)
-
-    def render_text(self,txt):
         self.image("shirtificate.png", w = self.epw)
         self.set_font("helvetica", "B", 20)
         self.text_color(255,255,255)
-        self.text(self.epw/2, self.text_hight*3, f"{txt}took CS50")
+        self.text(self.epw/2, self.text_hight*3, f"{self.name}took CS50")
+
+
+
 
 
 
 
 def main():
     name = input("Name: ")
-    pdf = PDF()
+    pdf = PDF(name)
     pdf.set_margin(0)
     pdf.add_page()
     pdf.render_text(name)
