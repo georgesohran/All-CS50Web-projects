@@ -15,10 +15,6 @@ class PDF(FPDF):
             align="C",
         )
         self.ln(10)
-
-
-    def footer(self):
-        self.set_y(-(297-self.text_hight))
         self.image("shirtificate.png", w = self.epw)
 
 
