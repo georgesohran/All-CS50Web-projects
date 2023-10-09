@@ -3,6 +3,7 @@ from PIL import Image
 
 class PDF(FPDF):
     def header(self):
+        self.cell(210,10)
         self.set_font("helvetica", "B", 24)
         self.set_x(210 / 2)
         self.cell(
