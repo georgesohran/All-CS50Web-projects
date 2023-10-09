@@ -4,7 +4,6 @@ from PIL import Image
 class PDF(FPDF):
     def __innit__(self):
         super().__innit__()
-        self.add_page()
 
     def header(self):
         self.set_font("helvetica", "B", 30)
@@ -15,6 +14,7 @@ class PDF(FPDF):
 
 def main():
     pdf = PDF()
+    pdf.add_page()
     pdf.image("shirtificate.png",h = pdf.eph, w = pdf.epw)
     pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
