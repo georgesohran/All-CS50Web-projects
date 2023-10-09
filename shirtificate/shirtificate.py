@@ -15,7 +15,13 @@ class PDF(FPDF):
             align="C",
         )
         self.ln(10)
+
+    def render_text(self,txt):
         self.image("shirtificate.png", w = self.epw)
+
+        self.set_font("helvetica", "B", 12)
+        self.cell(self.epw/2, self.text_hight*3, f"{txt}took CS50")
+
 
 
 
@@ -23,9 +29,7 @@ def main():
     name = input("Name: ")
     pdf = PDF()
     pdf.set_margin(0)
-    pdf.add_page()
-    pdf.set_text_color(255,255,255)
-    pdf.cell(0, pdf.text_hight*2, f"{name}took CS50")
+    pdf.render_text(name)
     pdf.output("test.pdf")
 
 main()
