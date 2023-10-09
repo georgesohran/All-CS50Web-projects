@@ -6,11 +6,6 @@ class PDF(FPDF):
         super().__innit__()
         self.add_page()
 
-
-    def chapter_body(self):
-        self.image("shirtificate.png",h = self.eph, w = self.epw)
-
-
     def header(self):
         self.set_font("helvetica", "B", 30)
         self.cell(30)
@@ -20,6 +15,7 @@ class PDF(FPDF):
 
 def main():
     pdf = PDF()
+    pdf.image("shirtificate.png",h = pdf.eph, w = pdf.epw)
     pdf.set_title("CS50 Shirtificate")
     pdf.output("test.pdf")
 
