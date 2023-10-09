@@ -14,6 +14,9 @@ class PDF(FPDF):
             align="C",
         )
         self.ln(10)
+    def footer(self):
+        
+
 
 
 def main():
