@@ -3,12 +3,11 @@ from PIL import Image
 
 class PDF(FPDF):
     def header(self):
-        self.cell(210,10)
-        self.set_font("helvetica", "B", 24)
+        self.set_font("helvetica", "B", 36)
         self.set_x(210 / 2)
         self.cell(
-            2,
-            9,
+            1,
+            30,
             "CS50 Shirtificate",
             new_x="LMARGIN",
             new_y="NEXT",
