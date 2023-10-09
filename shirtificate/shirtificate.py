@@ -4,7 +4,7 @@ from PIL import Image
 class PDF(FPDF):
     text_hight = 30
     def __init__(self,name):
-        self.image("shirtificate.png", w = self.epw)
+        self.image("shirtificate.png", w = 210)
         self.set_font("helvetica", "B", 20)
         self.text_color(255,255,255)
         self.text(self.epw/2, self.text_hight*3, f"{name}took CS50")
