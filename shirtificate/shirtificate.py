@@ -18,7 +18,8 @@ class PDF(FPDF):
 
     def render_text(self,txt):
         self.image("shirtificate.png", w = self.epw)
-        self.set_font("helvetica", "B", 12)
+        self.set_font("helvetica", "B", 20)
+        self.text_color(255,255,255)
         self.text(self.epw/2, self.text_hight*3, f"{txt}took CS50")
 
 
