@@ -3,7 +3,7 @@ from PIL import Image
 
 class PDF(FPDF):
     text_hight = 30
-    def __innit__(self,name):
+    def __init__(self,name):
         self.image("shirtificate.png", w = self.epw)
         self.set_font("helvetica", "B", 20)
         self.text_color(255,255,255)
