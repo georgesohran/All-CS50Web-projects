@@ -10,6 +10,7 @@ def main():
     main_window.title("math.py")
     main_window.geometry("1370x700")
     canvas = Canvas(main_window)
+    canvas.create_line(15, 25, 200, 25)
     main_window.mainloop()
 
 
