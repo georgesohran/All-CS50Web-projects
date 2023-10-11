@@ -7,4 +7,4 @@ import csv
 
 
 def main():
-    main_window = Tk(screenName="restaurant.py")
+    main_window = Tk(screenName="math.py")
