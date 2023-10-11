@@ -8,3 +8,5 @@ import csv
 
 def main():
     main_window = Tk(screenName="math.py")
+    
+    canvas = Canvas(main_window)
