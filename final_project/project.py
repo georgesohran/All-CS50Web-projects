@@ -8,8 +8,8 @@ import csv
 def main():
     main_window = Tk()
     main_window.title("math.py")
-    main_window.geometry("1370x700")
-    canvas = Canvas(main_window)
+    main_window.geometry("1200x600")
+    canvas = Canvas(main_window, bg="blue", height=250, width=300)
     canvas.create_line(15, 25, 200, 25)
     main_window.mainloop()
 
