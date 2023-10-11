@@ -1,6 +1,6 @@
 import sys
 import csv
-import tkinter
+import ttk
 
 
 def main():
