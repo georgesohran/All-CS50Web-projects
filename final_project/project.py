@@ -1,7 +1,10 @@
+from tkinter import *
+from tkinter import ttk
+
 import sys
 import csv
-from tkinter import ttk
+
 
 
 def main():
-    window = ttk()
+    window = Tk(screenName="restaurant.py")
