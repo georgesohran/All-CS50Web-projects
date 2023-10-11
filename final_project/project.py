@@ -1,8 +1,7 @@
 import sys
 import csv
-import tkinter as tk
+from tkinter import ttk
 
 
 def main():
-    window = Tk()
-    
+    window = ttk()
