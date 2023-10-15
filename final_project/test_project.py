@@ -14,5 +14,5 @@ def test_restructure_formula():
     assert p.restructure_formula("x/4") == "x/4"
 
 def test_def_range_of():
-    assert p.def_range_of("x**3") == range(-100,99)
-    assert p.def_range_of("math.sqrt(x)") == range(0,99)
+    assert p.def_range_of("x**3") == range(-100,100)
+    assert p.def_range_of("math.sqrt(x)") == range(0,100)

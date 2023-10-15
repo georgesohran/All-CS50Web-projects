@@ -116,7 +116,7 @@ def def_range_of(form:str):
         a = match1.group(1)
         for x in range(-100,100):
             try:
-                if eval(a):
+               
                     range_of_values.append(x)
             except ZeroDivisionError:
                 range_of_values.append(x+1)
