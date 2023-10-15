@@ -17,7 +17,7 @@ def_range_max = 100
 
 def main():
     main_window = Tk()
-    main_window.title("math.py")
+    main_window.title("math drowing.py")
     main_window.geometry("1200x600")
 
     canvas = Canvas(main_window, bg="#C0C0C0", height=graph_size, width=graph_size)
