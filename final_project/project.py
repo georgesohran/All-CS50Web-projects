@@ -29,12 +29,12 @@ def main():
     label = Label(main_window, width=3,height=1 , fg="black" , text="y =" , font=("Arial Bold", 24))
     label.place(x=graph_size+10,y=70)
     form_ent = Entry(main_window, font =("Arial Bold",24))
-    form_ent.place(x=graph_size+70,y=70)
+    form_ent.place(x=graph_size+80,y=70)
 
     label = Label(main_window , fg="black" , text="zoom in" , font=("Arial Bold", 24))
     label.place(x=graph_size+10,y=140)
     z_ent = Entry(main_window, font =("Arial Bold",24))
-    z_ent.place(x=graph_size+130,y=140)
+    z_ent.place(x=graph_size+140,y=140)
     z_ent.insert(0,"10")
 
     gen_btn = Button(main_window, text="generate" , font=("Arial Bold", 18),command=lambda: create_graph(canvas,form_ent,z_ent))
