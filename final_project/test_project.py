@@ -16,5 +16,5 @@ def test_restructure_formula():
 def test_def_range_of():
     list1 = [x for x in range(-100,100)]
     list2 = [x for x in range(0,100)]
-    assert p.def_range_of("x**3") == list1
+    assert p.def_range_of("x*3") == list1
     assert p.def_range_of("math.sqrt(x)") == list2
