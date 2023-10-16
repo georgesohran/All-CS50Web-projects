@@ -12,4 +12,5 @@ to match formula that was given
 4. **math**
 to compute the functions like _cos, sin_, etc.
 
-##
+## How does it work?
+
