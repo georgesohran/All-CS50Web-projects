@@ -119,7 +119,7 @@ def def_range_of(form:str):
                     range_of_values.append(x)
             except ZeroDivisionError:
                 range_of_values.append(x+1)
-    
+
 
     return range_of_values
 if __name__ == "__main__":
