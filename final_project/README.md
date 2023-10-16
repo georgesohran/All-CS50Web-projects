@@ -10,4 +10,6 @@ for one function that gives me a range of floats: _arange()_
 3. **re**
 to match formula that was given
 4. **math**
-to compute the functions like _cos,sin_,etc.
+to compute the functions like _cos, sin_, etc.
+
+##
