@@ -1,4 +1,4 @@
 # Math drawing
 #### Video Demo:  <URL HERE>
 #### Description:
-TODO
+This is my final project for CS50
