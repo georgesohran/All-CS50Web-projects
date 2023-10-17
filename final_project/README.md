@@ -14,6 +14,6 @@ to compute the functions like _cos, sin_, etc.
 
 ## How Does It Work?
 ### Main screen
-The program opens the window with the help of Tkinter module.
-There is an entry for the formula, entry for the zoom value and a button that generates the graph on a dedicated canvas on the left of the window
+The program opens the window with the help of Tkinter module. There is an entry for the formula, entry for the zoom value and a button that generates the graph on a dedicated canvas on the left of the window.
+### Generating graphs
 
