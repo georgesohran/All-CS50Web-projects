@@ -21,4 +21,6 @@ First-of-all the program gets the users input from zoom entry and formula entry 
 ### Offset of the coordinate system
 The coordinates system offfset is set by adding half of the canvas width and half of the canvas hight to the coordinates of each line in the graph by applying those values inside the _canvas.create_line()_
 
+## test_project.py
+
 ## Thank you for your atention, and thanks to CS50 for the course.
