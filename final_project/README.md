@@ -15,13 +15,22 @@ to compute the functions like _cos, sin_, etc.
 
 ## How Does It Work?
 ### Main screen
-The program opens the window with the help of Tkinter module. There is an entry for the formula, entry for the zoom value and a button that generates the graph on a dedicated canvas on the left of the window.
+The program opens the window with the help of Tkinter module.
+There is an entry for the formula, entry for the zoom value and a button that
+generates the graph on a dedicated canvas on the left of the window.
 ### Generating graphs
-First-of-all the program gets the users input from zoom entry and formula entry and then, based on the formula, it generates _y_ coordinate for each _x_ from -100 to 100 and then draws a line from the previous coordinates to the new coordinates with _canvas.create_line()_ method. Also it draws marks on each axis of the value 1. The zoom works as follows: the program gets the input value, then multiplies the _x_ and _y_ coordinates of the lines on the graph and of the marks on both axis by this value.
+First-of-all the program gets the users input from zoom entry and formula entry and then, based on the formula,
+it generates _y_ coordinate for each _x_ from -100 to 100 and then draws a line from the previous coordinates to the new coordinates with
+_canvas.create_line()_ method.
+
+Also it draws marks on each axis of the value 1. The zoom works as follows: the program gets the input value, then multiplies the
+_x_ and _y_ coordinates of the lines on the graph and of the marks on both axis by this value.
 ### Offset of the coordinate system
-The coordinates system offfset is set by adding half of the canvas width and half of the canvas hight to the coordinates of each line in the graph by applying those values inside the _canvas.create_line()_
+The coordinates system offfset is set by adding half of the canvas width and half of the canvas hight to the coordinates of each line in
+the graph by applying those values inside the _canvas.create_line()_
 ### Resturcturing the formula
-It is restructured into the actual python code by just replacing _sin_ with _math.sin_, _sqrt_ with _math.sqrt_ _cos_ with _math.cos_, _^_ with _**_, etc. Then the formula gets compiled into python by using _eval()_ function. The formula itself is stored as a string.
+It is restructured into the actual python code by just replacing _sin_ with _math.sin_, _sqrt_ with _math.sqrt_ _cos_ with _math.cos_
+with _**_, etc. Then the formula gets compiled into python by using _eval()_ function. The formula itself is stored as a string.
 ### test_project.py
-It tests three functions from the project.py 
+It tests three functions from the project.py
 ## Thank you for your atention, and thanks to CS50 for the course.
