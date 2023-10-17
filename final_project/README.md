@@ -14,6 +14,6 @@ to compute the functions like _cos, sin_, etc.
 
 ## How Does It Work?
 ### Main screen
-The program opens the window with the help of Tkinter module
-there is
+The program opens the window with the help of Tkinter module.
+There is an entry for the 
 
