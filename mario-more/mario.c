@@ -14,21 +14,21 @@ int main(void)
 
     int count = 1;
 
-    for(count, count <= height, count ++)
+    for(count, count <= height, count ++);
     {
-        for(a, a < height - count, a++)
+        for(a, a < height - count, a++);
         {
             printf(" ");
         }
 
-        for(a, a < count, a++)
+        for(a, a < count, a++);
         {
             printf("#");
         }
 
         printf("  ");
 
-        for(a, a < count, a++)
+        for(a, a < count, a++);
         {
             printf("#");
         }
