@@ -10,13 +10,13 @@ int main(void)
     {
         height = get_int("Height:");
     }
-    while((hight < 1) or (height > 8))
+    while((height < 1) or (height > 8))
 
     int count = 1;
 
     for(count, count <= height, count ++)
     {
-        for(a, a < hight - count, a++)
+        for(a, a < height - count, a++)
         {
             printf(" ");
         }
