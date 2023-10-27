@@ -16,10 +16,7 @@ int main(void)
 
     for(count, count <= height, count ++)
     {
-        for(int count2, count2 <= height * 2 + 2, count2 ++ )
-        {
-            printf(" ")
-        }
+        
 
     }
 }
