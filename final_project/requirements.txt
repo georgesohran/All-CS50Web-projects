@@ -1,4 +1,0 @@
-tkinter
-math
-re
-numpy (arange() function)
