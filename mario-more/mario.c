@@ -12,12 +12,11 @@ int main(void)
     }
     while((hight < 1) or (height > 8))
 
-    int count = 0
+    int count
 
-    while(count < height)
+    for(count, count <= height, count ++)
     {
-        count ++
-        for(count , )
+        for(int count2, count2 <= height * 2 + 2, count2 ++ )
         {
             printf(" ")
         }
