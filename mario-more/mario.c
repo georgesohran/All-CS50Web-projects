@@ -14,7 +14,7 @@ int main(void)
 
 
 
-    for(int count = 0; count <= height; count ++)
+    for(int count = 1; count <= height; count ++)
     {
         for(int a = 0; a < height - count; a++)
         {
