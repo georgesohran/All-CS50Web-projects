@@ -12,23 +12,23 @@ int main(void)
     }
     while((height < 1) || (height > 8));
 
-    int count = 1;
 
-    for(count, count <= height, count ++);
+
+    for(int count = 0; count <= height; count ++)
     {
-        for(a, a < height - count, a++);
+        for(int a = 0; a < height - count; a++)
         {
             printf(" ");
         }
 
-        for(a, a < count, a++);
+        for(int a = 0; a < count; a++)
         {
             printf("#");
         }
 
         printf("  ");
 
-        for(a, a < count, a++);
+        for(int a = 0; a < count; a++)
         {
             printf("#");
         }
