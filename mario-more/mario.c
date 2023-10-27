@@ -16,7 +16,7 @@ int main(void)
 
     for(count, count <= height, count ++)
     {
-        
+        for()
 
     }
 }
