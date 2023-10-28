@@ -7,5 +7,5 @@ int main(void)
 
     int n = get_long("Number: ");
 
-    if 
+    if n % 100 
 }
