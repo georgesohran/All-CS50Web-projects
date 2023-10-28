@@ -5,6 +5,7 @@ int main(void)
 {
     do
     {
-        
+        n = get_long("Number: ")
     }
+    while()
 }
