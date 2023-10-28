@@ -10,5 +10,5 @@ int main(void)
     {
         n = get_long("Number: ");
     }
-    while()
+    while(!n)
 }
