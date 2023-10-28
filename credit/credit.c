@@ -11,7 +11,7 @@ int main(void)
     {
         n = get_long("Number: ");
     }
-    while(!isallnum(n) , !(len(n) == 16))
+    while(!isnum(n) , !(len(n) == 16))
 
 
 }
