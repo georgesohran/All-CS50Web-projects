@@ -38,7 +38,15 @@ int main(void)
 
     if (final_sum % 10 == 0)
     {
-        printf("VISA\n");
+        if (n < 999999999999999)
+        {
+            printf("AMEX\n");
+        }
+        else
+        {
+            printf("VISA\n");
+        }
+
     }
     else
     {
