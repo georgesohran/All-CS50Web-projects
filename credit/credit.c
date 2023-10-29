@@ -15,7 +15,7 @@ int main(void)
     {
         if (power % 2 == 0)
         {
-            long x = n % pow(10 , power) - n % pow(10 , power-1);
+            long x = n % (long) pow(10 , power) - n % (long) pow(10 , power-1);
 
             if (10 < x) & (x > 100)
             {
