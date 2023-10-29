@@ -38,18 +38,7 @@ int main(void)
 
     if (final_sum % 10 == 0)
     {
-        if (n < 999999999999999 & n % (long) pow(10,14) == 3)
-        {
-            printf("AMEX")
-        }
-        else if (n < 9999999999999999 & n % (long) pow(10,15) == 4)
-        {
-            printf("VISA\n");
-        }
-        else if (n < 9999999999999999 & n % (long) pow(10,15) == 5)
-        {
-            printf("VISA\n");
-        }
+        
 
     }
     else
