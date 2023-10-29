@@ -34,9 +34,9 @@ int main(void)
         }
     }
 
+    final_sum = second_sum + first_sum
 
-
-    if
+    if final_sum
     {
 
     }
