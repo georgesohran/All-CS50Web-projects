@@ -50,6 +50,10 @@ int main(void)
         {
             printf("MAST\n");
         }
+        else
+        {
+            printf("INVALID\n")
+        }
 
     }
     else
