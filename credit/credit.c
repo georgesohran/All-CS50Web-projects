@@ -36,8 +36,12 @@ int main(void)
 
     final_sum = second_sum + first_sum
 
-    if final_sum
+    if final_sum % 10 == 0
     {
-
+        printf("VISA")
+    }
+    else
+    {
+        printf("Invalid")
     }
 }
