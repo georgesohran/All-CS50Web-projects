@@ -11,7 +11,7 @@ int main(void)
 
     int second_sum = 0;
 
-    for(int power = 0; power >= 16; power++)
+    for(int power = 0; power <= 16; power++)
     {
         if (power % 2 == 0)
         {
