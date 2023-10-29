@@ -17,7 +17,7 @@ int main(void)
         {
             long x = n % (long) pow(10 , power) - n % (long) pow(10 , power-1);
 
-            if (10 < x) & (x > 100)
+            if ((10 < x) & (x > 100))
             {
                 first_sum += x % 10;
                 first_sum += x % 100 - x % 10;
@@ -30,13 +30,13 @@ int main(void)
         }
         else
         {
-            second_sum += n % pow(10 , power);
+            second_sum += n % (long) pow(10 , power);
         }
     }
 
-    final_sum = second_sum + first_sum;
+    int final_sum = second_sum + first_sum;
 
-    if final_sum % 10 == 0
+    if (final_sum % 10 == 0)
     {
         printf("VISA");
     }
