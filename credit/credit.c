@@ -20,7 +20,7 @@ int main(void)
             if ((10 < x) & (100 > x))
             {
                 first_sum += x % 10;
-                first_sum += (x % 100)*;
+                first_sum += (x % 100) / 10;
             }
 
             else
