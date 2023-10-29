@@ -20,7 +20,7 @@ int main(void)
             if ((10 < x) & (x > 100))
             {
                 first_sum += x % 10;
-                first_sum += x % 100; 
+                first_sum += x % 100;
             }
 
             else
@@ -38,7 +38,18 @@ int main(void)
 
     if (final_sum % 10 == 0)
     {
-        printf("VISA\n");
+        if (n % (long) pow(10,16) == 4)
+        {
+            printf("VISA\n");
+        }
+        else if ((n % (long) pow(10,16) == 5) || (n % (long) pow(10,16) == 2))
+        {
+            printf("EXPRESS\n");
+        }
+        else if (n % (long) pow(10,16) == 3)
+        {
+            printf("AMEX\n");
+        }
     }
     else
     {
