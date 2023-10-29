@@ -38,7 +38,7 @@ int main(void)
 
     if (final_sum % 10 == 0)
     {
-        printf("VISA\n")
+        printf("VISA\n");
     }
     else
     {
