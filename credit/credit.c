@@ -42,7 +42,7 @@ int main(void)
         {
             printf("AMEX\n");
         }
-        else
+        else if (n < 9999999999999999 & n % 15 == 4)
         {
             printf("VISA\n");
         }
