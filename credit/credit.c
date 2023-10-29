@@ -17,7 +17,7 @@ int main(void)
         {
             long x = n % (long) pow(10 , power) / pow(10 , power-1);
 
-            if ((10 < x) & (100 > x))
+            if (10 < x)
             {
                 first_sum += x % 10;
                 first_sum += (x % 100) / 10;
