@@ -38,15 +38,15 @@ int main(void)
 
     if (final_sum % 10 == 0)
     {
-        if (n % (long) pow(10,16) == 4)
+        if (n % (long) pow(10,15) == 4)
         {
             printf("VISA\n");
         }
-        else if ((n % (long) pow(10,16) == 5) || (n % (long) pow(10,16) == 2))
+        else if ((n % (long) pow(10,15) == 5) || (n % (long) pow(10,15) == 2))
         {
             printf("EXPRESS\n");
         }
-        else if (n % (long) pow(10,16) == 3)
+        else if (n % (long) pow(10,15) == 3)
         {
             printf("AMEX\n");
         }
