@@ -15,6 +15,7 @@ int main(void)
     {
         if power % 2 == 0
         {
+            int x = n % pow(10 , power)
             first_sum += n % pow(10 , power)
         }
         else
@@ -25,7 +26,7 @@ int main(void)
 
 
 
-    if 
+    if
     {
 
     }
