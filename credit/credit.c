@@ -7,41 +7,41 @@ int main(void)
 
     long n = get_long("Number: ");
 
-    int first_sum = 0
+    int first_sum = 0;
 
-    int second_sum = 0
+    int second_sum = 0;
 
-    for(power, power >= 16, power++)
+    for(int power; power >= 16; power++)
     {
-        if power % 2 == 0
+        if (power % 2 == 0)
         {
-            int x = n % pow(10 , power) - n % pow(10 , power-1)
+            int x = n % pow(10 , power) - n % pow(10 , power-1);
 
             if (10 < x) & (x > 100)
             {
-                first_sum += x % 10
-                first_sum += x % 100 - x % 10
+                first_sum += x % 10;
+                first_sum += x % 100 - x % 10;
             }
 
             else
             {
-                first_sum += x
+                first_sum += x;
             }
         }
         else
         {
-            second_sum += n % pow(10 , power)
+            second_sum += n % pow(10 , power);
         }
     }
 
-    final_sum = second_sum + first_sum
+    final_sum = second_sum + first_sum;
 
     if final_sum % 10 == 0
     {
-        printf("VISA")
+        printf("VISA");
     }
     else
     {
-        printf("Invalid")
+        printf("INVALID");
     }
 }
