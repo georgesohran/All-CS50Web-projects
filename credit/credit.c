@@ -7,13 +7,18 @@ int main(void)
 
     long n = get_long("Number: ");
 
-    int lenght 
-
     int first_sum = 0;
 
     int second_sum = 0;
 
-    for(int num , num <)
+    for (int power = 1, power <= 8, power += 2)
+    {
+        int x = n % pow(10, power) / pow(10, (power - 1))
+
+        first_sum +=
+    }
+
+
 
     int final_sum = second_sum + first_sum;
 
