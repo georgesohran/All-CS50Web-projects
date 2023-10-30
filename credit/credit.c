@@ -22,14 +22,14 @@ int main(void)
 
         first_sum += x % 10;
         first_sum += (x % 100) / 10;
-        
+
         }
     }
 
 
     int final_sum = second_sum + first_sum;
 
-    if (final_sum % 10 == 0)
+    if (final_sum % 10 != 0)
     {
         if (n < 999999999999999 & n % 15 == 3)
         {
