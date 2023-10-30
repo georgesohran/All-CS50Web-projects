@@ -18,16 +18,11 @@ int main(void)
 
     for (int power = 2, power <= 8, power += 2)
     {
+        int x = (n % pow(10, power) / pow(10, (power - 1))) * 2;
 
-        int x = n % pow(10, power) / pow(10, (power - 1));
-        if (x >= 10)
-        {
-            first_sum += x % 10;
-            first_sum += (x % 100 / 10);
-        }
-        else
-        {
-            first_sum += x;
+        first_sum += x % 10;
+        first_sum += (x % 100) / 10;
+        
         }
     }
 
