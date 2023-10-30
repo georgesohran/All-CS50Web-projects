@@ -13,6 +13,12 @@ int main(void)
 
     for (int power = 1, power <= 8, power += 2)
     {
+        second_sum += n % pow(10, power) / pow(10, (power - 1));
+    }
+
+    for (int power = 2, power <= 8, power += 2)
+    {
+
         int x = n % pow(10, power) / pow(10, (power - 1));
         if (x >= 10)
         {
@@ -21,14 +27,8 @@ int main(void)
         }
         else
         {
-            first_sum += x
+            first_sum += x;
         }
-
-    }
-
-    for (int power = 2, power <= 8, power += 2)
-    {
-        second_sum += n % pow(10, power) / pow(10, (power - 1))
     }
 
 
