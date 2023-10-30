@@ -34,19 +34,19 @@ int main(void)
     }
     else
     {
-        if ((n >= pow(10, 15)) & (n < pow(10,16)) & (n % pow(10, 15) / pow(10, (power - 1))))
+        if ((n >= pow(10, 15)) & (n < pow(10,16)) & (n % pow(10, 15) / pow(10, (14)) == 4))
         {
             printf("VISA\n");
         }
-        else if ((n >= pow(10, 12)) & (n < pow(10,13)))
+        else if ((n >= pow(10, 12)) & (n < pow(10,13)) & (n % pow(10, 15) / pow(10, (14)) == 4))
         {
             printf("VISA\n");
         }
-        else if ((n >= pow(10, 14)) & (n < pow(10,15)))
+        else if ((n >= pow(10, 14)) & (n < pow(10,15)) & (n % pow(10, 15) / pow(10, (14)) == 4))
         {
             printf("AMEX\n");
         }
-        else if ((n >= pow(10, 15)) & (n < pow(10,16)))
+        else if ((n >= pow(10, 15)) & (n < pow(10,16)) & (n % pow(10, 15) / pow(10, (14)) == 4))
         {
             printf("MASTERCARD\n");
         }
