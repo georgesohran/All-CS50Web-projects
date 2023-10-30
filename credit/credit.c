@@ -7,6 +7,8 @@ int main(void)
 
     long n = get_long("Number: ");
 
+    int lenght 
+
     int first_sum = 0;
 
     int second_sum = 0;
