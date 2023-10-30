@@ -31,18 +31,11 @@ int main(void)
 
     if (final_sum % 10 != 0)
     {
-        if (n < 999999999999999 & n % 15 == 3)
-        {
-            printf("AMEX\n");
-        }
-        else if (n < 9999999999999999 & n % 15 == 4)
-        {
-            printf("VISA\n");
-        }
+        printf("INVALID\n")
 
     }
     else
     {
-        printf("INVALID\n");
+        
     }
 }
