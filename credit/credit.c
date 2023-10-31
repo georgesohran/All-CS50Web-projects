@@ -37,7 +37,7 @@ int main(void)
         lengh ++;
     }
 
-    int cdnum = n;
+    long cdnum = n;
 
     for(int a = 0; a < lengh - 2; a++)
     {
