@@ -10,14 +10,14 @@ int main(void)
 
     int second_sum = 0;
 
-    for (int power = 1, power <= 8, power += 2)
+    for (int power1 = 1; power1 <= 8; power1 += 2)
     {
-        second_sum += n % pow(10, power) / pow(10, (power - 1));
+        second_sum += n % (long) pow(10, power1) / (long) pow(10, (power1 - 1));
     }
 
-    for (int power = 2, power <= 8, power += 2)
+    for (int power2 = 2; power2 <= 8; power2 += 2)
     {
-        int x = (n % pow(10, power) / pow(10, (power - 1))) * 2;
+        int x = (n % (long) pow(10, power2) / (long) pow(10, (power2 - 1))) * 2;
 
         first_sum += x % 10;
         first_sum += (x % 100) / 10;
@@ -34,19 +34,19 @@ int main(void)
     }
     else
     {
-        if ((n >= pow(10, 15)) & (n < pow(10,16)) & (n % pow(10, 15) / pow(10, (14)) == 4))
+        if ((n >= (long) pow(10, 15)) && (n < (long) pow(10,16)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
         {
             printf("VISA\n");
         }
-        else if ((n >= pow(10, 12)) & (n < pow(10,13)) & (n % pow(10, 15) / pow(10, (14)) == 4))
+        else if ((n >= (long) pow(10, 12)) && (n < (long) pow(10,13)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
         {
             printf("VISA\n");
         }
-        else if ((n >= pow(10, 14)) & (n < pow(10,15)) & (n % pow(10, 15) / pow(10, (14)) == 4))
+        else if ((n >= (long) pow(10, 14)) && (n < (long) pow(10,15)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
         {
             printf("AMEX\n");
         }
-        else if ((n >= pow(10, 15)) & (n < pow(10,16)) & (n % pow(10, 15) / pow(10, (14)) == 4))
+        else if ((n >= (long) pow(10, 15)) && (n < (long) pow(10,16)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
         {
             printf("MASTERCARD\n");
         }
