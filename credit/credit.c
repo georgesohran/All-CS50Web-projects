@@ -39,7 +39,7 @@ int main(void)
 
     int cdnum = n;
 
-    for(int a = 0; a < lengh; a++)
+    for(int a = 0; a < lengh - 1; a++)
     {
         cdnum /= 10;
     }
@@ -48,7 +48,22 @@ int main(void)
 
     if (final_sum % 10 != 0)
     {
-        printf("INVALID\n");
+        if ((lengh == 13) & (cdnum == 4))
+        {
+            printf("VISA\n")
+        }
+        else if ((lengh == 16) & (cdnum == 4))
+        {
+            printf("VISA\n")
+        }
+        else if ((lengh == 15) & (cdnum == 3))
+        {
+            printf("AMEX\n")
+        }
+        else if ((lengh == 13) & (cdnum == 4))
+        {
+            printf("VISA\n")
+        }
     }
     else
     {
