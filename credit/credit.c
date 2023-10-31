@@ -35,7 +35,7 @@ int main(void)
     }
     else
     {
-        if(n % (long) pow(10,))
+        if(n / 10000000000000000)
         printf("VISA\n");
     }
 
