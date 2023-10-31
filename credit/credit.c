@@ -39,7 +39,7 @@ int main(void)
 
     int cdnum = n;
 
-    for(int a = 0; a < lengh - 1; a++)
+    for(int a = 0; a < lengh - 2; a++)
     {
         cdnum /= 10;
     }
@@ -50,19 +50,19 @@ int main(void)
     {
         if ((lengh == 13) & (cdnum == 4))
         {
-            printf("VISA\n")
+            printf("VISA\n");
         }
         else if ((lengh == 16) & (cdnum == 4))
         {
-            printf("VISA\n")
+            printf("VISA\n");
         }
         else if ((lengh == 15) & (cdnum == 3))
         {
-            printf("AMEX\n")
+            printf("AMEX\n");
         }
         else if ((lengh == 13) & (cdnum == 4))
         {
-            printf("VISA\n")
+            printf("VISA\n");
         }
     }
     else
