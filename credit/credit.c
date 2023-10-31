@@ -41,7 +41,7 @@ int main(void)
 
     for(int a = 0; a < lengh - 2; a++)
     {
-        cdnum /= 10;
+        cdnum = cdnum / 10;
     }
 
     printf("%i,%i,%i " , final_sum , cdnum , lengh);
