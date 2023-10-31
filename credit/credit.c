@@ -34,22 +34,7 @@ int main(void)
     }
     else
     {
-        if ((n >= (long) pow(10, 15)) && (n < (long) pow(10,16)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
-        {
-            printf("VISA\n");
-        }
-        else if ((n >= (long) pow(10, 12)) && (n < (long) pow(10,13)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
-        {
-            printf("VISA\n");
-        }
-        else if ((n >= (long) pow(10, 14)) && (n < (long) pow(10,15)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
-        {
-            printf("AMEX\n");
-        }
-        else if ((n >= (long) pow(10, 15)) && (n < (long) pow(10,16)) && (n % (long) pow(10, 15) / (long) pow(10, (14)) == 4))
-        {
-            printf("MASTERCARD\n");
-        }
+        
     }
 
 }
