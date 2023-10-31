@@ -48,7 +48,7 @@ int main(void)
 
     if (final_sum % 10 != 0)
     {
-        if ((lengh == 13) & (cdnum == 4))
+        if ((lengh == 13) & (cdnum / 10 == 4))
         {
             printf("VISA\n");
         }
