@@ -37,7 +37,7 @@ int main(void)
         lengh ++
     }
 
-    
+    for(int a, a < lengh, a++)
 
     if (final_sum % 10 != 0)
     {
