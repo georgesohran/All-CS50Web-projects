@@ -45,13 +45,13 @@ int main(void)
     {
         visa /= 10;
     }
-    while(mstr >= 10)
+    while(mstr >= 100000000000000)
     {
-        mstr /= 10;
+        mstr /= 100000000000000;
     }
-    while(amex >= 10)
+    while(amex >= 10000000000000)
     {
-        amex /= 10;
+        amex /= 10000000000000;
     }
 
     if (final_sum % 10 != 0)
