@@ -44,7 +44,13 @@ int main(void)
         cdnum /= 10;
     }
 
+    printf("%i,%i,%i " , final_sum , cdnum , lengh);
+
     if (final_sum % 10 != 0)
+    {
+        printf("INVALID\n");
+    }
+    else
     {
         if ((lengh == 13) & (cdnum / 10 == 4))
         {
@@ -66,10 +72,6 @@ int main(void)
         {
             printf("INVALID\n");
         }
-    }
-    else
-    {
-        printf("VISA\n");
     }
 
 }
