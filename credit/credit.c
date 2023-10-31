@@ -37,7 +37,12 @@ int main(void)
         lengh ++
     }
 
+    int cdnum = n
+
     for(int a, a < lengh, a++)
+    {
+
+    }
 
     if (final_sum % 10 != 0)
     {
