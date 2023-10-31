@@ -37,14 +37,22 @@ int main(void)
         lengh ++;
     }
 
-    long cdnum = n;
+    long visa = n;
+    long mstr = n;
+    long amex = n;
 
-    for(int a = 0; a < lengh - 2; a++)
+    while(visa >= 10)
     {
-        cdnum = cdnum / 10;
+        visa /= 10;
     }
-
-    printf("%i,%i,%i " , final_sum , cdnum , lengh);
+    while(mstr >= 10)
+    {
+        mstr /= 10;
+    }
+    while(amex >= 10)
+    {
+        amex /= 10;
+    }
 
     if (final_sum % 10 != 0)
     {
@@ -52,19 +60,19 @@ int main(void)
     }
     else
     {
-        if ((lengh == 13) & (cdnum / 10 == 4))
+        if ((lengh == 13) & (visa == 4))
         {
             printf("VISA\n");
         }
-        else if ((lengh == 16) & (cdnum / 10 == 4))
+        else if ((lengh == 16) & (visa == 4))
         {
             printf("VISA\n");
         }
-        else if ((lengh == 15) & (cdnum == 34 || cdnum == 37))
+        else if ((lengh == 15) & (amex == 34 || amex == 37))
         {
             printf("AMEX\n");
         }
-        else if ((lengh == 16) & (cdnum == 51 || cdnum == 52 || cdnum == 53 || cdnum == 54 || cdnum == 55))
+        else if ((lengh == 16) & (mstr == 51 || mstr == 52 || mstr == 53 || mstr == 54 || mstr == 55))
         {
             printf("MASTERCARD\n");
         }
