@@ -27,22 +27,24 @@ int main(void)
 
     int final_sum = second_sum + first_sum;
 
-    int lengh = 0
+    int lengh = 0;
 
-    long cd = n
+    long cd = n;
 
     while( cd > 0 )
     {
-        cd /= 10
-        lengh ++
+        cd /= 10;
+        lengh ++;
     }
 
-    int cdnum = n
+    int cdnum = n;
 
-    for(int a, a < lengh, a++)
+    for(int a = 0; a <= lengh; a++)
     {
-
+        cdnum /= 10;
     }
+
+    printf("%i %i ",cdnum,lengh);
 
     if (final_sum % 10 != 0)
     {
@@ -50,7 +52,6 @@ int main(void)
     }
     else
     {
-        if(n / 10000000000000000)
         printf("VISA\n");
     }
 
