@@ -27,7 +27,7 @@ int main(void)
 
     int final_sum = second_sum + first_sum;
 
-    printf(" %i ", first_sum);
+    printf("%i %i ", first_sum, second_sum);
 
     if (final_sum % 10 != 0)
     {
