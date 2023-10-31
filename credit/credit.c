@@ -39,7 +39,7 @@ int main(void)
 
     int cdnum = n;
 
-    for(int a = 0; a <= lengh; a++)
+    for(int a = 0; a < lengh; a++)
     {
         cdnum /= 10;
     }
