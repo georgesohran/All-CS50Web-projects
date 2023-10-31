@@ -44,7 +44,7 @@ int main(void)
         cdnum /= 10;
     }
 
-    printf("%i %i ",cdnum,lengh);
+    printf("%i %i ",cdnum/10,lengh);
 
     if (final_sum % 10 != 0)
     {
@@ -52,17 +52,21 @@ int main(void)
         {
             printf("VISA\n");
         }
-        else if ((lengh == 16) & (cdnum == 4))
+        else if ((lengh == 16) & (cdnum / 10 == 4))
         {
             printf("VISA\n");
         }
-        else if ((lengh == 15) & (cdnum == 3))
+        else if ((lengh == 15) & (cdnum == 34 || cdnum == 37))
         {
             printf("AMEX\n");
         }
-        else if ((lengh == 13) & (cdnum == 4))
+        else if ((lengh == 16) & (cdnum == 51 || cdnum == 52 || cdnum == 53 || cdnum == 54 || cdnum == 55))
         {
-            printf("VISA\n");
+            printf("MASTERCARD\n");
+        }
+        else
+        {
+            printf("IVALID\n");
         }
     }
     else
