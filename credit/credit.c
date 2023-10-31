@@ -44,8 +44,6 @@ int main(void)
         cdnum /= 10;
     }
 
-    printf("%i %i ",cdnum,lengh);
-
     if (final_sum % 10 != 0)
     {
         if ((lengh == 13) & (cdnum / 10 == 4))
