@@ -25,10 +25,13 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    for(int i = 0, i < strlen(word), i++ )
+    string word1 = word
+
+    for(int i = 0, i < strlen(word1), i++ )
     {
-        if (word[i] >= "a" && word[i] <= "z")
+        if (islower(word1[i]))
         {
+            word1[i] = toupper(word1[i]);
             
         }
 
