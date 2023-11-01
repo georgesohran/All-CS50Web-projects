@@ -42,6 +42,8 @@ int compute_score(string word)
 
     for(int i = 0; i < strlen(word); i++ )
     {
+        int a1 = word[i] - 141;
+
         if (islower(word[i]))
         {
             score += POINTS[word[i] - 141];
