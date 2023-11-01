@@ -29,7 +29,7 @@ int main(void)
     }
     else
     {
-        printf("Tie !");
+        printf("Tie !/");
     }
 
 }
@@ -37,11 +37,11 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    string word1 = word
+    string word1 = word;
 
-    int score = 0
+    int score = 0;
 
-    for(int i = 0, i < strlen(word1), i++ )
+    for(int i = 0; i < strlen(word1); i++ )
     {
         if (islower(word1[i]))
         {
