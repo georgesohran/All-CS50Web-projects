@@ -25,8 +25,12 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    for(int i = 0, i <= strlen(word), i++ )
+    for(int i = 0, i < strlen(word), i++ )
     {
+        if (word[i] >= "a" && word[i] <= "z")
+        {
+            
+        }
 
     }
 }
