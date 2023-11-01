@@ -42,15 +42,15 @@ int compute_score(string word)
 
     for(int i = 0; i < strlen(word); i++ )
     {
-        int a1 = word[i] - 141;
+        int a1 = word[i] - 97;
 
         if (islower(word[i]))
         {
-            score += POINTS[word[i] - 141];
+            score += POINTS[word[i] - 97];
         }
         else if (isupper(word[i]))
         {
-            score += POINTS[word[i] - 101];
+            score += POINTS[word[i] - 65];
         }
         else
         {
