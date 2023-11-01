@@ -37,13 +37,12 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    string word1 = word;
 
     int score = 0;
 
-    for(int i = 0; i < strlen(word1); i++ )
+    for(int i = 0; i < strlen(word); i++ )
     {
-        if (islower(word1[i]))
+        if (islower(word[i]))
         {
             score += POINTS[i - 141];
         }
