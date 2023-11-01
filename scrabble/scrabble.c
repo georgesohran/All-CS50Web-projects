@@ -19,11 +19,15 @@ int main(void)
     int score2 = compute_score(word2);
 
     // TODO: Print the winner
-    
+
 }
 
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
+    for(int i = 0, i <= strlen(word), i++ )
+    {
+
+    }
 }
 
