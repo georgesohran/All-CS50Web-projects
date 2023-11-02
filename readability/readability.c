@@ -16,6 +16,9 @@ int get_grade(string txt)
     int word_count = 0;
     int sentence_count = 0;
 
-    for (int i; i < strlen(txt))
+    for (int i; i < strlen(txt); i++)
+    {
+        if ((txt[i] => 65 && txt[i] =< 90) || (txt[i] => 65 && txt[i] =< 90))
+    }
 
 }
