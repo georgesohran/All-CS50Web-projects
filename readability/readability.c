@@ -8,7 +8,7 @@ int main(void)
 {
     string text = get_string("Text:");
 
-    int grade = get_grade(text);
+    get_grade(text);
 
 }
 
@@ -36,8 +36,7 @@ int get_grade(string txt)
 
     printf("%i %i %i /n", cer_count, word_count, sentence_count);
 
-    return(0);
+
 
     }
-
 }
