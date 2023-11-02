@@ -18,7 +18,20 @@ int get_grade(string txt)
 
     for (int i; i < strlen(txt); i++)
     {
-        if ((txt[i] => 65 && txt[i] =< 90) || (txt[i] => 65 && txt[i] =< 90))
+        if ((txt[i] => 65 && txt[i] =< 90) || (txt[i] => 97 && txt[i] =< 122))
+        {
+            cer_count ++
+        }
+        if (txt[i] == "." || txt[i] == "?" || txt[i] == "!")
+        {
+            sentence_count ++
+            word_count ++
+        }
+        if (txt[i] == " ")
+        {
+            word_count ++
+        }
+    printf("%i %i %i /n")
     }
 
 }
