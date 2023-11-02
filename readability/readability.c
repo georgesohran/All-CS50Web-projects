@@ -35,7 +35,7 @@ int main(void)
 
     int res = 0.0588 * L - 0.296 * S - 15.8;
 
-    printf("%i %i %i ... %f %f\n", cer_count, word_count, sentence_count, L, S );
+    //printf("%i %i %i ... %f %f\n", cer_count, word_count, sentence_count, L, S );
 
     if (res > 16)
     {
@@ -47,7 +47,7 @@ int main(void)
     }
     else
     {
-        printf("Grade %i\n", res + 1);
+        printf("Grade %i\n", res);
     }
 
 }
