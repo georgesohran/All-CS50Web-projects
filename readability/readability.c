@@ -29,13 +29,13 @@ int main(void)
         }
     }
 
-    float L = (cer_count / word_count) * 100;
+    float L = ((float) cer_count / (float) word_count) * 100;
 
-    float S = (sentence_count / word_count) * 100;
+    float S = ((float) sentence_count / (float) word_count) * 100;
 
     int res = 0.0588 * L - 0.296 * S - 15.8;
 
-    printf("Grade: %i\n", res);
+    printf("Grade %i\n", res);
 
 }
 
