@@ -18,12 +18,11 @@ int main(void)
         {
             cer_count ++;
         }
-        if (text[i] == 33 || text[i] == 46 || text[i] == 63)
+        else if (text[i] == 33 || text[i] == 46 || text[i] == 63)
         {
             sentence_count ++;
-            word_count ++;
         }
-        if (text[i] == 32)
+        else if (text[i] == 32)
         {
             word_count ++;
         }
