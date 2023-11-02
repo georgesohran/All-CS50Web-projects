@@ -23,7 +23,7 @@ int main(void)
             sentence_count ++;
             word_count ++;
         }
-        else if (text[i] == 32 && text[i - 1] != 33 && text[i - 1] != 46 && text[i - 1] != 63)
+        else if ((text[i] == 32 || text[i] == 44) && text[i - 1] != 33 && text[i - 1] != 46 && text[i - 1] != 63 && text[i] != 32 && text[i] != 44)
         {
             word_count ++;
         }
