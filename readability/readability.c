@@ -12,4 +12,10 @@ int main(void)
 int get_grade(string txt)
 {
     
+
+    int L = 0
+
+    int S = 0
+
+
 }
