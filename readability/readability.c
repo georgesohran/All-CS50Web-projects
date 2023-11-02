@@ -35,7 +35,19 @@ int main(void)
 
     int res = 0.0588 * L - 0.296 * S - 15.8;
 
-    printf("Grade %i\n", res);
+    if (res > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else if (res < 1)
+    {
+        printf("Grade 1\n");
+    }
+    else
+    {
+        printf("Grade %i\n", res);
+    }
+
 
 }
 
