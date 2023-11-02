@@ -24,7 +24,7 @@ int get_grade(string txt)
         {
             cer_count ++;
         }
-        if (txt[i] ==  || txt[i] == "?" || txt[i] == "!")
+        if (txt[i] == 33 || txt[i] == 46 || txt[i] == 63)
         {
             sentence_count ++;
             word_count ++;
