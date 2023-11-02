@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
-
+#include <math.h>
 
 
 int main(void)
@@ -23,7 +23,7 @@ int main(void)
             sentence_count ++;
             word_count ++;
         }
-        else if ((text[i] == 32 || text[i] == 44) && text[i - 1] != 33 && text[i - 1] != 46 && text[i - 1] != 63 && text[i] != 32 && text[i] != 44)
+        else if ((text[i] == 32 || text[i] == 44) && text[i - 1] != 33 && text[i - 1] != 46 && text[i - 1] != 63 && text[i] != 44)
         {
             word_count ++;
         }
@@ -33,7 +33,9 @@ int main(void)
 
     float S = ((float) sentence_count / (float)word_count) * 100;
 
-    int res = 0.0588 * L - 0.296 * S - 15.8;
+    float res = round(0.0588 * L - 0.296 * S - 15.8);
+
+    
 
     //printf("%i %i %i ... %f %f\n", cer_count, word_count, sentence_count, L, S );
 
@@ -47,7 +49,7 @@ int main(void)
     }
     else
     {
-        printf("Grade %i\n", res);
+        printf("Grade %f\n", res);
     }
 
 }
