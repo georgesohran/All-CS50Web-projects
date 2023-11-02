@@ -3,8 +3,13 @@
 
 int main(void)
 {
-    string text = get_string("Text:")
+    string text = get_string("Text:");
 
+    grade = get_grade(text)
 
+}
 
+int get_grade(string txt)
+{
+    
 }
