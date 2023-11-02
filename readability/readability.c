@@ -2,11 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 
+int get_grade(string txt);
+
 int main(void)
 {
     string text = get_string("Text:");
 
-    grade = get_grade(text);
+    int grade = get_grade(text);
 
 }
 
@@ -18,20 +20,24 @@ int get_grade(string txt)
 
     for (int i; i < strlen(txt); i++)
     {
-        if ((txt[i] => 65 && txt[i] =< 90) || (txt[i] => 97 && txt[i] =< 122))
+        if ((txt[i] >= 65 && txt[i] <= 90) || (txt[i] >= 97 && txt[i] <= 122))
         {
-            cer_count ++
+            cer_count ++;
         }
-        if (txt[i] == "." || txt[i] == "?" || txt[i] == "!")
+        if (txt[i] ==  || txt[i] == "?" || txt[i] == "!")
         {
-            sentence_count ++
-            word_count ++
+            sentence_count ++;
+            word_count ++;
         }
         if (txt[i] == " ")
         {
-            word_count ++
+            word_count ++;
         }
-    printf("%i %i %i /n")
+
+    printf("%i %i %i /n", cer_count, word_count, sentence_count);
+
+    return (0)
+
     }
 
 }
