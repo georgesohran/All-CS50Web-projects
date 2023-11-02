@@ -29,14 +29,14 @@ int get_grade(string txt)
             sentence_count ++;
             word_count ++;
         }
-        if (txt[i] == " ")
+        if (txt[i] == 32)
         {
             word_count ++;
         }
 
     printf("%i %i %i /n", cer_count, word_count, sentence_count);
 
-    return (0)
+    return(0);
 
     }
 
