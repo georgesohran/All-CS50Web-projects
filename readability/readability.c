@@ -27,10 +27,9 @@ int main(void)
         {
             word_count ++;
         }
-
-    printf("%i %i %i /n", cer_count, word_count, sentence_count);
-
     }
+
+    printf("%i %i %i \n", cer_count, word_count, sentence_count);
 
 }
 
