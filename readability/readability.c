@@ -41,11 +41,11 @@ int main(void)
     }
     else if (res < 1)
     {
-        printf("Grade 1\n");
+        printf("Before Grade 1\n");
     }
     else
     {
-        printf("Grade %i\n", res);
+        printf("Grade %i\n", res + 1);
     }
 
 
