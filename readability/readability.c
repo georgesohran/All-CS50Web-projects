@@ -16,10 +16,12 @@ int main(void)
     int word_count = count_words(text);
     int sentence_count = count_sentances(text);
 
-    float L = ((float) letter_count)
-    float S
+    float L = ((float) letter_count / (float) word_count) * 100;
+    float S = ((float) sentence_count / (float) word_count) * 100;
 
-    printf("%i %i %i \n", letter_count, word_count, sentence_count);
+    float index = 0.0588 * L - 0.296 * S - 15.8;
+
+    printf("%i %i %i \n%f %f %f\n", letter_count, word_count, sentence_count, L, S, index);
 
 }
 
