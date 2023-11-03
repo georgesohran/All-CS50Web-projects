@@ -23,6 +23,19 @@ int main(void)
 
     printf("%i %i %i \n%f %f %f\n", letter_count, word_count, sentence_count, L, S, index);
 
+    if ((int) index >= 16)
+    {
+        printf("Grade 16+")
+    }
+    else if ((int) index < 1)
+    {
+        printf("Before Grade 1", (int) index)
+    }
+    else
+    {
+        printf("Grade %i", (int) index)
+    }
+
 }
 
 int count_letters(string txt)
