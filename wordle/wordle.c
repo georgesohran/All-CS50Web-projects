@@ -126,7 +126,8 @@ string get_guess(int wordsize)
     // TODO #3
     do
     {
-        guess = get_string("Input a 5-letter word:");
+        printf("Input a %i-letter", wordsize);
+        guess = get_string("word:");
     }
     while(strlen(guess) != wordsize);
 
@@ -146,7 +147,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
     {
         // iterate over each letter of the choice
         for (int j = 0; j < wordsize; j++)
-            // compare the current guess letter to the current choice letter
+        {   // compare the current guess letter to the current choice letter
             if (guess[i] == choice[j] && i == j)
             {
                 status[i] = EXACT;
@@ -157,6 +158,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
             {
                 status[i] = CLOSE;
             }
+        }
     }
 
     for(int i = 0; i < sizeof(status); i++)
