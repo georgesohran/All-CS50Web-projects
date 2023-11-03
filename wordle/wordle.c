@@ -115,11 +115,11 @@ int main(int argc, string argv[])
     // TODO #7
     if (won)
     {
-        printf("You won !")
+        printf("You won !");
     }
     else
     {
-        printf("You lost !")
+        printf("%s", choice);
     }
 
     // that's all folks!
