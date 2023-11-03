@@ -20,7 +20,13 @@ int main(void)
 
 int count_letters(string txt)
 {
-    
+
+    int count = 0
+
+    for(int i = 0; i < strlen(txt); i++)
+    {
+        if (txt[i])
+    }
 }
 
 
