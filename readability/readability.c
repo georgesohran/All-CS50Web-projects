@@ -17,9 +17,9 @@ int main(void)
     int sentence_count = count_sentances(text);
 
     float L = round(((float) letter_count / (float) word_count) * 100);
-    float S = ((float) sentence_count / (float) word_count) * 100;
+    float S = round(((float) sentence_count / (float) word_count) * 100);
 
-    float index = 0.0588 * L - 0.296 * S - 15.8;
+    float index = round(0.0588 * L - 0.296 * S - 15.8);
 
     printf("%i %i %i \n%f %f %f\n", letter_count, word_count, sentence_count, L, S, index);
 
