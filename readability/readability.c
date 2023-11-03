@@ -25,15 +25,15 @@ int main(void)
 
     if ((int) index >= 16)
     {
-        printf("Grade 16+")
+        printf("Grade 16+\n");
     }
     else if ((int) index < 1)
     {
-        printf("Before Grade 1", (int) index)
+        printf("Before Grade 1\n");
     }
     else
     {
-        printf("Grade %i", (int) index)
+        printf("Grade %i\n", (int) index);
     }
 
 }
