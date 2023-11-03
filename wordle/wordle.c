@@ -134,8 +134,7 @@ string get_guess(int wordsize)
     // TODO #3
     do
     {
-        printf("Input a %i-letter", wordsize);
-        guess = get_string("word:");
+        guess = get_string("Input a %i-letterword:",wordsize);
     }
     while(strlen(guess) != wordsize);
 
