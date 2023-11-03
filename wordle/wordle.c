@@ -41,6 +41,7 @@ int main(int argc, string argv[])
     if (argv[1] < 5)
     {
         printf("Error: wordsize must be either 5, 6, 7, or 8");
+        return(1);
     }
     else
     {
