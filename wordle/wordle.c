@@ -92,7 +92,7 @@ int main(int argc, string argv[])
 
         for(int j = 0; j < sizeof(status); j++)
         {
-            status[j] = 0;
+            status[j] = WRONG;
         }
 
         // Calculate score for the guess
