@@ -28,6 +28,8 @@ int main(int argc, string argv[])
     // ensure proper usage
     // TODO #1
 
+    
+
     int wordsize = 0;
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
@@ -79,7 +81,7 @@ int main(int argc, string argv[])
         int score = check_word(guess, wordsize, status, choice);
 
         printf("Guess %i: ", i + 1);
-        
+
         // Print the guess
         print_word(guess, wordsize, status);
 
