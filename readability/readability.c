@@ -21,7 +21,7 @@ int main(void)
 
     float index = round(0.0588 * L - 0.296 * S - 15.8);
 
-    printf("%i %i %i \n%f %f %f\n", letter_count, word_count, sentence_count, L, S, index);
+    //printf("%i %i %i \n%f %f %f\n", letter_count, word_count, sentence_count, L, S, index);
 
     if ((int) index >= 16)
     {
