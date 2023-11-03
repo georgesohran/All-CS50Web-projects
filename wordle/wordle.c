@@ -152,7 +152,6 @@ int check_word(string guess, int wordsize, int status[], string choice)
         {
             for (int j = i; j < wordsize; j++)
             {
-
                 if (guess[i] == choice[j] && !i == j)
                 {
                     score += CLOSE;
