@@ -42,7 +42,7 @@ int count_words(string txt)
     for(int i = 0; i < strlen(txt); i++)
     {
         if (!(txt[i] >= 97 && txt[i] <= 122) && !(txt[i] >= 65 && txt[i] <= 90) &&
-            
+            !(txt[i] == 96) && !(txt[i] == 45) &&
             ((txt[i-1] >= 97 && txt[i-1] <= 122) || (txt[i-1] >= 65 && txt[i-1] <= 90)))
         {
             count ++;
