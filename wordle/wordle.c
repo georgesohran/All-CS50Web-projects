@@ -149,15 +149,21 @@ int check_word(string guess, int wordsize, int status[], string choice)
             // compare the current guess letter to the current choice letter
             if (guess[i] == choice[j] && i == j)
             {
-                status[i] = EXACT
-                break
+                status[i] = EXACT;
+                break;
             }
                 // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
             if (guess[i] == choice[j])
             {
-                status[i] = CLOSE
+                status[i] = CLOSE;
             }
     }
+
+    for(int i = 0; i < sizeof(status); i++)
+    {
+        score += status[i];
+    }
+    printf(score);
     return score;
 }
 
