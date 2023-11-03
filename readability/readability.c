@@ -57,7 +57,7 @@ int count_sentances(string txt)
 
     for(int i = 0; i < strlen(txt); i++)
     {
-        if ((txt[i] >= 97 && txt[i] <= 122) || (txt[i] >= 65 && txt[i] <= 90))
+        if (txt[i] == 33 || txt[i] == 46 || txt[i] == 63 )
         {
             count ++;
         }
