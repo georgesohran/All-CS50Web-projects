@@ -2,9 +2,9 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: It has almost similar time with 5000 and 50000 numbers due to O(n log n). It also has same results whith reversed files
 
 sort3 uses: TODO
 
