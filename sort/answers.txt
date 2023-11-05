@@ -1,6 +1,6 @@
 sort1 uses: Bubble sort
 
-How do you know?: First-of-all, it is much slower with 50000 numbers than with 5000 numbers indicating the O(n^2). Second-of-all it is a lot faster with alredy sorted list wich indicates its 
+How do you know?: First-of-all, it is much slower with 50000 numbers than with 5000 numbers indicating the O(n^2). Second-of-all it is a lot faster with alredy sorted list wich indicates sorts feature whith minimal O(n)
 
 sort2 uses: Merge sort
 
