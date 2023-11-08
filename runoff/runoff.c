@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -130,7 +131,7 @@ bool vote(int voter, int rank, string name)
     {
         if (strcmp(name, candidates[i].name) == 0)
         {
-            preferences[voter][rank] = i
+            preferences[voter][rank] = i;
             return true;
         }
     }
@@ -143,6 +144,7 @@ void tabulate(void)
     for (int i = 0; i < voter_count; i++)
     {
         int idx = preferences[i][0];
+
         if(!candidates[idx].eliminated)
         {
             candidates[idx].votes++;
@@ -154,14 +156,14 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    int half = voter_count / 2
+    int half = voter_count / 2;
 
     for(int i = 0; i < candidate_count; i++)
     {
-        if (!candidate[i].eliminated && candidate[i].votes >= half)
+        if (!candidates[i].eliminated && candidates[i].votes >= half)
         {
-            printf("%s\n", candidates[i].name)
-            return true
+            printf("%s\n", candidates[i].name);
+            return true;
         }
 
     }
@@ -171,13 +173,13 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    int min = 100
+    int min = 100;
 
     for(int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes < min && !candidates[i].eliminated)
         {
-            min = candidates[i].votes
+            min = candidates[i].votes;
         }
     }
     return min;
@@ -202,7 +204,7 @@ bool is_tie(int min)
     {
         if (!candidates[i].eliminated && candidates[i].votes == min)
         {
-            same_candidates++
+            same_candidates++;
         }
     }
 
@@ -216,6 +218,12 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-    // TODO
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == min)
+        {
+            candidates[i].eliminated = true;
+        }
+    }
     return;
 }
