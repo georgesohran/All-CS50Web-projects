@@ -180,7 +180,10 @@ bool is_tie(int min)
     {
         if (!candidates[i].eliminated)
         {
-            if
+            if (candidates[i].votes == min)
+            {
+                
+            }
         }
     }
     return false;
