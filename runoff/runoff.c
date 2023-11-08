@@ -160,7 +160,8 @@ bool print_winner(void)
     {
         if (!candidate[i].eliminated && candidate[i].votes >= half)
         {
-            print()
+            printf("%s\n", candidates[i].name)
+            return true
         }
 
     }
