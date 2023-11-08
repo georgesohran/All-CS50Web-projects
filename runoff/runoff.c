@@ -126,21 +126,11 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    int idx = 0
-
-    for(int i = 0; i < candidate_count; i++)
-    {
-        if(name == candidates[i].name)
-        {
-            idx = i
-        }
-    }
-
     for (int i = 0; i < voter_count; i++)
     {
         if (strcmp(name, candidates[i].name) == 0)
         {
-            preferences[voter][rank] = idx
+            preferences[voter][rank] = i
             return true;
         }
     }
@@ -171,7 +161,7 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    // TODO
+    for(int i = 0; i < candidate_count; i++)
     return 0;
 }
 
