@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <bmp.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -23,7 +24,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < height; j++)
         {
-            
+            RGBTRIPLE temp = image[j][i]
         }
     }
     return;
