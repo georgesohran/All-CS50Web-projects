@@ -55,21 +55,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 red_sum += image[i][j+1].rgbtRed;
                 red_sum += image[i+1][j+1].rgbtRed;
             }
-            else if (i == 0 && j == width-1)
+            else if (i == 0 && j == width)
             {
                 red_sum += image[i][j].rgbtRed;
                 red_sum += image[i][j-1].rgbtRed;
                 red_sum += image[i+1][j-1].rgbtRed;
                 red_sum += image[i+1][j].rgbtRed;
             }
-            else if (i == height-1 && j == 0)
+            else if (i == height && j == 0)
             {
                 red_sum += image[i][j].rgbtRed;
                 red_sum += image[i-1][j].rgbtRed;
                 red_sum += image[i-1][j+1].rgbtRed;
                 red_sum += image[i][j+1].rgbtRed;
             }
-            else if (i == height-1 && j == width-1)
+            else if (i == height && j == width)
             {
                 red_sum += image[i][j].rgbtRed;
                 red_sum += image[i-1][j-1].rgbtRed;
@@ -77,9 +77,34 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 red_sum += image[i][j-1].rgbtRed;
             }
             else if (i == 0 && j < width && j > 0)
-            else if (i == height-1 && j < width && j > 0)
+            {
+                red_sum += image[i][j].rgbtRed;
+                red_sum += image[i][j-1].rgbtRed;
+                red_sum += image[i+1][j-1].rgbtRed;
+                red_sum += image[i+1][j].rgbtRed;
+                red_sum += image[i][j+1].rgbtRed;
+                red_sum += image[i+1][j+1].rgbtRed;
+            }
+            else if (i == height && j < width && j > 0)
+            {
+                red_sum += image[i][j].rgbtRed;
+                red_sum += image[i-1][j-1].rgbtRed;
+                red_sum += image[i-1][j].rgbtRed;
+                red_sum += image[i][j-1].rgbtRed;
+                red_sum += image[i-1][j+1].rgbtRed;
+                red_sum += image[i+1][j-1].rgbtRed;
+                red_sum += image[i+1][j].rgbtRed;
+                red_sum += image[i][j+1].rgbtRed;
+                red_sum += image[i+1][j+1].rgbtRed;
+            }
             else if (j == 0 && i < height && i > 0)
-            else if (j == width-1 && i < 0 && i > 0)
+            {
+                return
+            }
+            else if (j == width && i < height && i > 0)
+            {
+                return
+            }
 
             red_sum += image[i][j].rgbtRed;
             red_sum += image[i-1][j-1].rgbtRed;
