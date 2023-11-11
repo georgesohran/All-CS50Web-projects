@@ -4,6 +4,7 @@
         "stdio.h": "c",
         "cmath": "c",
         "string.h": "c",
-        "random": "c"
+        "random": "c",
+        "helpers.h": "c"
     }
 }
