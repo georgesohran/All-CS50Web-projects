@@ -44,48 +44,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int red_sum = 0;
-            red_sum += image[i][j].rgbtRed;
-            red_sum += image[i-1][j-1].rgbtRed;
-            red_sum += image[i-1][j].rgbtRed;
-            red_sum += image[i][j-1].rgbtRed;
-            red_sum += image[i-1][j+1].rgbtRed;
-            red_sum += image[i+1][j-1].rgbtRed;
-            red_sum += image[i+1][j].rgbtRed;
-            red_sum += image[i][j+1].rgbtRed;
-            red_sum += image[i+1][j+1].rgbtRed;
-
-
-            int blue_sum = 0;
-            blue_sum += image[i][j].rgbtBlue;
-            blue_sum += image[i-1][j-1].rgbtBlue;
-            blue_sum += image[i-1][j].rgbtBlue;
-            blue_sum += image[i][j-1].rgbtBlue;
-            blue_sum += image[i-1][j+1].rgbtBlue;
-            blue_sum += image[i+1][j-1].rgbtBlue;
-            blue_sum += image[i+1][j].rgbtBlue;
-            blue_sum += image[i][j+1].rgbtBlue;
-            blue_sum += image[i+1][j+1].rgbtBlue;
-
-
-            int green_sum = 0;
-            green_sum += image[i][j].rgbtGreen;
-            green_sum += image[i-1][j-1].rgbtGreen;
-            green_sum += image[i-1][j].rgbtGreen;
-            green_sum += image[i][j-1].rgbtGreen;
-            green_sum += image[i-1][j+1].rgbtGreen;
-            green_sum += image[i+1][j-1].rgbtGreen;
-            green_sum += image[i+1][j].rgbtGreen;
-            green_sum += image[i][j+1].rgbtGreen;
-            green_sum += image[i+1][j+1].rgbtGreen;
-
-            int red_averege = red_sum / 9;
-            int green_averege = green_sum / 9;
-            int blue_averege = blue_sum / 9;
-
-            image[i][j].rgbtRed = red_averege;
-            image[i][j].rgbtBlue = blue_averege;
-            image[i][j].rgbtGreen = green_averege;
             
         }
     }
