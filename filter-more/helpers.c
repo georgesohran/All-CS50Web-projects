@@ -450,9 +450,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 gx_red += image[i][j].rgbtRed * 0;
                 gx_red += image[i-1][j-1].rgbtRed * -1;
-                gx_red += image[i-1][j].rgbtRed * -2;
-                gx_red += image[i][j-1].rgbtRed * 0;
-                gx_red += image[i-1][j+1].rgbtRed * 0;
+                gx_red += image[i-1][j].rgbtRed * 0;
+                gx_red += image[i][j-1].rgbtRed * -2;
+                gx_red += image[i-1][j+1].rgbtRed * -1;
                 gx_red += image[i+1][j-1].rgbtRed * 0;
                 gx_red += image[i+1][j].rgbtRed * 0;
                 gx_red += image[i][j+1].rgbtRed * 0;
