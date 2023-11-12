@@ -448,35 +448,35 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                red_sum += image[i][j].rgbtRed;
-                red_sum += image[i-1][j-1].rgbtRed;
-                red_sum += image[i-1][j].rgbtRed;
-                red_sum += image[i][j-1].rgbtRed;
-                red_sum += image[i-1][j+1].rgbtRed;
-                red_sum += image[i+1][j-1].rgbtRed;
-                red_sum += image[i+1][j].rgbtRed;
-                red_sum += image[i][j+1].rgbtRed;
-                red_sum += image[i+1][j+1].rgbtRed;
+                gx_red += image[i][j].rgbtRed * 0;
+                gx_red += image[i-1][j-1].rgbtRed * -1;
+                gx_red += image[i-1][j].rgbtRed * 0;
+                gx_red += image[i][j-1].rgbtRed * 0;
+                gx_red += image[i-1][j+1].rgbtRed * 0;
+                gx_red += image[i+1][j-1].rgbtRed * 0;
+                gx_red += image[i+1][j].rgbtRed * 0;
+                gx_red += image[i][j+1].rgbtRed * 0;
+                gx_red += image[i+1][j+1].rgbtRed * 0;
 
-                blue_sum += image[i][j].rgbtBlue;
-                blue_sum += image[i-1][j-1].rgbtBlue;
-                blue_sum += image[i-1][j].rgbtBlue;
-                blue_sum += image[i][j-1].rgbtBlue;
-                blue_sum += image[i-1][j+1].rgbtBlue;
-                blue_sum += image[i+1][j-1].rgbtBlue;
-                blue_sum += image[i+1][j].rgbtBlue;
-                blue_sum += image[i][j+1].rgbtBlue;
-                blue_sum += image[i+1][j+1].rgbtBlue;
+                gx_blue += image[i][j].rgbtBlue;
+                gx_blue += image[i-1][j-1].rgbtBlue;
+                gx_blue += image[i-1][j].rgbtBlue;
+                gx_blue += image[i][j-1].rgbtBlue;
+                gx_blue += image[i-1][j+1].rgbtBlue;
+                gx_blue += image[i+1][j-1].rgbtBlue;
+                gx_blue += image[i+1][j].rgbtBlue;
+                gx_blue += image[i][j+1].rgbtBlue;
+                gx_blue += image[i+1][j+1].rgbtBlue;
 
-                green_sum += image[i][j].rgbtGreen;
-                green_sum += image[i-1][j-1].rgbtGreen;
-                green_sum += image[i-1][j].rgbtGreen;
-                green_sum += image[i][j-1].rgbtGreen;
-                green_sum += image[i-1][j+1].rgbtGreen;
-                green_sum += image[i+1][j-1].rgbtGreen;
-                green_sum += image[i+1][j].rgbtGreen;
-                green_sum += image[i][j+1].rgbtGreen;
-                green_sum += image[i+1][j+1].rgbtGreen;
+                gx_green += image[i][j].rgbtGreen;
+                gx_green += image[i-1][j-1].rgbtGreen;
+                gx_green += image[i-1][j].rgbtGreen;
+                gx_green += image[i][j-1].rgbtGreen;
+                gx_green += image[i-1][j+1].rgbtGreen;
+                gx_green += image[i+1][j-1].rgbtGreen;
+                gx_green += image[i+1][j].rgbtGreen;
+                gx_green += image[i][j+1].rgbtGreen;
+                gx_green += image[i+1][j+1].rgbtGreen;
             }
 
             int red_averege = red_sum / 9;
