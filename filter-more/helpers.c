@@ -44,9 +44,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            long red_sum = 0;
-            long blue_sum = 0;
-            long green_sum = 0;
+            int red_sum = 0;
+            int blue_sum = 0;
+            int green_sum = 0;
 
             if (i == 0 && j == 0)
             {
@@ -261,16 +261,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            long red_sum = 0;
-            long blue_sum = 0;
-            long green_sum = 0;
+            int gx_red = 0;
+            int gx_blue = 0;
+            int gx_green = 0;
+
+            int gy_red = 0;
+            int gy_blue = 0;
+            int gy_green = 0;
 
             if (i == 0 && j == 0)
             {
-                red_sum += image[i][j].rgbtRed;
-                red_sum += image[i+1][j].rgbtRed;
-                red_sum += image[i][j+1].rgbtRed;
-                red_sum += image[i+1][j+1].rgbtRed;
+                gx_red += image[i][j].rgbtRed;
+                gx_red += image[i+1][j].rgbtRed;
+                gx_red += image[i][j+1].rgbtRed;
+                gx_red += image[i+1][j+1].rgbtRed;
 
                 blue_sum += image[i][j].rgbtBlue;
                 blue_sum += image[i+1][j].rgbtBlue;
