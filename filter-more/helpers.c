@@ -271,55 +271,70 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             if (i == 0 && j == 0)
             {
-                gx_red += image[i][j].rgbtRed;
-                gx_red += image[i+1][j].rgbtRed;
-                gx_red += image[i][j+1].rgbtRed;
-                gx_red += image[i+1][j+1].rgbtRed;
+                gx_red += image[i][j].rgbtRed * 0;
+                gx_red += image[i+1][j].rgbtRed * 0;
+                gx_red += image[i][j+1].rgbtRed * 2;
+                gx_red += image[i+1][j+1].rgbtRed * 1;
 
 
-                gx_blue += image[i][j].rgbtBlue;
-                gx_blue += image[i+1][j].rgbtBlue;
-                gx_blue += image[i][j+1].rgbtBlue;
-                gx_blue += image[i+1][j+1].rgbtBlue;
+                gx_blue += image[i][j].rgbtBlue * 0;
+                gx_blue += image[i+1][j].rgbtBlue * 0;
+                gx_blue += image[i][j+1].rgbtBlue * 2;
+                gx_blue += image[i+1][j+1].rgbtBlue * 1;
 
-                gx_green += image[i][j].rgbtGreen;
-                gx_green += image[i+1][j].rgbtGreen;
-                gx_green += image[i][j+1].rgbtGreen;
-                gx_green += image[i+1][j+1].rgbtGreen;
+                gx_green += image[i][j].rgbtGreen * 0;
+                gx_green += image[i+1][j].rgbtGreen * 0;
+                gx_green += image[i][j+1].rgbtGreen * 2;
+                gx_green += image[i+1][j+1].rgbtGreen * 1;
 
+                gy_red += image[i][j].rgbtRed * 0;
+                gy_red += image[i+1][j].rgbtRed * 2;
+                gy_red += image[i][j+1].rgbtRed * 0;
+                gy_red += image[i+1][j+1].rgbtRed * 1;
 
-                gy_red += image[i][j].rgbtRed;
-                gy_red += image[i+1][j].rgbtRed;
-                gy_red += image[i][j+1].rgbtRed;
-                gy_red += image[i+1][j+1].rgbtRed;
+                gy_blue += image[i][j].rgbtBlue * 0;
+                gy_blue += image[i+1][j].rgbtBlue * 2;
+                gy_blue += image[i][j+1].rgbtBlue * 0;
+                gy_blue += image[i+1][j+1].rgbtBlue * 1;
 
-                gy_blue += image[i][j].rgbtBlue;
-                gy_blue += image[i+1][j].rgbtBlue;
-                gy_blue += image[i][j+1].rgbtBlue;
-                gy_blue += image[i+1][j+1].rgbtBlue;
-
-                gy_green += image[i][j].rgbtGreen;
-                gy_green += image[i+1][j].rgbtGreen;
-                gy_green += image[i][j+1].rgbtGreen;
-                gy_green += image[i+1][j+1].rgbtGreen;
+                gy_green += image[i][j].rgbtGreen * 0;
+                gy_green += image[i+1][j].rgbtGreen * 2;
+                gy_green += image[i][j+1].rgbtGreen * 0;
+                gy_green += image[i+1][j+1].rgbtGreen * 1;
 
             }
             else if (i == 0 && j == width)
             {
-                red_sum += image[i][j].rgbtRed;
-                red_sum += image[i][j-1].rgbtRed;
-                red_sum += image[i+1][j-1].rgbtRed;
-                red_sum += image[i+1][j].rgbtRed;
+                gx_red += image[i][j].rgbtRed * 0;
+                gx_red += image[i][j-1].rgbtRed * 0;
+                gx_red += image[i+1][j].rgbtRed * 2;
+                gx_red += image[i+1][j-1].rgbtRed * 1;
 
-                blue_sum += image[i][j].rgbtBlue;
-                blue_sum += image[i][j-1].rgbtBlue;
-                blue_sum += image[i+1][j-1].rgbtBlue;
-                blue_sum += image[i+1][j].rgbtBlue;
+                gx_blue += image[i][j].rgbtBlue * 0;
+                gx_blue += image[i][j-1].rgbtBlue * 0;
+                gx_blue += image[i+1][j].rgbtBlue * 2;
+                gx_blue += image[i+1][j-1].rgbtBlue * 1;
 
-                green_sum += image[i][j].rgbtGreen;
-                green_sum += image[i][j-1].rgbtGreen;
-                green_sum += image[i+1][j-1].rgbtGreen;
-                green_sum += image[i+1][j].rgbtGreen;
+                gx_green += image[i][j].rgbtGreen * 0;
+                gx_green += image[i][j-1].rgbtGreen * 0;
+                gx_green += image[i+1][j].rgbtGreen * 2;
+                gx_green += image[i+1][j-1].rgbtGreen * 1;
+
+
+                gy_red += image[i][j].rgbtRed * 0;
+                gy_red += image[i][j-1].rgbtRed * 0;
+                gy_red += image[i+1][j].rgbtRed;
+                gy_red += image[i+1][j-1].rgbtRed;
+
+                gy_blue += image[i][j].rgbtBlue;
+                gy_blue += image[i][j-1].rgbtBlue;
+                gy_blue += image[i+1][j].rgbtBlue;
+                gy_blue += image[i+1][j-1].rgbtBlue;
+
+                gy_green += image[i][j].rgbtGreen;
+                gy_green += image[i][j-1].rgbtGreen;
+                gy_green += image[i+1][j].rgbtGreen;
+                gy_green += image[i+1][j-1].rgbtGreen;
             }
             else if (i == height && j == 0)
             {
