@@ -284,9 +284,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     for(int x = 0; x < 3; x++)
                     {
                         gx_red += image[i][j].rgbtRed;
-                        gx_red += image[i+1][j].rgbtRed;
-                        gx_red += image[i][j+1].rgbtRed;
-                        gx_red += image[i+1][j+1].rgbtRed;
                     }
                 }
 
