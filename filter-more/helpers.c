@@ -117,7 +117,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 green_sum += image[i-1][j].rgbtGreen;
                 green_sum += image[i][j-1].rgbtGreen;
             }
-            else if (i == 0 && j < width && j > 0)
+            else if (i == 0)
             {
                 red_sum += image[i][j].rgbtRed;
                 red_sum += image[i][j-1].rgbtRed;
@@ -140,7 +140,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 green_sum += image[i][j+1].rgbtGreen;
                 green_sum += image[i+1][j+1].rgbtGreen;
             }
-            else if (i == height && j < width && j > 0)
+            else if (i == height)
             {
                 red_sum += image[i][j].rgbtRed;
                 red_sum += image[i-1][j-1].rgbtRed;
@@ -163,7 +163,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 green_sum += image[i-1][j+1].rgbtGreen;
                 green_sum += image[i][j+1].rgbtGreen;
             }
-            else if (j == 0 && i < height && i > 0)
+            else if (j == 0)
             {
                 red_sum += image[i][j].rgbtRed;
                 red_sum += image[i-1][j].rgbtRed;
@@ -186,7 +186,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 green_sum += image[i][j+1].rgbtGreen;
                 green_sum += image[i+1][j+1].rgbtGreen;
             }
-            else if (j == width && i < height && i > 0)
+            else if (j == width)
             {
                 red_sum += image[i][j].rgbtRed;
                 red_sum += image[i-1][j-1].rgbtRed;
@@ -254,11 +254,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int Gx[][] = {{-1,0,1},
+int Gx[3][3] = {{-1,0,1},
               {-2,0,2},
               {-1,0,1}};
 
-int Gy[][] = {{-1,-2,-1},
+int Gy[3][3] = {{-1,-2,-1},
               {0,0,0},
               {-1,-2,-1}};
 
@@ -281,7 +281,26 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int x = 0; x < 3; x++)
                 {
-                    
+                    if (i == 0 && j == 0)
+                    {
+
+                    }
+                    else if (i == height && j == 0)
+                    {
+
+                    }
+                    else if (i == 0 && j == width)
+                    {
+
+                    }
+                    else if (i == height && j == width)
+                    {
+
+                    }
+                    else if (i == 0 && j < width && j > 0)
+                    {
+
+                    }
                 }
             }
         }
