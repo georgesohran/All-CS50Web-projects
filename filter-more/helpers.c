@@ -277,8 +277,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int gy_blue = 0;
             int gy_green = 0;
 
-
-            
+            for (int y = 0; y < 3; y++)
+            {
+                for (int x = 0; x < 3; x++)
+            }
         }
     }
     return;
