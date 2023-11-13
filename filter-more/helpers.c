@@ -254,14 +254,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int Gx[3][3] = {{-1,0,1},
-              {-2,0,2},
-              {-1,0,1}};
-
-int Gy[3][3] = {{-1,-2,-1},
-              {0,0,0},
-              {-1,-2,-1}};
-
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -279,13 +271,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             if (i == 0 && j == 0)
             {
-                for (int y = 0; y < 3; y++)
-                {
-                    for(int x = 0; x < 3; x++)
-                    {
-                        gx_red += image[i][j].rgbtRed;
-                    }
-                }
+                gx_red += image[i][j].rgbtRed;
+                gx_red += image[i+1][j].rgbtRed;
+                gx_red += image[i][j+1].rgbtRed;
+                gx_red += image[i+1][j+1].rgbtRed;
 
 
                 gx_blue += image[i][j].rgbtBlue;
