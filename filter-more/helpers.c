@@ -118,20 +118,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            int gx_red = 0;
+            int gx_blue = 0;
+            int gx_green = 0;
+
+            int gy_red = 0;
+            int gy_blue = 0;
+            int gy_green = 0;
+
             for (int y = -1; y < 2; y++)
             {
                 for (int x = -1; x < 2; x++)
                 {
                     int indx_x = x + 1;
                     int indx_y = y + 1;
-
-                    int gx_red = 0;
-                    int gx_blue = 0;
-                    int gx_green = 0;
-
-                    int gy_red = 0;
-                    int gy_blue = 0;
-                    int gy_green = 0;
 
                     if (i + x >= 0 && i + x < width && j + y >= 0 && j + y < height)
                     {
