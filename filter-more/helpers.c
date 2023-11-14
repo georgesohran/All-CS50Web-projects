@@ -104,7 +104,15 @@ int Gy[3][3] = {{-1,-2,-1},
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE temp[height][width];
 
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            temp[i][j] = image[i][j];
+        }
+    }
 
     for (int i = 0; i < height; i++)
     {
