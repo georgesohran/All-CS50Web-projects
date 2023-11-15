@@ -151,13 +151,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             if (new_red > 255) temp[i][j].rgbtRed = 255;
 
-            else temp[i][j].rgbtBlue = new_red;
+            else temp[i][j].rgbtRed = new_red;
 
 
             if (new_blue > 255) temp[i][j].rgbtBlue = 255;
 
             else temp[i][j].rgbtBlue = new_blue;
-            
+
 
             if (new_green > 255) temp[i][j].rgbtGreen = 255;
 
