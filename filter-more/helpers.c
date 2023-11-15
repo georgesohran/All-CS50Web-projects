@@ -145,9 +145,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            int new_red = round(sqrt((gx_red * gx_red) + (gy_red * gy_red)));
-            int new_blue = round(sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue)));
-            int new_green = round(sqrt((gx_green * gx_green) + (gy_green * gy_green)));
+            int new_red = round(sqrt(pow(gx_red,2) + pow(gy_red,2)));
+            int new_blue = round(sqrt(pow(gx_blue,2) + pow(gy_blue,2)));
+            int new_green = round(sqrt(pow(gx_green,2) + pow(gy_green,2)));
 
             if (new_red >= 255) temp[i][j].rgbtRed = 255;
 
