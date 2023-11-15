@@ -101,6 +101,12 @@ int Gy[3][3] = {{-1,-2,-1},
               {0,0,0},
               {1,2,1}};
 
+int clamp(int d, int min, int max) {
+  const int t = d < min ? min : d;
+  return t > max ? max : t;
+}
+
+
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -149,9 +155,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int new_blue = round(sqrt(pow(gx_blue,2) + pow(gy_blue,2)));
             int new_green = round(sqrt(pow(gx_green,2) + pow(gy_green,2)));
 
-            new_red = clamp(new_red,0,255)
-            new_blue = clamp(new_blue,0,255)
-            new_green = clamp(new_green,0,255)
+            new_red = clamp(new_red,0,255);
+            new_blue = clamp(new_blue,0,255);
+            new_green = clamp(new_green,0,255);
 
             temp[i][j].rgbtRed = new_red;
             temp[i][j].rgbtBlue = new_blue;
@@ -169,7 +175,3 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int clamp(int d, int min, int max) {
-  const int t = d < min ? min : d;
-  return t > max ? max : t;
-}
