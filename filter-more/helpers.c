@@ -145,6 +145,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
+            
             temp[i][j].rgbtRed = round(sqrt((gx_red * gx_red) + (gy_red * gy_red)));
             temp[i][j].rgbtBlue = round(sqrt((gx_blue * gx_blue) + (gy_blue * gy_blue)));
             temp[i][j].rgbtGreen = round(sqrt((gx_green * gx_green) + (gy_green * gy_green)));
