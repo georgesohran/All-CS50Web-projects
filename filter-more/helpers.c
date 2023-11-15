@@ -149,19 +149,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int new_blue = round(sqrt(pow(gx_blue,2) + pow(gy_blue,2)));
             int new_green = round(sqrt(pow(gx_green,2) + pow(gy_green,2)));
 
-            if (new_red >= 255) temp[i][j].rgbtRed = 255;
-
-            else temp[i][j].rgbtRed = new_red;
-
-
-            if (new_blue >= 255) temp[i][j].rgbtBlue = 255;
-
-            else temp[i][j].rgbtBlue = new_blue;
-
-
-            if (new_green >= 255) temp[i][j].rgbtGreen = 255;
-
-            else temp[i][j].rgbtGreen = new_green;
+            new_red = clamp(new_red,0,255)
+            new_blue = clamp(new_blue,0,255)
+            new_green = clamp(new_green,0,255)
 
             temp[i][j].rgbtRed = new_red;
             temp[i][j].rgbtBlue = new_blue;
@@ -177,4 +167,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     return;
+}
+
+int clamp(int d, int min, int max) {
+  const int t = d < min ? min : d;
+  return t > max ? max : t;
 }
