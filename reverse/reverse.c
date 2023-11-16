@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     if (argv[1])
     {
         printf("Usage: ./reverse input.wav output.wav")
-        return 1
+        return 2
     }
 
 
