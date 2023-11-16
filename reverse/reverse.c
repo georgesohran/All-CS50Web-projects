@@ -21,9 +21,9 @@ int main(int argc, char *argv[])
     char* input_file = argv[1];
     char* output_file = argv[2];
 
-    if (strcmp(&input_file[strlen(input_file)-3], "wav") == 0)
+    if (strcmp(&input_file[strlen(input_file)-3], "wav") != 0)
     {
-        printf("\n");
+        printf("Input is not a WAV file.\n");
         return 2;
     }
 
