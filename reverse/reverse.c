@@ -46,7 +46,10 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-    if (wavhead.audioFormat == )
+    if (check_format(wavhead) != 0)
+    {
+
+    }
 
     // Open output file for writing
     // TODO #5
