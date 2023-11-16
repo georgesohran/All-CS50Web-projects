@@ -17,6 +17,10 @@ int main(int argc, char *argv[])
         printf("Usage: ./reverse input.wav output.wav");
         return 1;
     }
+
+    char* input_file = argv[1]
+    char* output_file = argv[2]
+
     if ()
     {
         printf("");
