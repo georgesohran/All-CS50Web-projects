@@ -18,10 +18,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    char* input_file = argv[1]
-    char* output_file = argv[2]
+    char* input_file = argv[1];
+    char* output_file = argv[2];
 
-    if (strcmp(input_file+strlen(str1)-4, str2+strlen(str2)-4) == 0)
+    if (strcmp(&input_file[strlen(input_file)-3], "wav") == 0)
     {
         printf("");
         return 2;
