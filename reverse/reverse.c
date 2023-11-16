@@ -35,7 +35,9 @@ int main(int argc, char *argv[])
         printf("Could not open %s.\n", input_file)
         return 3
     }
-    
+
+    FILE* output_file = fopen(input_file_name, "w")
+
     // Read header
     // TODO #3
 
