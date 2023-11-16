@@ -18,19 +18,18 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    char* input_file = argv[1];
-    char* output_file = argv[2];
+    char* input_file_name = argv[1];
+    char* output_file_name = argv[2];
 
-    if (strcmp(&input_file[strlen(input_file)-3], "wav") != 0)
+    if (strcmp(&input_file_name[strlen(input_file_name)-3], "wav") != 0)
     {
         printf("Input is not a WAV file.\n");
         return 2;
     }
 
-
     // Open input file for reading
     // TODO #2
-    
+    FILE* input_file = fopen(input_file_name, "r")
 
     // Read header
     // TODO #3
