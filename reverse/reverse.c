@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./reverse input.wav output.wav");
         return 1;
     }
-    if (strtok(argv[1], ))
+    if (strtok(argv[1],"."))
     {
         printf("");
         return 2;
