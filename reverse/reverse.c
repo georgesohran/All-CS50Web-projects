@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     // TODO #1
     if (argc != 3)
     {
-        printf("Usage: ./reverse input.wav output.wav");
+        printf("Usage: ./reverse input.wav output.wav\n");
         return 1;
     }
 
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     if (strcmp(&input_file[strlen(input_file)-3], "wav") == 0)
     {
-        printf("");
+        printf("\n");
         return 2;
     }
 
