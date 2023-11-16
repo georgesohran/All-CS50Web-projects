@@ -41,12 +41,12 @@ int main(int argc, char *argv[])
     // Read header
     // TODO #3
 
-    WAVEHEADER bi
-    fread(&bi, sizeof(WAVHEADER))
-
+    WAVEHEADER wavhead;
+    fread(&bi, sizeof(WAVHEADER), 1, input_file);
 
     // Use check_format to ensure WAV format
     // TODO #4
+    if (wavhead.audioFormat == )
 
     // Open output file for writing
     // TODO #5
