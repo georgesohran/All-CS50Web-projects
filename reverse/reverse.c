@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./reverse input.wav output.wav");
         return 1;
     }
-    if (argv[1][strlen(argv[1:])])
+    if (argv[1])
     {
         printf("Usage: ./reverse input.wav output.wav");
         return 2;
