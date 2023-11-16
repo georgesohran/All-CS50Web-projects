@@ -30,7 +30,12 @@ int main(int argc, char *argv[])
     // Open input file for reading
     // TODO #2
     FILE* input_file = fopen(input_file_name, "r")
-
+    if (input_file == NULL)
+    {
+        printf("Could not open %s.\n", input_file)
+        return 3
+    }
+    
     // Read header
     // TODO #3
 
