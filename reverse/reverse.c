@@ -29,13 +29,14 @@ int main(int argc, char *argv[])
 
     // Open input file for reading
     // TODO #2
-    FILE* input_file = fopen(input_file_name, "r")
+    FILE* input_file = fopen(input_file_name, "r");
     if (input_file == NULL)
     {
-        printf("Could not open %s.\n", input_file)
-        return 1
+        printf("Could not open %s.\n", input_file_name);
+        return 1;
     }
 
+    fclose(input_file);
 
     // Read header
     // TODO #3
