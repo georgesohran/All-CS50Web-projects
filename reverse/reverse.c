@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     char* input_file = argv[1]
     char* output_file = argv[2]
 
-    if ()
+    if (strcmp(input_file+strlen(str1)-4, str2+strlen(str2)-4) == 0)
     {
         printf("");
         return 2;
