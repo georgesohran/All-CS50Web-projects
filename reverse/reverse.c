@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-    
+
     if (check_format(wavhead) == 0)
     {
         printf("Input is not a WAV file.\n");
@@ -52,16 +52,20 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     // TODO #5
-    fclose(input_file);
+
+    FILE* output_file = fopen(output_file_name, "w");
 
     // Write header to file
     // TODO #6
+    
 
     // Use get_block_size to calculate size of block
     // TODO #7
 
     // Write reversed audio to file
     // TODO #8
+
+    fclose(input_file);
 }
 
 int check_format(WAVHEADER header)
