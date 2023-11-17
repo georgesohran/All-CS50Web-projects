@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 
     int *b = malloc(size)
 
-    
+    fseek()
     while()
 
 
