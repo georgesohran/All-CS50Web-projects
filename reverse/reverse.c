@@ -55,6 +55,12 @@ int main(int argc, char *argv[])
     // TODO #5
 
     FILE* output_file = fopen(output_file_name, "w");
+    if (output_file == NULL)
+    {
+        fclose(output_file);
+        printf("Could not create %s.\n", outfile);
+        return 5;
+    }
 
     // Write header to file
     // TODO #6
