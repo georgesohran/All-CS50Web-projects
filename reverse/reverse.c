@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     // TODO #8
 
 
-    
+
     fclose(output_file);
     fclose(input_file);
 }
@@ -97,5 +97,8 @@ int check_format(WAVHEADER header)
 int get_block_size(WAVHEADER header)
 {
     // TODO #7
+    int size = 0
+    header
+
     return 0;
 }
