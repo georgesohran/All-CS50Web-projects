@@ -97,8 +97,5 @@ int check_format(WAVHEADER header)
 int get_block_size(WAVHEADER header)
 {
     // TODO #7
-    int size = 0
-    header
-
-    return 0;
+    return header;
 }
