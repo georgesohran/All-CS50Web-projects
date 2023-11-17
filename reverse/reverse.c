@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (header.format[1] == 87)
+    if (header.format[1])
     {
         return 1;
     }
@@ -74,6 +74,8 @@ int check_format(WAVHEADER header)
     {
         return 0;
     }
+
+
 }
 
 int get_block_size(WAVHEADER header)
