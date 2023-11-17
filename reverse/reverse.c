@@ -64,8 +64,7 @@ int main(int argc, char *argv[])
     // Write header to file
     // TODO #6
     WAVHEADER wavhead_out;
-    fread(&wavhead_out, sizeof(WAVHEADER), 1, output_file);
-
+    
     if (check_format(wavhead) == 0)
     {
         fclose(input_file);
