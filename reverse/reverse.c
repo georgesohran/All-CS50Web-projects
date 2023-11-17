@@ -72,6 +72,10 @@ int main(int argc, char *argv[])
     fseek(input_file, -size, SEEK_END);
     while(ftell(input_file) > sizeof(wavhead))
     {
+        if(fseek(input, -2 * size, SEEK_CUR))
+        {
+            return 1;
+        }
         fread(b, size, 1, input_file);
         fwrite(b, size, 1, output_file);
     }
