@@ -35,24 +35,20 @@ int main(int argc, char *argv[])
         printf("Could not open %s.\n", input_file_name);
         return 1;
     }
-    else
-    {
-        printf("you have succeeded");
-    }
 
     fclose(input_file);
 
     // Read header
     // TODO #3
-
     WAVHEADER wavhead;
     fread(&wavhead, sizeof(WAVHEADER), 1, input_file);
 
     // Use check_format to ensure WAV format
     // TODO #4
-    if (check_format(wavhead) != 0)
+    if (check_format(wavhead) == 0)
     {
-        return 69;
+        printf("Input is not a WAV file.\n");
+        return 1;
     }
 
     // Open output file for writing
@@ -73,11 +69,11 @@ int check_format(WAVHEADER header)
     // TODO #4
     if (header.format[1] == 87)
     {
-        return true;
+        return 1;
     }
     else
     {
-        return false;
+        return 0;
     }
 }
 
