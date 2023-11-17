@@ -66,7 +66,9 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     // TODO #8
-    
+
+
+    while()
 
 
     fclose(output_file);
