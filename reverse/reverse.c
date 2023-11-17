@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
     FILE* input_file = fopen(input_file_name, "r");
     if (input_file == NULL)
     {
+        fclose(input_file);
         printf("Could not open %s.\n", input_file_name);
         return 1;
     }
@@ -57,7 +58,7 @@ int main(int argc, char *argv[])
 
     // Write header to file
     // TODO #6
-    
+
 
     // Use get_block_size to calculate size of block
     // TODO #7
