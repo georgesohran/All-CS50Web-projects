@@ -21,12 +21,6 @@ int main(int argc, char *argv[])
     char* input_file_name = argv[1];
     char* output_file_name = argv[2];
 
-    //if (strcmp(&input_file_name[strlen(input_file_name)-3], "wav") != 0)
-    //{
-    //    printf("Input is not a WAV file.\n");
-    //    return 2;
-    //}
-
     // Open input file for reading
     // TODO #2
     FILE* input_file = fopen(input_file_name, "r");
@@ -64,7 +58,7 @@ int main(int argc, char *argv[])
     // Write header to file
     // TODO #6
     WAVHEADER wavhead_out;
-    
+
     if (check_format(wavhead) == 0)
     {
         fclose(input_file);
