@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-    if (check_format(wavhead) == 0)
+    if (check_format(wavhead))
     {
         printf("Input is not a WAV file.\n");
         return 1;
