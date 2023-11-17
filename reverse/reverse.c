@@ -67,10 +67,15 @@ int main(int argc, char *argv[])
     // Write reversed audio to file
     // TODO #8
 
-    int *b = malloc(size)
+    int *b = malloc(size);
 
-    fseek(input_file, size, SEEK_END)
+    fseek(input_file, size, SEEK_END);
     while(ftell(input_file) > sizeof(wavhead))
+    {
+        fread(b, size, 1, input_file);
+        fwrite(b, size, 1, output_file);
+        
+    }
 
 
     fclose(output_file);
