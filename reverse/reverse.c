@@ -59,12 +59,7 @@ int main(int argc, char *argv[])
     // TODO #6
     WAVHEADER wavhead_out;
 
-    if (check_format(wavhead) == 0)
-    {
-        fclose(input_file);
-        printf("Output is not a WAV file.\n");
-        return 1;
-    }
+    
     // Use get_block_size to calculate size of block
     // TODO #7
     int size = get_block_size(wavhead);
