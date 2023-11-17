@@ -66,9 +66,15 @@ int main(int argc, char *argv[])
     WAVHEADER wavhead_out;
     fread(&wavhead_out, sizeof(WAVHEADER), 1, output_file);
 
-
+    if (check_format(wavhead) == 0)
+    {
+        fclose(input_file);
+        printf("Output is not a WAV file.\n");
+        return 1;
+    }
     // Use get_block_size to calculate size of block
     // TODO #7
+    int size = get_block_size(wavhead);
 
     // Write reversed audio to file
     // TODO #8
