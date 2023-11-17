@@ -52,14 +52,14 @@ int main(int argc, char *argv[])
     {
         fclose(output_file);
         printf("Could not create %s.\n", output_file_name);
-        return 5;
+        return 1;
     }
 
     // Write header to file
     // TODO #6
-    WAVHEADER wavhead_out;
+    fwrite(&header, sizeof(WAVHEADER), 1, output_file)
 
-    
+
     // Use get_block_size to calculate size of block
     // TODO #7
     int size = get_block_size(wavhead);
