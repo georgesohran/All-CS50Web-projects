@@ -76,6 +76,8 @@ int main(int argc, char *argv[])
     // TODO #7
     int size = get_block_size(wavhead);
 
+    printf("%i\n", size);
+
     // Write reversed audio to file
     // TODO #8
 
