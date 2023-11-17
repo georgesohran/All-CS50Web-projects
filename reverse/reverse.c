@@ -35,6 +35,10 @@ int main(int argc, char *argv[])
         printf("Could not open %s.\n", input_file_name);
         return 1;
     }
+    else
+    {
+        printf("you have succeeded");
+    }
 
     fclose(input_file);
 
@@ -67,8 +71,14 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (header.)
-    return 0;
+    if (strcmp(header.format,"wav") == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 int get_block_size(WAVHEADER header)
