@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (strcmp(header.format,"wav") == 0)
+    if (strcmp(header.format[1],"W") == 0)
     {
         return true;
     }
