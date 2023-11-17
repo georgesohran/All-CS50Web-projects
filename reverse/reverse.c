@@ -63,6 +63,8 @@ int main(int argc, char *argv[])
 
     // Write header to file
     // TODO #6
+    WAVHEADER wavhead_out;
+    fread(&wavhead_out, sizeof(WAVHEADER), 1, output_file);
 
 
     // Use get_block_size to calculate size of block
@@ -70,7 +72,7 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     // TODO #8
-
+    fclose(output_file);
     fclose(input_file);
 }
 
