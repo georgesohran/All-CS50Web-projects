@@ -36,8 +36,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    fclose(input_file);
-
     // Read header
     // TODO #3
     WAVHEADER wavhead;
@@ -53,6 +51,7 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     // TODO #5
+    fclose(input_file);
 
     // Write header to file
     // TODO #6
