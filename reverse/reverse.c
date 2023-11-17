@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
     int *b = malloc(size)
 
     fseek(input_file, size, SEEK_END)
-    while(ftell())
+    while(ftell(input_file) > sizeof(wavhead))
 
 
     fclose(output_file);
