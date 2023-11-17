@@ -44,16 +44,15 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-
     if (check_format(wavhead) == 0)
     {
+        fclose(input_file);
         printf("Input is not a WAV file.\n");
         return 1;
     }
 
     // Open output file for writing
     // TODO #5
-
     FILE* output_file = fopen(output_file_name, "w");
     if (output_file == NULL)
     {
