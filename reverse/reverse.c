@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 
     // Write header to file
     // TODO #6
-    fwrite(&header, sizeof(WAVHEADER), 1, output_file)
+    fwrite(&wavhead, sizeof(WAVHEADER), 1, output_file);
 
 
     // Use get_block_size to calculate size of block
@@ -74,7 +74,6 @@ int main(int argc, char *argv[])
     {
         fread(b, size, 1, input_file);
         fwrite(b, size, 1, output_file);
-
     }
 
 
