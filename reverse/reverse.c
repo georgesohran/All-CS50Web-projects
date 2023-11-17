@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
     FILE* output_file = fopen(output_file_name, "w");
     if (output_file == NULL)
     {
-        fclose(input_file);
+        fclose(output_file);
         printf("Could not create %s.\n", output_file_name);
         return 5;
     }
