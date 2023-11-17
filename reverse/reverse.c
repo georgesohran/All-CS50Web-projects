@@ -67,6 +67,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
+    if (header)
     return 0;
 }
 
