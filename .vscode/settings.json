@@ -6,6 +6,8 @@
         "string.h": "c",
         "random": "c",
         "helpers.h": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "dictionary.h": "c",
+        "stdbool.h": "c"
     }
 }
