@@ -50,8 +50,6 @@ bool load(const char *dictionary)
 
     while(fscanf(dictptr,"%s",new_word) != EOF)
     {
-        fscanf(dictptr,"%s",new_word);
-
         node* new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
