@@ -57,6 +57,9 @@ bool load(const char *dictionary)
         strcpy(n->word, new_word);
 
         n->next = NULL;
+
+        int indx;
+        
     }
 
 
