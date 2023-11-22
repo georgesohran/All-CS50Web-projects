@@ -71,6 +71,8 @@ bool load(const char *dictionary)
 
         new_node->next = table[indx]->next;
         table[indx] = new_node;
+
+        free(new_node);
     }
 
     return true;
