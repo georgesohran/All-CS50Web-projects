@@ -76,7 +76,7 @@ bool load(const char *dictionary)
         new_node->next = table[indx];
         table[indx] = new_node;
 
-        wcount ++
+        wcount ++;
     }
 
     fclose(dictptr);
@@ -99,12 +99,12 @@ bool unload(void)
     {
         node* temp_cursor;
         node* cursor = table[i]->next;
-        while(cursor != NULL);
+        while(cursor != NULL)
         {
             temp_cursor = cursor;
             cursor = cursor->next;
             free(temp_cursor);
         }
     }
-    return false;
+    return true;
 }
