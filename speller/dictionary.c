@@ -65,6 +65,8 @@ bool load(const char *dictionary)
     while (fscanf(dictptr,"%s",new_word) != EOF)
     {
         int indx = hash(new_word);
+        node* new_node = malloc(sizeof(node))
+        
     }
 
     return true;
