@@ -52,24 +52,37 @@ bool load(const char *dictionary)
 
     char new_word[LENGTH + 1];
     int count = 0;
+    char cb
 
-    while(fscanf(dictptr,"%s",new_word) != EOF)
+    while(fscanf(dictptr,"%c",cb) != EOF)
     {
-        node* new_node = malloc(sizeof(node));
-        if (new_node == NULL)
+        if (isalpha(c) || (c == '\'' && index > 0))
         {
-            return false;
-        }
+            word[count] = c;
+            count++;
 
-        strcpy(new_node->word, new_word);
+            if (count > LENGTH)
+            {
+                node* new_node = malloc(sizeof(node));
+                if (new_node == NULL)
+                {
+                    return false;
+                }
 
-        int indx = hash(&new_word[0]);
+                strcpy(new_node->word, new_word);
 
-        new_node->next = table[indx]->next;
-        table[indx]->next = new_node;
+                int indx = hash(&new_word[0]);
+
+                new_node->next = table[indx]->next;
+                table[indx]->next = new_node;
+
+                free(new_node);
+
+                wcount ++;
+                count = 0;
+            }
 
 
-        free(new_node);
     }
 
     return true;
