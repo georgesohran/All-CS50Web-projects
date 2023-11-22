@@ -67,9 +67,13 @@ bool load(const char *dictionary)
         int indx = hash(new_word);
 
         node* new_node = malloc(sizeof(node));
+        if (new_node == NULL)
+        {
+            return false
+        }
         strcpy(new_node->word, new_word);
 
-        new_node->next = table[indx]->next;
+        new_node->next = table[indx];
         table[indx] = new_node;
 
         free(new_node);
