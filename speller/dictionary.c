@@ -58,8 +58,8 @@ bool load(const char *dictionary)
 
         n->next = NULL;
 
-        int indx;
-        
+        int indx = hash(&new_word[0])
+
     }
 
 
