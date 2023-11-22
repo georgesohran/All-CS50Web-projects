@@ -77,6 +77,8 @@ bool load(const char *dictionary)
         table[indx] = new_node;
 
         free(new_node);
+
+        wcount ++
     }
 
     fclose(dictptr);
