@@ -42,12 +42,12 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char word[];
+    char word[LENGTH + 1];
     int count = 0;
 
     while(fscanf(dictptr,"%s",word) != EOF)
     {
-
+        
 
     }
 
