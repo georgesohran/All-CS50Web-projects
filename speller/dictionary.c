@@ -47,12 +47,18 @@ bool load(const char *dictionary)
 
     while(fscanf(dictptr,"%s",word) != EOF)
     {
-        char c
-        fscanf(dictptr,"%c",c)
-        
-
         if (fscanf(dictptr,"%s",word) == "\n")
+        {
+            count = 0;
 
+
+        }
+
+        char c;
+        fscanf(dictptr,"%c",c);
+
+        word[count] = c;
+        int count ++;
     }
 
 
