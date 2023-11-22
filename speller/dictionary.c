@@ -73,7 +73,7 @@ bool load(const char *dictionary)
         }
         strcpy(new_node->word, new_word);
 
-        new_node->next = table[indx];
+        new_node->next = table[indx]->next;
         table[indx] = new_node;
 
         wcount ++;
