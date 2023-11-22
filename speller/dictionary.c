@@ -31,8 +31,11 @@ bool check(const char *word)
     node* cursor = table[hash(word)];
     while(cursor != NULL)
     {
+        if(strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
         cursor = cursor->next;
-        if(strcasecmp(word,))
     }
     return false;
 }
@@ -43,7 +46,7 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     int indx = (toupper(word[0]) - atoi("A")) * (toupper(word[1]) - atoi("A"));
 
-    return indx ;
+    return indx;
 }
 
 // Loads dictionary into memory, returning true if successful, else false

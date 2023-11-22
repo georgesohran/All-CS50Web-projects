@@ -8,6 +8,7 @@
         "helpers.h": "c",
         "algorithm": "c",
         "dictionary.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "strings.h": "c"
     }
 }
