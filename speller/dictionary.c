@@ -65,7 +65,8 @@ bool load(const char *dictionary)
         }
         else
         {
-            new_node->next = table[indx]->next
+            new_node->next = table[indx]->next;
+            table[indx]->next = new_node
         }
 
 
