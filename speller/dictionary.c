@@ -62,16 +62,9 @@ bool load(const char *dictionary)
 
         int indx = hash(&new_word[0]);
 
-        if (table[indx]->next == NULL)
-        {
-            new_node->next = NULL;
-            table[indx]->next = new_node;
-        }
-        else
-        {
-            new_node->next = table[indx]->next;
-            table[indx]->next = new_node;
-        }
+        new_node->next = table[indx]->next;
+        table[indx]->next = new_node;
+
 
         free(new_node);
 
