@@ -69,7 +69,7 @@ bool load(const char *dictionary)
         node* new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
-            return false
+            return false;
         }
         strcpy(new_node->word, new_word);
 
@@ -78,6 +78,8 @@ bool load(const char *dictionary)
 
         free(new_node);
     }
+
+    fclose(dictptr);
 
     return true;
 }
