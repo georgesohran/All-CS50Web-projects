@@ -52,11 +52,11 @@ bool load(const char *dictionary)
 
     char new_word[LENGTH + 1];
     int count = 0;
-    char cb = malloc(sizeof(char));
+    char cb = "\0";
 
     while(fscanf(dictptr,"%c",cb) != EOF)
     {
-        if (&new_word[count] == "\n")
+        if (strcmp(&new_word[count], "\n") == 0)
         {
             node* new_node = malloc(sizeof(node));
             if (new_node == NULL)
@@ -82,7 +82,6 @@ bool load(const char *dictionary)
             count++;
         }
     }
-    free(cb);
     return true;
 }
 
