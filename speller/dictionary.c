@@ -52,7 +52,7 @@ bool load(const char *dictionary)
 
     char new_word[LENGTH + 1];
     int count = 0;
-    char cb = '\0';
+    char* cb = NULL;
 
     while(fscanf(dictptr,"%c",cb) != EOF)
     {
@@ -76,7 +76,7 @@ bool load(const char *dictionary)
         }
         else
         {
-            new_word[count] = cb;
+            new_word[count] = *cb;
             count++;
         }
     }
