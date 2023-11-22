@@ -47,7 +47,11 @@ bool load(const char *dictionary)
 
     while(fscanf(dictptr,"%s",word) != EOF)
     {
+        char c
+        fscanf(dictptr,"%c",c)
         
+
+        if (fscanf(dictptr,"%s",word) == "\n")
 
     }
 
