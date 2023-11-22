@@ -2,6 +2,9 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -54,7 +57,7 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        strcpy(nnew_node->word, new_word);
+        strcpy(new_node->word, new_word);
 
         int indx = hash(&new_word[0]);
 
@@ -66,10 +69,10 @@ bool load(const char *dictionary)
         else
         {
             new_node->next = table[indx]->next;
-            table[indx]->next = new_node
+            table[indx]->next = new_node;
         }
 
-
+    
 
 
     }
