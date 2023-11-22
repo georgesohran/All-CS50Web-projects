@@ -42,14 +42,15 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char word[LENGTH + 1];
+    char new_word[LENGTH + 1];
     int count = 0;
 
-    while(fscanf(dictptr,"%s",word) != EOF)
+    while(fscanf(dictptr,"%s",new_word) != EOF)
     {
-        fscanf(dictptr,"%s",word)
+        fscanf(dictptr,"%s",new_word);
 
-        node 
+        node* new_node = malloc(sizeof(node));
+        strcpy(n->word, new_word);
     }
 
 
