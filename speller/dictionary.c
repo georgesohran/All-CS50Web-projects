@@ -58,7 +58,7 @@ bool load(const char *dictionary)
     {
         if (isalpha(cb) || (cb == '\'' && count > 0))
         {
-            if (word[count] == "\n")
+            if (new_word[count] == "\n")
             {
                 node* new_node = malloc(sizeof(node));
                 if (new_node == NULL)
