@@ -28,6 +28,12 @@ int wcount = 0;
 bool check(const char *word)
 {
     // TODO
+    node* cursor = table[hash(word)];
+    while(cursor != NULL)
+    {
+        cursor = cursor->next;
+        if(strcasecmp(word,))
+    }
     return false;
 }
 
