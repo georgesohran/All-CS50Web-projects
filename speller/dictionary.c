@@ -32,7 +32,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int indx = (toupper(word[0]) - "A") * (toupper(word[1]) - "A");
+    int indx = (toupper(word[0]) - atoi("A")) * (toupper(word[1]) - atoi("A"));
 
     return indx ;
 }
@@ -69,7 +69,7 @@ bool load(const char *dictionary)
         free(new_node);
     }
 
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
