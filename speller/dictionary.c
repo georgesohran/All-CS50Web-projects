@@ -39,9 +39,14 @@ bool load(const char *dictionary)
     FILE* dictptr = fopen(dictionary,"r");
     if (dictptr == NULL)
     {
-        
         return false;
     }
+
+    char* word;
+    for(int i; i < )
+
+
+
     return false;
 }
 
