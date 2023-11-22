@@ -57,6 +57,7 @@ bool load(const char *dictionary)
         {
             return false;
         }
+
         strcpy(new_node->word, new_word);
 
         int indx = hash(&new_word[0]);
@@ -72,7 +73,7 @@ bool load(const char *dictionary)
             table[indx]->next = new_node;
         }
 
-    
+        free(new_node);
 
 
     }
