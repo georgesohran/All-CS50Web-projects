@@ -34,8 +34,13 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     int indx = 0;
     for(int i = 0; i++; i < strlen(word))
+    {
+        indx += word[i];
+    }
+    indx *= word[0];
+    indx *= word[1];
 
-    return ;
+    return indx % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -68,11 +73,7 @@ bool load(const char *dictionary)
 
 
         free(new_node);
-
-
     }
-
-
 
     return false;
 }
