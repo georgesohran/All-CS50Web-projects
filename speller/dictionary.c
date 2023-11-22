@@ -52,58 +52,36 @@ bool load(const char *dictionary)
 
     char new_word[LENGTH + 1];
     int count = 0;
-    char cb
+    char cb;
 
     while(fscanf(dictptr,"%c",cb) != EOF)
     {
-        if (isalpha(cb) || (cb == '\'' && count > 0))
+        if (&new_word[count] == "\n")
         {
-            if (new_word[count] == "\n")
+            node* new_node = malloc(sizeof(node));
+            if (new_node == NULL)
             {
-                node* new_node = malloc(sizeof(node));
-                if (new_node == NULL)
-                {
-                    return false;
-                }
-
-                strcpy(new_node->word, new_word);
-
-                int indx = hash(&new_word[0]);
-
-                new_node->next = table[indx]->next;
-                table[indx]->next = new_node;
-
-                free(new_node);
-
-                wcount ++;
-                count = 0;
-            }
-            else
-            {
-                word[count] = c;
-                count++;
+                return false;
             }
 
+            strcpy(new_node->word, new_word);
 
+            int indx = hash(&new_word[0]);
 
-        node* new_node = malloc(sizeof(node));
-        if (new_node == NULL)
-        {
-            return false;
+            new_node->next = table[indx]->next;
+            table[indx]->next = new_node;
+
+            free(new_node);
+
+            wcount ++;
+            count = 0;
         }
-
-        strcpy(new_node->word, new_word);
-
-        int indx = hash(&new_word[0]);
-
-        new_node->next = table[indx]->next;
-        table[indx]->next = new_node;
-
-        free(new_node);
-
-        wcount ++;
+        else
+        {
+            word[count] = cb;
+            count++;
+        }
     }
-
     return true;
 }
 
