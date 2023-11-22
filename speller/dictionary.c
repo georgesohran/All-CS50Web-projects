@@ -17,7 +17,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = (26 * 26);
+const unsigned int N = (26 * 26) - 26;
 
 // Hash table
 node *table[N];
@@ -45,9 +45,9 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int indx = (toupper(word[0]) - atoi("A")) * (toupper(word[1]) - atoi("A"));
+    int indx = (toupper(word[0]) - atoi("A")) * (toupper(word[1]) - atoi("A"))  ;
 
-    return indx;
+    return indx % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -61,35 +61,12 @@ bool load(const char *dictionary)
     }
 
     char new_word[LENGTH + 1];
-    int count = 0;
-    char* cb = NULL;
 
-    while(fscanf(dictptr,"%c",cb) != EOF)
+    while (fscanf(dictptr,"%s",new_word) != EOF)
     {
-        if (strcmp(&new_word[count], "\n") == 0)
-        {
-            node* new_node = malloc(sizeof(node));
-            if (new_node == NULL)
-            {
-                return false;
-            }
-
-            strcpy(new_node->word, new_word);
-
-            int indx = hash(&new_word[0]);
-
-            new_node->next = table[indx]->next;
-            table[indx]->next = new_node;
-
-            wcount ++;
-            count = 0;
-        }
-        else
-        {
-            new_word[count] = *cb;
-            count++;
-        }
+        int indx = hash(new_word);
     }
+
     return true;
 }
 
