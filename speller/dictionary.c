@@ -51,6 +51,8 @@ bool load(const char *dictionary)
 
         node* new_node = malloc(sizeof(node));
         strcpy(n->word, new_word);
+
+        n->next = NULL;
     }
 
 
