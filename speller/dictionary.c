@@ -76,8 +76,6 @@ bool load(const char *dictionary)
         new_node->next = table[indx];
         table[indx] = new_node;
 
-        free(new_node);
-
         wcount ++
     }
 
@@ -97,5 +95,9 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    for (int i = 0; i < N; i++)
+    {
+        table[i]
+    }
     return false;
 }
