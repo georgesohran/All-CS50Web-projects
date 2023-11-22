@@ -52,7 +52,7 @@ bool load(const char *dictionary)
 
     char new_word[LENGTH + 1];
     int count = 0;
-    char cb = "\0";
+    char cb = '\0';
 
     while(fscanf(dictptr,"%c",cb) != EOF)
     {
@@ -71,8 +71,6 @@ bool load(const char *dictionary)
             new_node->next = table[indx]->next;
             table[indx]->next = new_node;
 
-            free(new_node);
-
             wcount ++;
             count = 0;
         }
@@ -89,7 +87,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return wcount;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
