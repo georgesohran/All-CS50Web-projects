@@ -29,7 +29,7 @@ int wcount = 0;
 bool check(const char *word)
 {
     // TODO
-    int indx = hash(word)
+    int indx = hash(word);
 
     node* cursor = table[indx];
     while(cursor != NULL)
