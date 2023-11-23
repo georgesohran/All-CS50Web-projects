@@ -32,7 +32,7 @@ bool check(const char *word)
     int indx = hash(word);
 
     node* cursor = table[indx];
-    while(cursor != NULL)
+    while(cursor != 0)
     {
         if(strcasecmp(word, cursor->word) == 0)
         {
