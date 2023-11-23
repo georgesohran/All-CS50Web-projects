@@ -121,7 +121,6 @@ bool unload(void)
                 free(temp_cursor);
             }
             free(cursor);
-            free(temp_cursor);
         }
 
     }
