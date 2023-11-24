@@ -29,6 +29,7 @@ def main():
 
     for _ in range(N):
         winner = simulate_tournament(teams)
+        
 
 
     # Print each team's chances of winning, according to simulation
@@ -61,7 +62,7 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    
+
     if len(teams) == 1:
         return teams[0]["team"]
 
