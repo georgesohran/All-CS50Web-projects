@@ -71,5 +71,6 @@ def simulate_tournament(teams):
     simulate_tournament(winners)
 
 
+
 if __name__ == "__main__":
     main()
