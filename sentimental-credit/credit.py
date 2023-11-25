@@ -1,4 +1,4 @@
-import re
+from re import search
 
 
 def main():
@@ -10,7 +10,9 @@ def is_AMEX(card_num:str):
     sum1 = 0
 
     for i in range(len(card_num), step = 2):
-        sum1 += int(card_num[i])
+        if int(card_num[i])*2 > 9:
+            sum1
+        sum1 += int(card_num[i])*2
 
     return True
 
