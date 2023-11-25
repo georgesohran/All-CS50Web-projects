@@ -31,12 +31,12 @@ def is_valid(card_num:str):
     sum2 = 0
 
     for i in range(0,len(card_num),2):
-        num = int(card_num[i])*2
-        if num > 9:
-            sum1 += num % 10
-            sum1 += num % 100
+        num_str = str(int(card_num[i])*2)
+        if len(num_str) == 2:
+            sum1 += int(num_str[0])
+            sum1 += int(num_str[1])
         else:
-            sum1 += num
+            sum1 += int(num_str)
 
     for i in range(1,len(card_num),2):
         sum2 += int(card_num[i])
