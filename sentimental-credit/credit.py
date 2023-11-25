@@ -4,7 +4,9 @@ from re import search
 def main():
     card_num = input("Number: ")
 
-    if search("^14",card_num)
+    digit_num = len(card_num)
+
+    if search(r"^14{0-9}*",card_num) and digit_num ==
 
 def is_valid(card_num:str):
     sum1 = 0
