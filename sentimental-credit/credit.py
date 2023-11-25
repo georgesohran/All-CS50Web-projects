@@ -7,6 +7,11 @@ def main():
     digcount = len(card_num)
 
 def is_AMEX(card_num:str):
+    sum1 = 0
+
+    for i in range(len(card_num), step = 2):
+        sum += card_num[i]
+
     return True
 
 
