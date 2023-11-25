@@ -6,7 +6,23 @@ def main():
 
     digit_num = len(card_num)
 
-    if search(r"^14{0-9}*",card_num) and digit_num ==
+    if search(r"^4{0-9}*",card_num) and digit_num == 16:
+        if is_valid(card_num):
+            print("VISA")
+        else:
+            print("INVALID")
+
+    elif search(r"^5{0-9}*",card_num) and digit_num == 15:
+        if is_valid(card_num):
+            print("MASTERCARD")
+        else:
+            print("INVALID")
+
+    elif search(r"^3{0-9}*",card_num) and digit_num == 15:
+        if is_valid(card_num):
+            print("A")
+        else:
+            print("INVALID")
 
 def is_valid(card_num:str):
     sum1 = 0
@@ -24,8 +40,10 @@ def is_valid(card_num:str):
 
     sum3 = sum1 + sum2
 
-    return True
-
+    if sum3 % 10 == 0:
+        return True
+    else:
+        return False
 
 
 if __name__ == "__main__":
