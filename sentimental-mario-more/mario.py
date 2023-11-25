@@ -1,6 +1,6 @@
 def main():
     height = -48
-    while height <= 0 and height > 8:
+    while height <= 0 or height > 8:
         try:
             height = int(input("Height: "))
         except ValueError:
