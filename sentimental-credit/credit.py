@@ -6,23 +6,25 @@ def main():
 
     digit_num = len(card_num)
 
-    if search(r"^4{0-9}*",card_num) and digit_num == 16:
+    if search(r"^4{0,9}*",card_num) and digit_num == 16:
         if is_valid(card_num):
             print("VISA")
         else:
             print("INVALID")
 
-    elif search(r"^5{0-9}*",card_num) and digit_num == 15:
+    elif search(r"^5{0,9}*",card_num) and digit_num == 15:
         if is_valid(card_num):
             print("MASTERCARD")
         else:
             print("INVALID")
 
-    elif search(r"^3{0-9}*",card_num) and digit_num == 15:
+    elif search(r"^3{0,9}*",card_num) and digit_num == 15:
         if is_valid(card_num):
-            print("A")
+            print("AMEX")
         else:
             print("INVALID")
+    else:
+        print("INVALID")
 
 def is_valid(card_num:str):
     sum1 = 0
