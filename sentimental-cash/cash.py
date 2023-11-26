@@ -24,11 +24,13 @@ def main():
 
 
 def get_input():
-    while True:
+    a = -1
+    while a < 0:
         try:
-            return float(input("Change owed: "))
+            a = float(input("Change owed: "))
         except ValueError:
             continue
+    return a
 
 if __name__ == "__main__":
     main()
