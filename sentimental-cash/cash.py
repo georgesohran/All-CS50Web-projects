@@ -14,6 +14,7 @@ def main():
             change = a
             count += 1
         elif a == 0:
+            count += 1
             break
         else:
             idx += 1
