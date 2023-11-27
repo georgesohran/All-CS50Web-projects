@@ -16,9 +16,13 @@ def main():
         for i in reader:
             people.append(i)
 
-    print(people)
-
     # TODO: Read DNA sequence file into a variable
+    dna = ""
+
+    with open(sys.argv[2],"r") as sequence:
+        dna = sequence.readline()
+
+    print(dna)
 
     # TODO: Find longest match of each STR in DNA sequence
 
