@@ -12,8 +12,12 @@ def main():
     grade = int(round(0.0588 * L - 0.296 * S - 15.8))
 
 #    print(f"{sentences}--{words}--{letters}\n{L}--{S}")
-
-    print(f"Grade {grade}")
+    if grade >= 16:
+        print("Grade 16+")
+    elif grade < 1:
+        print("Before Grade 1")
+    else:
+        print(f"Grade {grade}")
 
 
 def count_sentences(txt:str):
