@@ -13,17 +13,19 @@ def main():
     people_strs = []
 
     with open(sys.argv[1],"r") as database:
-        reader = csv.DictReader(database)
+        reader_d = csv.DictReader(database)
+        for row in reader_d:
+            people.append(row)
+
+        reader = csv.reader(database)
         for row in reader:
-            people.append(i)
+            print(reader)
 
     # TODO: Read DNA sequence file into a variable
     dna = ""
 
     with open(sys.argv[2],"r") as sequence:
         dna = sequence.readline()
-
-    print(dna)
 
     # TODO: Find longest match of each STR in DNA sequence
 
