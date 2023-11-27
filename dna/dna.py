@@ -18,8 +18,6 @@ def main():
     STRs = [x for x in people[0].keys()]
     STRs.remove("name")
 
-    print(people)
-
     # TODO: Read DNA sequence file into a variable
     DNA = ""
 
@@ -27,6 +25,13 @@ def main():
         DNA = sequence.readline()
 
     # TODO: Find longest match of each STR in DNA sequence
+    act_strs = {}
+
+    for STR in STRs:
+        match1 = longest_match(DNA, STR)
+        act_strs[STR] = match1
+
+
 
 
     # TODO: Check database for matching profiles
