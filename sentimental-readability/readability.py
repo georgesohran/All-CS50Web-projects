@@ -11,7 +11,7 @@ def main():
 
     grade = int(round(0.0588 * L - 0.296 * S - 15.8))
 
-    print(f"{sentences}--{words}--{letters}\n{L}--{S}")
+#    print(f"{sentences}--{words}--{letters}\n{L}--{S}")
 
     print(f"Grade {grade}")
 
