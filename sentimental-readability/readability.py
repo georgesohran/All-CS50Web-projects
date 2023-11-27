@@ -2,19 +2,21 @@ def main():
 
     text = str(input("Text: "))
 
-    sentances = count_sentances(text)
+    sentences = count_sentences(text)
     words = count_words(text)
     letters = count_letters(text)
 
-    print(f"{sentances}--{words}--{letters}")
+    print(f"{sentences}--{words}--{letters}")
 
-    L = 0
-    S = 0
+    L = (letters / words) * 100
+    S = (sentences / words) * 100
 
-    grade = 0.0588 * L - 0.296 * S - 15.8
+    grade = int(round(0.0588 * L - 0.296 * S - 15.8))
+
+    print(f"Grade {grade}")
 
 
-def count_sentances(txt:str):
+def count_sentences(txt:str):
     count = 0
 
     for i in range(len(txt)):
