@@ -13,11 +13,12 @@ def main():
 
     with open(sys.argv[1],"r") as database:
         reader_d = csv.DictReader(database)
-        for row in reader_d:
-            people.append(row)
+        people = [row for row in reader_d]
 
-    STRs = people[0].keys()
-    print(STRs)
+    STRs = [x for x in people[0].keys()]
+    STRs.remove("name")
+
+    print(people)
 
     # TODO: Read DNA sequence file into a variable
     DNA = ""
