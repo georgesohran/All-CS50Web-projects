@@ -29,7 +29,7 @@ def count_words(txt:str):
     count = 0
 
     for i in range(len(txt)):
-        if not txt[i].isalnum() and txt[i-1].isalnum():
+        if txt[i] in [".","?","!",",","/"," "] and txt[i-1].isalnum():
             count += 1
     return count
 
