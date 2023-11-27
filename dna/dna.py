@@ -45,6 +45,8 @@ def main():
             print(person["name"])
             return
 
+        true_count = 0
+
     print("No match")
 
     return
