@@ -6,12 +6,12 @@ def main():
     words = count_words(text)
     letters = count_letters(text)
 
-    print(f"{sentences}--{words}--{letters}")
-
     L = (letters / words) * 100
     S = (sentences / words) * 100
 
     grade = int(round(0.0588 * L - 0.296 * S - 15.8))
+
+    print(f"{sentences}--{words}--{letters}\n{L}--{S}")
 
     print(f"Grade {grade}")
 
