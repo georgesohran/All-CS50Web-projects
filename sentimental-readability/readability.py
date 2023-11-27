@@ -14,7 +14,7 @@ def count_sentances(txt:str):
     count = 0
 
     for i in range(len(txt)-1):
-        if txt[i] in [".","?","!"] and txt[i+1] != ".":
+        if txt[i] in [".","?","!"] and txt[i-1] not in [".","?","!"]:
             count += 1
     return count
 
