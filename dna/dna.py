@@ -36,7 +36,7 @@ def main():
 
     for person in people:
         for STR in STRs:
-            if person[STR] == act_strs[STR]:
+            if int(person[STR]) == act_strs[STR]:
                 true_count += 1
             else:
                 pass
@@ -44,7 +44,7 @@ def main():
         if true_count == len(STRs):
             print(person["name"])
             return
-        
+
     print("No match")
 
     return
