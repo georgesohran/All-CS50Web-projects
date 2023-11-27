@@ -8,6 +8,10 @@ def main():
 
     print(f"{sentances}--{words}--{letters}")
 
+    L = 0
+    S = 0
+
+    grade = 0.0588 * L - 0.296 * S - 15.8
 
 
 def count_sentances(txt:str):
