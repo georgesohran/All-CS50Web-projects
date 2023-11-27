@@ -31,10 +31,21 @@ def main():
         match1 = longest_match(DNA, STR)
         act_strs[STR] = match1
 
-
-
-
     # TODO: Check database for matching profiles
+    true_count = 0
+
+    for person in people:
+        for STR in STRs:
+            if person[STR] == act_strs[STR]:
+                true_count += 1
+            else:
+                pass
+
+        if true_count == len(STRs):
+            print(person["name"])
+            return
+        
+    print("No match")
 
     return
 
