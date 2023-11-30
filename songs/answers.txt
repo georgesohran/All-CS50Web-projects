@@ -1,1 +1,5 @@
-Averege of energy 
+Average of energy from the list is 0,65906
+The average of danceability from the list is 0.71646
+And the average of valence is 0.484443
+
+The average of these values is 
