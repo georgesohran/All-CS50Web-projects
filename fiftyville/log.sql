@@ -7,3 +7,6 @@
 SELECT description FROM crime_scene_reports WHERE month == 7 AND day == 28;
 --time: 10:15, three withnesses
 
+SELECT transcript FROM interviews WHERE month == 7 AND day == 28;
+
+--
