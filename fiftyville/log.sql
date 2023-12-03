@@ -13,4 +13,13 @@ SELECT transcript,name FROM interviews WHERE month == 7 AND day == 28;
 SELECT activity,license_plate FROM bakery_security_logs WHERE month == 7 AND day == 28 AND hour == 10 ;
 
 SELECT atm_location FROM atm_transactions GROUP BY atm_location;
--- Leggett Street 
+-- Leggett Street
+
+
+SELECT name FROM people WHERE
+    id IN (SELECT person_id FROM bank_accounts WHERE
+        account_number IN (SELECT account_number FROM atm_transactions WHERE
+            month == 7 AND day == 28 AND atm_location == 'Leggett Street' AND transaction_type == 'withdraw'
+            )
+        );
+-- suspects: 
