@@ -22,4 +22,4 @@ SELECT name FROM people WHERE
             month == 7 AND day == 28 AND atm_location == 'Leggett Street' AND transaction_type == 'withdraw'
             )
         );
--- suspects: 
+-- suspects: Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, Bruce
