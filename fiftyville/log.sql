@@ -9,3 +9,5 @@ SELECT description FROM crime_scene_reports WHERE month == 7 AND day == 28;
 
 SELECT transcript,name FROM interviews WHERE month == 7 AND day == 28;
 -- withdraw money, drove away from bakery parking lot, flew away tomorrow
+
+SELECT activity,license_plate FROM bakery_security_logs WHERE month == 7 AND day == 28 AND hour == 10 ;
