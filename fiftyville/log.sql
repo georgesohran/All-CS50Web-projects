@@ -37,3 +37,9 @@ SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WH
 
 
 --Bruce, Keny, Benista, Taylor, Diana Brooke made a call that day.
+
+SELECT name FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day == 28 AND month == 7 AND year == 2021 AND hour == 10);
+
+--Bruce, Diana drove away from bakery at 10.
+
+
