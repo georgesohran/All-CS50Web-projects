@@ -42,4 +42,7 @@ SELECT name FROM people WHERE license_plate IN (SELECT license_plate FROM bakery
 
 --Bruce, Diana drove away from bakery at 10.
 
+SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights WHERE year ==2021 AND day==29 AND month==7 ));
+
+--still Bruce and Diana
 
