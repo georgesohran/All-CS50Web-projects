@@ -29,4 +29,4 @@ SELECT * FROM people WHERE name == 'Bruce';
 SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Bruce';
 
 
---Bruce,Keny,Benista made a call that day.
+--Bruce, Keny, Benista, Taylor, Brooke made a call that day.
