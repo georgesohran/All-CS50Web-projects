@@ -57,3 +57,7 @@ SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM pa
 SELECT city FROM airports WHERE id == (SELECT destination_airport_id FROM flights WHERE id == 36);
 
 --THe city thief escaped to was New York City
+
+SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE caller == (SELECT phone_number FROM people WHERE name =='Bruce') AND day == 28 AND month == 7 AND year == 2021);
+
+-- Possible allays == Gregory, Carl, Robin, Deborah
