@@ -50,3 +50,6 @@ SELECT id FROM flights WHERE year ==2021 AND day==29 AND month==7 ORDER BY hour;
 
 -- earliest flight id is 36
 
+SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id == 36);
+
+--the only name overlaping is Bruce, so that's probobly him
