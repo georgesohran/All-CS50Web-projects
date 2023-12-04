@@ -25,3 +25,8 @@ SELECT name FROM people WHERE
 -- suspects: Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, Bruce
 
 SELECT * FROM people WHERE name == 'Bruce';
+
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Bruce';
+
+
+--Bruce made a call that day.
