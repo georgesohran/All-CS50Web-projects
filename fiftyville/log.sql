@@ -53,3 +53,7 @@ SELECT id FROM flights WHERE year ==2021 AND day==29 AND month==7 ORDER BY hour;
 SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id == 36);
 
 --the only name overlaping is Bruce, so that's probobly him
+
+SELECT city FROM airports WHERE id == (SELECT destination_airport_id FROM flights WHERE id == 36);
+
+--THe city thief escaped to was New York City
