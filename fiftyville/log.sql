@@ -27,6 +27,13 @@ SELECT name FROM people WHERE
 SELECT * FROM people WHERE name == 'Bruce';
 
 SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Bruce';
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Kenny';
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Benista';
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Brooke';
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Luca';
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Taylor';
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Diana';
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE month == 7 AND day == 28) AND name == 'Iman';
 
 
---Bruce, Keny, Benista, Taylor, Brooke made a call that day.
+--Bruce, Keny, Benista, Taylor, Diana Brooke made a call that day.
