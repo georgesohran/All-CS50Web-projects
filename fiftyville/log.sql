@@ -62,4 +62,6 @@ SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls 
 
 -- Possible accomplice == Gregory, Carl, Robin, Deborah
 
+SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE caller == (SELECT phone_number FROM people WHERE name =='Bruce') AND duration < 60 AND day == 28 AND month == 7 AND year == 2021);
 
+--The only person whos call duration was less then a minute is Robin
