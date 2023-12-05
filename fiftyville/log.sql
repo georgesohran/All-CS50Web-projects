@@ -60,4 +60,6 @@ SELECT city FROM airports WHERE id == (SELECT destination_airport_id FROM flight
 
 SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE caller == (SELECT phone_number FROM people WHERE name =='Bruce') AND day == 28 AND month == 7 AND year == 2021);
 
--- Possible allays == Gregory, Carl, Robin, Deborah
+-- Possible accomplice == Gregory, Carl, Robin, Deborah
+
+
