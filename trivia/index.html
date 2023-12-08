@@ -16,14 +16,27 @@
                 });
 
                 let incorrects = document.querySelectorAll('.not');
-                for (let i = 0; i < incorrects.length; i++)
-                {
+                for (let i = 0; i < incorrects.length; i++){
                     incorrects[i].addEventListener('click',function(){
                         incorrects[i].style.backgroundColor = 'red';
                         document.querySelector('#cor').innerHTML = 'incorrect';
                     });
                 }
             });
+
+            let ans = 'blue'
+
+            document.addEventListener('DOMContentLoaded',function(){
+                let b = document.querySelector('#but')
+                b.addEventListener('click',function(){
+                    if(input.text == ans){
+                        
+                    }
+                });
+
+            });
+
+
         </script>
     </head>
     <body>
@@ -65,7 +78,9 @@
 
                 <h3>What is the color of the sky?</h3>
 
-                <input></input>
+                <input autofocus placeholder="answer" id="input"></input>
+
+                <button type="submit" id="but">Check answer</button>
 
             </div>
         </div>
