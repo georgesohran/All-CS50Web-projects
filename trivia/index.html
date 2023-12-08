@@ -7,23 +7,23 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            document.addEventListener("DOMContentLoaded",function() {
-                    let correct = document.querySelector(".c");
-                    correct.addEventListener("clik",function()
-                    {
-                        correct.style.backgroundColor = "green";
-                        document.querySelector("#cor").innerHTML = "correct";
-                    });
-
-                    let incorrects = document.querySelectorAll(".n");
-                    for (let i = 0; i < incorrects.length; i++)
-                    {
-                        incorrects[i].addEventListener("clik",function(){
-                            incorrects[i].style.backgroundColor = "red";
-                            document.querySelector("#cor").innerHTML = "incorrect";
-                        });
-                    }
+            document.addEventListener('DOMContentLoaded',function() {
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('clik',function()
+                {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#cor').innerHTML = 'correct';
                 });
+
+                let incorrects = document.querySelectorAll('.not');
+                for (let i = 0; i < incorrects.length; i++)
+                {
+                    incorrects[i].addEventListener('clik',function(){
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#cor').innerHTML = 'incorrect';
+                    });
+                }
+            });
         </script>
     </head>
     <body>
@@ -39,19 +39,19 @@
                 <h3>
                     What is the most widespread language in the world ?
                 </h3>
-                <button class="n" type="submit">
+                <button class="not" type="submit">
                     Spanish
                 </button>
-                <button class="n" type="submit">
+                <button class="not" type="submit">
                     Latin
                 </button>
-                <button class="n" type="submit">
+                <button class="not" type="submit">
                     Chinese
                 </button>
-                <button class="c" type="submit">
+                <button class="correct" type="submit">
                     English
                 </button>
-                <button class="n" type="submit">
+                <button class="not" type="submit">
                     Russian
                 </button>
 
