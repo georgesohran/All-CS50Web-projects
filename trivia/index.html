@@ -8,6 +8,13 @@
         <script>
             // TODO: Add code to check answers to questions
             document.addEventListener("DOMContentLoaded",function() {
+                    let correct = document.querySelector(".c");
+                    correct.addEventListener("clik",function()
+                    {
+                        correct.style.backgroundColor = "green";
+                        document.querySelector("#cor").innerHTML = "correct";
+                    });
+
                     let incorrects = document.querySelectorAll(".n")
                     for (let i = 0; i < incorrects.length; i++)
                     {
@@ -17,13 +24,6 @@
                             document.querySelector("#cor").innerHTML = "incorrect";
                         });
                     }
-
-                    let correct = document.querySelector(".c");
-                    correct.addEventListener("clik",function()
-                    {
-                        correct.style.backgroundColor = "green";
-                        document.querySelector("#cor").innerHTML = "correct";
-                    });
                 });
         </script>
     </head>
