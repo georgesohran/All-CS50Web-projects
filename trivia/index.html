@@ -32,11 +32,11 @@
                     let input = document.querySelector('input')
                     let txt = document.querySelector('#txt')
                     if(input.value == ans){
-                        txt.value = 'correct';
+                        txt.innerHTML = 'correct';
                         input.backgroundColor = 'green';
                     }
                     else{
-                        txt.value = 'incorrect';
+                        txt.innerHTML = 'incorrect';
                         input.backgroundColor = 'red';
                     }
                 });
