@@ -7,28 +7,25 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            function check()
-            {
-                let incorrects = document.querySelectorAll("#0")
-                for (let i = 0; i < incorrects.length; i++)
-                {
-                    incorrects[i].addEventListener("clik",function()
+            document.addEventListener("DOMContentLoaded",function() {
+                    let incorrects = document.querySelectorAll("#0")
+                    for (let i = 0; i < incorrects.length; i++)
                     {
-                        incorrects[i].style.backgroundColor = "red";
-                        document.querySelector("#cor").innerHTML = "incorrect";
+                        incorrects[i].addEventListener("clik",function()
+                        {
+                            incorrects[i].style.backgroundColor = "red";
+                            document.querySelector("#cor").innerHTML = "incorrect";
+                        });
+                    }
+
+
+                    let correct = document.querySelector(".1");
+                    correct.addEventListener("clik",function()
+                    {
+                        incorrect.style.backgroundColor = "green";
+                        document.querySelector("#cor").innerHTML = "correct";
                     });
-                }
-
-
-                let correct = document.querySelector("#1");
-                correct.addEventListener("clik",function()
-                {
-                    incorrect.style.backgroundColor = "green";
-                    document.querySelector("#cor").innerHTML = "correct";
                 });
-
-                document.addEventListener("DOMContentLoaded",check);
-            }
         </script>
     </head>
     <body>
@@ -44,19 +41,19 @@
                 <h3>
                     What is the most widespread language in the world ?
                 </h3>
-                <button type="submit" id="0">
+                <button class="0" type="submit">
                     Spanish
                 </button>
-                <button type="submit" id="0">
+                <button class="0" type="submit">
                     Latin
                 </button>
-                <button type="submit" id="0">
+                <button class="0" type="submit">
                     Chinese
                 </button>
-                <button type="submit" id="1">
+                <button class="1" type="submit">
                     English
                 </button>
-                <button type="submit" id="0">
+                <button class="0" type="submit">
                     Russian
                 </button>
 
