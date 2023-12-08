@@ -24,13 +24,19 @@
                 }
             });
 
-            let ans = 'blue'
+            let ans = 'blue';
 
             document.addEventListener('DOMContentLoaded',function(){
-                let b = document.querySelector('#but')
+                let b = document.querySelector('#but');
                 b.addEventListener('click',function(){
+                    let input = document.querySelector('input')
                     if(input.value == ans){
-
+                        input.value = 'correct';
+                        input.backgroundColor = 'red';
+                    }
+                    else{
+                        input.value = 'incorrect';
+                        input.backgroundColor = 'green';
                     }
                 });
 
@@ -81,7 +87,6 @@
                 <input autofocus placeholder="answer" id="input"></input>
 
                 <button type="submit" id="but">Check answer</button>
-                <>
 
             </div>
         </div>
