@@ -15,7 +15,15 @@
                 let incorrect = document.querySelectorAll("#0")
                 incorrect.addEventListener("clik",function()
                 {
-                    incorrect.style.backgroundColor == "Red"
+                    incorrect.style.backgroundColor = "red";
+                    document.querySelector("#cor").text = "incorrect";
+                });
+
+                let correct = document.querySelector("#1")
+                incorrect.addEventListener("clik",function()
+                {
+                    incorrect.style.backgroundColor = "green";
+                    document.querySelector("#cor").innerHTML = "correct";
                 });
             }
         </script>
@@ -49,7 +57,7 @@
                     Russian
                 </button>
 
-                <>
+                <p id="cor"></p>
             </div>
 
             <div class="section">
