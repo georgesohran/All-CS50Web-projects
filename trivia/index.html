@@ -8,11 +8,11 @@
         <script>
             // TODO: Add code to check answers to questions
             document.addEventListener('DOMContentLoaded',function() {
-                alert('dom content loaded')
+
                 let correct = document.querySelector('.correct');
-                correct.addEventListener('clik',function()
+                correct.addEventListener('click',function()
                 {
-                    alert('correct')
+                    
                     correct.style.backgroundColor = 'green';
                     document.querySelector('#cor').innerHTML = 'correct';
                 });
@@ -20,7 +20,7 @@
                 let incorrects = document.querySelectorAll('.not');
                 for (let i = 0; i < incorrects.length; i++)
                 {
-                    incorrects[i].addEventListener('clik',function(){
+                    incorrects[i].addEventListener('click',function(){
                         alert('incorrect')
                         incorrects[i].style.backgroundColor = 'red';
                         document.querySelector('#cor').innerHTML = 'incorrect';
