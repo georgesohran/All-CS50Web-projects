@@ -9,13 +9,16 @@
             // TODO: Add code to check answers to questions
             function check(id)
             {
+                alert("sussusAmongus");
                 if (id == 4)
                 {
-                    document.querySelector(`#ans${id}`).style.color = "green";
+                    let b = document.querySelector(`#ans${id}`);
+                    b.style.color = "green"
                 }
                 else
                 {
-                    document.querySelector(`#ans${id}`).style.color = "red";
+                    let b = document.querySelector(`#ans${id}`);
+                    b.style.color = "red"
                 }
 
             }
@@ -27,28 +30,30 @@
         </div>
 
         <div class="container">
-            <div class="section" id = "query">
+            <div class="section" id = "query" >
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>
                     What is the most widespread language in the world ?
                 </h3>
-                <button type="submit" id="ans1" onsubmit="check(1); return false;" >
-                    Spanish
-                </button>
-                <button type="submit" id="ans2" onsubmit="check(2); return false;">
-                    Latin
-                </button>
-                <button type="submit" id="ans3" onsubmit="check(3); return false;">
-                    Chinese
-                </button>
-                <button type="submit" id="ans4" onsubmit="check(4); return false;">
-                    English
-                </button>
-                <button type="submit" id="ans5" onsubmit="check(5); return false;">
-                    Russian
-                </button>
+                <form onsubmit="check(1); return false;">
+                    <button type="submit" id="ans1" onsubmit="check(1); return false;" >
+                        Spanish
+                    </button>
+                    <button type="submit" id="ans2" onsubmit="check(2); return false;">
+                        Latin
+                    </button>
+                    <button type="submit" id="ans3" onsubmit="check(3); return false;">
+                        Chinese
+                    </button>
+                    <button type="submit" id="ans4" onsubmit="check(4); return false;">
+                        English
+                    </button>
+                    <button type="submit" id="ans5" onsubmit="check(5); return false;">
+                        Russian
+                    </button>
+                </form>
             </div>
 
             <div class="section">
