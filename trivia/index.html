@@ -30,13 +30,14 @@
                 let b = document.querySelector('#but');
                 b.addEventListener('click',function(){
                     let input = document.querySelector('input')
+                    let txt = document.querySelector('#txt')
                     if(input.value == ans){
-                        input.value = 'correct';
-                        input.backgroundColor = 'red';
+                        txt.value = 'correct';
+                        input.backgroundColor = 'green';
                     }
                     else{
-                        input.value = 'incorrect';
-                        input.backgroundColor = 'green';
+                        txt.value = 'incorrect';
+                        input.backgroundColor = 'red';
                     }
                 });
 
@@ -84,7 +85,7 @@
 
                 <h3>What is the color of the sky?</h3>
 
-                <input class="input" autofocus placeholder="answer" id="input"></input>
+                <input class="hover" type="text" id="input"></input>
 
                 <button type="submit" id="but">Check answer</button>
 
