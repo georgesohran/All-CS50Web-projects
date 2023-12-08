@@ -9,9 +9,14 @@
             // TODO: Add code to check answers to questions
             document.addEventListener("DOMContentLoaded",check);
 
+
             function check()
             {
-                let input = addEventListener
+                let incorrect = document.querySelectorAll("#0")
+                incorrect.addEventListener("clik",function()
+                {
+                    incorrect.style.backgroundColor == "Red"
+                });
             }
         </script>
     </head>
@@ -28,23 +33,23 @@
                 <h3>
                     What is the most widespread language in the world ?
                 </h3>
-                <form onsubmit="check(); return false;">
-                    <button type="submit" id=1>
-                        Spanish
-                    </button>
-                    <button type="submit" id=2>
-                        Latin
-                    </button>
-                    <button type="submit" id=3>
-                        Chinese
-                    </button>
-                    <button type="submit" id=4>
-                        English
-                    </button>
-                    <button type="submit" id=5>
-                        Russian
-                    </button>
-                </form>
+                <button type="submit" id=0>
+                    Spanish
+                </button>
+                <button type="submit" id=0>
+                    Latin
+                </button>
+                <button type="submit" id=0>
+                    Chinese
+                </button>
+                <button type="submit" id=1>
+                    English
+                </button>
+                <button type="submit" id=0>
+                    Russian
+                </button>
+
+                <>
             </div>
 
             <div class="section">
