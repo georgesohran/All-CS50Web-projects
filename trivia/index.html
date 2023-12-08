@@ -7,12 +7,13 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            document.addEventListener("DOMContentLoaded",check);
-
-
             function check()
             {
-                let incorrect = document.querySelectorAll("#0")
+                let incorrects = document.querySelectorAll("#0")
+                for (let i = 0; )
+                {
+
+                }
                 incorrect.addEventListener("clik",function()
                 {
                     incorrect.style.backgroundColor = "red";
@@ -25,6 +26,7 @@
                     incorrect.style.backgroundColor = "green";
                     document.querySelector("#cor").innerHTML = "correct";
                 });
+                document.addEventListener("DOMContentLoaded",check);
             }
         </script>
     </head>
@@ -41,19 +43,19 @@
                 <h3>
                     What is the most widespread language in the world ?
                 </h3>
-                <button type="submit" id=0>
+                <button type="submit" id="0">
                     Spanish
                 </button>
-                <button type="submit" id=0>
+                <button type="submit" id="0">
                     Latin
                 </button>
-                <button type="submit" id=0>
+                <button type="submit" id="0">
                     Chinese
                 </button>
-                <button type="submit" id=1>
+                <button type="submit" id="1">
                     English
                 </button>
-                <button type="submit" id=0>
+                <button type="submit" id="0">
                     Russian
                 </button>
 
