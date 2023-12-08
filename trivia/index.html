@@ -11,11 +11,11 @@
             {
                 if (id == 4)
                 {
-                    document.querySelector(`#ans${id}`).style.color = '#00ff00'
+                    document.querySelector(`#ans${id}`).style.color = "green";
                 }
                 else
                 {
-                    document.querySelector(`#ans${id}`).style.color = '#ff0000'
+                    document.querySelector(`#ans${id}`).style.color = "red";
                 }
 
             }
@@ -34,19 +34,19 @@
                 <h3>
                     What is the most widespread language in the world ?
                 </h3>
-                <button type="submit" class="button" id="ans1" onsubmit="check(1)" >
+                <button type="submit" id="ans1" onsubmit="check(1); return false;" >
                     Spanish
                 </button>
-                <button type="submit" class="button" id="ans2" onsubmit="check(2)">
+                <button type="submit" id="ans2" onsubmit="check(2); return false;">
                     Latin
                 </button>
-                <button type="submit" class="button" id="ans3" onsubmit="check(3)">
+                <button type="submit" id="ans3" onsubmit="check(3); return false;">
                     Chinese
                 </button>
-                <button type="submit" class="button" id="ans4" onsubmit="check(4)">
+                <button type="submit" id="ans4" onsubmit="check(4); return false;">
                     English
                 </button>
-                <button type="submit" class="button" id="ans5" onsubmit="check(5)">
+                <button type="submit" id="ans5" onsubmit="check(5); return false;">
                     Russian
                 </button>
             </div>
