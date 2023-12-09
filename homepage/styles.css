@@ -8,10 +8,22 @@
     margin: 0;
 }
 
+body{
+    background-color: 
+}
+
 h2{
     background-color: #8888dd;
     color: #ffffff;
     text-align: center;
     height: 60px;
     padding: 5px;
+    margin: 0;
+}
+
+h5{
+    background-color: #6666aa;
+    color: #dddddd;
+    height: 45px;
+    text-align: center;
 }
