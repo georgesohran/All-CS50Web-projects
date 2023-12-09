@@ -2,7 +2,7 @@
     background-color: #aaaadd;
     color: #ffffff;
     text-align: center;
-    font-size: 240%;
+    font-size: 260%;
     padding: 10px;
     height: 100px;
     margin: 0;
@@ -14,8 +14,8 @@
 }
 
 li{
+    font-size: 150%;
     
-
 }
 
 h2{
