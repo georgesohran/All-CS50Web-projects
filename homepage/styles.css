@@ -2,6 +2,13 @@
     background-color: #aaaadd;
     color: #ffffff;
     text-align: center;
-    font-size: 160%;
+    font-size: 240%;
+    padding: 10px;
     height: 80px;
+}
+
+h2{
+    background-color: #8888dd;
+    color: #ffffff;
+    text-align: center;
 }
