@@ -8,10 +8,15 @@
     margin: 0;
 }
 
-.mainpt{
+.mainprt{
     margin-top: 30px ;
     margin-left: 60px;
     margin-right: 60px;
+}
+
+.addtext{
+    font-size:120%;
+    margin-top: 40px;
 }
 
 a{
