@@ -10,13 +10,20 @@
 
 .mainprt{
     margin-top: 30px ;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
 .addtext{
     font-size:120%;
     margin-top: 40px;
+}
+
+footer{
+    margin-top:150px;
+    margin-bottom:30px;
+    background-color: #303030;
+    color:#ffffff;
 }
 
 a{
