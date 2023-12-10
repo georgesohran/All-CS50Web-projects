@@ -7,10 +7,13 @@
         <link href="styles.css" rel="stylesheet">
         <script>
             function checkForButton(){
-                let button = document.querySelector("#chopinsearch");
-                button.addEventListener("click",function(){
-                    
+                document.querySelector("form").addEventListener("submit",function(){
+                    let button = document.querySelector("#chopinsearch");
+                    button.addEventListener("click",function(){
+                        
+                    });
                 });
+
             }
             document.addEventListener("DOMContentLoaded", checkForButton);
 
