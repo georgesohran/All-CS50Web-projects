@@ -9,7 +9,8 @@
 
             document.addEventListener("DOMContentLoaded", function(){
                 document.querySelector("form").addEventListener("submit",function(){
-                    location.reload("https://www.youtube.com/results?search_query=chopin")
+                    window.location ="https://www.youtube.com/results?search_query=chopin"
+                    event.preventDefault()
                 });
             });
 
