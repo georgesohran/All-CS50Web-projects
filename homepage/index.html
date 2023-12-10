@@ -8,7 +8,7 @@
             document.addEventListener("DOMContentLoaded", function(){
                 document.querySelect("form").addEventListener("submit",function(){
                     name = document.querySelector("input").value;
-                    
+                    window.location.replace(`https://www.youtube.com/results?search_query=${name}`)
                 });
             });
         </script>
