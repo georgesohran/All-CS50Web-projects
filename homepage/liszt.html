@@ -7,8 +7,12 @@
         <link href="styles.css" rel="stylesheet">
         <script>
             document.addEventListener("DOMContentLoaded", function(){
-                document.querySelector("form").addEventListener("submit",function(){
+                document.querySelector("#more").addEventListener("submit",function(){
                     window.location ="https://www.youtube.com/results?search_query=liszt"
+                    event.preventDefault()
+                });
+                document.querySelector("#back").addEventListener("submit",function(){
+                    window.location = "index.html"
                     event.preventDefault()
                 });
             });
@@ -18,6 +22,8 @@
     <body>
         <h1 class="title">Franz Liszt</h1>
         <h2>(1811 - 1886)</h2>
+
+        <form><button id="back" class="btn btn-secondary" type="submit">Get back</button></form>
 
         <p>Franz Liszt was a Hungarian composer, virtuoso pianist, conductor, and teacher of the Romantic period. With a diverse body of work spanning more than six decades, he is considered to be one of the most prolific and influential composers of his era and remains one of the most popular composers in modern concert piano repertoire.</p>
         <p>Liszt first gained renown during the early nineteenth century for his virtuoso skill as a pianist. Regarded as one of the greatest pianists of all time, he toured Europe during the 1830s and 1840s, often playing for charity. In these years, Liszt developed a reputation for his powerful performances as well as his physical attractiveness. In what has now been dubbed "Lisztomania", he rose to a degree of stardom and popularity among the public not experienced by the virtuosos who preceded him — whereas earlier performers mostly served the upper class, Liszt attracted a more general audience. During this period and into his later life, Liszt was a friend, musical promoter and benefactor to many composers of his time, including Frédéric Chopin, Charles-Valentin Alkan, César Franck, Richard Wagner, Hector Berlioz, Robert Schumann, Clara Schumann, Camille Saint-Saëns, Edvard Grieg, Ole Bull, Joachim Raff, Mikhail Glinka, and Alexander Borodin.</p>
@@ -60,7 +66,7 @@
                 </tbody>
             </table>
             <p> If you want to listen to more of liszt's music go here: </p>
-            <form>
+            <form id="more">
                 <button class="btn btn-primary" type="submit">More Liszt</button>
             </form>
         </div>
