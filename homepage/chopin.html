@@ -7,8 +7,12 @@
         <link href="styles.css" rel="stylesheet">
         <script>
             document.addEventListener("DOMContentLoaded", function(){
-                document.querySelector("form").addEventListener("submit",function(){
+                document.querySelector("#more").addEventListener("submit",function(){
                     window.location ="https://www.youtube.com/results?search_query=chopin"
+                    event.preventDefault()
+                });
+                document.querySelector("#back").addEventListener("submit",function(){
+                    window.history.back()
                     event.preventDefault()
                 });
             });
@@ -18,6 +22,7 @@
     <body>
         <h1 class="title">Frédéric Chopin</h1>
         <h2>(1810 - 1849)</h2>
+        <form id="back"><button class="btn btn-secondary" type="submit">Get back</button></form>
 
         <p>Frédéric François Chopin was a Polish composer and virtuoso pianist of the Romantic period, who wrote primarily for solo piano. He has maintained worldwide renown as a leading musician of his era, one whose "poetic genius was based on a professional technique that was without equal in his generation".</p>
         <p>Chopin's compositions are mostly for solo piano, though he also wrote two piano concertos, some chamber music, and 19 songs set to Polish lyrics. His piano pieces are technically demanding and expanded the limits of the instrument; his own performances were noted for their nuance and sensitivity. Chopin's major piano works include mazurkas, waltzes, nocturnes, polonaises, the instrumental ballade (which Chopin created as an instrumental genre), études, impromptus, scherzi, preludes, and sonatas, some published only posthumously. Among the influences on his style of composition were Polish folk music, the classical tradition of J. S. Bach, Mozart, and Schubert, and the atmosphere of the Paris salons, of which he was a frequent guest. His innovations in style, harmony, and musical form, and his association of music with nationalism, were influential throughout and after the late Romantic period.</p>
@@ -52,8 +57,8 @@
                 </tbody>
             </table>
             <p> If you want to listen to more of chopin's music go here: </p>
-            <form>
-                <button id="chopinsearch" class="btn btn-primary" type="submit">More Chopin</button>
+            <form id="more">
+                <button class="btn btn-primary" type="submit">More Chopin</button>
             </form>
         </div>
     </body>
