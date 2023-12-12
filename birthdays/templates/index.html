@@ -39,7 +39,11 @@
                         <form action="/index.html" method="post">
                             {% for person in people %}
 
-                            
+                            <tr>
+                                <td>{{person.name}}</td>
+                                <td>{{person.month}}</td>
+                                <td>{{person.day}}</td>
+                            </tr>
 
                             {% forend %}
                         </form>
