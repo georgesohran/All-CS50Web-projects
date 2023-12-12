@@ -33,8 +33,9 @@ def index():
 
         if 0 < new_month < 13 and 0 < new_day < 31:
             db.execute("INSERT INTO birthdays (name,month,day) VALUES (?,?,?);", new_name, new_month, new_day)
-            return redirect("/")
-        
+            return redirect("/",invalid=False)
+
+        return redirect("/",invalid=True)
 
     else:
 
