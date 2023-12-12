@@ -6,7 +6,10 @@
         <link href="/static/styles.css" rel="stylesheet">
         <script>
 
-            const status = {{ invalid|tojson }};
+            const stat = {{ invalid|tojson }};
+            if(stat){
+                alert("incorrect name")
+            }
 
         </script>
         <title>Birthdays</title>
@@ -40,7 +43,7 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                        <form action="/index.html" method="post">
+                        <form id="btable" action="/index.html" method="post">
                             {% for person in people %}
 
                             <tr>
