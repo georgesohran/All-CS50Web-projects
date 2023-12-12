@@ -9,7 +9,7 @@
             let xhttp = new XMLHttpRequest()
             xhttp.onreadystatechange = function(){
                 if (xhttp.status == 200  && xhttp.readyState == 4){
-                    
+
                 }
             }
 
@@ -25,7 +25,7 @@
 
                 <h2>Add a Birthday</h2>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
-                <form action="/" method="post">
+                <form action="/" method="post" onsubmit>
                     <input class="input" value="name" name="name"></input>
                     <input class="input" value="month" name="month"></input>
                     <input class="input" value="day" name="day"></input>
