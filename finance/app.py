@@ -110,12 +110,10 @@ def quote():
 
         name, price, symbol = l["name"], l["price"], l["symbol"]
 
-        
+        return render_template("quote.html", quoted=False, name=name,price=price,symbol=symbol)
 
     else:
-        return render_template("quote.html")
-
-    return apology("TODO")
+        return render_template("quote.html", quoted=True )
 
 
 @app.route("/register", methods=["GET", "POST"])
