@@ -106,6 +106,8 @@ def quote():
     if request.method == "POST":
         if not lookup(request.form.get("symbol")):
             return render_tamplate("layout.html")
+        l = lookup(request.form.get("symbol"))
+        
     else:
         ...
     return apology("TODO")
