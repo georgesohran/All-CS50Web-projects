@@ -110,17 +110,22 @@ def quote():
 def register():
     """Register user"""
     if request.method == "POST":
-        if not register.form.get("username"):
-            return apology("insert your user name please")
+        if not request.form.get("username"):
+            return apology("insert your user name please", 403)
 
-        elif not register.form.get("password"):
-            return apology("insert your password please")
+        elif not request.form.get("password"):
+            return apology("insert your password please", 403)
 
-        db.execute("INSERT INTO users (username,hash) VALUES (?,?)", register.form.get("username"),
-                   generate_password_hash(register.form.get("password")))
+        elif not request.form.get("conf_password"):
+            return apology("confirm your passord please", 403)
+
+        elif request.form.get("password") != request.form.get("conf_password"):
+            return apology("password and confirmation pasword don't match", 403)
+
+        db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"),
+                   generate_password_hash(request.form.get("password")))
 
 
-        db.execute
     return apology("TODO")
 
 
