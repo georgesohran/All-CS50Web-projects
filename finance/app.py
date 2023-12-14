@@ -110,7 +110,15 @@ def quote():
 def register():
     """Register user"""
     if request.method == "POST":
+        if not register.form.get("username"):
+            return apology("insert your user name please")
+
+        elif not register.form.get("password"):
+            return apology("insert your password please")
+
         
+
+        db.execute
     return apology("TODO")
 
 
