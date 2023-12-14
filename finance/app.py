@@ -116,7 +116,7 @@ def register():
         elif not register.form.get("password"):
             return apology("insert your password please")
 
-        
+        db.execute("INSERT INTO ")
 
         db.execute
     return apology("TODO")
