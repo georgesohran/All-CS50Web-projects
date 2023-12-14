@@ -129,6 +129,8 @@ def register():
                    generate_password_hash(request.form.get("password")))
 
         session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
+
+        return redirect("/")
     else:
         return render_template("register.html")
 
