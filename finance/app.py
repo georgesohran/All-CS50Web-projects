@@ -118,7 +118,7 @@ def register():
 
         db.execute("INSERT INTO users (username,hash) VALUES (?,?)", register.form.get("username"),
                    generate_password_hash(register.form.get("password")))
-        
+
 
         db.execute
     return apology("TODO")
