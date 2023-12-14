@@ -116,7 +116,9 @@ def register():
         elif not register.form.get("password"):
             return apology("insert your password please")
 
-        db.execute("INSERT INTO users (username,hash) VALUES (?,?)", register.form.get("username"), )
+        db.execute("INSERT INTO users (username,hash) VALUES (?,?)", register.form.get("username"),
+                   generate_password_hash(register.form.get("password")))
+        
 
         db.execute
     return apology("TODO")
