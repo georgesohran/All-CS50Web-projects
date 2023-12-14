@@ -2,15 +2,9 @@
 
 {% block main %}
 
-{% if quoted %}
-
-<p class="pq">{{ name }}({{symbol}}) costs {{price}}</p>
-
-{% else %}
 <form>
     <input name="symbol" placeholder="symbol"></input>
     <button type="submit" class="btn btn-primary" >Search</button>
 </form>
-{% endif %}
 
 {% endblock %}
