@@ -122,7 +122,7 @@ def register():
         elif request.form.get("password") != request.form.get("conf_password"):
             return apology("password and confirmation pasword don't match", 403)
 
-        elif username in db.execute("SELECT name FROM users"):
+        elif request.form.get("username") in db.execute("SELECT name FROM users"):
             return apology("your username is already taken")
 
         db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"),
