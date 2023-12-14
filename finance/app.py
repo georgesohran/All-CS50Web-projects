@@ -105,11 +105,16 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         if not lookup(request.form.get("symbol")):
-            return render_tamplate("layout.html")
+            return redirect("/")
         l = lookup(request.form.get("symbol"))
+
+        name, price, symbol = l["name"], l["price"], l["symbol"]
+
         
+
     else:
-        ...
+        return render_template("quote.html")
+
     return apology("TODO")
 
 
