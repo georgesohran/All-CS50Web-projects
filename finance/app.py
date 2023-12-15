@@ -55,7 +55,7 @@ def buy():
 
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
-        
+        current_user_stocks = [symbol for symbol in current_user_stocks["symbol"]]
 
 
         if len(current_user_stocks) == 0:
