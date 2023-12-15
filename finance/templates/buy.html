@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
 
 {% block main %}
-
-<ul>
-    <li> </li>
-</ul>
-
+<form>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Buy</button>
+</form>
 {% endblock %}
