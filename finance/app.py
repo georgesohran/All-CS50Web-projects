@@ -54,7 +54,7 @@ def buy():
         name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*int(request.form.get("share"))
 
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
-        current_user_stocks = [symbol for symbol in current_user]
+        current_user_stocks = [symbol for symbol in current_user_stocks]
 
         if len(current_user_stocks) == 0:
             db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
