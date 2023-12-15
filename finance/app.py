@@ -56,6 +56,8 @@ def buy():
 
         name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*int(request.form.get("share"))
 
+        if db.execute("")
+
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
         current_user_stocks = [symbol_dict["symbol"] for symbol_dict in current_user_stocks]
