@@ -43,13 +43,18 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        if not request.form.get("symbol") or not request.form.get(share):
+        if not request.form.get("symbol") or not request.form.get("share"):
             return apology("please provide both symbol and share", 403)
 
+        if not lookup(request.form.get("symbol")):
+            return apology(f"cant find {request.form.get('symbol')} symbol.")
+
+        
+
+    else:
+        return redirect("/")
 
 
-
-    return apology("TODO")
 
 
 @app.route("/history")
