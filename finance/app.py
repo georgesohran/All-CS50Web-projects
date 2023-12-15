@@ -71,14 +71,7 @@ def buy():
             return redirect("/")
 
         elif request.form.get("symbol") in current_user_stocks:
-            db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
-                        session["user_id"][0]["id"],
-                        symbol,
-                        name,
-                        request.form.get("share"),
-                        price,
-                        total
-                       )
+            db.execute("UPDATE users_stocks SET shares = shares + 1 WHERE user_id == ?", session["user_id"][0]["id"])
             return redirect("/")
 
 
