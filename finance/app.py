@@ -49,14 +49,17 @@ def buy():
         if not lookup(request.form.get("symbol")):
             return apology(f"cant find {request.form.get('symbol')} symbol.")
 
-        if request.form.get("share") <= 0:
+        if int(request.form.get("share")) <= 0:
             return apology("please provide a positive share")
 
         l = lookup(request.form.get("symbol"))
 
         name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*int(request.form.get("share"))
 
-        if db.execute("")
+
+
+        if db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"][0]["id"])[0]["cash"] < total:
+            return apology("you can't afford this stock")
 
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
@@ -89,7 +92,6 @@ def buy():
                        )
 
         return redirect("/")
-
 
     else:
         return render_template("buy.html")
