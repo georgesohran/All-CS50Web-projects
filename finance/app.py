@@ -56,6 +56,7 @@ def buy():
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
         current_user_stocks = [symbol_dict["symbol"] for symbol_dict in current_user_stocks]
+        current_user_stocks = set(current_user_stocks)
 
         print(current_user_stocks)
 
@@ -68,12 +69,19 @@ def buy():
                         price,
                         total
                        )
-            return redirect("/")
 
-        elif request.form.get("symbol") in current_user_stocks:
-            db.execute("UPDATE users_stocks SET shares = shares + 1 WHERE user_id == ?", session["user_id"][0]["id"])
-            return redirect("/")
+        elif symbol in current_user_stocks:
+            db.execute("UPDATE users_stocks SET shares = shares + ? WHERE user_id == ?", request.form.get("share"), session["user_id"][0]["id"])
 
+        else:
+            db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
+                        session["user_id"][0]["id"],
+                        symbol,
+                        name,
+                        request.form.get("share"),
+                        price,
+                        total
+                       )
 
         return redirect("/")
 
