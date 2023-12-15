@@ -43,10 +43,10 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        if not request.form.get(symbol) or not request.form.get(share):
+        if not request.form.get("symbol") or not request.form.get(share):
             return apology("please provide both symbol and share", 403)
 
-        
+
 
 
     return apology("TODO")
