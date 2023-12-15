@@ -49,7 +49,10 @@ def buy():
         if not lookup(request.form.get("symbol")):
             return apology(f"cant find {request.form.get('symbol')} symbol.")
 
-        
+        l = lookup(request.form.get("symbol"))
+
+        name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*
+
 
     else:
         return redirect("/")
