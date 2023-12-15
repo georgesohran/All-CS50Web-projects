@@ -55,8 +55,8 @@ def buy():
 
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
-        if not current_user_stocks:
-            print(current_user_stocks)
+        if len(current_user_stocks) == 0:
+            print(1)
 
         return redirect("/")
     else:
