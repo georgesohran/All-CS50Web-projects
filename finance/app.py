@@ -56,7 +56,13 @@ def buy():
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
         if len(current_user_stocks) == 0:
-            
+            db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
+                        session["user_id"][0]["id"],
+                        symbol,
+                        name,
+                        request.form.get("share"),
+                        
+                       )
 
             return redirect("/")
 
