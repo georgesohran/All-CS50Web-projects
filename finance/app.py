@@ -51,11 +51,13 @@ def buy():
 
         l = lookup(request.form.get("symbol"))
 
-        name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*
+        name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*request.form.get("share")
 
+        
 
-    else:
         return redirect("/")
+    else:
+        return render_template("buy.html")
 
 
 
