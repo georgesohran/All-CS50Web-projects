@@ -51,7 +51,7 @@ def buy():
 
         l = lookup(request.form.get("symbol"))
 
-        name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*request.form.get("share")
+        name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*int(request.form.get("share"))
 
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"])
 
