@@ -61,11 +61,13 @@ def buy():
                         symbol,
                         name,
                         request.form.get("share"),
-                        
+                        price,
+                        total
                        )
 
-            return redirect("/")
 
+            return redirect("/")
+        elif 
 
         return redirect("/")
     else:
