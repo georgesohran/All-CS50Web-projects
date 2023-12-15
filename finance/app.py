@@ -55,6 +55,7 @@ def buy():
 
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
+
         if len(current_user_stocks) == 0:
             db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
                         session["user_id"][0]["id"],
@@ -64,10 +65,11 @@ def buy():
                         price,
                         total
                        )
+            current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
-
+            print(current_user_stocks)
             return redirect("/")
-        elif 
+        #elif request.form.get("symbol")
 
         return redirect("/")
     else:
