@@ -61,7 +61,7 @@ def buy():
         if db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"][0]["id"])[0]["cash"] < total:
             return apology("you can't afford this stock")
 
-        db.execute("UPDATE users cash = cash - ? WHERE id == ?", total, session["user_id"][0]["id"])
+        db.execute("UPDATE users SET cash = cash - ? WHERE id == ?", total, session["user_id"][0]["id"])
 
         current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
 
