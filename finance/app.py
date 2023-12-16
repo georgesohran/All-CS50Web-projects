@@ -93,6 +93,8 @@ def buy():
                         total
                        )
 
+        db.execute("INSERT INTO history")
+
         return redirect("/")
 
     else:
