@@ -5,6 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
+
 from helpers import apology, login_required, lookup, usd
 
 # Configure application
@@ -93,7 +94,12 @@ def buy():
                         total
                        )
 
-        db.execute("INSERT INTO history")
+        db.execute("INSERT INTO history(symbol,shares,price,transacted) VALUES (?,?,?,?)",
+                   symbol,
+                   request.form.get("share"),
+                   price,
+                   datetime.datetime.now()
+                   )
 
         return redirect("/")
 
