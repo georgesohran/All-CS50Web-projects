@@ -12,7 +12,11 @@
         </tr>
     </thead>
     <tbody>
-        
+        {% for row in rows %}
+            <tr>
+                <td>{{row.}}</td>
+            </tr>
+        {% endfor %}
     </tbody>
 </table>
 
