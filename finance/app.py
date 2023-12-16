@@ -95,7 +95,7 @@ def buy():
                         total
                        )
 
-        db.execute("INSERT INTO history(symbol,shares,price,transacted,user_id) VALUES (?,?,?,?)",
+        db.execute("INSERT INTO history(symbol,share,price,transacted,user_id) VALUES (?,?,?,?,?)",
                    symbol,
                    request.form.get("share"),
                    price,
