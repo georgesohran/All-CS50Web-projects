@@ -95,11 +95,12 @@ def buy():
                         total
                        )
 
-        db.execute("INSERT INTO history(symbol,shares,price,transacted) VALUES (?,?,?,?)",
+        db.execute("INSERT INTO history(symbol,shares,price,transacted,user_id) VALUES (?,?,?,?)",
                    symbol,
                    request.form.get("share"),
                    price,
-                   datetime.datetime.now()
+                   datetime.datetime.now(),
+                   session["user_id"][0]["id"]
                    )
 
         return redirect("/")
@@ -114,7 +115,7 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    
+    rows = db.execute("SELECT ")
 
     return render_template("history.html", )
 
