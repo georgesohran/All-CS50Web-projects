@@ -14,7 +14,10 @@
     <tbody>
         {% for row in rows %}
             <tr>
-                <td>{{row.}}</td>
+                <td>{{row.symbol}}</td>
+                <td>{{row.shares}}</td>
+                <td>{{row.price}}</td>
+                <td>{{row.transacted}}</td>
             </tr>
         {% endfor %}
     </tbody>
