@@ -7,19 +7,28 @@
         <tr>
             <th>symbol</th>
             <th>name</th>
-            <th>sharesx</th>
             <th>shares</th>
+            <th>price</th>
             <th>TOTAL</th>
         </tr>
     </thead>
     <tbody>
+        {% for row in rows %}
 
+        <tr>
+            <td>{{row.symbol}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.share}}</td>
+            <td>{{row.price}}</td>
+            <td>{{row.total}}</td>
+        </tr>
+
+        {% endfor %}
     </tbody>
 </table>
 
 <ul>
-    <li></li>
-    <li></li>
+    <li>CASH: {{cash}}</li>
 </ul>
 
 {% endblock %}
