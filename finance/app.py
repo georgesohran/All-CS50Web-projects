@@ -219,4 +219,10 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    if request.method == "POST":
+        ...
+    else:
+        symbols = db.execute("SELECT symbol FROM users_stocks WHARE user_id == ?", session["user_id"][0]["id"])
+
+        return render_template("sell.html")
     return apology("TODO")
