@@ -235,7 +235,7 @@ def sell():
         if int(request.form.get("shares")) <= 0:
             return apology("invalid shares", 403)
 
-        db.execute("INSERT INTO users")
+        db.execute("UPDATE users SET cash = cash + ?")
 
 
 
