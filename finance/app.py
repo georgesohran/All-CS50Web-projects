@@ -35,10 +35,10 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    rows = db.execute("SELECT * FROM users_stocks WHERE id == ?", session["user_id"][0]["id"])
-    users_cash = db.execute("SELECT cash FROM users WHERE user_id == ?", session["user_id"][0]["id"])
+    rows = db.execute("SELECT * FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
+    users_cash = db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"][0]["id"])
 
-    return render_template("index.html",rows=rows,cash=users_cash)
+    return render_template("index.html",rows=rows,cash=users_cash[0])
 
 
 @app.route("/buy", methods=["GET", "POST"])
