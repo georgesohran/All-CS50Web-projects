@@ -225,22 +225,19 @@ def sell():
         symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
         symbols = [symboldict["symbol"] for symboldict in symbols]
 
-        for symbol in symbols:
-            symbol_share = db.execute("SELECT shares FROM users_stocks WHERE user_id == ? WHERE",session["user_id"][0]["id"],symbol)
-            if request.form.get("symbol") == symbol and request.form.get("shares") > symbol_share[0]["share"]:
-                return apology("invalid amount of shares", 403)
-
         if request.form.get("symbol") not in symbols:
             return apology("incorrect symbol", 403)
         if int(request.form.get("shares")) <= 0:
             return apology("invalid shares", 403)
+        for symbol in symbols:
+            symbol_share = db.execute("SELECT shares FROM users_stocks WHERE user_id == ? AND WHERE symbol = ?",session["user_id"][0]["id"],symbol)
+            if request.form.get("symbol") == symbol and request.form.get("shares") > symbol_share[0]["share"]:
+                return apology("invalid amount of shares", 403)
 
         l = lookup(request.form.get("symbol"))
         price  = l["price"]
 
         db.execute("UPDATE users SET cash = cash + ? WHERE id == ?", price, session["user_id"][0]["id"])
-
-        db.execute("UPDATE users_stocks SET ")
 
 
     else:
