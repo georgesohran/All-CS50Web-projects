@@ -231,7 +231,7 @@ def sell():
             return apology("invalid shares", 403)
 
         symbol_share = db.execute("SELECT shares FROM users_stocks WHERE user_id == ? AND WHERE symbol = ?",session["user_id"][0]["id"],request.form.get("symbol"))
-        if and request.form.get("shares") > symbol_share[0]["share"]:
+        if request.form.get("shares") > symbol_share[0]["share"]:
             return apology("invalid amount of shares", 403)
 
         l = lookup(request.form.get("symbol"))
