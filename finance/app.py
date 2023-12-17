@@ -219,10 +219,26 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+
+
     if request.method == "POST":
-        ...
+        symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
+        symbols = [symboldict["symbol"] for symboldict in symbols]
+
+        for symbol in symbols:
+            symbol_share = db.execute("SELECT shares FROM users_stocks WHERE user_id == ? WHERE",session["user_id"][0]["id"],symbol)
+            if request.form.get("share") > symbol_share[0]["share"]:
+                return apology("invalid share")
+
+
+        if request.form.get("symbol") not in symbols:
+            return apology("incorrect symbol", 403)
+        if int(request.form.get("shares")) <= 0:
+            return apology("invalid shares", 403)
+
+
+
     else:
         symbols = db.execute("SELECT symbol FROM users_stocks WHARE user_id == ?", session["user_id"][0]["id"])
-
-        return render_template("sell.html")
+        return render_template("sell.html",symbols=symbols)
     return apology("TODO")
