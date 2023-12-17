@@ -239,6 +239,10 @@ def sell():
 
         db.execute("UPDATE users SET cash = cash + ? WHERE id == ?", price, session["user_id"][0]["id"])
 
+        if request.form.get("shares") == symbol_share[0]["share"]:
+            
+        db.execute("")
+
 
     else:
         symbols = db.execute("SELECT symbol FROM users_stocks WHARE user_id == ?", session["user_id"][0]["id"])
