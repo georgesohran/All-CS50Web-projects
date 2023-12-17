@@ -235,8 +235,12 @@ def sell():
         if int(request.form.get("shares")) <= 0:
             return apology("invalid shares", 403)
 
-        db.execute("UPDATE users SET cash = cash + ?")
+        l = lookup(request.form.get("symbol"))
+        price  = l["price"]
 
+        db.execute("UPDATE users SET cash = cash + ? WHERE id == ?", price, session["user_id"][0]["id"])
+
+        db.execute("UPDATE users_stocks SET ")
 
 
     else:
