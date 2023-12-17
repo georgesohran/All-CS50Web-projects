@@ -235,7 +235,7 @@ def sell():
         if int(request.form.get("shares")) <= 0:
             return apology("invalid shares", 403)
 
-        db.e
+        db.execute("INSERT INTO users")
 
 
 
