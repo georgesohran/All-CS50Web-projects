@@ -230,7 +230,7 @@ def sell():
         if not symbol_shares:
             return apology("incorrect symbol", 403)
 
-        if int(request.form.get("shares")) <= 0 or int(request.form.get("shares")) > symbol_shares:
+        if int(request.form.get("shares")) <= 0 or int(request.form.get("shares")) > symbol_shares[0]["shares"]:
             return apology("invalid shares", 403)
 
         l = lookup(request.form.get("symbol"))
@@ -238,8 +238,11 @@ def sell():
 
         db.execute("UPDATE users SET cash = cash + ? WHERE id == ?", price, session["user_id"][0]["id"])
 
-        if request.form.get("shares") == symbol_share[0]["share"]:
+        if request.form.get("shares") == symbol_shares[0]["shares"]:
             db.execute("DELETE FROM users_stocks WHERE user_id == ? AND symbol == ?")
+
+        else:
+            db.execute("UPDATE users_stocks SET shares = shares - ? WHERE user_id == ? AND symbol == ?", request.form.get("shares"), session["user_id"][0]["id"], request.form.get("symbol"))
 
     else:
 
