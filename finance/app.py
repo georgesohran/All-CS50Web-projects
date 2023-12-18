@@ -242,9 +242,10 @@ def sell():
         else:
             db.execute("UPDATE users_stocks SET shares = shares - ? WHERE user_id == ? AND symbol == ?", request.form.get("shares"), session["user_id"][0]["id"], request.form.get("symbol"))
 
+        return redirect("/")
+
     else:
 
         symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
         return render_template("sell.html",symbols=symbols)
 
-    return apology("TODO")
