@@ -225,6 +225,8 @@ def sell():
         symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
         symbols = [symboldict["symbol"] for symboldict in symbols]
 
+        symbol_shares = db.execute("")
+
         if request.form.get("symbol") not in symbols:
             return apology("incorrect symbol", 403)
         if int(request.form.get("shares")) <= 0:
@@ -242,8 +244,9 @@ def sell():
         if request.form.get("shares") == symbol_share[0]["share"]:
             db.execute("DELETE FROM users_stocks WHERE user_id == ? AND symbol == ?")
 
-
     else:
-        symbols = db.execute("SELECT symbol FROM users_stocks WHARE user_id == ?", session["user_id"][0]["id"])
+
+        symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
         return render_template("sell.html",symbols=symbols)
+
     return apology("TODO")
