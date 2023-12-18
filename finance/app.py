@@ -238,7 +238,7 @@ def sell():
 
         db.execute("UPDATE users SET cash = cash + ? WHERE id == ?", price, session["user_id"][0]["id"])
 
-        if request.form.get("shares") == symbol_shares[0]["shares"]:
+        if int(request.form.get("shares")) == int(symbol_shares[0]["shares"]):
             db.execute("DELETE FROM users_stocks WHERE user_id == ? AND symbol == ?")
 
         else:
