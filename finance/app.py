@@ -190,16 +190,16 @@ def register():
     """Register user"""
     if request.method == "POST":
         if not request.form.get("username"):
-            return apology("insert your user name please", 403)
+            return apology("insert your user name please")
 
         elif not request.form.get("password"):
-            return apology("insert your password please", 403)
+            return apology("insert your password please")
 
         elif not request.form.get("confirmation"):
-            return apology("confirm your passord please", 403)
+            return apology("confirm your passord please")
 
         elif request.form.get("password") != request.form.get("confirmation"):
-            return apology("password and confirmation pasword don't match", 403)
+            return apology("password and confirmation pasword don't match")
 
         elif request.form.get("username") in db.execute("SELECT username FROM users"):
             return apology("your username is already taken")
