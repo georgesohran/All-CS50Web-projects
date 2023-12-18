@@ -223,7 +223,7 @@ def sell():
         symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
         symbols = [symboldict["symbol"] for symboldict in symbols]
 
-        symbol_shares = db.execute("SELECT shares FROM users_stocks WHERE user_id == ? AND symbol == ?", session["user_id"][0]["id"], request.form.get("shares"))
+        symbol_shares = db.execute("SELECT shares FROM users_stocks WHERE user_id == ? AND symbol == ?", session["user_id"][0]["id"], request.form.get("symbol"))
 
         if not symbol_shares:
             return apology("incorrect symbol", 403)
