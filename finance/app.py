@@ -189,6 +189,9 @@ def quote():
 def register():
     """Register user"""
     if request.method == "POST":
+        names = db.execute("SELECT username FROM users")
+        names = [name["username"] for name in names]
+
         if not request.form.get("username"):
             return apology("insert your user name please")
 
@@ -201,7 +204,7 @@ def register():
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("password and confirmation pasword don't match")
 
-        elif request.form.get("username") in db.execute("SELECT username FROM users"):
+        elif request.form.get("username") in names:
             return apology("your username is already taken")
 
         db.execute("INSERT INTO users (username,hash) VALUES (?,?)", request.form.get("username"),
