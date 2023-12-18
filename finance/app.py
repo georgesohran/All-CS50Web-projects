@@ -219,8 +219,6 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-
-
     if request.method == "POST":
         symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
         symbols = [symboldict["symbol"] for symboldict in symbols]
