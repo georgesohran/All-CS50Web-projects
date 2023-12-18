@@ -237,15 +237,15 @@ def sell():
         db.execute("UPDATE users SET cash = cash + ? WHERE id == ?", price, session["user_id"][0]["id"])
 
         if int(request.form.get("shares")) == int(symbol_shares[0]["shares"]):
-            db.execute("DELETE FROM users_stocks WHERE user_id == ? AND symbol == ?")
+            db.execute("DELETE FROM users_stocks WHERE user_id == ? AND symbol == ?",session["user_id"][0]["id"], request.form.get("symbol"))
 
         else:
             db.execute("UPDATE users_stocks SET shares = shares - ? WHERE user_id == ? AND symbol == ?", request.form.get("shares"), session["user_id"][0]["id"], request.form.get("symbol"))
-
+            db.execute("UPDATE users_stocks SET total = shares * price WHERE user_id == ? AND symbol == ?", session["user_id"][0]["id"], request.form.get("symbol"))
         return redirect("/")
 
     else:
 
-        symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
+        symbols = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"],)
         return render_template("sell.html",symbols=symbols)
 
