@@ -53,11 +53,8 @@ def buy():
         if not lookup(request.form.get("symbol")):
             return apology(f"cant find {request.form.get('symbol')} symbol.")
 
-        if float(request.form.get("shares")) != int(request.form.get("shares")):
-            return apology("invalid shares")
-
         if int(request.form.get("shares")) <= 0:
-            return apology("please provide a positive shares")
+            return apology("invalid number of shares")
 
         l = lookup(request.form.get("symbol"))
 
