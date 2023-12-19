@@ -40,8 +40,8 @@ def after_request(response):
 def index():
     print(session)
 
-    rows = db.execute("SELECT * FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
-    users_cash = db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"][0]["id"])
+    rows = db.execute("SELECT * FROM users_stocks WHERE user_id == ?", session["user_id"])
+    users_cash = db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"])
 
     return render_template("index.html",rows=rows,cash=users_cash[0])
 
