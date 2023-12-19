@@ -79,7 +79,7 @@ def buy():
 
         if len(current_user_stocks) == 0:
             db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
-                        session["user_id"][0]["id"],
+                        session["user_id"],
                         symbol,
                         name,
                         request.form.get("shares"),
@@ -88,11 +88,11 @@ def buy():
                        )
 
         elif symbol in current_user_stocks:
-            db.execute("UPDATE users_stocks SET shares = shares + ? WHERE user_id == ?", request.form.get("shares"), session["user_id"][0]["id"])
+            db.execute("UPDATE users_stocks SET shares = shares + ? WHERE user_id == ?", request.form.get("shares"), session["user_id"])
 
         else:
             db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
-                        session["user_id"][0]["id"],
+                        session["user_id"],
                         symbol,
                         name,
                         request.form.get("shares"),
@@ -100,12 +100,12 @@ def buy():
                         total
                        )
 
-        db.execute("INSERT INTO history(symbol,shares,price,transacted,user_id) VALUES (?,?,?,?,?)",
+        db.execute("INSERT INTO history(symbol,share,price,transacted,user_id) VALUES (?,?,?,?,?)",
                    symbol,
                    request.form.get("shares"),
                    price,
                    datetime.datetime.now(),
-                   session["user_id"][0]["id"]
+                   session["user_id"]
                    )
 
         return redirect("/")
