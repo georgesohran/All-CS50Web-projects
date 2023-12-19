@@ -37,8 +37,6 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    print(session)
-
     rows = db.execute("SELECT * FROM users_stocks WHERE user_id == ?", session["user_id"])
     users_cash = db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"])
 
