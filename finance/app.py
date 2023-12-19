@@ -53,7 +53,7 @@ def buy():
         if not lookup(request.form.get("symbol")):
             return apology(f"cant find {request.form.get('symbol')} symbol.")
 
-        if int(request.form.get("shares")) <= 0:
+        if int(request.form.get("shares")) <= 0 or not request.form.get("shares").isdigit():
             return apology("invalid number of shares")
 
         l = lookup(request.form.get("symbol"))
