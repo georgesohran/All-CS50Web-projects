@@ -67,14 +67,12 @@ def buy():
         if db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"])[0]["cash"] < total:
             return apology("you can't afford this stock")
 
-        db.execute("UPDATE users SET cash = cash - ? WHERE id == ?", total, session["user_id"][0]["id"])
+        db.execute("UPDATE users SET cash = cash - ? WHERE id == ?", total, session["user_id"])
 
-        current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"][0]["id"])
+        current_user_stocks = db.execute("SELECT symbol FROM users_stocks WHERE user_id == ?", session["user_id"])
 
         current_user_stocks = [symbol_dict["symbol"] for symbol_dict in current_user_stocks]
         current_user_stocks = set(current_user_stocks)
-
-        print(current_user_stocks)
 
         if len(current_user_stocks) == 0:
             db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
