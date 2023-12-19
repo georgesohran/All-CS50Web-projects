@@ -178,7 +178,7 @@ def quote():
             return apology("no such symbol found",400)
         l = lookup(request.form.get("symbol"))
 
-        name, price, symbol = l["name"], l["price"], l["symbol"]
+        name, price, symbol = l["name"], format(l["price"],".2f"), l["symbol"]
 
         return render_template("quoted.html", name=name,price=price,symbol=symbol)
     else:
