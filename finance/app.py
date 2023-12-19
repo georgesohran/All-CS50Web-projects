@@ -22,6 +22,9 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 @app.after_request
 def after_request(response):
