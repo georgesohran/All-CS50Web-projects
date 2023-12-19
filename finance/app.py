@@ -22,10 +22,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -179,13 +175,12 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         if not lookup(request.form.get("symbol")):
-            return redirect("/")
+            return apology("no such symbol found",400)
         l = lookup(request.form.get("symbol"))
 
         name, price, symbol = l["name"], l["price"], l["symbol"]
 
         return render_template("quoted.html", name=name,price=price,symbol=symbol)
-
     else:
         return render_template("quote.html")
 
