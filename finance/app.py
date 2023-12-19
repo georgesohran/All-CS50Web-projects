@@ -48,10 +48,13 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         if not request.form.get("symbol") or not request.form.get("shares"):
-            return apology("please provide both symbol and shares", 403)
+            return apology("please provide both symbol and shares")
 
         if not lookup(request.form.get("symbol")):
             return apology(f"cant find {request.form.get('symbol')} symbol.")
+
+        if float(request.form.get("shares")) != int(request.form.get("shares")):
+            return apology("invalid shares")
 
         if int(request.form.get("shares")) <= 0:
             return apology("please provide a positive shares")
@@ -61,8 +64,7 @@ def buy():
         name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*int(request.form.get("shares"))
 
 
-
-        if db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"][0]["id"])[0]["cash"] < total:
+        if db.execute("SELECT cash FROM users WHERE id == ?", session["user_id"])[0]["cash"] < total:
             return apology("you can't afford this stock")
 
         db.execute("UPDATE users SET cash = cash - ? WHERE id == ?", total, session["user_id"][0]["id"])
