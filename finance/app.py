@@ -47,18 +47,18 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        if not request.form.get("symbol") or not request.form.get("share"):
-            return apology("please provide both symbol and share", 403)
+        if not request.form.get("symbol") or not request.form.get("shares"):
+            return apology("please provide both symbol and shares", 403)
 
         if not lookup(request.form.get("symbol")):
             return apology(f"cant find {request.form.get('symbol')} symbol.")
 
-        if int(request.form.get("share")) <= 0:
-            return apology("please provide a positive share")
+        if int(request.form.get("shares")) <= 0:
+            return apology("please provide a positive shares")
 
         l = lookup(request.form.get("symbol"))
 
-        name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*int(request.form.get("share"))
+        name, price, symbol, total = l["name"], l["price"], l["symbol"], l["price"]*int(request.form.get("shares"))
 
 
 
@@ -79,27 +79,27 @@ def buy():
                         session["user_id"][0]["id"],
                         symbol,
                         name,
-                        request.form.get("share"),
+                        request.form.get("shares"),
                         price,
                         total
                        )
 
         elif symbol in current_user_stocks:
-            db.execute("UPDATE users_stocks SET shares = shares + ? WHERE user_id == ?", request.form.get("share"), session["user_id"][0]["id"])
+            db.execute("UPDATE users_stocks SET shares = shares + ? WHERE user_id == ?", request.form.get("shares"), session["user_id"][0]["id"])
 
         else:
             db.execute("INSERT INTO users_stocks (user_id,symbol,name,shares,price,total) VALUES(?,?,?,?,?,?)",
                         session["user_id"][0]["id"],
                         symbol,
                         name,
-                        request.form.get("share"),
+                        request.form.get("shares"),
                         price,
                         total
                        )
 
-        db.execute("INSERT INTO history(symbol,share,price,transacted,user_id) VALUES (?,?,?,?,?)",
+        db.execute("INSERT INTO history(symbol,shares,price,transacted,user_id) VALUES (?,?,?,?,?)",
                    symbol,
-                   request.form.get("share"),
+                   request.form.get("shares"),
                    price,
                    datetime.datetime.now(),
                    session["user_id"][0]["id"]
