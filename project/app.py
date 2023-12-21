@@ -3,7 +3,7 @@ import sqlite3
 
 app = FastAPI()
 
-db = mysql.connector.connect(database="database")
+db = sqlite3.connect(database="database")
 cursor = db.cursor()
 
 @app.get("/")
