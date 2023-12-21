@@ -3,7 +3,7 @@ import mysql.connector
 
 app = FastAPI()
 
-db = mysql.connector.connect("database.db")
+db = mysql.connector.connect(database="database")
 cursor = db.cursor()
 
 @app.get("/")
