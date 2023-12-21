@@ -4,7 +4,7 @@ import sqlite3
 app = FastAPI()
 
 db = sqlite3.connect(database="database")
-cursor = db.cursor()
+cur = db.cursor()
 
 @app.get("/")
 def index():
