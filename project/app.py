@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-import mysql.connector
+import sqlite3
 
 app = FastAPI()
 
