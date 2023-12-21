@@ -3,7 +3,7 @@ import mysql.connector
 
 app = FastAPI()
 
-database = mysql.connector
+database = mysql.connector.connect("")
 
 @app.get("/")
 def index():
