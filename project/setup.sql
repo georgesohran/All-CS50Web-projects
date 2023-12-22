@@ -2,8 +2,7 @@ CREATE TABLE students
 (
     id INTEGER PRIMARY KEY  AUTOINCREMENT(200) NOT NULL,
     name TEXT NOT NULL,
-    password_hash TEXT NOT NULL,
-
+    password_hash TEXT NOT NULL
 );
 
 CREATE TABLE teachers
@@ -18,7 +17,7 @@ CREATE TABLE teachers
 CREATE TABLE subjects
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL
 );
 
 CREATE TABLE students_grades
