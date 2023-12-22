@@ -1,6 +1,6 @@
 CREATE TABLE students
 (
-    id INTEGER NOT NULL AUTO_INCREMENT,
+    id INTEGER NOT NULL AUTO_INCREMENT=100,
     name TEXT NOT NULL,
     password_hash TEXT NOT NULL,
     PRIMARY KEY (id)
@@ -8,7 +8,10 @@ CREATE TABLE students
 
 CREATE TABLE teachers
 (
-
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    name TEXT NOT NULL,
+    password_hash TEXT NOT NULL,
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE subjects
