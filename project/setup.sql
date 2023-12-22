@@ -1,7 +1,7 @@
 CREATE TABLE students
 (
-    name TEXT NOT NULL,
     id INTEGER NOT NULL AUTO_INCREMENT,
+    name TEXT NOT NULL,
     password_hash TEXT NOT NULL,
     PRIMARY KEY (id)
 );
