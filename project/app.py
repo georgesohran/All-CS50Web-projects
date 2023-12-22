@@ -3,10 +3,10 @@ import sqlite3
 
 app = FastAPI()
 
-db = sqlite3.connect(database="database")
+db = sqlite3.connect("database.db")
 cur = db.cursor()
 
-cur.execute("INSERT INTO subjects (name) VALUES (ENGLISH)")
+cur.execute("INSERT INTO subjects (name) VALUES (english)")
 
 @app.get("/")
 def index():
