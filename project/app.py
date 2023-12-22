@@ -6,7 +6,7 @@ app = FastAPI()
 db = sqlite3.connect("database.db")
 cur = db.cursor()
 
-cur.execute("INSERT INTO subjects VALUES (name,english),(name,math),(name,history);")
+cur.execute("INSERT INTO subjects (name) VALUES ('english'),('math'),('history');")
 db.commit()
 
 @app.get("/")
