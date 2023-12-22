@@ -6,7 +6,7 @@ app = FastAPI()
 db = sqlite3.connect(database="database")
 cur = db.cursor()
 
-cur.execute("")
+cur.execute("INSERT INTO subjects name VALUES (1,ENGLISH)")
 
 @app.get("/")
 def index():
