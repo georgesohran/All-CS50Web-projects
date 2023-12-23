@@ -9,13 +9,14 @@ app = FastAPI()
 db = sqlite3.connect("database.db")
 cur = db.cursor()
 
+templates = Jinja2Templates(directory="templates")
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def index():
     return "aa"
 
 
-@app.post("/login/")
+@app.post("/login/", response_class=HTMLResponse)
 def login(name:str, password:str, type:str):
     if type == "teacher":
         ...
