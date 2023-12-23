@@ -9,3 +9,6 @@ cur = db.cursor()
 @app.get("/")
 def index():
     return "aa"
+
+@app.get("/")
+def loginform
