@@ -12,7 +12,7 @@ cur = db.cursor()
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
-def index(request: Request):
+async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request,"word":"my word"})
 
 
