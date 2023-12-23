@@ -22,7 +22,7 @@ def register(request:Request, type:str, name:str, password:str):
     if type not in ["teacher", "student"]:
         return RedirectResponse(url="/register")
 
-    existing_names = cur.execute("SELECT name FROM teachers")
+    cur.execute("INSERT INTO teachers")
 
 
 @app.post("/login/", response_class=HTMLResponse)
