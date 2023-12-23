@@ -3,7 +3,12 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
+
 import sqlite3
+
+from werkzeug.security import check_password_hash, generate_password_hash
+
+
 
 app = FastAPI()
 
@@ -25,8 +30,7 @@ def register(request:Request, type:str, name:str, password:str):
     if type == "teacher":
         return RedirectResponse(url="/teacher/register2/")
 
-
-    cur.execute("INSERT INTO students (name, password_hash) VALUES ()")
+    cur.execute("INSERT INTO students (name, password_hash) VALUES (?,?)", name, generate_password_hash(password))
 
 
 @app.post("/login/", response_class=HTMLResponse)
