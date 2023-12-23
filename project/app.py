@@ -13,5 +13,11 @@ def index():
 
 
 @app.post("/login/")
-def login(name:str, ):
-    ...
+def login(name:str, password:str, type:str):
+    if type == "teacher":
+        ...
+    elif type == "student":
+        ...
+    else:
+        ...
+
