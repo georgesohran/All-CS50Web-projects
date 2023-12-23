@@ -20,9 +20,13 @@ def index(request: Request):
 @app.post("/register", response_class=HTMLResponse)
 def register(request:Request, type:str, name:str, password:str):
     if type not in ["teacher", "student"]:
-        return RedirectResponse(url="/register")
+        return RedirectResponse(url="/register/")
 
-    cur.execute("INSERT INTO teachers")
+    if type == "teacher":
+        return RedirectResponse(url="/teacher/register2/")
+
+
+    cur.execute("INSERT INTO students (name, password_hash) VALUES ()")
 
 
 @app.post("/login/", response_class=HTMLResponse)
