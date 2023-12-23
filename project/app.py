@@ -12,11 +12,11 @@ cur = db.cursor()
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
-async def index(request: Request):
+def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
 @app.post("/register", response_class=HTMLResponse)
-def regester():
+def regester(request:Request,type:str,name:str,password:str):
     ...
 
 @app.post("/login/", response_class=HTMLResponse)
