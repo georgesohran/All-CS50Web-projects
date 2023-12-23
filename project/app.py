@@ -17,9 +17,9 @@ async def index(request: Request):
 
 
 @app.post("/login/", response_class=HTMLResponse)
-def login(name:str, password:str, type:str):
+def login(request: Request, name:str, password:str, type:str):
     if type == "teacher":
-        ...
+        return templates.TemplateResponse("student/index.html",)
     elif type == "student":
         ...
     else:
