@@ -11,4 +11,9 @@ def index():
     return "aa"
 
 @app.get("/login")
-def login()
+def login():
+    ...
+
+@app.post("/login")
+def login():
+    ...
