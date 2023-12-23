@@ -16,8 +16,9 @@ def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
 @app.post("/register", response_class=HTMLResponse)
-def regester(request:Request,type:str,name:str,password:str):
-    ...
+def regester(request:Request, type:str, name:str, password:str):
+    if type not in ["teacher", "student"]:
+        return templates.TemplateResponse("")
 
 @app.post("/login/", response_class=HTMLResponse)
 def login(request: Request, name:str, password:str, type:str):
