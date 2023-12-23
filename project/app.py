@@ -13,7 +13,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):
-    return templates.TemplateResponse("index.html", {"word":"my word"})
+    return templates.TemplateResponse("index.html", {"request": request,"word":"my word"})
 
 
 @app.post("/login/", response_class=HTMLResponse)
