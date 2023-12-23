@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
 import sqlite3
 
 app = FastAPI()
@@ -15,10 +16,14 @@ templates = Jinja2Templates(directory="templates")
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
+
 @app.post("/register", response_class=HTMLResponse)
 def register(request:Request, type:str, name:str, password:str):
     if type not in ["teacher", "student"]:
-        return templates.TemplateResponse("register.html", {"request":request})
+        return RedirectResponse(url="/register")
+
+    existing_names = cur.execute("SELECT name FROM teachers")
+
 
 @app.post("/login/", response_class=HTMLResponse)
 def login(request: Request, name:str, password:str, type:str):
