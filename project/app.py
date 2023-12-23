@@ -21,6 +21,9 @@ templates = Jinja2Templates(directory="templates")
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
+@app.get("/register", response_class=HTMLResponse)
+def register(request:Request):
+    return templates.TemplateResponse("register.html", {"request":request})
 
 @app.post("/register", response_class=HTMLResponse)
 def register(request:Request, type:str, name:str, password:str):
