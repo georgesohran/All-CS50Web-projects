@@ -33,8 +33,6 @@ async def register(request:Request, type:str, name:str, password:str):
     if type == "teacher":
         return RedirectResponse(url="/teacher/register2/")
 
-    cur.execute("INSERT INTO students (name, password_hash) VALUES (?,?)", name, generate_password_hash(password))
-
     return templates.TemplateResponse("register.html", {"request":request})
 
 
