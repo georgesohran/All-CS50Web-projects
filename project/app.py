@@ -10,10 +10,10 @@ cur = db.cursor()
 def index():
     return "aa"
 
-@app.get("/login")
+@app.get("/login/")
 def login():
     ...
 
-@app.post("/login")
+@app.post("/login/")
 def login():
     ...
