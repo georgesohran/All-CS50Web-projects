@@ -26,7 +26,7 @@ def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
 @app.post("/register", response_class=HTMLResponse)
-def register(request:Request, type:str, name:str, password:str):
+async def register(request:Request, type:str, name:str, password:str):
     if type not in ["teacher", "student"]:
         return RedirectResponse(url="/register/")
 
@@ -35,7 +35,7 @@ def register(request:Request, type:str, name:str, password:str):
 
     cur.execute("INSERT INTO students (name, password_hash) VALUES (?,?)", name, generate_password_hash(password))
 
-    return RedirectResponse(url="/")
+    return await RedirectResponse(url="/")
 
 
 @app.post("/login/", response_class=HTMLResponse)
