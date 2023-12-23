@@ -35,6 +35,8 @@ def register(request:Request, type:str, name:str, password:str):
 
     cur.execute("INSERT INTO students (name, password_hash) VALUES (?,?)", name, generate_password_hash(password))
 
+    return RedirectResponse(url="/")
+
 
 @app.post("/login/", response_class=HTMLResponse)
 def login(request: Request, name:str, password:str, type:str):
