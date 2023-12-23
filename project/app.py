@@ -6,14 +6,12 @@ app = FastAPI()
 db = sqlite3.connect("database.db")
 cur = db.cursor()
 
+
 @app.get("/")
 def index():
     return "aa"
 
-@app.get("/login/")
-def login():
-    ...
 
 @app.post("/login/")
-def login():
+def login(name:str, ):
     ...
