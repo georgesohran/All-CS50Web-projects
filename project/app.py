@@ -10,5 +10,5 @@ cur = db.cursor()
 def index():
     return "aa"
 
-@app.get("/")
-def loginform
+@app.get("/login")
+def login()
