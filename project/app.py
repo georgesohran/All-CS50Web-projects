@@ -8,9 +8,9 @@ from pydantic import BaseModel
 import sqlite3
 
 from uuid import uuid4
-
 from werkzeug.security import check_password_hash, generate_password_hash
 
+from functions import *
 
 
 class SessionData(BaseModel):
