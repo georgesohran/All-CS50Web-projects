@@ -36,7 +36,8 @@ def register(request:Request):
 
 @app.post("/register", response_class=HTMLResponse)
 async def register(request:Request, name:str = Form(...), password:str = Form(...), type = Form(...)):
-    return {"name":name,"password":password,"type":type}
+    
+    return "s"
 
 
 
