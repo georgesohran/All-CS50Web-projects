@@ -26,7 +26,7 @@ def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
 @app.post("/register", response_class=HTMLResponse)
-async def register(request:Request, type:str, name:str, password:str):
+async def register(request:Request, type:str, name:str, paword:str):
     if type not in ["teacher", "student"]:
         return RedirectResponse(url="/register/")
 
