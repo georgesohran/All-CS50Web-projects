@@ -4,10 +4,17 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 
+from pydantic import BaseModel
+
 import sqlite3
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
+
+class User(BaseModel):
+    name:str
+    password:str
+    type:str
 
 
 app = FastAPI()
@@ -21,19 +28,21 @@ templates = Jinja2Templates(directory="templates")
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
+
+
 @app.get("/register", response_class=HTMLResponse)
 def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
 @app.post("/register", response_class=HTMLResponse)
-async def register(request:Request, type:str, name:str, password:str):
+async def register(type:str, name:str, password:str):
     if type not in ["teacher", "student"]:
         return RedirectResponse(url="/register/")
 
     if type == "teacher":
         return RedirectResponse(url="/teacher/register2/")
 
-    return templates.TemplateResponse("register.html", {"request":request})
+    return RedirectResponse("/")
 
 
 
