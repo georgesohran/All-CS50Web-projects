@@ -35,7 +35,7 @@ def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
 @app.post("/register", response_class=HTMLResponse)
-async def register(request:Request, name:str = Form(...), password:str = Form(...), type = Form(...)):
+def register(request:Request, name:str = Form(...), password:str = Form(...), type = Form(...)):
 
     return RedirectResponse(url="/")
 
