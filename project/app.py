@@ -34,10 +34,10 @@ def index(request: Request):
 def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
-@app.post("/register", response_class=HTMLResponse)
+@app.post("/register", response_class=RedirectResponse)
 def register(request:Request, name:str = Form(...), password:str = Form(...), type = Form(...)):
 
-    return 
+    return
 
 
 
