@@ -8,13 +8,13 @@ class Student(Base):
     __tablename__ = "students"
     id:Mapped[int] = mapped_column(primary_key=True)
     name:Mapped[str] = mapped_column(Text,nullable=False)
+    grades:Mapped[list["grades"]]
 
 
 class Subject(Base):
     __tablename__ = "subjects"
     id:Mapped[int] = mapped_column(primary_key=True)
     name:Mapped[str] = mapped_column(Text,nullable=False)
-
 
 
 class Teacher(Base):
