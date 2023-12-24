@@ -34,8 +34,8 @@ def index(request: Request):
 def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
-@app.post("/register")
-async def register(user:User):
+@app.post("/register", response_class=HTMLResponse)
+async def register(request:Request,user:User):
     return user
 
 
