@@ -4,17 +4,9 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 
-from pydantic import BaseModel
-
 import sqlite3
 
 from werkzeug.security import check_password_hash, generate_password_hash
-
-
-class User(BaseModel):
-    name:str
-    password:str
-    type:str
 
 
 app = FastAPI()
