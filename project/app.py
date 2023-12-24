@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -35,8 +35,8 @@ def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
 @app.post("/register", response_class=HTMLResponse)
-async def register(request:Request,user:User):
-    return user
+async def register(request:Request, name:str = Form(...), password:str = Form(...), type = Form(...)):
+    return "user"
 
 
 
