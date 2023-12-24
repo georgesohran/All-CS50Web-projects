@@ -36,14 +36,8 @@ def register(request:Request):
 
 @app.post("/register", response_class=HTMLResponse)
 async def register(user:User):
-    user_dict = user.dict()
-    if user.type not in ["teacher", "student"]:
-        return RedirectResponse(url="/register/")
 
-    if user.type == "teacher":
-        return RedirectResponse(url="/teacher/register2/")
-
-    return user_dict
+    return user
 
 
 
