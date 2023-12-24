@@ -8,7 +8,7 @@ from functools import wraps
 
 
 class SessionData(BaseModel):
-    user_id:int
+    user_id:int | None = None
 
 def login_required(f):
     @wraps(f)

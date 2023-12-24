@@ -13,9 +13,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from functions import *
 
 
-class SessionData(BaseModel):
-    userid: str
-
 app = FastAPI()
 
 db = sqlite3.connect("database.db")
@@ -26,10 +23,12 @@ templates = Jinja2Templates(directory="templates")
 
 
 @app.get("/", response_class=HTMLResponse)
+@login_required
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
 @app.post("/", response_class=HTMLResponse)
+@login_required
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
@@ -41,7 +40,6 @@ def register(request:Request):
 
 @app.post("/register", response_class=RedirectResponse)
 def register(request:Request, name:str = Form(...), password:str = Form(...), type = Form(...)):
-
     return "/"
 
 
