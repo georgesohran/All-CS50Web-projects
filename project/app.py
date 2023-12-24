@@ -35,11 +35,11 @@ def register(request:Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
 @app.post("/register", response_class=HTMLResponse)
-async def register(type:str, name:str, password:str):
-    if type not in ["teacher", "student"]:
+async def register(user:User):
+    if user.type not in ["teacher", "student"]:
         return RedirectResponse(url="/register/")
 
-    if type == "teacher":
+    if user.type == "teacher":
         return RedirectResponse(url="/teacher/register2/")
 
     return RedirectResponse("/")
