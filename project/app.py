@@ -20,15 +20,17 @@ cur = db.cursor()
 
 templates = Jinja2Templates(directory="templates")
 
+class LoggedUser():
+    user_id = None
+    name = None
 
+logged_users = []
 
 @app.get("/", response_class=HTMLResponse)
-@login_required
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
 @app.post("/", response_class=HTMLResponse)
-@login_required
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
@@ -40,6 +42,7 @@ def register(request:Request):
 
 @app.post("/register", response_class=RedirectResponse)
 def register(request:Request, name:str = Form(...), password:str = Form(...), type = Form(...)):
+    
     return "/"
 
 
