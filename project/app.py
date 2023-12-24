@@ -28,6 +28,10 @@ templates = Jinja2Templates(directory="templates")
 def index(request: Request):
     return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
 
+@app.post("/", response_class=HTMLResponse)
+def index(request: Request):
+    return templates.TemplateResponse("layout.html", {"request": request,"word":"my word"})
+
 
 
 @app.get("/register", response_class=HTMLResponse)
