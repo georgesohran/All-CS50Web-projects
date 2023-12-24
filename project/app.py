@@ -5,7 +5,8 @@ from fastapi.responses import RedirectResponse
 
 from pydantic import BaseModel
 
-import sqlite3
+from sqlalchemy.orm import Session
+from sqlalchemy.exc import IntegrityError
 
 from uuid import uuid4
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -14,9 +15,6 @@ from functions import *
 
 
 app = FastAPI()
-
-db = sqlite3.connect("database.db")
-cur = db.cursor()
 
 templates = Jinja2Templates(directory="templates")
 
