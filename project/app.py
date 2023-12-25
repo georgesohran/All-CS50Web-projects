@@ -2,6 +2,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from functions import login_required
 
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
