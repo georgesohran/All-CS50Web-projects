@@ -11,6 +11,11 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/register")
+@app.route("/register", method=["POST","GET"])
 def register():
-    
+    ...
+
+@app.route("/login", method=["POST","GET"])
+def register():
+    ...
+
