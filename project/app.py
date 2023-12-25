@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 Session(app)
 
+db = SQLAlchemy(app)
 
 @app.after_request
 def after_request(response):
