@@ -10,6 +10,16 @@ Session(app)
 
 db = SQLAlchemy(app)
 
+class Students(db.Model):
+    ...
+
+class Teachers(db.Model):
+    ...
+
+class Subjects(db.Model):
+    ...
+
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
