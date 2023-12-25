@@ -29,6 +29,6 @@ def register():
     ...
 
 @app.route("/login", method=["POST","GET"])
-def register():
-    ...
+def login():
+    session["user_id"] = 0
 
