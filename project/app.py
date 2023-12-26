@@ -8,7 +8,6 @@ import os.path
 import sqlite3
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
@@ -19,7 +18,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "database.db")
 db = sqlite3.connect(db_path, check_same_thread=False)
 cur = db.cursor()
-
 
 
 
@@ -63,7 +61,7 @@ def register():
 
             if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
                 return render_template("register.html",messege="invalid subject")
-            
+
             cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",(name, generate_password_hash(password), subject_id))
             db.commit()
         elif type == "student":
