@@ -57,16 +57,15 @@ def register():
 
         if type == "teacher":
             subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
-            print(db.execute("SELECT name FROM subjects").fetchall())
-            if subject not in db.execute("SELECT name FROM subjects").fetchall():
+            if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
                 return render_template("register.html",messege="invalid subject")
-            cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",name, generate_password_hash(password), subject_id)
+            cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",(name,), (generate_password_hash(password),), (subject_id,))
             cur.commit()
         elif type == "student":
-            cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", name, generate_password_hash(password))
+            cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name,), (generate_password_hash(password),))
             cur.commit()
 
-        id = db.execute("SELECT id FROM students WHERE name == ? AND password_hash == ?", name, generate_password_hash(password))
+        id = db.execute("SELECT id FROM students WHERE name == ?", (name,))
         id.fetchall()
 
         session["user_id"] = id
