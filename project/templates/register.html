@@ -6,8 +6,10 @@
     <script>
         function enable(){
             let type = document.querySelector("#select").value
+            console.log(`${type}`)
             if (type == "teacher"){
                 var new_select = document.createElement("input");
+
 
                 const element = document.querySelector("#aditional");
                 element.appendChild(new_select);
