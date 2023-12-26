@@ -1,4 +1,4 @@
-/*
+
 CREATE TABLE teachers
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,7 +21,7 @@ CREATE TABLE subjects
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL
 );
-*/
+
 CREATE TABLE students_grades
 (
     student_id INTEGER,
