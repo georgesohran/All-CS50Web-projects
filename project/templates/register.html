@@ -10,7 +10,11 @@
             if (type == "teacher"){
                 var new_select = document.createElement("input");
                 const element = document.querySelector("#aditional");
-                
+                new_select.setAttribute("class" , "form-control mx-auto w-auto")
+                new_select.setAttribute("name" , "subject")
+                new_select.setAttribute("placeholder" , "what subject are you teaching")
+                new_select.setAttribute("type" , "text")
+                new_select.setAttribute("id", "aditional_select")
                 element.appendChild(new_select);
             }
             else if (type == "student"){
@@ -19,7 +23,7 @@
             }
             else {
                 const button = document.querySelector("button")
-                button.setAtribute("disabled","")
+                button.setAttribute("disabled","")
             }
         };
     </script>
