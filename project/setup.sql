@@ -9,9 +9,9 @@ CREATE TABLE teachers
 CREATE TABLE students
 (
     id INTEGER AUTOINCREMENT PRIMARY KEY,
-    password_hash TEXT NOT NULL,
+;    password_hash TEXT NOT NULL,
     name TEXT NOT NULL
-);
+)
 
 CREATE TABLE subjects
 (
