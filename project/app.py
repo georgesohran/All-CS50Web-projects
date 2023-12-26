@@ -57,7 +57,8 @@ def register():
 
         if type == "teacher":
             subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
-            print(subject_id)
+            subject_id = subject_id[0]
+            subject_id = [i for i in subject_id][0]
             if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
                 return render_template("register.html",messege="invalid subject")
             cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",(name, generate_password_hash(password), subject_id))
