@@ -40,6 +40,13 @@ def register():
 
         if not password or not password2 or not name or not type:
             return redirect("/register")
+        if type not in ["teacher", "student"]:
+            return redirect("/register")
+        if password != password2:
+            return redirect("/register")
+
+        names = cur.execute(f"SELECT name FROM {type}s")
+        
 
     else:
         return render_template("register.html")
