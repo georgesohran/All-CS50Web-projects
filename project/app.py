@@ -12,6 +12,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = sqlite3.connect("tutorial.db")
+cur = db.cursor()
 
 @app.after_request
 def after_request(response):
