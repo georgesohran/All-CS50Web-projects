@@ -13,15 +13,20 @@ db = SQLAlchemy(app)
 class Students(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+    grades = db.relationship("Grades",backref="student")
 
 class Teachers(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
-    subject_id = db.Column(db.Integer)
+    subject_id = db.Column(db.Integer, db.ForeignKey("subject.id"))
 
 class Subjects(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+
+class Grades(db.Model):
+    value = db.Column(db.Integer)
+    student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
 
 
 @app.after_request
