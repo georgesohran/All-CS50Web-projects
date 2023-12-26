@@ -11,13 +11,17 @@ Session(app)
 db = SQLAlchemy(app)
 
 class Students(db.Model):
-    ...
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
 
 class Teachers(db.Model):
-    ...
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    subject_id = db.Column(db.Integer)
 
 class Subjects(db.Model):
-    ...
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
 
 
 @app.after_request
