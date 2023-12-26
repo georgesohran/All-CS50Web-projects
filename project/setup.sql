@@ -1,4 +1,4 @@
-/*
+
 CREATE TABLE teachers
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
