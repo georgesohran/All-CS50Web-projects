@@ -61,7 +61,7 @@ def register():
             return redirect("/register")
 
         if type == "teacher":
-            subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", subject)
+            subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,))
             if subject not in db.execute("SELECT name FROM subjects"):
                 return redirect("/register")
             cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",name, generate_password_hash(password), subject_id)
