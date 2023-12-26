@@ -15,12 +15,15 @@
                 new_select.setAtribute("name" , "subject")
                 new_select.setAtribute("placeholder" , "what subject are you teaching")
                 new_select.setAtribute("type" , "text")
+                new_select.setAtribute("id", "aditional_select")
             }
             else if (type == "student"){
-                
+                const element = document.querySelector("#aditional_select");
+                element.remove();
             }
             else {
-
+                const button = document.querySelector("button")
+                button.setAtribute("disabled","disabled")
             }
         };
     </script>
