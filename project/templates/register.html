@@ -5,7 +5,7 @@
 <div class="container-fluid py-5 text-center">
     <script>
         function enable(){
-            let type = document.querySelector("#select").selectedIndex
+            let type = document.querySelector("#type_select").value
 
             if (type == "teacher"){
                 var new_select = document.createElement("input");
@@ -17,7 +17,7 @@
                 new_select.setAtribute("type" , "text")
             }
             else if (type == "student"){
-
+                
             }
             else {
 
