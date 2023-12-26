@@ -45,14 +45,18 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/register", method=["POST","GET"])
+@app.route("/register", methods=["POST","GET"])
 def register():
     if request.method == "POST":
         ...
     else:
         return render_template("register.html")
 
-@app.route("/login", method=["POST","GET"])
+@app.route("/login", methods=["POST","GET"])
 def login():
+    if request.method == "POST":
+        ...
+    else:
+        return render_template("register.html")
     session["user_id"] = 0
 
