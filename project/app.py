@@ -61,6 +61,11 @@ def register():
         elif type == "student":
             cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", name, generate_password_hash(password))
             cur.commit()
+
+        id = db.execute("SELECT id FROM students WHERE name == ? AND password_hash == ?", name, generate_password_hash(password))
+        id.fetchall()
+
+        session["user_id"] = id
     else:
         return render_template("register.html")
 
