@@ -9,7 +9,7 @@
             if (type == "teacher"){
                 var new_select = document.createElement("input");
 
-                const element = document.getElementById("aditional");
+                const element = document.querySelector("#aditional");
                 element.appendChild(new_select);
 
                 new_select.setAtribute("class" , "form-control mx-auto w-auto")
@@ -38,7 +38,7 @@
             <input class="form-control mx-auto w-auto" name="password2" placeholder="password repeat" type="password"></input>
         </div>
         <div id="select" class="mb3">
-            <select class="form-select mx-auto w-auto" name="type" onchange="enable">
+            <select class="form-select mx-auto w-auto" name="type" onchange="enable()">
                 <option disabled selected> who are you? </option>
                 <option>teacher</option>
                 <option>student</option>
