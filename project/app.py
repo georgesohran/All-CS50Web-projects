@@ -5,7 +5,7 @@ from functions import login_required
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.sqlite3"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///sqlite3"
 Session(app)
 
 db = SQLAlchemy(app)
