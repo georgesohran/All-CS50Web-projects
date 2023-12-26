@@ -6,19 +6,15 @@
     <script>
         function enable(){
             let type = document.querySelector("#select").value
-            console.log(`${type}`)
+
             if (type == "teacher"){
                 var new_select = document.createElement("input");
-
-
                 const element = document.querySelector("#aditional");
                 element.appendChild(new_select);
-
                 new_select.setAtribute("class" , "form-control mx-auto w-auto")
                 new_select.setAtribute("name" , "subject")
                 new_select.setAtribute("placeholder" , "what subject are you teaching")
                 new_select.setAtribute("type" , "text")
-
             }
             else if (type == "student"){
 
