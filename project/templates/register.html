@@ -4,9 +4,9 @@
 
 <div class="container-fluid py-5 text-center">
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            select = document.querySelector("#select").addEventListener()
-        });
+        function enable(){
+
+        };
     </script>
 
     <form method="post">
@@ -20,7 +20,7 @@
             <input class="form-control mx-auto w-auto" name="password2" placeholder="password repeat" type="password"></input>
         </div>
         <div id="select" class="mb3">
-            <select class="form-select mx-auto w-auto" name="type">
+            <select class="form-select mx-auto w-auto" name="type" onchange="enable">
                 <option disabled selected> who are you? </option>
                 <option>teacher</option>
                 <option>student</option>
