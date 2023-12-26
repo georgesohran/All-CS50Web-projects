@@ -2,6 +2,8 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from functions import login_required
 
+from werkzeug.security import check_password_hash, generate_password_hash
+
 import sqlite3
 
 app = Flask(__name__)
@@ -44,10 +46,21 @@ def register():
             return redirect("/register")
         if password != password2:
             return redirect("/register")
-
         names = cur.execute(f"SELECT name FROM {type}s")
-        
+        names.fetchall()
+        print(names)
+        if name in names:
+            return redirect("/register")
 
+        if type == "teacher":
+            subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", subject)
+            if subject not in db.execute("SELECT name FROM subjects"):
+                return redirect("/register")
+            cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",name, generate_password_hash(password), subject_id)
+            cur.commit()
+        elif type == "student":
+            cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", name, generate_password_hash(password))
+            cur.commit()
     else:
         return render_template("register.html")
 
