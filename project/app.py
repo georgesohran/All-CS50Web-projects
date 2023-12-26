@@ -72,7 +72,7 @@ def register():
 
         session["user_id"] = id
 
-        redirect("/")
+        return redirect("/")
     else:
         return render_template("register.html", messege="OK")
 
