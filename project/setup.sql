@@ -1,28 +1,33 @@
+/*
 CREATE TABLE teachers
 (
-    id INTEGER AUTOINCREMENT PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     password_hash TEXT NOT NULL,
-    subject_id INTEGER FOREIGN KEY REFERENCES subjects(id)
+    subject_id INTEGER,
+    FOREIGN KEY(subject_id) REFERENCES subjects(id)
 );
+
 
 CREATE TABLE students
 (
-    id INTEGER AUTOINCREMENT PRIMARY KEY,
-;    password_hash TEXT NOT NULL,
-    name TEXT NOT NULL
-)
-
-CREATE TABLE subjects
-(
-    id INTEGER AUTOINCREMENT PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    password_hash TEXT NOT NULL,
     name TEXT NOT NULL
 );
 
+CREATE TABLE subjects
+(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+*/
 CREATE TABLE students_grades
 (
-    student_id INTEGER FOREIGN KEY REFERENCES students(id),
-    subject_id INTEGER FOREIGN KEY REFERENCES subjects(id),
+    student_id INTEGER,
+    subject_id INTEGER,
     time TEXT NOT NULL,
-    grade INTEGER NOT NULL
+    grade INTEGER NOT NULL,
+    FOREIGN KEY(subject_id) REFERENCES subjects(id),
+    FOREIGN KEY(student_id) REFERENCES students(id)
 );
