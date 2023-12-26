@@ -30,6 +30,7 @@ class Grades(db.Model):
     student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
 
 
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
