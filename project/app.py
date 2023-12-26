@@ -46,6 +46,7 @@ def register():
             return redirect("/register")
         if password != password2:
             return redirect("/register")
+        
         names = cur.execute(f"SELECT name FROM {type}s")
         names.fetchall()
         print(names)
