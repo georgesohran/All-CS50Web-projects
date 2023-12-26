@@ -13,7 +13,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-db = sqlite3.connect("tutorial.db")
+db = sqlite3.connect("tutorial.db", check_same_thread=False)
 cur = db.cursor()
 
 @app.after_request
@@ -46,7 +46,7 @@ def register():
             return redirect("/register")
         if password != password2:
             return redirect("/register")
-        
+
         names = cur.execute(f"SELECT name FROM {type}s")
         names.fetchall()
         print(names)
