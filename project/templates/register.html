@@ -7,18 +7,7 @@
         function enable(){
             let type = document.querySelector("#select").value
             if (type == "teacher"){
-                const new_select = document.createElement("select");
-
-                var ajax = new XMLHttpRequest();
-
-                ajax.onreadystatechange = function(){
-                    if (ajax.readyState == 2 && ajax.Status == 200){
-                        
-                    }
-                }
-
-                const node = document.createTextNode("This is new.");
-                para.appendChild(node);
+                const new_select = document.createElement("input");
             }
             else if (type == "student"){
 
