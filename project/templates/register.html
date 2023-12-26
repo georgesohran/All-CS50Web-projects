@@ -8,6 +8,9 @@
             let type = document.querySelector("#select").value
             if (type == "teacher"){
                 const new_select = document.createElement("input");
+
+                const element = document.getElementById("aditional");
+                element.appendChild(new_select);
                 
             }
             else if (type == "student"){
@@ -36,6 +39,9 @@
                 <option>student</option>
             </select>
         </div>
+
+        <div id="aditional"></div>
+
         <button type="submit" class="btn btn-primary">register</button>
     </form>
 </div>
