@@ -35,6 +35,7 @@ class StudentsGrades(db.Model):
      grade = db.Column(db.Integer)
      student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
 
+db.create_all()
 
 @app.after_request
 def after_request(response):
