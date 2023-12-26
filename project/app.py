@@ -20,17 +20,23 @@ class Students(db.Model):
 
 
 class Teachers(db.Model):
+     __tablename__ = "teachers"
+
      id = db.Column(db.Integer, primary_key=True)
      name = db.Column(db.String)
      subject_id = db.Column(db.Integer, db.ForeignKey("subject.id"))
 
 
 class Subjects(db.Model):
+     __tablename__ = "subjects"
+
      id = db.Column(db.Integer, primary_key=True)
      name = db.Column(db.String)
 
 
 class StudentsGrades(db.Model):
+     __tablename__ = "students_grades"
+
      subject_id = db.Column(db.Integer, db.ForeignKey("subject"))
      grade = db.Column(db.Integer)
      student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
