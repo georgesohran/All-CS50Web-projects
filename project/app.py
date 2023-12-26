@@ -31,7 +31,16 @@ def index():
 @app.route("/register", methods=["POST","GET"])
 def register():
     if request.method == "POST":
-        ...
+        password = request.form.get("password")
+        password2 = request.form.get("password2")
+        name = request.form.get("name")
+        type = request.form.get("type")
+        if type == "teacher":
+            subject = request.form.get("subject")
+
+        if not password or not password2 or not name or not type:
+            return redirect("/register")
+
     else:
         return render_template("register.html")
 
