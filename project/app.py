@@ -61,10 +61,10 @@ def register():
             if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
                 return render_template("register.html",messege="invalid subject")
             cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",(name, generate_password_hash(password), subject_id))
-            cur.commit()
+            db.commit()
         elif type == "student":
             cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name, generate_password_hash(password)))
-            cur.commit()
+            db.commit()
 
         id = db.execute("SELECT id FROM students WHERE name == ?", (name,))
         id.fetchall()
