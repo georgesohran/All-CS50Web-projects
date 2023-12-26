@@ -48,22 +48,17 @@ def register():
             subject = request.form.get("subject")
 
         if not password or not password2 or not name or not type:
-            return redirect("/register")
+            return render_template("register.html", messege="missing password or name or type")
         if type not in ["teacher", "student"]:
-            return redirect("/register")
+            return render_template("register.html", messege="invalid type")
         if password != password2:
-            return redirect("/register")
+            return render_template("register.html", messege="invalid repeat password")
 
-        names = cur.execute(f"SELECT name FROM {type}s")
-        names.fetchall()
-        print(names)
-        if name in names:
-            return redirect("/register")
 
         if type == "teacher":
             subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,))
             if subject not in db.execute("SELECT name FROM subjects"):
-                return redirect("/register")
+                return render_template("register.html")
             cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",name, generate_password_hash(password), subject_id)
             cur.commit()
         elif type == "student":
@@ -74,8 +69,10 @@ def register():
         id.fetchall()
 
         session["user_id"] = id
+
+        redirect("/")
     else:
-        return render_template("register.html")
+        return render_template("register.html", messege="OK")
 
 @app.route("/login", methods=["POST","GET"])
 def login():
