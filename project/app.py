@@ -6,6 +6,9 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"
+
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQLAlchemy(app)
@@ -54,7 +57,7 @@ def register():
 
 @app.route("/login", methods=["POST","GET"])
 def login():
-    session["user_id"] = 0
+    session.clear()
     if request.method == "POST":
         ...
     else:
