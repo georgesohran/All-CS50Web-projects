@@ -69,6 +69,7 @@ def register():
             db.commit()
 
         session["user_id"] = cur.execute("SELECT id FROM students WHERE name == ?", (name,)).fetchall()[0]
+        session["user_type"] = type
 
         db.close()
 
