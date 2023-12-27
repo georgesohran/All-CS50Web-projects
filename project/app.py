@@ -111,7 +111,7 @@ def login():
         if name not in all_names:
             return render_template("login.html", messege="the name is not registrated")
 
-        act_password = cur.execute(f"SELECT password_hash FROM {type}s WHERE name == ?", (name,))
+        act_password = cur.execute(f"SELECT password_hash FROM {type}s WHERE name == ?", (name,)).fetchall()
         if check_password_hash(act_password, password):
             return render_template("login.html", messege="invalid password")
 
