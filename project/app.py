@@ -55,22 +55,22 @@ def register():
 
 
         if type == "teacher":
-            subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
-            subject_id = subject_id[0]
-            subject_id = [i for i in subject_id][0]
-            print(f"subject_id: {subject_id} ")
-
-            if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
-                return render_template("register.html",messege="invalid subject")
-
-            cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",(name, generate_password_hash(password), subject_id))
-            db.commit()
+            #subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
+            #subject_id = subject_id[0]
+            #subject_id = [i for i in subject_id][0]
+            #print(f"subject_id: {subject_id} ")
+#
+            #if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
+            #    return render_template("register.html",messege="invalid subject")
+#
+            #cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",(name, generate_password_hash(password), subject_id))
+            #db.commit()
         elif type == "student":
-            cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name, generate_password_hash(password)))
-            db.commit()
+            #cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name, generate_password_hash(password)))
+            #db.commit()
 
-        id = db.execute("SELECT id FROM students WHERE name == ?", (name,))
-        id.fetchall()
+        #id = db.execute("SELECT id FROM students WHERE name == ?", (name,))
+        #id.fetchall()
 
         session["user_id"] = id
 
