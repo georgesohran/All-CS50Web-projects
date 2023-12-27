@@ -47,4 +47,4 @@ CREATE TABLE schedule
 */
 
 INSERT INTO schedule(monday,tuesday,wednesday,thirsday,friday,saturday,sunday)
-    VALUES (None,'computer sceince','english','math','history','phisycs','math','computer sceince','')
+    VALUES ('-','computer sceince','english','math','history','phisycs','math')
