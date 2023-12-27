@@ -31,11 +31,13 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    return render_template("layout.html")
+    return render_template(f"{session["user_type"]}/index.html")
 
 
 @app.route("/register", methods=["POST","GET"])
 def register():
+    session.clear()
+
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
     if request.method == "POST":
@@ -68,13 +70,11 @@ def register():
             cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name, generate_password_hash(password)))
             db.commit()
 
-        session["user_id"] = cur.execute("SELECT id FROM students WHERE name == ?", (name,)).fetchall()
-        print(session["user_id"])
+        session["user_id"] = cur.execute(f"SELECT id FROM {type}s WHERE name == ?", (name,)).fetchall()
+
         session["user_type"] = type
 
         db.close()
-
-        print(session)
 
         return redirect("/")
 
@@ -88,16 +88,28 @@ def register():
 @app.route("/login", methods=["POST","GET"])
 def login():
     session.clear()
+
+    db = sqlite3.connect(db_path, check_same_thread=False)
+    cur = db.cursor()
     if request.method == "POST":
-        ...
+        name = request.form.get("name")
+        type = request.form.get("type")
+        password =request.form.get("password")
+
+        if type not in ["teacher", "students"]:
+            return render_template("login.html", messege="invalid type")
+
+        all_names = 
+
+
     else:
-        return render_template("login.html")
+        db.close()
+        return render_template("login.html", messege="OK")
 
 
 @app.route("/logout")
 def logout():
     session.clear()
-    print(session)
     return redirect("/login")
 
 
