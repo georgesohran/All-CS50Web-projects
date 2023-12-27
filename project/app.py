@@ -68,10 +68,13 @@ def register():
             cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name, generate_password_hash(password)))
             db.commit()
 
-        session["user_id"] = cur.execute("SELECT id FROM students WHERE name == ?", (name,)).fetchall()[0]
+        session["user_id"] = cur.execute("SELECT id FROM students WHERE name == ?", (name,)).fetchall()
+        print(session["user_id"])
         session["user_type"] = type
 
         db.close()
+
+        print(session)
 
         return redirect("/")
 
@@ -89,5 +92,12 @@ def login():
         ...
     else:
         return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/login")
+
 
 

@@ -23,18 +23,20 @@
                         <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                         <li class="nav-item"><a class="nav-link" href="/grades">Students</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contacts">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">logout</a></li>
                     </ul>
                     {% else %}
                     <ul class="navbar-nav me-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/buy"></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/sell">Sell</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/grades">Grades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/teachers">Teachers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">logout</a></li>
                     </ul>
                     {% endif%}
 
                 {% else %}
                 <ul class="navbar-nav me-auto mt-2">
-                    <li class="nav-item"><a class="nav-link" href="/quote">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
                 </ul>
                 {% endif %}
             </div>
