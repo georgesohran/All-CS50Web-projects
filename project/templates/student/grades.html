@@ -3,17 +3,21 @@
 {% block main %}
 
 <div>
+    <table>
     {% for subject in subject %}
+        <tr>
         {% for obj in grades %}
-
-        {% if obj.3 == subject %}
             
+        {% if obj.3 == subject %}
+
         {% else %}
 
         {% endif %}
 
         {% endfor %}
+        <tr>
     {% endfor %}
+    </table>
 </div>
 
 {% endblock %}
