@@ -140,7 +140,7 @@ def main_page():
     if session["user_type"] == "teacher":
         return render_template("teacher/index.html")
     elif session["user_type"] == "student":
-        cur.execute("")
+        schedule = cur.execute("SELECT * FROM schedule").fetchall("")
         db.close()
         return render_template("student/index.html")
 
