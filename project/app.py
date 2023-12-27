@@ -28,6 +28,8 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
+
 @app.route("/register", methods=["POST","GET"])
 def register():
     session.clear()
@@ -80,8 +82,6 @@ def register():
 
         return render_template("register.html", messege="OK")
 
-
-
 @app.route("/login", methods=["POST","GET"])
 def login():
     session.clear()
@@ -121,11 +121,12 @@ def login():
         db.close()
         return render_template("login.html", messege="OK")
 
-
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect("/login")
+
+
 
 @app.route("/")
 @login_required
@@ -133,7 +134,7 @@ def main_page():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
     if session["user_type"] == "teacher":
-        
+
         return render_template("teacher/index.html")
 
     elif session["user_type"] == "student":
@@ -141,3 +142,10 @@ def main_page():
         db.close()
         return render_template("student/index.html", schedule=schedule)
 
+@app.route("/students",methods=["POST","GET"])
+@login_required
+def students():
+    if request.method == "POST":
+        ...
+    else:
+        return render_template("teacher/students.html")
