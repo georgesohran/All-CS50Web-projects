@@ -54,6 +54,8 @@ def register():
             return render_template("register.html", messege="invalid type")
         if password != password2:
             return render_template("register.html", messege="invalid repeat password")
+        if subject not in ["math", "history", "english","computer sceince"]:
+            return render_template("register.html", messege="invalid subject")
 
         if type == "teacher":
             subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
