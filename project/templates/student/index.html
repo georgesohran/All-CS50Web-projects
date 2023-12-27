@@ -6,6 +6,7 @@
     <table class="table">
         <thead></thead>
           <tr>
+            <th>number</th>
             <th scope="col">monday</th>
             <th scope="col">tuesday</th>
             <th scope="col">wednesday</th>
@@ -20,13 +21,13 @@
             {% for row in schedule %}
                 <tr>
                     <th scope="row">{{i}}</th>
-                    <td>row[0]</td>
-                    <td>row[1]</td>
-                    <td>row[2]</td>
-                    <td>row[3]</td>
-                    <td>row[4]</td>
-                    <td>row[5]</td>
-                    <td>row[6]</td>
+                    <td>{{row.0}}</td>
+                    <td>{{row.1}}</td>
+                    <td>{{row.2}}</td>
+                    <td>{{row.3}}</td>
+                    <td>{{row.4}}</td>
+                    <td>{{row.5}}</td>
+                    <td>{{row.6}}</td>
                 </tr>
                 {% set i = i + 1 %}
             {% endfor %}

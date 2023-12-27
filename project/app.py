@@ -28,12 +28,6 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-@app.route("/")
-@login_required
-def index():
-    return render_template(f"{session["user_type"]}/index.html")
-
-
 @app.route("/register", methods=["POST","GET"])
 def register():
     session.clear()
@@ -134,6 +128,7 @@ def logout():
     return redirect("/login")
 
 @app.route("/")
+@login_required
 def main_page():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
