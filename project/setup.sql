@@ -1,4 +1,4 @@
-
+/*
 CREATE TABLE teachers
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -32,6 +32,5 @@ CREATE TABLE students_grades
     FOREIGN KEY(student_id) REFERENCES students(id)
 );
 
-
-
 INSERT INTO subjects(name) VALUES ('math'),('english'),('phisics'),('computer sceince'),('history');
+*/
