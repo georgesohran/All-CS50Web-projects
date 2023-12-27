@@ -106,13 +106,13 @@ def login():
             return render_template("login.html", messege="invalid type")
 
         all_names = cur.execute(f"SELECT name FROM {type}s")
-        print(all_names)
         all_names = [i[0] for i in all_names]
 
         if name not in all_names:
             return render_template("login.html", messege="the name is not registrated")
 
         act_password = cur.execute(f"SELECT password_hash FROM {type}s WHERE name == ?", (name,)).fetchall()[0]
+        print(act_password[0],generate_password_hash(password))
         if check_password_hash(act_password[0], password):
             return render_template("login.html", messege="invalid password")
 
