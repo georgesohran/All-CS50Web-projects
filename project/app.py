@@ -94,7 +94,10 @@ def login():
     if request.method == "POST":
         name = request.form.get("name")
         type = request.form.get("type")
-        password =request.form.get("password")
+        password = request.form.get("password")
+
+        if not name or not type or not password:
+            return render_template("login.html" ,messege="missing name, type or password")
 
         if type not in ["teacher", "students"]:
             return render_template("login.html", messege="invalid type")
@@ -104,7 +107,12 @@ def login():
         all_names = [i[0] for i in all_names]
 
         if name not in all_names:
-            return render_tamplate("login.html", messege="")
+            return render_template("login.html", messege="the name is not registrated")
+
+        act_password = cur.execute(f"SELECT password_hash FROM {type}s WHERE name == ?", name)
+        
+
+
 
 
     else:
