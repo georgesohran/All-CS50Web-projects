@@ -135,4 +135,8 @@ def logout():
 
 @app.route("/")
 def main_page():
-    if session["user_type"]
+    if session["user_type"] == "teacher":
+        ...
+    elif session["user_type"] == "student":
+        ...
+
