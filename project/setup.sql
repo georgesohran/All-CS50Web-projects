@@ -1,4 +1,4 @@
-
+/*
 CREATE TABLE teachers
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,3 +44,7 @@ CREATE TABLE schedule
     saturday TEXT,
     sunday TEXT
 );
+*/
+
+INSERT INTO schedule(monday,tuesday,wednesday,thirsday,friday,saturday,sunday)
+    VALUES (None,'computer sceince','english','math','history','phisycs','math','computer sceince','')
