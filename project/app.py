@@ -114,18 +114,20 @@ def login():
             return render_template("login.html", messege="invalid password")
 
         if type == "teacher":
+            subject = request.form.get("subject")
             subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
             subject_id = subject_id[0]
             subject_id = [i for i in subject_id][0]
-
             if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
                 return render_template("register.html",messege="invalid subject")
-        else:
-            ...
 
+        session["user_id"] = cur.execute(f"SELECT id FROM {type}s WHERE name == ?", (name,)).fetchall()
+
+        session["user_type"] = type
 
         db.close()
 
+        return redirect("/")
     else:
         db.close()
         return render_template("login.html", messege="OK")
