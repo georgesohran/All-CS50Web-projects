@@ -36,8 +36,11 @@ INSERT INTO subjects(name) VALUES ('math'),('english'),('phisics'),('computer sc
 */
 CREATE TABLE schedule
 (
-    monday
-    tuesday
-    thirsday
-    forthday
+    monday TEXT,
+    tuesday TEXT,
+    wednesday TEXT,
+    thirsday TEXT,
+    friday TEXT,
+    saturday TEXT,
+    sunday TEXT
 );
