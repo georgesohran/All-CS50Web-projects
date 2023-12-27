@@ -110,10 +110,21 @@ def login():
             return render_template("login.html", messege="the name is not registrated")
 
         act_password = cur.execute(f"SELECT password_hash FROM {type}s WHERE name == ?", name)
-        
+        if check_password_hash(act_password, password):
+            return render_template("login.html", messege="invalid password")
+
+        if type == "teacher":
+            subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
+            subject_id = subject_id[0]
+            subject_id = [i for i in subject_id][0]
+
+            if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
+                return render_template("register.html",messege="invalid subject")
+        else:
+            ...
 
 
-
+        db.close()
 
     else:
         db.close()
