@@ -1,4 +1,4 @@
-/*
+
 CREATE TABLE teachers
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,7 +33,7 @@ CREATE TABLE students_grades
 );
 
 INSERT INTO subjects(name) VALUES ('math'),('english'),('phisics'),('computer sceince'),('history');
-*/
+
 CREATE TABLE schedule
 (
     monday TEXT,
