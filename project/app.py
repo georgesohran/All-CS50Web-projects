@@ -133,7 +133,9 @@ def main_page():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
     if session["user_type"] == "teacher":
+        
         return render_template("teacher/index.html")
+
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
         db.close()
