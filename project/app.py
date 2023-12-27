@@ -157,10 +157,8 @@ def students():
     averege_grades = {}
 
     for subject in subjects:
-        averege = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == ? AND subject_id == (SELECT id FROM subjects WHERE name == ?)",(session["user_id"][0][0],), subject[0]).fetchall()
-        averege[subject[0]] = averege
-
-    print(averege_grades)
+        averege = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == ? AND subject_id == (SELECT id FROM subjects WHERE name == ?)",(session["user_id"][0][0], subject[0])).fetchall()
+        averege_grades[subject[0]] = averege[0][0]
 
     db.close()
-    return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege)
+    return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege_grades)
