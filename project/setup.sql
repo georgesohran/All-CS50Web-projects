@@ -34,3 +34,5 @@ CREATE TABLE students_grades
 
 INSERT INTO subjects(name) VALUES ('math'),('english'),('phisics'),('computer sceince'),('history');
 */
+
+CREATE TABLE 
