@@ -121,7 +121,7 @@ def login():
             subject_id = subject_id[0]
             subject_id = [i for i in subject_id][0]
             if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
-                return render_template("register.html",messege="invalid subject")
+                return render_template("login.html",messege="invalid subject")
 
         session["user_id"] = cur.execute(f"SELECT id FROM {type}s WHERE name == ?", (name,)).fetchall()
 
