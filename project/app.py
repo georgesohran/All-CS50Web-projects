@@ -1,6 +1,6 @@
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
-from functions import login_required
+from functions import login_required,sort_grades
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -151,6 +151,7 @@ def students():
     cur = db.cursor()
 
     grades = db.execute("SELECT students_grades.grade, students_grades.time, subjects.name FROM students_grades INNER JOIN subjects ON students_grades.subject_id = subjects.id WHERE student_id = ?", (session["user_id"],)).fetchall()
+    subjects = db.execute("SELECT name FROM subjects").fetchall()
 
     db.close()
-    return render_template("student/grades.html",grades=grades)
+    return render_template("student/grades.html",grades=grades, subjects=subjects)
