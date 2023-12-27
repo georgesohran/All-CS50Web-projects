@@ -53,7 +53,6 @@ def register():
         if password != password2:
             return render_template("register.html", messege="invalid repeat password")
 
-
         if type == "teacher":
             subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
             subject_id = subject_id[0]
@@ -64,12 +63,12 @@ def register():
 
             cur.execute("INSERT INTO teachers (name,password_hash,subject_id) VALUES(?,?,?)",(name, generate_password_hash(password), subject_id))
             db.commit()
+
         elif type == "student":
             cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name, generate_password_hash(password)))
             db.commit()
 
         session["user_id"] = cur.execute("SELECT id FROM students WHERE name == ?", (name,)).fetchall()[0]
-        print(session["user_id"])
 
         db.close()
 
