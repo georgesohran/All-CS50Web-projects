@@ -47,7 +47,8 @@ CREATE TABLE schedule
 
 
 INSERT INTO schedule(monday,tuesday,wednesday,thirsday,friday,saturday,sunday)
-    VALUES ('-','computer sceince','english','math','history','phisycs','math')
+    VALUES ('-','computer sceince','english','math','history','phisycs','math');
 */
 
-INSERT INTO students_grades ()
+INSERT INTO students_grades (student_id, subject_id, time, grade)
+    VALUES (9,5,'12.07.2023  12:43',5),(9,6,'12.07.2023  12:20',4),(9,7,'12.11.2023  12:43',3);
