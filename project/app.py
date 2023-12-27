@@ -115,13 +115,6 @@ def login():
         if check_password_hash(act_password[0], password):
             return render_template("login.html", messege="invalid password")
 
-        if type == "teacher":
-            subject = request.form.get("subject")
-            subject_id = db.execute("SELECT id FROM subjects WHERE name == ?", (subject,)).fetchall()
-            subject_id = subject_id[0]
-            subject_id = [i for i in subject_id][0]
-            if (subject,) not in db.execute("SELECT name FROM subjects").fetchall():
-                return render_template("login.html",messege="invalid subject")
 
         session["user_id"] = cur.execute(f"SELECT id FROM {type}s WHERE name == ?", (name,)).fetchall()
 
