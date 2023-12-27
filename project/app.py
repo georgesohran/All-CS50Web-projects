@@ -150,7 +150,7 @@ def students():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
 
-    grades = db.execute("SELECT grade,time")
+    grades = db.execute("SELECT grade,time FROM students_grades WHERE student_id == ")
 
     db.close()
     return render_template("student/grades.html",)
