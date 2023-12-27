@@ -150,8 +150,10 @@ def students():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
 
-    grades = db.execute("SELECT students_grades.grade, students_grades.time, subjects.name FROM students_grades INNER JOIN students_grades.subject_id = subjects.id")
-    print(grades)
+    grades = db.execute("SELECT students_grades.grade, students_grades.time, subjects.name FROM students_grades INNER JOIN subjects ON students_grades.subject_id = subjects.id").fetchall()
+
+    for object in grades:
+        print(object)
 
     db.close()
-    return render_template("student/grades.html",)
+    return render_template("student/grades.html",grades=grades)
