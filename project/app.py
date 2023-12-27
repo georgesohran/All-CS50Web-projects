@@ -136,7 +136,6 @@ def main_page():
         return render_template("teacher/index.html")
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
-        print(schedule)
         db.close()
         return render_template("student/index.html", schedule=schedule)
 
