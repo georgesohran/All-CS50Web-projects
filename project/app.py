@@ -127,7 +127,7 @@ def logout():
     return redirect("/login")
 
 
-
+#sheared functions of student and teacher
 @app.route("/")
 @login_required
 def main_page():
@@ -143,7 +143,7 @@ def main_page():
         return render_template("student/index.html", schedule=schedule)
 
 
-
+#some functions for the students
 @app.route("/grades")
 @login_required
 def students():
@@ -158,7 +158,16 @@ def students():
 
     for subject in subjects:
         averege = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == ? AND subject_id == (SELECT id FROM subjects WHERE name == ?)",(session["user_id"][0][0], subject[0])).fetchall()
-        averege_grades[subject[0]] = averege[0][0]
+        if averege[0][0] == None:
+            averege_grades[subject[0]] = 0
+        else:
+            averege_grades[subject[0]] = averege[0][0]
+
+    print(averege_grades)
 
     db.close()
     return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege_grades)
+
+
+
+#some functions for teacher
