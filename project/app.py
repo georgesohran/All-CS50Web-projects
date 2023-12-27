@@ -142,10 +142,15 @@ def main_page():
         db.close()
         return render_template("student/index.html", schedule=schedule)
 
-@app.route("/students",methods=["POST","GET"])
+
+
+@app.route("/grades")
 @login_required
 def students():
-    if request.method == "POST":
-        ...
-    else:
-        return render_template("teacher/students.html")
+    db = sqlite3.connect(db_path, check_same_thread=False)
+    cur = db.cursor()
+
+    grades = db.execute("SELECT grade,time")
+
+    db.close()
+    return render_template("student/grades.html",)
