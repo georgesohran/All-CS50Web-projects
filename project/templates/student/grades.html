@@ -3,11 +3,11 @@
 {% block main %}
 
 <div>
-    <table class="table">
+    <table class="table table-bordered">
     <tbody>
     {% for subject in subjects %}
         <tr>
-        <th scope="row"> {{subject.0}} </th>
+        <th scope="row" style="max-width: 150px; word-wrap: break-word;"> {{subject.0}} </th>
 
         {% for obj in grades %}
         {% if obj.2 == subject.0 %}
