@@ -135,8 +135,12 @@ def logout():
 
 @app.route("/")
 def main_page():
+    db = sqlite3.connect(db_path, check_same_thread=False)
+    cur = db.cursor()
     if session["user_type"] == "teacher":
         return render_template("teacher/index.html")
     elif session["user_type"] == "student":
+        cur.execute("")
+        db.close()
         return render_template("student/index.html")
 
