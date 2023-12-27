@@ -16,8 +16,7 @@ Session(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "database.db")
-db = sqlite3.connect(db_path, check_same_thread=False)
-cur = db.cursor()
+
 
 
 
@@ -37,6 +36,8 @@ def index():
 
 @app.route("/register", methods=["POST","GET"])
 def register():
+    db = sqlite3.connect(db_path, check_same_thread=False)
+    cur = db.cursor()
     if request.method == "POST":
         password = request.form.get("password")
         password2 = request.form.get("password2")
@@ -73,9 +74,16 @@ def register():
 
         session["user_id"] = id
 
+        db.close()
+
         return redirect("/")
+
     else:
+        db.close()
+
         return render_template("register.html", messege="OK")
+
+
 
 @app.route("/login", methods=["POST","GET"])
 def login():
