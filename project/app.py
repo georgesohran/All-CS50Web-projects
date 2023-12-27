@@ -133,5 +133,6 @@ def logout():
     session.clear()
     return redirect("/login")
 
-
-
+@app.route("/")
+def main_page():
+    if session["user_type"]
