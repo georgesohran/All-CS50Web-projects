@@ -13,5 +13,7 @@ def login_required(f):
 
 
 def sort_grades(grades):
-    
+    sorted_grades = []
+    for item in grades:
+        
 
