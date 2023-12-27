@@ -141,11 +141,6 @@ def main_page():
         return render_template("teacher/index.html")
     elif session["user_type"] == "student":
         schedule = cur.execute("SELECT * FROM schedule").fetchall()
-        schedule_list = []
-
-        for obj in schedule:
-            schedule_list.append(list(obj))
-
         db.close()
-        return render_template("student/index.html")
+        return render_template("student/index.html", schedule=schedule)
 
