@@ -101,7 +101,10 @@ def login():
 
         all_names = cur.execute(f"SELECT name FROM {type}s")
         print(all_names)
-        all_names = []
+        all_names = [i[0] for i in all_names]
+
+        if name not in all_names:
+            return render_tamplate("login.html", messege="")
 
 
     else:
