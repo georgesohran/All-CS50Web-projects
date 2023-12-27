@@ -101,7 +101,7 @@ def login():
         if not name or not type or not password:
             return render_template("login.html" ,messege="missing name, type or password")
 
-        if type not in ["teacher", "students"]:
+        if type not in ["teacher", "student"]:
             return render_template("login.html", messege="invalid type")
 
         all_names = cur.execute(f"SELECT name FROM {type}s")

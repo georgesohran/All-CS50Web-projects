@@ -17,6 +17,9 @@
                 <option>student</option>
             </select>
         </div>
+        {% if messege != 'OK' %}
+        <p>{{messege}}</p>
+        {% endif %}
         <button type="submit" class="btn btn-primary">Log in</button>
     </form>
 </div>
