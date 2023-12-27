@@ -155,5 +155,4 @@ def students():
     subjects = db.execute("SELECT name FROM subjects").fetchall()
 
     db.close()
-    print(grades,"-----",subjects)
     return render_template("student/grades.html",grades=grades, subjects=subjects)

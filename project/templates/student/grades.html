@@ -7,7 +7,7 @@
     <tbody>
     {% for subject in subjects %}
         <tr>
-        <th scope="row" style="max-width: 150px; word-wrap: break-word;"> {{subject.0}} </th>
+        <th scope="row" style="width: 150px; word-wrap: break-word;"> {{subject.0}} </th>
 
         {% for obj in grades %}
         {% if obj.2 == subject.0 %}
