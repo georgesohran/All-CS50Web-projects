@@ -99,7 +99,9 @@ def login():
         if type not in ["teacher", "students"]:
             return render_template("login.html", messege="invalid type")
 
-        all_names = 
+        all_names = cur.execute(f"SELECT name FROM {type}s")
+        print(all_names)
+        all_names = []
 
 
     else:
