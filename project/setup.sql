@@ -44,7 +44,10 @@ CREATE TABLE schedule
     saturday TEXT,
     sunday TEXT
 );
-*/
+
 
 INSERT INTO schedule(monday,tuesday,wednesday,thirsday,friday,saturday,sunday)
     VALUES ('-','computer sceince','english','math','history','phisycs','math')
+*/
+
+INSERT INTO students_grades ()

@@ -150,7 +150,8 @@ def students():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
 
-    grades = db.execute("SELECT students_grades.grade, students_grades.time, subjects.name FROM students_grades INNER JOIN ")
+    grades = db.execute("SELECT students_grades.grade, students_grades.time, subjects.name FROM students_grades INNER JOIN students_grades.subject_id = subjects.id")
+    print(grades)
 
     db.close()
     return render_template("student/grades.html",)
