@@ -68,10 +68,8 @@ def register():
             cur.execute("INSERT INTO students (name,password_hash) VALUES(?,?)", (name, generate_password_hash(password)))
             db.commit()
 
-        id = db.execute("SELECT id FROM students WHERE name == ?", (name,))
-        id.fetchall()
-
-        session["user_id"] = id
+        session["user_id"] = cur.execute("SELECT id FROM students WHERE name == ?", (name,)).fetchall()[0]
+        print(session["user_id"])
 
         db.close()
 
