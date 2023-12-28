@@ -155,6 +155,24 @@ def schedule():
 
     return render_template("student/schedule.html", schedule=schedule)
 
+@app.route("/profile")
+@login_required
+def profile():
+    db = sqlite3.connect(db_path, check_same_thread=False)
+
+    if session["user_type"] == "student":
+        
+        db.close()
+
+        return render_template("")
+    elif session["user_type"] == "teacher":
+
+        db.close()
+
+        return render_template("")
+
+
+
 
 
 #some functions for the students
@@ -181,6 +199,5 @@ def grades():
 
     db.close()
     return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege_grades)
-
 
 #some functions for teacher
