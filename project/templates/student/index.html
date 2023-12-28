@@ -4,6 +4,9 @@
 
 <div style="margin-left: 80px; margin-right:80px; margin-top: 20px">
     <br>
+
+    <h3 class="h3">Your current schedule</h3>
+
     <button onclick="click" class="btn btn-info" style="float: left; margin-bottom: 30px" data-bs-toggle="modal" data-bs-target="#Modal">Why are some cells red?</button>
 
     <table class="table table-bordered table-primary">
@@ -38,20 +41,24 @@
         </tbody>
     </table>
 
+    <br>
+    <br>
+    <br>
+
     <h3 class="h3">Your current grades</h3>
 
-    <table>
+    <table class="table table-bordered table-primary">
       <thead>
         <tr scope="col">
-          {% for key,value in averege_grades.values() %}
-          <th>{{key}}</th>
+          {% for obj in averege_grades %}
+          <th>{{obj}}</th>
           {% endfor %}
         </tr>
       </thead>
       <tbody>
         <tr>
-          {% for key,value in averege_grades.values() %}
-          <td>{{value}}</td>
+          {% for obj in averege_grades %}
+          <td>{{averege_grades[obj]}}</td>
           {% endfor %}
         </tr>
       </tbody>
