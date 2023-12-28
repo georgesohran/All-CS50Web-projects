@@ -146,7 +146,7 @@ def main_page():
 #some functions for the students
 @app.route("/grades")
 @login_required
-def students():
+def grades():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
 
@@ -168,7 +168,17 @@ def students():
     db.close()
     return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege_grades)
 
+@app.route("/schedule")
+@login_required
+def schedule():
+    db = sqlite3.connect(db_path, check_same_thread=False)
+    schedule = db.execute("SELECT * FROM schedule").fetchall()
 
+    
+
+    db.close()
+
+    return render_template("student/index.html", schedule=schedule)
 
 
 #some functions for teacher
