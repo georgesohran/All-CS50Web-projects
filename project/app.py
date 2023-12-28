@@ -140,6 +140,9 @@ def main_page():
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
         db.close()
+
+        bad_subjects = db.execute("SELECT name FROM subject").fetchall()
+
         return render_template("student/index.html", schedule=schedule)
 
 
@@ -174,11 +177,9 @@ def schedule():
     db = sqlite3.connect(db_path, check_same_thread=False)
     schedule = db.execute("SELECT * FROM schedule").fetchall()
 
-    
-
     db.close()
 
-    return render_template("student/index.html", schedule=schedule)
+    return render_template("student/schedule.html", schedule=schedule)
 
 
 #some functions for teacher
