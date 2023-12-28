@@ -144,9 +144,11 @@ def main_page():
         schedule = db.execute("SELECT * FROM schedule").fetchall()
 
 
-        bad_sub_id = db.execute("SELECT subject_id FROM students_grades WHERE students_id == ?", (session["user_id"][0][0],)).fetchall()
+        bad_sub_id = db.execute("SELECT subject_id FROM students_grades WHERE student_id == ?", (session["user_id"][0][0],)).fetchall()
 
-        bad_subjects = db.execute("SELECT name FROM subjects WHERE id IN (?)", ()).fetchall()
+        bad_sub_id = set(bad_sub_id)
+
+        bad_subjects = db.execute("SELECT name FROM subjects WHERE id IN (?)", (bad_sub_id[0][0],)).fetchall()
 
         bad_subjects = [sub[0] for sub in bad_subjects]
 
