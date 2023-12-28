@@ -3,6 +3,8 @@
 {% block main %}
 
 <div style="margin-left: 80px; margin-right:80px; margin-top: 20px">
+    
+
     <table class="table table-bordered table-primary">
         <thead></thead>
           <tr>
@@ -20,11 +22,10 @@
             {% set i = 1 %}
             {% for time in schedule %}
                 <tr>
+                    <th scope="row">{{i}}</th>
                     {% for sub in time %}
-                        <th scope="row">{{time.0}}</th>
-
                         {% if sub in bad_subjects %}
-                        <td color="red">{{sub}}</td>
+                        <td class="table-danger">{{sub}}</td>
                         {% else %}
                         <td>{{sub}}</td>
                         {% endif %}
