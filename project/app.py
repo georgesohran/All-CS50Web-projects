@@ -153,7 +153,7 @@ def schedule():
 
     db.close()
 
-    return render_template("student/schedule.html", schedule=schedule)
+    return render_template("schedule.html", schedule=schedule)
 
 @app.route("/profile")
 @login_required
