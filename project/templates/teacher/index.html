@@ -22,12 +22,7 @@
                 <tr>
                     <th scope="row">{{i}}</th>
                     {% for sub in time %}
-                        {% if sub in bad_subjects %}
-                        <td class="table-danger">{{sub}}</td>
-                        {% else %}
                         <td>{{sub}}</td>
-                        {% endif %}
-
                     {% endfor %}
                 </tr>
                 {% set i = i + 1 %}

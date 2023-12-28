@@ -224,7 +224,10 @@ def grades():
     return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege_grades)
 
 #some functions for teacher
-@app.route("/students")
+@app.route("/students", methods=["POST","GET"])
 @login_required
 def students():
-    ...
+    if request.method == "POST":
+        ...
+    else:
+        ...
