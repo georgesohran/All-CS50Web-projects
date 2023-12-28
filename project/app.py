@@ -153,10 +153,9 @@ def main_page():
                 sub_name = db.execute("SELECT name FROM subjects WHERE id == ?", sub).fetchall()
                 bad_subjects.append(sub_name[0][0])
 
-
-        print(bad_subjects,":::::",schedule)
         db.close()
         return render_template("student/index.html", schedule=schedule, bad_subjects=bad_subjects)
+
 
 @app.route("/schedule")
 @login_required
@@ -207,8 +206,6 @@ def grades():
             averege_grades[subject[0]] = 0
         else:
             averege_grades[subject[0]] = averege[0][0]
-
-    print(averege_grades)
 
     db.close()
     return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege_grades)
