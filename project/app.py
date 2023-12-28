@@ -185,8 +185,6 @@ def profile():
 
 
 
-
-
 #some functions for the students
 @app.route("/grades")
 @login_required
