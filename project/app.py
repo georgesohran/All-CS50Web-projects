@@ -137,10 +137,10 @@ def main_page():
     db = sqlite3.connect(db_path, check_same_thread=False)
     cur = db.cursor()
     if session["user_type"] == "teacher":
+        schedule = db.execute("SELECT * FROM schedule").fetchall()
 
-        
-
-        return render_template("teacher/index.html")
+        db.close()
+        return render_template("teacher/index.html", schedule=schedule)
 
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
@@ -167,6 +167,7 @@ def main_page():
 
         db.close()
         return render_template("student/index.html", schedule=schedule, bad_subjects=bad_subjects, averege_grades=averege_grades)
+
     else:
         db.close()
         return render_template("layout.html")
