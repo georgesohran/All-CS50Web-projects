@@ -21,15 +21,14 @@
             {% for row in schedule %}
                 <tr>
                     <th scope="row">{{i}}</th>
-                    {% for i in range(7) %}
-                        {% if row[i] in bad_subjects %}
-                        <td color="red">{{row[i]}}</td>
+                    {% for j in range(7) %}
+                        {% if row[j] in bad_subjects %}
+                        <td color="red">{{row[j]}}</td>
                         {% else %}
-                        <td>{{row[i]}}</td>
+                        <td>{{row[j]}}</td>
                         {% endif %}
 
                     {% endfor %}
-
                 </tr>
                 {% set i = i + 1 %}
             {% endfor %}
