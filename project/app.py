@@ -127,7 +127,7 @@ def logout():
     return redirect("/login")
 
 
-#sheared functions of student and teacher
+#sheared functions for both student and teacher
 @app.route("/")
 @login_required
 def main_page():
