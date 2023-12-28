@@ -21,13 +21,15 @@
             {% for row in schedule %}
                 <tr>
                     <th scope="row">{{i}}</th>
-                    <td>{{row.0}}</td>
-                    <td>{{row.1}}</td>
-                    <td>{{row.2}}</td>
-                    <td>{{row.3}}</td>
-                    <td>{{row.4}}</td>
-                    <td>{{row.5}}</td>
-                    <td>{{row.6}}</td>
+                    {% for i in range(7) %}
+                        {% if row[i] in bad_subjects %}
+                        <td color="red">{{row[i]}}</td>
+                        {% else %}
+                        <td>{{row[i]}}</td>
+                        {% endif %}
+
+                    {% endfor %}
+
                 </tr>
                 {% set i = i + 1 %}
             {% endfor %}
@@ -36,7 +38,7 @@
 
     <br>
 
-    
+
 </div>
 
 {% endblock %}
