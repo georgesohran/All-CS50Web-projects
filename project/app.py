@@ -143,22 +143,20 @@ def main_page():
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
 
-
         all_subject_ids = db.execute("SELECT subject_id FROM students_grades WHERE student_id == ?", (session["user_id"][0][0],)).fetchall()
 
         bad_subjects = []
 
         for sub in all_subject_ids:
             grade = db.execute("SELECT AVG(grade) FROM students_grades WHERE subject_id == ?", sub).fetchall()
-            print(grade)
             if grade[0][0] < 4:
                 sub_name = db.execute("SELECT name FROM subjects WHERE id == ?", sub).fetchall()
                 bad_subjects.append(sub_name[0][0])
 
 
-        print(bad_subjects)
+        print(bad_subjects,":::::",schedule)
         db.close()
-        return render_template("student/index.html", schedule=schedule, bad_subject=bad_subjects)
+        return render_template("student/index.html", schedule=schedule, bad_subjects=bad_subjects)
 
 @app.route("/schedule")
 @login_required
