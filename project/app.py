@@ -161,15 +161,15 @@ def profile():
     db = sqlite3.connect(db_path, check_same_thread=False)
 
     if session["user_type"] == "student":
-        
+
         db.close()
 
-        return render_template("")
+        return render_template("student/profile.html")
     elif session["user_type"] == "teacher":
 
         db.close()
 
-        return render_template("")
+        return render_template("teacher/profile.html")
 
 
 
