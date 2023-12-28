@@ -141,9 +141,11 @@ def main_page():
         schedule = db.execute("SELECT * FROM schedule").fetchall()
         db.close()
 
-        bad_subjects = db.execute("SELECT name FROM subject").fetchall()
+        bad_subjects = db.execute("""SELECT name FROM subjects WHERE id IN
+                                  (SELECT subject_id FROM students_grades WHERE student_id == ? AND
+                                  (SELECT AVG(grade) FROM students_grades WHERE student_id == ?))""", (session["user_id"][0][0], session["user_id"][0][0])).fetchall()
 
-        return render_template("student/index.html", schedule=schedule)
+        return render_template("student/index.html", schedule=schedule, bad_subject=bad_subjects)
 
 @app.route("/schedule")
 @login_required
