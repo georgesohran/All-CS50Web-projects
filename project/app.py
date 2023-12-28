@@ -18,6 +18,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "database.db")
 
 
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 
 @app.after_request
