@@ -143,7 +143,7 @@ def main_page():
 
         bad_subjects = db.execute("""SELECT name FROM subjects WHERE id IN
                                   (SELECT subject_id FROM students_grades WHERE student_id == ? AND
-                                  (SELECT AVG(grade) FROM students_grades WHERE student_id == ?) < 4) """, (session["user_id"][0][0], session["user_id"][0][0])).fetchall()
+                                  SELECT AVG(grade) < 4) """, (session["user_id"][0][0],)).fetchall()
 
         bad_subjects = [sub[0] for sub in bad_subjects]
 
