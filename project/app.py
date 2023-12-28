@@ -144,7 +144,7 @@ def main_page():
         schedule = db.execute("SELECT * FROM schedule").fetchall()
 
 
-        bad_sub_id = db.execute("").fetchall()
+        bad_sub_id = db.execute("SELECT subject_id FROM students_grades WHERE students_names").fetchall()
 
         bad_subjects = db.execute("SELECT name FROM subjects WHERE id IN (?)", ()).fetchall()
 
