@@ -52,7 +52,8 @@ INSERT INTO schedule(monday,tuesday,wednesday,thirsday,friday,saturday,sunday)
 
 INSERT INTO students_grades (student_id, subject_id, time, grade)
     VALUES (9,5,'12.07.2023  12:43',5),(9,3,'12.07.2023  12:20',4),(9,2,'12.11.2023  12:43',3);
-*/
+
 
 INSERT INTO schedule(monday,tuesday,wednesday,thirsday,friday,saturday,sunday)
     VALUES ('math','-','english','computer sceince','-','phisycs','history');
+*/

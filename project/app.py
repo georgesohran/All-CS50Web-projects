@@ -150,21 +150,21 @@ def main_page():
         averege_grades = {}
 
         for sub in all_subject_ids:
-            subject = db.execute("SELECT name FROM subjects WHERE id == ?", sub)
-            grade = db.execute("SELECT AVG(grade) FROM students_grades WHERE subject_id == ? AND student_id == ?", sub, (session["user_id"][0][0],)).fetchall()
+            subject = db.execute("SELECT name FROM subjects WHERE id == ?", sub).fetchall()
+            grade = db.execute("SELECT AVG(grade) FROM students_grades WHERE subject_id == ? AND student_id == ?", (sub[0], session["user_id"][0][0])).fetchall()
             if grade[0][0] < 4:
                 sub_name = db.execute("SELECT name FROM subjects WHERE id == ?", sub).fetchall()
                 bad_subjects.append(sub_name[0][0])
 
             if grade[0][0] == None:
-                averege_grades[subject[0]] = 0
+                averege_grades[subject[0][0]] = 0
             else:
-                averege_grades[subject[0]] = grade[0][0]
+                averege_grades[subject[0][0]] = grade[0][0]
 
         print(averege_grades)
 
         db.close()
-        return render_template("student/index.html", schedule=schedule, bad_subjects=bad_subjects)
+        return render_template("student/index.html", schedule=schedule, bad_subjects=bad_subjects, averege_grades=averege_grades)
 
 
 @app.route("/schedule")
