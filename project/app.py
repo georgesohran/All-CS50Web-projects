@@ -141,7 +141,7 @@ def main_page():
         return render_template("teacher/index.html")
 
     elif session["user_type"] == "student":
-        schedule = db.execute("SELECT * FROM schedule").fetchall()
+        schedule = db.execute("SELECT * FROM schedule").fetchall()[0]
 
         all_subject_ids = db.execute("SELECT subject_id FROM students_grades WHERE student_id == ?", (session["user_id"][0][0],)).fetchall()
 
