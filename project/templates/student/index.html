@@ -18,17 +18,16 @@
         </thead>
         <tbody>
             {% set i = 1 %}
-            {% for row in schedule %}
+            {% for sub in schedule %}
                 <tr>
                     <th scope="row">{{i}}</th>
-                    {% for j in range(7) %}
-                        {% if row[j] in bad_subjects %}
-                        <td color="red">{{row[j]}}</td>
-                        {% else %}
-                        <td>{{row[j]}}</td>
-                        {% endif %}
 
-                    {% endfor %}
+                    {% if sub in bad_subjects %}
+                    <td color="red">{{sub}}</td>
+                    {% else %}
+                    <td>{{sub}}</td>
+                    {% endif %}
+
                 </tr>
                 {% set i = i + 1 %}
             {% endfor %}
