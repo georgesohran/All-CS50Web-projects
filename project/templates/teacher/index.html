@@ -2,6 +2,38 @@
 
 {% block main %}
 
+<div>
+    <table class="table table-bordered table-primary">
+        <thead></thead>
+          <tr>
+            <th>number</th>
+            <th scope="col">monday</th>
+            <th scope="col">tuesday</th>
+            <th scope="col">wednesday</th>
+            <th scope="col">thirsday</th>
+            <th scope="col">friday</th>
+            <th scope="col">saturday</th>
+            <th scope="col">sunday</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% set i = 1 %}
+            {% for time in schedule %}
+                <tr>
+                    <th scope="row">{{i}}</th>
+                    {% for sub in time %}
+                        {% if sub in bad_subjects %}
+                        <td class="table-danger">{{sub}}</td>
+                        {% else %}
+                        <td>{{sub}}</td>
+                        {% endif %}
 
+                    {% endfor %}
+                </tr>
+                {% set i = i + 1 %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}

@@ -138,6 +138,8 @@ def main_page():
     cur = db.cursor()
     if session["user_type"] == "teacher":
 
+        
+
         return render_template("teacher/index.html")
 
     elif session["user_type"] == "student":
@@ -165,7 +167,9 @@ def main_page():
 
         db.close()
         return render_template("student/index.html", schedule=schedule, bad_subjects=bad_subjects, averege_grades=averege_grades)
-
+    else:
+        db.close()
+        return render_template("layout.html")
 
 @app.route("/schedule")
 @login_required
@@ -219,4 +223,7 @@ def grades():
     return render_template("student/grades.html",grades=grades, subjects=subjects, averege=averege_grades)
 
 #some functions for teacher
-@app.route("")
+@app.route("/students")
+@login_required
+def students():
+    ...
