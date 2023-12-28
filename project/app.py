@@ -151,6 +151,7 @@ def main_page():
         bad_subjects = [sub[0] for sub in bad_subjects]
 
 
+        print(bad_sub_id)
         print(bad_subjects)
         db.close()
         return render_template("student/index.html", schedule=schedule, bad_subject=bad_subjects)
