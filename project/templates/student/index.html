@@ -18,16 +18,18 @@
         </thead>
         <tbody>
             {% set i = 1 %}
-            {% for sub in schedule %}
+            {% for time in schedule %}
                 <tr>
-                    <th scope="row">{{i}}</th>
+                    {% for sub in time %}
+                        <th scope="row">{{time.0}}</th>
 
-                    {% if sub in bad_subjects %}
-                    <td color="red">{{sub}}</td>
-                    {% else %}
-                    <td>{{sub}}</td>
-                    {% endif %}
+                        {% if sub in bad_subjects %}
+                        <td color="red">{{sub}}</td>
+                        {% else %}
+                        <td>{{sub}}</td>
+                        {% endif %}
 
+                    {% endfor %}
                 </tr>
                 {% set i = i + 1 %}
             {% endfor %}
