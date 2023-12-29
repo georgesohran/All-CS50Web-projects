@@ -231,12 +231,10 @@ def students():
         students_names = db.execute("SELECT name FROM students").fetchall()
         students_ids = db.execute("SELECT id FROM students").fetchall()
 
-        print(request.form.get("geru"),request.form.get("new_user"),request.form.get("wazup"))
-
         for student,id in zip(students_names,students_ids):
             if not request.form.get(student[0]):
                 continue
-            if not 0 < request.form.get(student[0]) <= 5:
+            if not 0 < int(request.form.get(student[0])) <= 5:
                 db.close()
                 return render_template("students.html")
 
