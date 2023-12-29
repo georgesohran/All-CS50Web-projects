@@ -1,5 +1,5 @@
 # digGradeBook
-> A digital grade book.
+### A digital grade book.
 #### Video Demo:  <URL HERE>
 #### Description:
 
@@ -7,7 +7,7 @@
 *This application is built using flask python framework, sqlite3 database, jinja2, html and alitle bit of JavaScript.*
 
 ## Registration.
-
+When visited the root 
 
 ## As a student.
 
