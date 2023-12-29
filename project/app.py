@@ -257,4 +257,4 @@ def students():
                 averege_grades[student[0]] = averege[0][0]
 
         db.close()
-        return render_template("teacher/students.html", grades=grades, students=students, averege=averege)
+        return render_template("teacher/students.html", grades=grades, students=students, averege=averege_grades)
