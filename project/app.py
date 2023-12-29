@@ -243,16 +243,19 @@ def students():
     if request.method == "POST":
         ...
     else:
-        sub_id = db.execute("SELECT subject_id FROM teachers WHERE id == ?", (session["user_id"][0][0],)).fetchall()
+        grades = db.execute("SELECT students_grades.grade, students_grades.time, subjects.name FROM students_grades INNER JOIN subjects ON students_grades.subject_id = subjects.id WHERE student_id = ?", (session["user_id"][0][0],)).fetchall()
 
-        students = db.execute("SELECT name FROM students").fetchall()
+        subjects = db.execute("SELECT name FROM subjects").fetchall()
 
         students_grades = {}
 
-        for student in students:
-            grades = db.execute("SELECT grade FROM students_grades WHERE name == ? AND subject_id == ?",(student[0], sub_id[0][0])).fetchall()
+        for subject in subjects:
+            averege = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == ? AND subject_id == (SELECT id FROM subjects WHERE name == ?)",(session["user_id"][0][0], subject[0])).fetchall()
+            if averege[0][0] == None:
+                averege_grades[subject[0]] = 0
+            else:
+                averege_grades[subject[0]] = averege[0][0]
 
-        print(students_grades)
 
         db.close()
         return render_template("teacher/students.html", students_grades=students_grades)
