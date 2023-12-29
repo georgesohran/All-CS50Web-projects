@@ -1,6 +1,6 @@
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
-from functions import login_required,sort_grades
+from functions import login_required
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -139,10 +139,21 @@ def main_page():
     if session["user_type"] == "teacher":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
 
-        students = db.execute("SELECT name FROM students")
+        students = db.execute("SELECT name FROM students").fetchall()
+
+        print(session["user_id"][0][0])
+
+        subject = db.execute("SELECT subject_id FROM teachers WHERE id == ?", (session["user_id"][0][0])).fetchall()
+
+        grades = {}
+
+        for student in students:
+            grade = db.execute("SELECT AVG(grade) FROM students_grades WHERE students_id == (SELECT id FROM students WHERE name == ?) AND subject_id == ?", (student[0],subject[0][0])).fetchall()
+
+            grades[student[0]] = grade[0][0]
 
         db.close()
-        return render_template("teacher/index.html", students=students , schedule=schedule)
+        return render_template("teacher/index.html", students=students , schedule=schedule , grades = grades)
 
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
