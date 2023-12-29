@@ -244,7 +244,13 @@ def students():
         ...
     else:
         sub_id = db.execute("SELECT subject_id FROM teachers WHERE id == ?", (session["user_id"][0][0],)).fetchall()
-        students_grades = db.execute("SELECT students_grades.grade ,students.name FROM students_grades INNER JOIN students ON students.id = students_grades.student_id WHERE subject_id == ?", sub_id[0]).fetchall()
+
+        students = db.execute("SELECT name FROM students").fetchall()
+
+        students_grades = {}
+
+        for student in students:
+            grades = db.execute("SELECT grade FROM students_grades WHERE name == ? AND subject_id == ?",(student[0], sub_id[0][0])).fetchall()
 
         print(students_grades)
 
