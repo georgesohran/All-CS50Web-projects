@@ -11,8 +11,8 @@
     <tbody>
     {% for student in students %}
         <tr>
-        <th scope="row" style="width: 150px; word-wrap: break-word;"> {{subject.0}} </th>
-        <th scope="row" style="width: 150px; word-wrap: break-word;"></thscope>{{averege[subject.0]}}</th>
+        <th scope="row" style="width: 150px; word-wrap: break-word;"> {{student.0}} </th>
+        <th scope="row" style="width: 150px; word-wrap: break-word;"></thscope>{{averege[student.0]}}</th>
         {% for obj in grades %}
         {% if obj.2 == student.0 %}
             <td>{{obj.0}}</td>
