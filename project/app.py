@@ -4,6 +4,8 @@ from functions import login_required
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
+import datetime
+
 import os.path
 import sqlite3
 
@@ -195,23 +197,6 @@ def schedule():
 
     return render_template("schedule.html", schedule=schedule)
 
-@app.route("/profile")
-@login_required
-def profile():
-    db = sqlite3.connect(db_path, check_same_thread=False)
-
-    if session["user_type"] == "student":
-
-        db.close()
-
-        return render_template("student/profile.html")
-    elif session["user_type"] == "teacher":
-
-        db.close()
-
-        return render_template("teacher/profile.html")
-
-
 
 #some functions for the students
 @app.route("/grades")
@@ -243,15 +228,17 @@ def grades():
 def students():
     db = sqlite3.connect(db_path, check_same_thread=False)
     if request.method == "POST":
-        students = db.execute("SELECT name FROM students").fetchall()
+        students_names = db.execute("SELECT name FROM students").fetchall()
+        students_ids = db.execute("SELECT id FROM students").fetchall()
 
         print(request.form.get("geru"),request.form.get("new_user"),request.form.get("wazup"))
 
-        for student in students:
+        for student,id in zip(students_names,students_ids):
             if not request.form.get(student[0]):
                 pass
 
-            db.execute("INSERT INTO students_grades () VALUES ()").fetchall()
+            db.execute("INSERT INTO students_grades (student_id, subject_id, time, grade) VALUES (?,(SELECT subject_id FROM teachers WHERE id == ?),?,?)", (id[0], session["user_id"][0][0],datetime.datetime.now(), request.form.get(student[0]))).fetchall()
+            db.commit()
 
         db.close()
         return redirect("/")
