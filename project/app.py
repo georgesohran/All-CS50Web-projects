@@ -251,7 +251,7 @@ def students():
 
         students_grades = {}
 
-        for subject in subjects:
+        for name in students_names:
             averege = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == ? AND subject_id == (SELECT id FROM subjects WHERE name == ?)",(session["user_id"][0][0], subject[0])).fetchall()
             if averege[0][0] == None:
                 students_grades[subject[0]] = 0
