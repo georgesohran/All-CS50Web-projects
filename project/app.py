@@ -153,6 +153,10 @@ def main_page():
             else:
                 grades[student[0]] = grade[0][0]
 
+        subject = db.execute("SELECT name FROM subjects WHERE id == ?", subject[0]).fetchall()
+
+        print(subject, schedule)
+
         db.close()
         return render_template("teacher/index.html", students=students , schedule=schedule , grades = grades , subject=subject)
 
