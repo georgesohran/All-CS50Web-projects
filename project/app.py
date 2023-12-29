@@ -135,7 +135,6 @@ def logout():
 @login_required
 def main_page():
     db = sqlite3.connect(db_path, check_same_thread=False)
-    cur = db.cursor()
     if session["user_type"] == "teacher":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
 
@@ -219,7 +218,6 @@ def profile():
 @login_required
 def grades():
     db = sqlite3.connect(db_path, check_same_thread=False)
-    cur = db.cursor()
 
     grades = db.execute("SELECT students_grades.grade, students_grades.time, subjects.name FROM students_grades INNER JOIN subjects ON students_grades.subject_id = subjects.id WHERE student_id = ?", (session["user_id"][0][0],)).fetchall()
 
@@ -241,7 +239,10 @@ def grades():
 @app.route("/students", methods=["POST","GET"])
 @login_required
 def students():
+    db = sqlite3.connect(db_path, check_same_thread=False)
     if request.method == "POST":
         ...
     else:
-        ...
+        students_grades = db.execute("SELECT students.name, ")
+
+        return render_template("students.html")
