@@ -4,6 +4,7 @@
 #### Description:
 
 ## Technology
+*This application is built using flask python framework, sqlite3 database, jinja2, html and alitle bit of JavaScript.*
 
 ## Registration.
 
