@@ -20,4 +20,6 @@ At your grades page you can see not only the averege of grades, but all grades y
 ## As a teacher.
 If you logged in as a teacher and correctly specified your subject, you should be able to see the main page. Here you can see the current schedule and when is the subjects that you teach. Also here you can see tha averege grade for each student you are teaching.
 
+Now apon clicking the 'students' url on the navigation bar you will see the table displaing all their grades for your subject along with their averege grades. Here you can grade any one of them with any grade you want in the range from 1-5 (otherwise website is not going to update the table)
 
+There also a schedule link you can click to see current schedule.
