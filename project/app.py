@@ -148,13 +148,13 @@ def main_page():
         for student in students:
             grade = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == (SELECT id FROM students WHERE name == ?) AND subject_id == ?", (student[0],subject[0][0])).fetchall()
 
-            if grade[0][0] == None:
+            if not grade[0][0] :
                 grades[student[0]] = 0
             else:
                 grades[student[0]] = grade[0][0]
 
         db.close()
-        return render_template("teacher/index.html", students=students , schedule=schedule , grades = grades)
+        return render_template("teacher/index.html", students=students , schedule=schedule , grades = grades , subject=subject)
 
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
