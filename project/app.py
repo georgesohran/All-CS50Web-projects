@@ -139,8 +139,10 @@ def main_page():
     if session["user_type"] == "teacher":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
 
+        students = db.execute("SELECT name FROM students")
+
         db.close()
-        return render_template("teacher/index.html", schedule=schedule)
+        return render_template("teacher/index.html", students=students , schedule=schedule)
 
     elif session["user_type"] == "student":
         schedule = db.execute("SELECT * FROM schedule").fetchall()
