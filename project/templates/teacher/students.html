@@ -19,7 +19,7 @@
         <th scope="row" style="width: 150px; word-wrap: break-word;"> {{student.0}} </th>
         <th scope="row" style="width: 150px; word-wrap: break-word;">{{averege[student.0]}}</th>
         <th scope="row" style="width: 150px; word-wrap: break-word;" >
-            <input name= {{student.0}} type="number"></input>
+            <input name={{student.0}}></input>
         </th>
         {% for obj in grades %}
         {% if obj.1 == student.0 %}
