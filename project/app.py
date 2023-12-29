@@ -248,9 +248,10 @@ def students():
         print(request.form.get("geru"),request.form.get("new_user"),request.form.get("wazup"))
 
         for student in students:
-            
+            if not request.form.get(student[0]):
+                pass
 
-            db.execute("").fetchall()
+            db.execute("INSERT INTO students_grades () VALUES ()").fetchall()
 
         db.close()
         return redirect("/")
