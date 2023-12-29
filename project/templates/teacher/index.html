@@ -3,6 +3,7 @@
 {% block main %}
 
 <div>
+    <br>
     <table class="table table-bordered table-primary">
         <thead></thead>
           <tr>
@@ -23,7 +24,7 @@
                     <th scope="row">{{i}}</th>
                     {% for sub in time %}
                         {% if sub == subject[0][0] %}
-                        <td class="table-success">{{sub}}</td>
+                        <td class="table-warning">{{sub}}</td>
                         {% else %}
                         <td>{{sub}}</td>
                         {% endif %}
@@ -35,8 +36,8 @@
     </table>
 </div>
 <br>
-<div>
-    <table class="table table-bordered table-striped">
+<div style="margin-left: 80px; margin-right:80px;">
+    <table class="table table-bordered table-primary">
         <tbody>
             {% for student in students %}
             <tr>
