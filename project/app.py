@@ -243,8 +243,16 @@ def grades():
 def students():
     db = sqlite3.connect(db_path, check_same_thread=False)
     if request.method == "POST":
+        students = db.execute("SELECT name FROM students").fetchall()
 
-        print(request.form.get("geru"),request.form.get("new_user"))
+        print(request.form.get("geru"),request.form.get("new_user"),request.form.get("wazup"))
+
+        for student in students:
+            
+
+            db.execute("").fetchall()
+
+        db.close()
         return redirect("/")
     else:
         grades = db.execute("SELECT students_grades.grade, students.name FROM students_grades INNER JOIN students ON students_grades.student_id = students.id WHERE subject_id = (SELECT subject_id FROM teachers WHERE id == ?)", (session["user_id"][0][0],)).fetchall()
