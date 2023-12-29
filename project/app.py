@@ -243,6 +243,10 @@ def students():
     if request.method == "POST":
         ...
     else:
-        students_grades = db.execute("SELECT students.name, ")
+        
+
+        students_grades = db.execute("SELECT students_grades.grade ,students.name FORM students_grades INNER students JOIN ON students.id = students_grades.student_id WHERE subject_id == ?").fetchall()
+
+        print(students_grades)
 
         return render_template("students.html")
