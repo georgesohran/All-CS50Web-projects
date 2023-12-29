@@ -10,7 +10,8 @@ Apon visiting the root directory you are being prompted to provide your name, pa
 
 ## As a student.
 Now when you've successfully logged in as a student you can see the main page of the website. On the main page as a Student you can see the current schedule (and yes you now also study at sundays, you are welcome). Some of the cells on the table might be red, wich indicates that you have a below 4 grade for this subject and you shouldn't miss it.
-Below the schedule you can see your current averege grades for all subjects. But if you want a more pre
+Below the schedule you can see your current averege grades for all subjects. But if you want a more precise picture of your grades you should visit the grades page.
+At your grades page you can see not only the averege of grades, but all grades you have ever got for each subject.
 
 ## As a teacher.
 
