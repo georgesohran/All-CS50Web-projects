@@ -245,9 +245,9 @@ def students():
     else:
         sub_id = db.execute("SELECT subject_id FROM teachers WHERE id ==?", (session["user_id"][0][0])).fetchall()
 
-        students_grades = db.execute("SELECT students_grades.grade, students.name FROM students_grades INNER JOIN students ON students_grades.student_id = students.id WHERE subject_id = ?", sub_id[0]).fetchall()
+        students = db.execute("SELECT students_grades.grade, students.name FROM students_grades INNER JOIN students ON students_grades.student_id = students.id WHERE subject_id = ?", sub_id[0]).fetchall()
 
-        students = db.execute("SELECT name FROM subjects").fetchall()
+        students_names = db.execute("SELECT name FROM students").fetchall()
 
         students_grades = {}
 
