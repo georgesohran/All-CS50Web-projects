@@ -22,8 +22,8 @@
                 <tr>
                     <th scope="row">{{i}}</th>
                     {% for sub in time %}
-                        {% if sub == subject[0][0] %}
-                        <td class="table-warning">{{sub}}</td>
+                        {% if sub == subject.0.0 %}
+                        <td class="table-success">{{sub}}</td>
                         {% else %}
                         <td>{{sub}}</td>
                         {% endif %}
