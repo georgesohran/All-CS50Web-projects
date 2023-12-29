@@ -245,16 +245,16 @@ def students():
     else:
         grades = db.execute("SELECT students_grades.grade, student.name FROM students_grades INNER JOIN students ON students_grades.student_id = students.id WHERE student_id = ?", (session["user_id"][0][0],)).fetchall()
 
-        students = db.execute("SELECT name FROM subjects").fetchall()
+        students = db.execute("SELECT name FROM students").fetchall()
 
         averege_grades = {}
 
         for student in students:
-            averege = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == ? AND subject_id == (SELECT subject_id FROM subjects WHERE name == ?)",(student[0] ,session["user_id"][0][0],)).fetchall()
+            averege = db.execute("SELECT AVG(grade) FROM students_grades WHERE student_id == ? AND subject_id == (SELECT subject_id FROM teachers WHERE id == ?)",(student[0] ,session["user_id"][0][0],)).fetchall()
             if averege[0][0] == None:
-                averege_grades[subject[0]] = 0
+                averege_grades[student[0]] = 0
             else:
-                averege_grades[subject[0]] = averege[0][0]
+                averege_grades[student[0]] = averege[0][0]
 
         db.close()
-        return render_template("teacher/students.html")
+        return render_template("teacher/students.html", )
