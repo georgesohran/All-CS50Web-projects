@@ -1,7 +1,6 @@
 # digGradeBook
 ### A digital grade book.
 #### Video Demo:  <URL HERE>
-#### Description:
 
 ## Technology
 *This application is built using flask python framework, sqlite3 database, jinja2, html and alitle bit of JavaScript.*
@@ -11,7 +10,7 @@ Apon visiting the root directory you are being prompted to provide your name, pa
 
 ## As a student.
 Now when you've successfully logged in as a student you can see the main page of the website. On the main page as a Student you can see the current schedule (and yes you now also study at sundays, you are welcome). Some of the cells on the table might be red, wich indicates that you have a below 4 grade for this subject and you shouldn't miss it.
-Below the schedule you can see your current grades for all subjects, that you 
+Below the schedule you can see your current grades for all subjects. And also
 
 ## As a teacher.
 
