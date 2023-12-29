@@ -18,6 +18,6 @@ Below the schedule you can see your current averege grades for all subjects. But
 At your grades page you can see not only the averege of grades, but all grades you have ever got for each subject. And also you could check out the schedule page where you can just see the schedule without any distraction.
 
 ## As a teacher.
-If you logged in as a teacher and correctly specified your subject, you should be able to see 
+If you logged in as a teacher and correctly specified your subject, you should be able to see the main page. Here you can see the current schedule and when is the subjects that you teach. Also here you can see tha averege grade for each student you are teaching.
 
 
