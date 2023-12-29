@@ -23,10 +23,10 @@
           </tr>
         </thead>
         <tbody>
-            {% set i = 1 %}
+
             {% for time in schedule %}
                 <tr>
-                    <th scope="row">{{i}}</th>
+                    <th scope="row">{{loop.index0 + 1}}</th>
                     {% for sub in time %}
                         {% if sub in bad_subjects %}
                         <td class="table-danger">{{sub}}</td>
@@ -36,7 +36,7 @@
 
                     {% endfor %}
                 </tr>
-                {% set i = i + 1 %}
+                
             {% endfor %}
         </tbody>
     </table>
