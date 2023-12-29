@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-            {% set i = 1%}{% endset %}
+            {% set i = 1 %}
             {% for time in schedule %}
                 <tr>
                     <th scope="row">{{i}}</th>
@@ -30,7 +30,7 @@
                         {% endif %}
                     {% endfor %}
                 </tr>
-                {% set i %}{{i + 1}}{% endset %}
+                {% set i = i + 1 %}
             {% endfor %}
         </tbody>
     </table>

@@ -155,8 +155,6 @@ def main_page():
 
         subject = db.execute("SELECT name FROM subjects WHERE id == ?", subject[0]).fetchall()
 
-        print(subject, schedule)
-
         db.close()
         return render_template("teacher/index.html", students=students , schedule=schedule , grades = grades , subject=subject)
 
@@ -180,8 +178,6 @@ def main_page():
                 averege_grades[subject[0][0]] = 0
             else:
                 averege_grades[subject[0][0]] = grade[0][0]
-
-        print(averege_grades)
 
         db.close()
         return render_template("student/index.html", schedule=schedule, bad_subjects=bad_subjects, averege_grades=averege_grades)
