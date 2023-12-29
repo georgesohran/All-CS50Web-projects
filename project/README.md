@@ -1,5 +1,5 @@
 # digGradeBook
-> Text that is a quote
+> A digital grade book.
 #### Video Demo:  <URL HERE>
 #### Description:
 TODO
