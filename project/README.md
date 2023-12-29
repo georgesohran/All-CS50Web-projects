@@ -2,4 +2,14 @@
 > A digital grade book.
 #### Video Demo:  <URL HERE>
 #### Description:
-TODO
+
+## Registration.
+
+
+## As a student.
+
+
+## As a teacher.
+
+
+
