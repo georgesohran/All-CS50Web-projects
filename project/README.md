@@ -1,6 +1,6 @@
 # digGradeBook
 ### A digital grade book.
-#### Video Demo:  
+#### Video Demo: https://youtu.be/UgYfZ7XWN4E
 
 ## Technology
 *This application is built using flask python framework, sqlite3 database, jinja2, html and alitle bit of JavaScript.*
