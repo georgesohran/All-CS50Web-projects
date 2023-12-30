@@ -236,7 +236,7 @@ def students():
                 continue
             if not 0 < int(request.form.get(student[0])) <= 5:
                 db.close()
-                return render_template("students.html")
+                return render_template("teacher/students.html")
 
             db.execute("INSERT INTO students_grades (student_id, subject_id, time, grade) VALUES (?,(SELECT subject_id FROM teachers WHERE id == ?),?,?)", (id[0], session["user_id"][0][0],datetime.datetime.now(), request.form.get(student[0]))).fetchall()
             db.commit()
