@@ -1,12 +1,15 @@
 .search_input{
-    text-align: center;
+    margin: auto;
+    width: 50%;
     size: 20%;
 }
 
-.button{
+button{
+    margin: auto;
     background-color: #8080d0;
-    text-align: center;
-    size: 20%
+    width: 50%;
+    size: 20%;
+
 }
 
 h1{
