@@ -1,11 +1,11 @@
 .search_input{
-    align: center;
+    text-align: center;
     size: 20%;
 }
 
 .button{
-    background-color: #2020aa;
-    align: center;
+    background-color: #8080d0;
+    text-align: center;
     size: 20%
 }
 
