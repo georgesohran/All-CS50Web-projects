@@ -1,11 +1,13 @@
 .search_input{
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
     size: 20%;
 }
 
 button{
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #8080d0;
     width: 50%;
     size: 20%;
