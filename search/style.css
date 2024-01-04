@@ -19,7 +19,7 @@ button{
     border-radius: 25px;
     color: #FFFFFF;
     font-family: arial;
-    height: 100%;
+    border: 2px;
     outline: 2px;
     width: 100%;
 }
