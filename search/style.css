@@ -15,17 +15,12 @@ button{
 }
 
 .insearch{
-    background-color: var(--color-realbox-background);
     border: none;
-    border-radius: var(--ntp-realbox-border-radius);
-    color: var(--color-realbox-foreground);
-    font-family: inherit;
-    font-size: inherit;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-family: arial;
     height: 100%;
-    outline: 0;
-    padding-inline-end: calc(var(--ntp-realbox-voice-icon-offset) + var(--ntp-realbox-icon-width) + var(--ntp-realbox-inner-icon-margin));
-    padding-inline-start: 52px;
-    position: relative;
+    outline: 2px;
     width: 100%;
 }
 
