@@ -1,7 +1,14 @@
 .search_input{
-    width:12;
+    align: center;
+    size: 20%;
 }
 
 .button{
-    
+    background-color: #2020aa;
+    align: center;
+    size: 20%
+}
+
+h1{
+    text-align: center;
 }
