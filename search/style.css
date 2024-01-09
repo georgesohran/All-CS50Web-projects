@@ -42,18 +42,16 @@ button{
 }
 
 .insearch{
-    font-family: arial,sans-serif;
-    line-height: 22px;
-    margin-bottom: 8px;
-    overflow-x: hidden;
-    border: none;
-    border-radius: 25px;
-    background-color: white;
-    font-family: arial;
-    border-style: solid;
-    border-width: 1px;
-    height: 15%;
-    width: 100%;
+    display: flex;
+    z-index: 3;
+    position: relative;
+    min-height: 40px;
+    background: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: none;
+    border-radius: 24px;
+    margin: 0 auto;
+    width: 300px;
 }
 
 h1{
