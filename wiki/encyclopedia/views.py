@@ -10,7 +10,7 @@ def index(request):
     })
 
 def entry(request, name):
-    if md_content := get_entry(name):
+    if md_content := util.get_entry(name):
         html_content = markdown(md_content)
         return render(request, "encyclopedia/entry.html",{
             "entry_content" : html_content,
