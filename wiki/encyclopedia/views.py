@@ -8,3 +8,5 @@ def index(request):
         "entries": util.list_entries()
     })
 
+def entry(request, name):
+    return render()
