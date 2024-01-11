@@ -10,4 +10,5 @@ def index(request):
     })
 
 def entry(request, name):
+    html_content = markdown2.markdown()
     return render()
