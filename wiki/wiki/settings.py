@@ -70,7 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wiki.wsgi.application'
 
-CSRF_TRUSTED_ORIGINS = ['https://CODESPACE-URL-8000.preview.app.github.dev']
+CSRF_TRUSTED_ORIGINS = ['https://vigilant-space-potato-6qj5xw466gj3rp99-8000.preview.app.github.dev']
 
 
 # Database
