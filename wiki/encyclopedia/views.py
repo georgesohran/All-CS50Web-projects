@@ -10,8 +10,12 @@ def index(request):
     })
 
 def entry(request, name):
-    with open(f"entries/{name}.md") as file:
-        md_content = file.read()
+    try:
+        with open(f"entries/{name}.md") as file:
+            md_content = file.read()
+    except FileNotFoundError:
+        md_content = "There is no such entry"
+
     html_content = markdown(md_content)
     return render(request, "encyclopedia/entry.html",{
         "entry_content" : html_content,
