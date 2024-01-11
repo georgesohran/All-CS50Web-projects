@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import markdown2
+from markdown2 import markdown_path
 
 from . import util
 
@@ -10,5 +10,5 @@ def index(request):
     })
 
 def entry(request, name):
-    html_content = markdown2.markdown()
+    html_content = markdown_path()
     return render()
