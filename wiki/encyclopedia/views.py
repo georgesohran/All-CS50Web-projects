@@ -10,5 +10,5 @@ def index(request):
     })
 
 def entry(request, name):
-    html_content = markdown_path()
+    html_content = markdown_path("entries/CSS.md")
     return render()
