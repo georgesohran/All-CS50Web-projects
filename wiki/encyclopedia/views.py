@@ -10,7 +10,10 @@ def index(request):
     })
 
 def entry(request, name):
-    with open("entries/CSS.md") as file:
+    with open(f"entries/{name}.md") as file:
         md_content = file.read()
     html_content = markdown(md_content)
-    return render()
+    return render(request, "encyclopedia/entry.html",{
+        "entry_content" : html_content,
+        "entry_name" : name
+    })
