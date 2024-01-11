@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from markdown2 import markdown_path
+from markdown2 import markdown
 
 from . import util
 
@@ -10,5 +10,7 @@ def index(request):
     })
 
 def entry(request, name):
-    html_content = markdown_path("entries/CSS.md")
+    with open("entries/CSS.md") as file:
+        md_content = file.read()
+    html_content = markdown(md_content)
     return render()
