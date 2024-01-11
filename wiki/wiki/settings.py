@@ -70,6 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wiki.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = ['https://CODESPACE-URL-8000.preview.app.github.dev']
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
