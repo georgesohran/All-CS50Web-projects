@@ -10,10 +10,16 @@ def index(request):
     })
 
 def entry(request, name):
-   
+    if md_content := get_entry(name):
+        html_content = markdown(md_content)
+        return render(request, "encyclopedia/entry.html",{
+            "entry_content" : html_content,
+            "entry_name" : name
+        })
 
-    html_content = markdown(md_content)
+    html_content = markdown("Sorry, no such entry was found")
     return render(request, "encyclopedia/entry.html",{
-        "entry_content" : html_content,
-        "entry_name" : name
-    })
+            "entry_content" : html_content,
+            "entry_name" : name
+        })
+
