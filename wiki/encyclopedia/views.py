@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django import forms
 from markdown2 import markdown
 
 from . import util
@@ -6,7 +7,7 @@ from . import util
 
 def index(request):
     if request.method == "POST":
-        print(request.POST)
+        print(forms.Form(request.POST))
 
 
     return render(request, "encyclopedia/index.html", {
@@ -26,6 +27,3 @@ def entry(request, name):
             "entry_content" : html_content,
             "entry_name" : name
         })
-
-def search(request):
-    ...
