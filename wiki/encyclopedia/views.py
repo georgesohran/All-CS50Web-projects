@@ -68,3 +68,9 @@ def entry(request, name):
             "entry_name" : name,
         })
 
+def create_new_page(request):
+    if request.method == "POST":
+        ...
+    else:
+        ...
+
