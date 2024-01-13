@@ -43,3 +43,6 @@ def entry(request, name):
             "entry_content" : html_content,
             "entry_name" : name
         })
+
+def search_results(request):
+    return render(request, "encyclopedia/search_results.html")
