@@ -14,7 +14,7 @@ def index(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
-            entry_name = form.cleaned_data["q"]
+            entry_name = form.cleaned_data["query"]
             if entry_name in util.list_entries():
                 return HttpResponseRedirect(reverse(f"index"))
             else:
