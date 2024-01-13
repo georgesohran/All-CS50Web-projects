@@ -40,13 +40,15 @@ def entry(request, name):
         html_content = markdown(md_content)
         return render(request, "encyclopedia/entry.html",{
             "entry_content" : html_content,
-            "entry_name" : name
+            "entry_name" : name,
+            "sform": SearchForm()
         })
 
     html_content = markdown("Sorry, no such entry was found")
     return render(request, "encyclopedia/entry.html",{
             "entry_content" : html_content,
-            "entry_name" : name
+            "entry_name" : name,
+            "sform": SearchForm()
         })
 
 def search_results(request):
