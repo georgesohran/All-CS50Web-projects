@@ -12,14 +12,13 @@ class SearchForm(forms.Form):
 
 def index(request):
     if request.method == "POST":
-        form = forms.Form(request.POST)
+        form = SearchForm(request.POST)
         print(form)
         if form.is_valid():
             entry_name = form.cleaned_data["q"]
             if entry_name in util.list_entries():
                 return HttpResponseRedirect(reverse(f"index"))
             else:
-                ...
                 return render(request, "encyclopedia/search_results.html")
         else:
             print("invalid form")
@@ -28,7 +27,8 @@ def index(request):
             })
     else:
         return render(request, "encyclopedia/index.html", {
-            "entries": util.list_entries()
+            "entries": util.list_entries(),
+            "sform": SearchForm()
         })
 
 
