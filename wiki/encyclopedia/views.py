@@ -34,7 +34,6 @@ def index(request):
             entry_name = form.cleaned_data["query"]
 
             if entry_name in util.list_entries():
-                #I could't use reverse function here, because the website crashes if I use it
                 return HttpResponseRedirect(reverse(f"wiki:{entry_name}"))
             else:
                 return render(request, "encyclopedia/search_results.html", {
