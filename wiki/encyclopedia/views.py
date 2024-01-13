@@ -11,7 +11,7 @@ from . import util
 
 #this code for displaying a button is from here: https://djangosnippets.org/snippets/2312/
 class SubmitButtonWidget(forms.Widget):
-    def render(self, name, value, attrs=None, renderer=None): #except for this line
+    def render(self, name, value, attrs=None, renderer=None):
         return '<input type="submit" name="%s" value="%s">' % (html.escape(name), html.escape(value))
 class SubmitButtonField(forms.Field):
     def __init__(self, *args, **kwargs):
@@ -61,10 +61,7 @@ def entry(request, name):
     return render(request, "encyclopedia/entry.html",{
             "entry_content" : html_content,
             "entry_name" : name,
-            "sform": SearchForm()
         })
 
 def search_results(request):
-    return render(request, "encyclopedia/search_results.html", {
-        "sform": SearchForm()
-    })
+    return render(request, "encyclopedia/search_results.html", {})
