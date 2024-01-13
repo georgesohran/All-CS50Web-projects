@@ -13,7 +13,6 @@ class SearchForm(forms.Form):
 def index(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
-        print(form)
         if form.is_valid():
             entry_name = form.cleaned_data["q"]
             if entry_name in util.list_entries():

@@ -14,7 +14,7 @@
                 <h2>Wiki</h2>
                 <form method="post">
                     {% csrf_token %}
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                    {{ sform }}
                     <button type="submit" class="btn btn-primary">Search</button>
                 </form>
                 <div>
