@@ -17,7 +17,10 @@ def index(request):
             if entry_name in util.list_entries():
                 return HttpResponseRedirect(reverse(f"{entry_name}"))
             else:
-                return ...
+                ...
+                return render(request, "encyclopedia/search_results.html")
+        else:
+            
 
 
 
