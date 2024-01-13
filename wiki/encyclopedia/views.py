@@ -38,7 +38,10 @@ def index(request):
                 return HttpResponseRedirect(f"/{entry_name}")
             else:
                 print("doesn't exist")
-                return HttpResponseRedirect(reverse("search_results"))
+                res = util.search_results_for()
+                return render(request, "encyclopedia/search_results.html", {
+
+                })
         else:
             print("invalid")
             return render(request, "encyclopedia/index.html", {
@@ -63,8 +66,3 @@ def entry(request, name):
             "entry_name" : name,
         })
 
-def search_results(request):
-    res = util.search_results_for("")
-    return render(request, "encyclopedia/search_results.html", {
-
-    })
