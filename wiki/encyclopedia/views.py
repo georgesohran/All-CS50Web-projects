@@ -21,7 +21,7 @@ def index(request):
                 return HttpResponseRedirect(reverse(f"{entry_name}"))
             else:
                 print("doesn't exist")
-                return HttpResponseRedirect(reverse(f"{entry_name}"))
+                return HttpResponseRedirect(reverse("search_results"))
         else:
             print("invalid")
             return render(request, "encyclopedia/index.html", {
