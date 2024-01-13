@@ -52,4 +52,6 @@ def entry(request, name):
         })
 
 def search_results(request):
-    return render(request, "encyclopedia/search_results.html")
+    return render(request, "encyclopedia/search_results.html", {
+        "sform": SearchForm()
+    })

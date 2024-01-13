@@ -15,7 +15,7 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ sform }}
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary", style="margin-top:10px">Search</button>
                 </form>
                 <div>
                     <a href="{% url 'index' %}">Home</a>
