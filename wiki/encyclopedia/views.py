@@ -8,7 +8,8 @@ from . import util
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
-    button = forms.
+    button = forms.CharField()
+    button.type = "submit"
 
 
 def index(request):
