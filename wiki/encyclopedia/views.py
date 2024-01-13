@@ -23,3 +23,5 @@ def entry(request, name):
             "entry_name" : name
         })
 
+def search(request):
+    ...
