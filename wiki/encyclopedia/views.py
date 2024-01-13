@@ -16,7 +16,7 @@ def index(request):
         if form.is_valid():
             entry_name = form.cleaned_data["query"]
             if entry_name in util.list_entries():
-                return HttpResponseRedirect(reverse(f"index"))
+                return HttpResponseRedirect(reverse(f"{entry_name}"))
             else:
                 return render(request, "encyclopedia/search_results.html")
         else:
