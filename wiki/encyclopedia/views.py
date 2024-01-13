@@ -21,7 +21,8 @@ def index(request):
                 return render(request, "encyclopedia/search_results.html")
         else:
             return render(request, "encyclopedia/index.html", {
-                "entries": util.list_entries()
+                "entries": util.list_entries(),
+                "sform": SearchForm()
             })
     else:
         return render(request, "encyclopedia/index.html", {
