@@ -13,8 +13,6 @@ def index(request):
         print(form)
         if form.is_valid():
             entry_name = form.cleaned_data["q"]
-            print(entry_name)
-
             if entry_name in util.list_entries():
                 return HttpResponseRedirect(reverse(f"{entry_name}"))
             else:
