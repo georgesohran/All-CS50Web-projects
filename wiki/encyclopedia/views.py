@@ -20,7 +20,12 @@ def index(request):
                 ...
                 return render(request, "encyclopedia/search_results.html")
         else:
-            
+            print("invalid form")
+            return render(request, "encyclopedia/index.html", {
+                "entries": util.list_entries()
+            })
+
+        
 
 
 
