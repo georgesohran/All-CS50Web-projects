@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django import forms
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from markdown2 import markdown
 
 from . import util
@@ -7,8 +9,17 @@ from . import util
 
 def index(request):
     if request.method == "POST":
-        print(forms.Form(request.POST))
-        
+        form = forms.Form(request.POST)
+        print(form)
+        if form.is_valid():
+            entry_name = form.cleaned_data["q"]
+
+            if entry_name in util.list_entries():
+                return HttpResponseRedirect(reverse(f"{entry_name}"))
+            else:
+                return ...
+
+
 
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
