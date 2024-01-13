@@ -5,6 +5,10 @@ from . import util
 
 
 def index(request):
+    if request.method == "POST":
+        print(request.POST)
+
+
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
