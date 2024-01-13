@@ -6,6 +6,9 @@ from markdown2 import markdown
 
 from . import util
 
+class SearchForm(forms.Form):
+    query = forms.CharField(label="Search Encyclopedia")
+
 
 def index(request):
     if request.method == "POST":
