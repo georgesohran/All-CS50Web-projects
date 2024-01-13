@@ -24,10 +24,10 @@ def index(request):
             return render(request, "encyclopedia/index.html", {
                 "entries": util.list_entries()
             })
-
-    return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
-    })
+    else:
+        return render(request, "encyclopedia/index.html", {
+            "entries": util.list_entries()
+        })
 
 
 def entry(request, name):
