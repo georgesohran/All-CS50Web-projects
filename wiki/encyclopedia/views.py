@@ -64,4 +64,7 @@ def entry(request, name):
         })
 
 def search_results(request):
-    return render(request, "encyclopedia/search_results.html", {})
+    res = util.search_results_for("")
+    return render(request, "encyclopedia/search_results.html", {
+
+    })

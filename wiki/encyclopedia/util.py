@@ -37,5 +37,10 @@ def get_entry(title):
         return None
 
 
-def search_results_for():
-    ...
+def search_results_for(s):
+    results = []
+    for entry in list_entries():
+        if s in entry:
+            results.append(entry)
+    return results
+
