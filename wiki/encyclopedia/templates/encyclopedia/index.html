@@ -10,7 +10,7 @@
     <ul>
         {% for entry in entries %}
         <!-- for some reason "url {{entry}}" didn't work and -->
-            <li><a href="url '{{entry}}'">{{ entry }}</a></li>
+            <li><a href="{% url 'entry' %}">{{ entry }}</a></li>
         {% endfor %}
     </ul>
 
