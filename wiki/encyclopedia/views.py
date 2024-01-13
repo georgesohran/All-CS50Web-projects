@@ -15,12 +15,15 @@ def index(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             entry_name = form.cleaned_data["query"]
+
             if entry_name in util.list_entries():
+                print("exists")
                 return HttpResponseRedirect(reverse(f"{entry_name}"))
             else:
-                return render(request, "encyclopedia/search_results.html")
+                print("doesn't exist")
+                return HttpResponseRedirect(reverse(f"{entry_name}"))
         else:
-            
+            print("invalid")
             return render(request, "encyclopedia/index.html", {
                 "entries": util.list_entries(),
                 "sform": SearchForm()
