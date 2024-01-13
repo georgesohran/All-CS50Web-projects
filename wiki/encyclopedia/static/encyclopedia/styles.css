@@ -37,6 +37,7 @@ textarea {
     margin-top: 5px;
 }
 
-a {
+/* i tried, but it doesn't apply the style */
+li > a {
     font-size:30px
 }
