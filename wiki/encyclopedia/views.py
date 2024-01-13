@@ -18,7 +18,7 @@ def index(request):
 
             if entry_name in util.list_entries():
                 print("exists")
-                return HttpResponseRedirect(reverse(f"{entry_name}"))
+                return HttpResponseRedirect(f"/{entry_name}")
             else:
                 print("doesn't exist")
                 return HttpResponseRedirect(reverse("search_results"))
