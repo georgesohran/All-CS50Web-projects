@@ -37,6 +37,6 @@ textarea {
     margin-top: 5px;
 }
 
-li => a {
+li > a {
     font-size: 140%;
 }
