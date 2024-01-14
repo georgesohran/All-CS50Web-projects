@@ -11,6 +11,9 @@ from . import util
 class SubmitButton(forms.Input):
     input_type = "submit"
 
+class SubmitButtonField(forms.Field):
+
+
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
