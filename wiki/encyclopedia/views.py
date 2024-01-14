@@ -10,9 +10,7 @@ from . import util
 
 class SubmitButton(forms.Input):
     input_type = "submit"
-
-class SubmitButtonField(forms.Field):
-
+    super().__init__()
 
 
 class SearchForm(forms.Form):
