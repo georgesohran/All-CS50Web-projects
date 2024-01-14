@@ -90,4 +90,6 @@ def edit_page(request, name):
     if request.method == "POST":
         ...
     else:
-        ...
+        return render(request,"encyclopedia/edit_page.html",{
+            "entry_name": name
+        })
