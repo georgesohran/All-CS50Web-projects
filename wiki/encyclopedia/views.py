@@ -17,6 +17,7 @@ class SearchForm(forms.Form):
 class NewEntryForm(forms.Form):
     title = forms.CharField()
     content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5"}))
+    button = "<input type='submit' value='Search'></input>"
 
 
 def index(request):
