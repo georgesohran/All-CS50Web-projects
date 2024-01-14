@@ -8,15 +8,10 @@ from markdown2 import markdown
 
 from . import util
 
-class SubmitButton(forms.Input):
-    def __init__(self):
-        super().__init__(attrs={type:"submit"})
-        return self.render()
-
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
     #plain HTML just works, it is fine
-    button = SubmitButton()
+    button = forms.Input().render("type", "submit")
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
