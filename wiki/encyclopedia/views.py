@@ -11,14 +11,13 @@ from . import util
 class SubmitButton(forms.Input):
     input_type = "submit"
     def __init__(self, attrs=None):
-        self.attrs = {"type":"submit"}
+        self.attrs = attrs
 
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
-    #plain HTML just works, it is fine
-    attrs = {"type":"submit"}
-    button = SubmitButton().render("s","Search", attrs={"type":"submit"})
+
+    button = forms.CharField(widget=SubmitButton(attrs={}))
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
