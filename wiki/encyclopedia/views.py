@@ -91,5 +91,6 @@ def edit_page(request, name):
         ...
     else:
         return render(request,"encyclopedia/edit_page.html",{
-            "entry_name": name
+            "entry_name": name,
+            "entry_content": util.get_entry(name)
         })
