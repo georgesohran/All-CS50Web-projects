@@ -80,6 +80,7 @@ def create_new_page(request):
                 })
             else:
                 util.save_entry(form.cleaned_data["title"])
+                return HttpResponseRedirect(f"/wiki/{title}")
     else:
         return render(request, "encyclopedia/new_page.html",{
             "neenform": NewEntryForm()
