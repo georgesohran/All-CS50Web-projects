@@ -26,7 +26,7 @@ class NewEntryForm(forms.Form):
 
 class EditEntryForm(forms.Form):
     def __init__(self, attrs):
-        
+        ...
 
 def index(request):
     if request.method == "POST":
