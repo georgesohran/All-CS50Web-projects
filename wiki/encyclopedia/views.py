@@ -65,5 +65,7 @@ def create_new_page(request):
     if request.method == "POST":
         form = forms.Form(request.POST)
     else:
-        return render(request, "encyclopedia/new_page.html")
+        return render(request, "encyclopedia/new_page.html",{
+            "neenform": NewEntryForm()
+        })
 
