@@ -10,8 +10,8 @@ from . import util
 
 class SubmitButton(forms.Input):
     input_type = "submit"
-    def __init__(self, attrs={"type":"submit"}):
-        self.attrs = attrs
+    def __init__(self):
+        self.attrs = {"type":"submit"}
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
@@ -21,7 +21,7 @@ class SearchForm(forms.Form):
 class NewEntryForm(forms.Form):
     title = forms.CharField()
     content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5"}))
-    button = forms.CharField(widget=SubmitButton(attrs={""}))
+    button = forms.CharField(widget=SubmitButton())
 
 
 def index(request):
