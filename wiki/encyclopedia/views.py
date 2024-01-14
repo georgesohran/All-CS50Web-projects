@@ -11,6 +11,7 @@ from . import util
 class SubmitButton(forms.Input):
     def __init__(self):
         super().__init__(attrs={type:"submit"})
+        return self.render()
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
