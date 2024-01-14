@@ -11,7 +11,8 @@ from . import util
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
-    button = "<input type='submit'>Search</input>"
+    #plain HTML just works, it is fine
+    button = "<input type='submit' value='Search'></input>"
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
