@@ -5,7 +5,9 @@
 {% block body %}
 
 <form method="post">
-    {{neenform.}}
+    {{neenform.title}}
+    {{neenform.content}}
+    {{neenform.button | safe}}
 </form>
 
 {% endblock %}
