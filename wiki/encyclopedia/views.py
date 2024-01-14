@@ -24,7 +24,9 @@ class NewEntryForm(forms.Form):
     content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry"}))
     button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
 
-
+class EditEntryForm(forms.Form):
+    def __init__(self, attrs):
+        
 
 def index(request):
     if request.method == "POST":
@@ -90,9 +92,8 @@ def edit_page(request, name):
     if request.method == "POST":
         ...
     else:
-        form = NewEntryForm()
-        form.title.widget
+        form = EditEntryForm()
         return render(request,"encyclopedia/edit_page.html",{
             "entry_name": name,
-            "neenform": NewEntryForm()
+            "neenform": form
         })
