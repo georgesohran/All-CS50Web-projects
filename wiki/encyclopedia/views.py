@@ -8,15 +8,18 @@ from markdown2 import markdown
 
 from . import util
 
-class SubmitButton(forms.Input):
-    input_type = "submit"
+class SubmitButton(forms.Widget):
     def __init__(self, attrs=None):
         self.attrs = attrs
+        default_attrs = {"type": "submit"}
+        if attrs:
+            default_attrs.update(attrs)
+        super().__init__(default_attrs)
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
 
-    button = forms.CharField(widget=SubmitButton(attrs={"type":"submit"}))
+    button = forms.CharField(widget=SubmitButton())
 
 
 class NewEntryForm(forms.Form):
