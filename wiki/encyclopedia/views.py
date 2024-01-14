@@ -20,7 +20,7 @@ class SearchForm(forms.Form):
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
-    content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5"}))
+    content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry"}))
     button = forms.CharField(widget=SubmitButton())
 
 
