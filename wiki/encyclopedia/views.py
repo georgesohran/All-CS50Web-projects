@@ -8,6 +8,8 @@ from markdown2 import markdown
 
 from . import util
 
+
+
 class SubmitButton(forms.Input):
     input_type = "submit"
     def __init__(self, attrs={"type":"submit"}):
@@ -17,11 +19,11 @@ class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
     button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Search"}))
 
-
 class NewEntryForm(forms.Form):
     title = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry"}))
     content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry"}))
     button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
+
 
 
 def index(request):
@@ -67,7 +69,10 @@ def entry(request, name):
 
 def create_new_page(request):
     if request.method == "POST":
-        form = forms.Form(request.POST)
+        form = NewEntryForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data["title"]
+            contnt = form.cleaned_data["content"]
     else:
         return render(request, "encyclopedia/new_page.html",{
             "neenform": NewEntryForm()
