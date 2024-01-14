@@ -13,7 +13,6 @@ class SubmitButton(forms.Input):
     def __init__(self, attrs=None):
         self.attrs = attrs
 
-
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
 
