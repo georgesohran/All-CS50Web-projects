@@ -8,8 +8,9 @@ from markdown2 import markdown
 
 from . import util
 
-class SubmitButton(forms.Widget):
-
+class SubmitButton(forms.Input):
+    def __init__(self):
+        super().__init__(self, attrs={type:"submit"})
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
