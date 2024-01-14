@@ -12,14 +12,14 @@ class SubmitButton(forms.Input):
     input_type = "submit"
     def __init__(self, attrs=None):
         self.attrs = {"type":"submit"}
-        return self.render("s","Search")
+        self.render("s","Search", attrs=self.attrs)
 
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
     #plain HTML just works, it is fine
     attrs = {"type":"submit"}
-    button = SubmitButton()
+    button = SubmitButton().render("s","Search", attrs=self.attrs)
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
