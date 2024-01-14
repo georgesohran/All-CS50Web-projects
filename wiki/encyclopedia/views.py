@@ -28,7 +28,7 @@ class SearchForm(forms.Form):
 
 class NewEntryForm(forms.Forms):
     title = forms.CharField()
-    content = forms.
+    content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5"}))
 
 
 def index(request):
