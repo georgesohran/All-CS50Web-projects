@@ -91,7 +91,7 @@ def edit_page(request, name):
         ...
     else:
         form = NewEntryForm()
-        
+        form.title.widget
         return render(request,"encyclopedia/edit_page.html",{
             "entry_name": name,
             "neenform": NewEntryForm()
