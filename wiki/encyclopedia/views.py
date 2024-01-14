@@ -11,7 +11,6 @@ from . import util
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
-    button = forms.CharField(attrs={"type":"submit"})
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
