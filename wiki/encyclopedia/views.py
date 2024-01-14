@@ -9,17 +9,8 @@ from markdown2 import markdown
 from . import util
 
 
-#this code for displaying a button is from here: https://djangosnippets.org/snippets/2312/
-class SubmitButtonWidget(forms.Widget):
-    def __init__(self, name, value):
-        ...
-    def render(self, name, value, attrs=None, renderer=None):
-        return '<input type="submit" name="%s" value="%s">' % (html.escape(name), html.escape(value))
-
-
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
-    button = SubmitButtonWidget(value="Search", name="search_button")
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
