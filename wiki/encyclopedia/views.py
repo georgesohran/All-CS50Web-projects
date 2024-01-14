@@ -90,7 +90,9 @@ def edit_page(request, name):
     if request.method == "POST":
         ...
     else:
+        form = NewEntryForm()
+        
         return render(request,"encyclopedia/edit_page.html",{
             "entry_name": name,
-            "entry_content": util.get_entry(name)
+            "neenform": NewEntryForm()
         })
