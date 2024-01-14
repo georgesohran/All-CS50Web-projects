@@ -73,7 +73,11 @@ def create_new_page(request):
         if form.is_valid():
             title = form.cleaned_data["title"]
             contnt = form.cleaned_data["content"]
-            util.save_entry(form.cleaned_data["title"])
+            if util.save_entry(form.cleaned_data["title"]) == 1:
+                return render(request, "encyclopedia/new_page.html", {
+                    "neenform": NewEntryForm(),
+                    "messege": "Entry with this title already exists"
+                })
     else:
         return render(request, "encyclopedia/new_page.html",{
             "neenform": NewEntryForm()
