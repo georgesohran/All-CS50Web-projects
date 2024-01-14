@@ -71,8 +71,8 @@ def create_new_page(request):
     if request.method == "POST":
         form = NewEntryForm(request.POST)
         if form.is_valid():
-            title = form.cleaned_data["title"]
-            contnt = form.cleaned_data["content"]
+            util.save_entry(form.cleaned_data["title"], form.cleaned_data["content"])
+            return HttpResponseRedirect(f"/wiki/{entry_name}")
     else:
         return render(request, "encyclopedia/new_page.html",{
             "neenform": NewEntryForm()
