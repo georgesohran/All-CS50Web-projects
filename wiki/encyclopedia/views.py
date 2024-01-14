@@ -72,5 +72,5 @@ def create_new_page(request):
     if request.method == "POST":
         ...
     else:
-        ...
+        return render(request, "encyclopedia/new_page.html", {})
 
