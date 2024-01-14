@@ -11,22 +11,17 @@ from . import util
 
 #this code for displaying a button is from here: https://djangosnippets.org/snippets/2312/
 class SubmitButtonWidget(forms.Widget):
+    def __init__(self, name, value):
+        ...
     def render(self, name, value, attrs=None, renderer=None):
         return '<input type="submit" name="%s" value="%s">' % (html.escape(name), html.escape(value))
-class SubmitButtonField(forms.Field):
-    def __init__(self, *args, **kwargs):
-        kwargs["widget"] = SubmitButtonWidget
-        super(SubmitButtonField, self).__init__(*args, **kwargs)
-    def clean(self, value):
-        return value
-
 
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
-    button = SubmitButtonField(initial=u"Search")
+    button = SubmitButtonWidget(value="Search", name="search_button")
 
-class NewEntryForm(forms.Forms):
+class NewEntryForm(forms.Form):
     title = forms.CharField()
     content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5"}))
 
