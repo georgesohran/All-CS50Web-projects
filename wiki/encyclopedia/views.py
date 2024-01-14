@@ -8,6 +8,8 @@ from markdown2 import markdown
 
 from . import util
 
+class SubmitButton(forms.Widget):
+
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
