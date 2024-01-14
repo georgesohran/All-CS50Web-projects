@@ -26,6 +26,10 @@ class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
     button = SubmitButtonField(initial=u"Search")
 
+class NewEntryForm(forms.Forms):
+    title = forms.CharField()
+    content = forms.
+
 
 def index(request):
     if request.method == "POST":
@@ -70,7 +74,7 @@ def entry(request, name):
 
 def create_new_page(request):
     if request.method == "POST":
-        ...
+        form = forms.Form(request.POST)
     else:
-        return render(request, "encyclopedia/new_page.html", {})
+        return render(request, "encyclopedia/new_page.html")
 
