@@ -17,6 +17,8 @@
                     {{ sform.query }}
                     {{ sform.button | safe }}
                 </form>
+                {% block nav1 %}
+                {% endblock %}
                 <div>
                     <a href="{% url 'index' %}">Home</a>
                 </div>
@@ -26,7 +28,7 @@
                 <div>
                     <a>Random Page</a>
                 </div>
-                {% block nav %}
+                {% block nav2 %}
                 {% endblock %}
             </div>
             <div class="main col-lg-10 col-md-9">
