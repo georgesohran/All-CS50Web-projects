@@ -17,7 +17,8 @@ class SubmitButton(forms.Input):
 class SearchForm(forms.Form):
     query = forms.CharField(label="Search Encyclopedia")
 
-    button = forms.CharField(widget=SubmitButton(attrs={}))
+    button = forms.CharField(widget=SubmitButton(attrs={"type":"submit"}))
+
 
 class NewEntryForm(forms.Form):
     title = forms.CharField()
