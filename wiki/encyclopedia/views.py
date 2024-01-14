@@ -86,7 +86,7 @@ def create_new_page(request):
             "neenform": NewEntryForm()
         })
 
-def edit_page(request):
+def edit_page(request, name):
     if request.method == "POST":
         ...
     else:
