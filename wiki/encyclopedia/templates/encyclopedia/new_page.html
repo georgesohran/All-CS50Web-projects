@@ -1,7 +1,12 @@
 {% extends "encyclopedia/layout.html" %}
 
+{% block title %} New page {% endblock %}
+
 {% block body %}
 
-<input ></input>
+<form method="post">
+    <input name="title"></input>
+    <textarea name="contents"></textarea>
+</form>
 
 {% endblock %}
