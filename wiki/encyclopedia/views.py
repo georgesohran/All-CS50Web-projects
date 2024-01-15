@@ -94,7 +94,7 @@ def edit_page(request, name):
     if request.method == "POST":
         ...
     else:
-        form = EditEntryForm("dummy_title", "dummy_content")
+        form = EditEntryForm()
         return render(request,"encyclopedia/edit_page.html",{
             "entry_name": name,
             "neenform": form
