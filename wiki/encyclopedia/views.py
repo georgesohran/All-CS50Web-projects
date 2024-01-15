@@ -87,7 +87,7 @@ def create_new_page(request):
 
 def edit_page(request, name):
     if request.method == "POST":
-        
+        ...
     else:
         if name not in util.list_entries():
             return HttpResponseRedirect(f"/wiki/",{
