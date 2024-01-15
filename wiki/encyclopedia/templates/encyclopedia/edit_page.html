@@ -8,10 +8,10 @@
 
 <p style="color:red">{{messege}}</p>
 
-<form>
+<form method="POST">
     {% csrf_token %}
     <br>
-    <textarea>{{edit_content}}</textarea>
+    <textarea name="contents">{{edit_content}}</textarea>
     <br>
     <button type="submit">Save</button>
 </form>
