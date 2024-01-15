@@ -1,2 +1,2 @@
 #Flask
-Flask is a web framework for python, HTML, CSS
+Flask is a web framework for [python](/wiki/Python), HTML.
