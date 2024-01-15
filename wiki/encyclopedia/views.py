@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils import html
 
+from random import choose
+
 from markdown2 import markdown
 
 from . import util
@@ -49,7 +51,10 @@ def index(request):
                 "sform": SearchForm()
             })
     else:
+
+
         return render(request, "encyclopedia/index.html", {
+            "rnd_page":"CSS",
             "entries": util.list_entries(),
             "sform": SearchForm()
         })
