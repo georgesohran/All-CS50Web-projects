@@ -89,7 +89,16 @@ def edit_page(request, name):
     if request.method == "POST":
         ...
     else:
-        entry_time = 
+        if name not in util.list_entries():
+            return HttpResponseRedirect(f"/wiki/",{
+                 "messege": f"There is no such entry as {name}"
+            })
+
+        if md_content := util.get_entry(name):
+            html_content = markdown(md_content)
+        else:
+            html_content = markdown("Sorry, no such entry was found")
+
 
         return render(request,"encyclopedia/edit_page.html",{
             "entry_name": name,
