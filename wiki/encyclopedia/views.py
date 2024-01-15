@@ -85,15 +85,18 @@ def create_new_page(request):
             "neenform": NewEntryForm()
         })
 
+
 def edit_page(request, name):
     if request.method == "POST":
         contents = request.POST["contents"]
-        
 
         if name not in util.list_entries():
             return render(request,"encyclopedia/edit_page.html",{
                  "messege": f"There is no such entry as {name}"
             })
+
+        util.save_entry(name, contents)
+
     else:
         if name not in util.list_entries():
             return render(request,"encyclopedia/edit_page.html",{
