@@ -24,11 +24,6 @@ class NewEntryForm(forms.Form):
     content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry"}))
     button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
 
-class EditEntryForm(forms.Form):
-    title = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry", "value":"title"}))
-    content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry", "value":"content"}))
-    button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
-
 
 def index(request):
     if request.method == "POST":
@@ -94,6 +89,8 @@ def edit_page(request, name):
     if request.method == "POST":
         ...
     else:
+        entry_time = 
+
         return render(request,"encyclopedia/edit_page.html",{
             "entry_name": name,
             "edit_title": forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry"})),
