@@ -4,6 +4,13 @@
 
 {% block body %}
 
-{{neenform}}
+<form>
+    {% csrf_token %}
+    {{neenform.title}}
+    <br>
+    {{neenform.content}}
+    <br>
+    {{neenform.button}}
+</form>
 
 {% endblock %}
