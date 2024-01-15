@@ -102,6 +102,5 @@ def edit_page(request, name):
 
         return render(request,"encyclopedia/edit_page.html",{
             "entry_name": name,
-            "edit_title": forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry"})),
-            "edit_form": forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry", "value":"content"})).render()
+            "edit_form": html_content
         })
