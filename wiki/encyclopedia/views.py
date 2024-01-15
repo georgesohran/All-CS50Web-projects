@@ -97,6 +97,8 @@ def edit_page(request, name):
 
         util.save_entry(name, contents)
 
+        return HttpResponseRedirect(f"/wiki/{name}")
+
     else:
         if name not in util.list_entries():
             return render(request,"encyclopedia/edit_page.html",{
