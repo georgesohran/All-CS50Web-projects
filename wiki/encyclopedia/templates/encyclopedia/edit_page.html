@@ -6,11 +6,11 @@
 
 <form>
     {% csrf_token %}
-    {{neenform.title}}
+    {{edit_title}}
     <br>
-    {{neenform.content}}
+    {{edit_content}}
     <br>
-    {{neenform.button}}
+    <button type="submit">Save</button>
 </form>
 
 {% endblock %}
