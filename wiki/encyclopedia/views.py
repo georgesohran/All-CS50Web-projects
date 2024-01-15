@@ -25,8 +25,8 @@ class NewEntryForm(forms.Form):
     button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
 
 class EditEntryForm(forms.Form):
-    title = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry", "value":title}))
-    content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry", "value":content}))
+    title = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry", "value":"title"}))
+    content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry", "value":"content"}))
     button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
 
 
