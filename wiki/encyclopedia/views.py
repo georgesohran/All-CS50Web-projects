@@ -25,10 +25,10 @@ class NewEntryForm(forms.Form):
     button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
 
 class EditEntryForm(forms.Form):
-    def __init__(self, attrs):
-        self.title = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry", "value":attrs["title"]}))
-        self.content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry", "value":attrs["content"]}))
-        self.button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
+    def __init__(self, title):
+        title = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of your entry", "value":attrs["title"]}))
+        content = forms.CharField(widget=forms.Textarea(attrs={"rows":"5","placeholder":"The contents of your entry", "value":attrs["content"]}))
+        button = forms.CharField(widget=SubmitButton(attrs={"type":"submit","value":"Create new entry"}))
 
 
 def index(request):
