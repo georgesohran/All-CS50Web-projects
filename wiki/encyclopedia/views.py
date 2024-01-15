@@ -90,7 +90,7 @@ def edit_page(request, name):
         ...
     else:
         if name not in util.list_entries():
-            return render(request, "encyclopedia/edit_page.html",{
+            return render(request,"encyclopedia/edit_page.html",{
                  "messege": f"There is no such entry as {name}"
             })
 
