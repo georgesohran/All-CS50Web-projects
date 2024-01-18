@@ -6,9 +6,9 @@ class User(AbstractUser):
     pass
 
 
-class Auction():
+class Auction(models.Model):
     pass
 
 
-class Bid():
+class Bid(models.Model):
     pass
