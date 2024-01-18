@@ -7,7 +7,9 @@ class User(AbstractUser):
 
 
 class Auction(models.Model):
-    pass
+    product = models.CharField()
+    description = models.CharField()
+    
 
 
 class Bid(models.Model):
