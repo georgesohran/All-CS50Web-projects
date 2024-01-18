@@ -9,9 +9,10 @@ class User(AbstractUser):
 class Auction(models.Model):
     product = models.CharField()
     description = models.CharField()
-    
+
 
 
 class Bid(models.Model):
+    id = models.
     user_id = models.ForeignKey()
     bid_price = models.IntegerField()
