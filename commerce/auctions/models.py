@@ -7,9 +7,9 @@ class User(AbstractUser):
 
 
 class Auction(models.Model):
-    user_id = models.ForeignKey()
-
+    pass
 
 
 class Bid(models.Model):
-    pass
+    user_id = models.ForeignKey()
+    bid_price = models.IntegerField()
