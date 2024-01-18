@@ -11,7 +11,7 @@ class Auction(models.Model):
     current_bid_id = models.ForeignKey()
     product = models.CharField()
     description = models.CharField()
-
+    image = models.ImageField()
 
 
 
