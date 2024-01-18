@@ -7,12 +7,14 @@ class User(AbstractUser):
 
 
 class Auction(models.Model):
+    host_id = models.ForeignKey()
+    current_bid_id = models.ForeignKey()
     product = models.CharField()
     description = models.CharField()
 
 
 
+
 class Bid(models.Model):
-    id = models.
     user_id = models.ForeignKey()
     bid_price = models.IntegerField()
