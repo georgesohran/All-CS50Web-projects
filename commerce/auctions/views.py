@@ -63,5 +63,6 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
+
 def listings(request):
     return render(request, "auctions/layout.html")
