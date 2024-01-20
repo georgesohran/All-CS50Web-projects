@@ -16,7 +16,7 @@ class Auction(models.Model):
     time = models.CharField(max_length=64, blank=True)
 
     def __str__(self):
-        return f"host: {self.host.id}\nproduct: {self.product}\ntime: {self.time}"
+        return f"host: {self.host_id},\nproduct: {self.product},\ntime: {self.time}"
 
 
 class Bid(models.Model):
@@ -25,7 +25,7 @@ class Bid(models.Model):
     bid_price = models.IntegerField()
 
     def __str__(self):
-        return f"user_id: {self.user_id}\nbid_price: {self.bid_price}"
+        return f"user_id: {self.user_id},\nbid_price: {self.bid_price}"
 
 
 class Comment(models.Model):
@@ -34,4 +34,4 @@ class Comment(models.Model):
     contents = models.CharField(max_length=1024)
 
     def __str__(self):
-        return f"user: {self.user_id}\ncontents: {self.contents}\nauction: {self.auction_id}"
+        return f"user: {self.user_id},\ncontents: {self.contents},\nauction: {self.auction_id}"
