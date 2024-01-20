@@ -14,7 +14,6 @@ class Auction(models.Model):
     image = models.ImageField()
 
 
-
 class Bid(models.Model):
     user_id = models.ForeignKey()
     bid_price = models.IntegerField()
