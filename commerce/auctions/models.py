@@ -18,5 +18,9 @@ class Auction(models.Model):
     description = models.CharField(max_length=256)
     image = models.ImageField()
 
-class Auction_bids(models.Model):
-    
+
+class Auction_Bids(models.Model):
+    bid_id = models.ForeignKey(Bid, models.CASCADE)
+    auction_id = models.ForeignKey(Auction, models.CASCADE)
+
+
