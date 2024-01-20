@@ -37,7 +37,7 @@ class Comment(models.Model):
         return f"user: {self.user_id},\ncontents: {self.contents},\nauction: {self.auction_id}"
 
 
-class WathcList(models.Model):
+class Watchlist(models.Model):
     auction_id = models.ForeignKey(Auction, models.CASCADE)
     user_id = models.ForeignKey(User, models.CASCADE)
 
