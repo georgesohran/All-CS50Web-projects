@@ -70,4 +70,5 @@ def categories(request):
     return render(request, "auctions/layout.html")
 def watchlist(request):
     return render(request, "auctions/layout.html")
-
+def create_listing(request):
+    return render(request, "auctions/layout.html")
