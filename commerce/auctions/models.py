@@ -14,8 +14,8 @@ class Bid(models.Model):
 class Auction(models.Model):
     host_id = models.ForeignKey(User, models.CASCADE)
     current_bid_id = models.ForeignKey(Bid, models.CASCADE)
-    product = models.CharField()
-    description = models.CharField()
+    product = models.CharField(max_length=64)
+    description = models.CharField(max_length=64)
     image = models.ImageField()
 
 
