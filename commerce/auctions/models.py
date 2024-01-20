@@ -16,7 +16,8 @@ class Auction(models.Model):
     # current_bid_id = models.ForeignKey(Bid, models.CASCADE)
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
-    image = models.ImageField()
+    image = models.ImageField(blank=True)
+    time = models.CharField()
 
 
 class Auction_Bids(models.Model):
