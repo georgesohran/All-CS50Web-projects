@@ -20,7 +20,7 @@ class Auction(models.Model):
 
 
 class Auction_Bids(models.Model):
-    bid_id = models.ForeignKey(Bid, models.CASCADE)
-    auction_id = models.ForeignKey(Auction, models.CASCADE)
+    bid_id = models.ManyToManyField(Bid, models.CASCADE)
+    auction_id = models.ManyToManyField(Auction, models.CASCADE)
 
 
