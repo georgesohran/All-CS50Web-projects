@@ -19,7 +19,7 @@ class Auction(models.Model):
     # current_bid_id = models.ForeignKey(Bid, models.CASCADE)
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
-    category = models.CharField(max_length=64)
+    category = models.CharField(max_length=64, blank=True)
     image = models.ImageField(blank=True)
     time = models.CharField(max_length=64)
 
@@ -34,9 +34,11 @@ class Auction_Bid(models.Model):
     def __str__(self):
         return f"auction: {self.auction_id}\nbid: {self.bid_id}"
 
+
 class Comment(models.Model):
+    auction_id = models.ForeignKey(Auction, models.CASCADE)
     user_id = models.ForeignKey(User, models.CASCADE)
     contents = models.CharField(max_length=1024)
 
     def __str__(self):
-        return f"user: {self.user_id}\ncontents: {self.contents}"
+        return f"user: {self.user_id}\ncontents: {self.contents}\nauction: {self.auction_id}"
