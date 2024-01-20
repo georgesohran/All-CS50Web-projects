@@ -10,6 +10,9 @@ class Bid(models.Model):
     user_id = models.ForeignKey(User, models.CASCADE)
     bid_price = models.IntegerField()
 
+    def __str__(self):
+        return f"user_id: {self.user_id}\nbid_price: {self.bid_price}"
+
 
 class Auction(models.Model):
     host_id = models.ForeignKey(User, models.CASCADE)
@@ -19,10 +22,14 @@ class Auction(models.Model):
     image = models.ImageField(blank=True)
     time = models.CharField()
 
+    def __str__(self):
+        return f"host: {self.host.id}\nproduct: {self.product}\ntime: {self.time}"
+
 
 class Auction_Bids(models.Model):
     auction_id = models.ForeignKey(Auction, models.CASCADE)
     bid_id = models.ForeignKey(Bid, models.CASCADE)
 
-
+    def __str__(self):
+        return f"auction: {self.auction_id}\nbid: {self.bid_id}"
 
