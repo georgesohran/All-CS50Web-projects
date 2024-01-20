@@ -35,3 +35,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"user: {self.user_id},\ncontents: {self.contents},\nauction: {self.auction_id}"
+
+
+class WathcList(models.Model):
+    auction_id = models.ForeignKey(Auction, models.CASCADE)
+    user_id = models.ForeignKey(User, models.CASCADE)
+
+    def __str__(self):
+        return f"user: {self.user_id},\nauction: {self.auction_id}"
+
