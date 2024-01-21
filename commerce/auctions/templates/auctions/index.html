@@ -4,9 +4,11 @@
     <h2>Active Listings</h2>
 
     {% for auction in auctions %}
+    <div class="auction_container">
         <form>
-            
+            {{auction.id}}
         </form>
+    </div>
     {% empty %}
         <h5>No listings are active right now</h5>
     {% endfor %}
