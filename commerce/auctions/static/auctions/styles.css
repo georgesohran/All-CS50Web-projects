@@ -2,13 +2,6 @@ body {
     padding: 10px;
 }
 
-.form_container{
-    margin: auto;
-    width: 50%;
-    border: 3px solid gray;
-    padding: 10px;
-}
-
 .auction_container{
     border-color:grey;
     border-width:3px;
