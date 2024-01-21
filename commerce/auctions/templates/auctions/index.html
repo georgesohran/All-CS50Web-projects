@@ -3,5 +3,10 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    TODO
+    {% for auction in auctions: %}
+        
+    {% empty %}
+        <h5>No listings are active right now<h5>
+    {% endfor %}
+
 {% endblock %}
