@@ -3,10 +3,12 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    {% for auction in auctions: %}
-        
+    {% for auction in auctions %}
+        <form>
+            
+        </form>
     {% empty %}
-        <h5>No listings are active right now<h5>
+        <h5>No listings are active right now</h5>
     {% endfor %}
 
 {% endblock %}

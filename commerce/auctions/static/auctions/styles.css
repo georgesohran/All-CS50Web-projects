@@ -5,3 +5,8 @@ body {
 .form_container{
     margin: 80px
 }
+
+.auction_container{
+    border-color:grey;
+    border-width:3px
+}
