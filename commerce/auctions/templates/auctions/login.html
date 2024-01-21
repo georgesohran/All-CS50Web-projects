@@ -1,5 +1,7 @@
 {% extends "auctions/layout.html" %}
 
+
+
 {% block body %}
 
     <h2>Login</h2>
@@ -7,7 +9,7 @@
     {% if message %}
         <div>{{ message }}</div>
     {% endif %}
-    <div id="form_container">
+
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div class="form-group">
@@ -18,7 +20,7 @@
         </div>
         <input class="btn btn-primary" type="submit" value="Login">
     </form>
-    </div>
+
     Don't have an account? <a href="{% url 'register' %}">Register here.</a>
 
 {% endblock %}

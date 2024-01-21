@@ -2,7 +2,7 @@ body {
     padding: 10px;
 }
 
-.form_container{
+form{
     margin: auto;
     width: 50%;
     border: 3px solid gray;
