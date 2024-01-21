@@ -7,7 +7,7 @@
     {% if message %}
         <div>{{ message }}</div>
     {% endif %}
-    <div class="form_container">
+    <div id="form_container">
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div class="form-group">
