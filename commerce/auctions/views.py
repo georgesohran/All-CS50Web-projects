@@ -17,7 +17,6 @@ def index(request):
     for auction in auctions:
         bids = Bid.objects.filter(auction_id=auction.id)
         maxprice_bid = bids.aggregate(Max("bid_price"))
-        auction_bids[]
         
 
     return render(request, "auctions/index.html",{

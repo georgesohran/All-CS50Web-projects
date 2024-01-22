@@ -7,8 +7,7 @@ class User(AbstractUser):
 
 
 class Bid(models.Model):
-    auction_id = models.ForeignKey(Auction, models.CASCADE)
-    user_id = models.ForeignKey(User, models.CASCADE)
+    user = models.ForeignKey(User, models.CASCADE)
     bid_price = models.IntegerField()
 
     def __str__(self):
@@ -16,8 +15,8 @@ class Bid(models.Model):
 
 
 class Auction(models.Model):
-    host_id = models.ForeignKey(User, models.CASCADE)
-    current_bid_id = models.ForeignKey(Bid, models.CASCADE)
+    host = models.ForeignKey(User, models.CASCADE)
+    current_bid = models.ForeignKey(Bid, models.CASCADE)
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
     category = models.CharField(max_length=64, blank=True)
@@ -29,8 +28,8 @@ class Auction(models.Model):
 
 
 class Comment(models.Model):
-    auction_id = models.ForeignKey(Auction, models.CASCADE)
-    user_id = models.ForeignKey(User, models.CASCADE)
+    auction = models.ForeignKey(Auction, models.CASCADE)
+    user = models.ForeignKey(User, models.CASCADE)
     contents = models.CharField(max_length=1024)
 
     def __str__(self):
@@ -38,8 +37,8 @@ class Comment(models.Model):
 
 
 class Watchlist(models.Model):
-    auction_id = models.ForeignKey(Auction, models.CASCADE)
-    user_id = models.ForeignKey(User, models.CASCADE)
+    auction = models.ForeignKey(Auction, models.CASCADE)
+    user = models.ForeignKey(User, models.CASCADE)
 
     def __str__(self):
         return f"user: {self.user_id},\nauction: {self.auction_id}"
