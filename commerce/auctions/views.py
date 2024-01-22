@@ -9,8 +9,15 @@ from .models import *
 
 @login_required(login_url="/login")
 def index(request):
+    auctions = Auction.objects.all()
+
+    auction_bids = {}
+
+    for auction in auctions:
+        
+
     return render(request, "auctions/index.html",{
-        "auctions":Auction.objects.all()
+        "auctions":auctions
     })
 
 
