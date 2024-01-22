@@ -8,13 +8,13 @@ class User(AbstractUser):
 
 class Auction(models.Model):
     host_id = models.ForeignKey(User, models.CASCADE)
-    # current_bid_id = models.ForeignKey(Bid, models.CASCADE)
+    current_bid_id = models.ForeignKey(Bid, models.CASCADE)
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
     category = models.CharField(max_length=64, blank=True)
     image = models.ImageField(blank=True)
     time = models.CharField(max_length=64, blank=True)
-    current_price = models.FloatField()
+
 
     def __str__(self):
         return f"host: {self.host_id},\nproduct: {self.product},\ntime: {self.time}"
