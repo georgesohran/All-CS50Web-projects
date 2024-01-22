@@ -6,17 +6,8 @@ class User(AbstractUser):
     pass
 
 
-class Bid(models.Model):
-    user = models.ForeignKey(User, models.CASCADE)
-    bid_price = models.IntegerField()
-
-    def __str__(self):
-        return f"user_id: {self.user_id},\nbid_price: {self.bid_price}"
-
-
 class Auction(models.Model):
     host = models.ForeignKey(User, models.CASCADE)
-    current_bid = models.ForeignKey(Bid, models.CASCADE)
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
     category = models.CharField(max_length=64, blank=True)
@@ -25,6 +16,15 @@ class Auction(models.Model):
 
     def __str__(self):
         return f"host: {self.host_id},\nproduct: {self.product},\ntime: {self.time}"
+
+
+class Bid(models.Model):
+    auction = models.ForeignKey(Auction, models.CASCADE)
+    user = models.ForeignKey(User, models.CASCADE)
+    bid_price = models.IntegerField()
+
+    def __str__(self):
+        return f"user_id: {self.user_id},\nbid_price: {self.bid_price}"
 
 
 class Comment(models.Model):
