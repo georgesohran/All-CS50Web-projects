@@ -3,7 +3,8 @@ body {
   margin: 10px;
 }
 
-.container_new {
-  margin: 10px;
-  background-color:green
+.container-form {
+  margin-left: 240px;
+  margin-right: 240px;
+  text-align: center;
 }
