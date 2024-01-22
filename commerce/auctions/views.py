@@ -67,7 +67,7 @@ def register(request):
 
 
 def listings(request, listing_id):
-    
+    auction = Auction.objects.get(pk=listing_id)
     return render(request, "auctions/layout.html")
 def categories(request):
     return render(request, "auctions/layout.html")
