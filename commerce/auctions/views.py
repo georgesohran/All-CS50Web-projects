@@ -66,7 +66,8 @@ def register(request):
         return render(request, "auctions/register.html")
 
 
-def listings(request, listing_id): #dummy data was inserted so now work with it
+def listings(request, listing_id):
+    
     return render(request, "auctions/layout.html")
 def categories(request):
     return render(request, "auctions/layout.html")
