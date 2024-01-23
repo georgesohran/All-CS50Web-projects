@@ -18,6 +18,8 @@ def index(request):
 
     auction_prices = {}
 
+    final_contents = {}
+
     for auction in auctions:
         auct_bids = Bid.objects.filter(auction=auction)
         print(auction)
@@ -30,6 +32,8 @@ def index(request):
             auction_prices[auction.id] = price
 
     print(auction_prices)
+
+    
 
     return render(request, "auctions/index.html",{
         "auctions":auctions,
