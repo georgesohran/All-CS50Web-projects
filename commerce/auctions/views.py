@@ -18,7 +18,7 @@ def index(request):
 
     auction_prices = {}
 
-    final_contents = {}
+    final_contents = []
 
     for auction in auctions:
         auct_bids = Bid.objects.filter(auction=auction)
@@ -31,7 +31,7 @@ def index(request):
 
     for auct in auctions:
         d = [auct, auction_prices[auct.id]]
-        final_contents[auct.id] = d
+        final_contents.append(d)
 
     print(final_contents)
 
