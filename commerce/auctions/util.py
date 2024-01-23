@@ -2,12 +2,12 @@ import datetime
 import pytz
 
 
-
-tz = pytz.timezone('America/New_York')
+utc=pytz.UTC
 
 def get_latest_time(a):
-    max = datetime.datetime(2000,1,1,tzinfo=tz)
+    max_time = datetime.datetime(2000,1,1,tzinfo=tz)
     for obj in a:
-        if obj.time > max:
-            max = obj.time
+        time = obj.time.replace(tzinfo=utc)
+        if obj.time > max_time:
+            max_time = obj.time
     return max
