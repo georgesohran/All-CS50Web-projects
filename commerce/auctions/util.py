@@ -9,5 +9,5 @@ def get_latest_time(a):
     for obj in a:
         time = obj.time.replace(tzinfo=utc)
         if time > max_time:
-            max_time = obj.time
-    return max
+            max_time = time
+    return max_time
