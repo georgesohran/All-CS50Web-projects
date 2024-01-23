@@ -13,6 +13,7 @@ class Auction(models.Model):
     category = models.CharField(max_length=64, blank=True)
     image = models.ImageField(blank=True)
     time = models.CharField(max_length=64, blank=True)
+    current_price = models.FloatField()
 
     def __str__(self):
         return f"host: {self.host_id},\nproduct: {self.product},\ntime: {self.time}"
