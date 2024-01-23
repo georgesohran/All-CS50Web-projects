@@ -27,6 +27,8 @@ def index(request):
         else:
             auction_prices[auction.id] = get_latest_time(auct_bids)
 
+    print(auction_prices)
+
     return render(request, "auctions/index.html",{
         "auctions":auctions,
         "auct_prices": auction_prices
