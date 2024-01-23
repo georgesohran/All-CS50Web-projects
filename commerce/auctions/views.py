@@ -22,8 +22,6 @@ def index(request):
 
     for auction in auctions:
         auct_bids = Bid.objects.filter(auction=auction)
-        print(auction)
-        print(auct_bids)
         if not auct_bids:
             continue
         else:
@@ -31,13 +29,14 @@ def index(request):
             price = auct_bids.get(time=time)
             auction_prices[auction.id] = price
 
+    for auct in auctions:
+        d = [auct, auction_prices[auct.id]]
+        final_contents[auct.id] = d
+
     print(auction_prices)
 
-    
-
     return render(request, "auctions/index.html",{
-        "auctions":auctions,
-        "auct_prices": auction_prices
+        "auctions":final_contents,
     })
 
 
