@@ -14,12 +14,7 @@ import datetime
 def index(request):
     auctions = Auction.objects.all()
 
-    auction_prices = {}
-
-    for auction in auctions:
-        bids = Bid.objects.filter(auction=auction)
-        maxprice_bid = bids.aggregate(Max("bid_price"))
-        auction_prices[auction.id] = maxprice_bid
+    auction_bids = Bid.objects.
 
     return render(request, "auctions/index.html",{
         "auctions":auctions
