@@ -8,6 +8,8 @@ from django.db.models import Max
 
 from .models import *
 
+import datetime
+
 @login_required(login_url="/login")
 def index(request):
     auctions = Auction.objects.all()
