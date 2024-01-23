@@ -9,8 +9,7 @@
     <div class="auction_container">
         <form>
             {{auction.id}}
-            {% set id = auction.id %}
-            <p>{{auction_prices.id}}</p>
+            {{auction_prices.auction.id}}
         </form>
     </div>
     {% empty %}

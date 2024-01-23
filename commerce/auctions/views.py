@@ -25,7 +25,9 @@ def index(request):
         if not auct_bids:
             continue
         else:
-            auction_prices[auction.id] = get_latest_time(auct_bids)
+            time = get_latest_time(auct_bids)
+            price = auct_bids.get(time=time)
+            auction_prices[auction.id] = price
 
     print(auction_prices)
 
