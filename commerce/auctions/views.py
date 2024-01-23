@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
 from .models import *
+from .util import *
 
 import datetime
 
@@ -19,7 +20,7 @@ def index(request):
 
     for auction in auctions:
         auct_bids = Bid.objects.filter(auction=auction)
-        max_bid_price
+        max_bid_price = get_latest_time(auct_bids)
 
     return render(request, "auctions/index.html",{
         "auctions":auctions
