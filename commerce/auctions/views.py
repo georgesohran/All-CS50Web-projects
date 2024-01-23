@@ -33,7 +33,7 @@ def index(request):
         d = [auct, auction_prices[auct.id]]
         final_contents[auct.id] = d
 
-    print(auction_prices)
+    print(final_contents)
 
     return render(request, "auctions/index.html",{
         "auctions":final_contents,
