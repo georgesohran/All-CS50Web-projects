@@ -1,18 +1,17 @@
-
 body {
-  margin: 10px;
-}
+    margin: 10px;
+  }
 
 .container-form {
-  margin-left: 360px;
-  margin-right: 360px;
-  text-align: center;
+    margin-left: 360px;
+    margin-right: 360px;
+    text-align: center;
 }
 
 .container-auction{
-  margin-left: 360px;
-  margin-right: 360px;
-  text-align: center;
-  border: 2px gray;
-  padding: 10px;
+    margin-left: 360px;
+    margin-right: 360px;
+    text-align: center;
+    border: 2px gray;
+    padding: 10px;
 }
