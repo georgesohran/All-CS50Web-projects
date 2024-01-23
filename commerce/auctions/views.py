@@ -16,14 +16,20 @@ import datetime
 def index(request):
     auctions = Auction.objects.all()
 
-    auction_bids = {}
+    auction_prices = {}
 
     for auction in auctions:
         auct_bids = Bid.objects.filter(auction=auction)
-        max_bid_price = get_latest_time(auct_bids)
+        print(auction)
+        print(auct_bids)
+        if not auct_bids:
+            continue
+        else:
+            auction_prices[auction.id] = get_latest_time(auct_bids)
 
     return render(request, "auctions/index.html",{
-        "auctions":auctions
+        "auctions":auctions,
+        "auct_prices": auction_prices
     })
 
 
