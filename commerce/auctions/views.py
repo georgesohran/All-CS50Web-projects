@@ -14,7 +14,11 @@ import datetime
 def index(request):
     auctions = Auction.objects.all()
 
-    auction_bids = Bid.objects.
+    auction_bids = {}
+
+    for auction in auctions:
+        auct_bids = Bid.objects.filter(auction=auction)
+        max_bid = 
 
     return render(request, "auctions/index.html",{
         "auctions":auctions
