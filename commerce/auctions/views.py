@@ -4,11 +4,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.db.models import Max
 
 from .models import *
 
 import datetime
+
+
 
 @login_required(login_url="/login")
 def index(request):
@@ -18,7 +19,7 @@ def index(request):
 
     for auction in auctions:
         auct_bids = Bid.objects.filter(auction=auction)
-        max_bid = 
+        max_bid_price
 
     return render(request, "auctions/index.html",{
         "auctions":auctions
