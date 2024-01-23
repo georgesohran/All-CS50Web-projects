@@ -1,6 +1,9 @@
 import datetime
+import pytz
 
 
+
+utc=pytz.UTC
 
 def get_latest_time(a):
     max = datetime.datetime(2000,1,1)
