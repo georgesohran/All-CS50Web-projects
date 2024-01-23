@@ -6,10 +6,9 @@
     <h2>Active Listings</h2>
 
     {% for auction in auctions %}
-    <div class="auction_container">
-        <form>
-            {{auction.0}}
-            {{auction.1}}
+    <div class="container-auction">
+        <form class="container-auction">
+            <p>{{auction.auction_data}}{{auction.bid_data}}</p>
         </form>
     </div>
     {% empty %}
