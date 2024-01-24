@@ -10,7 +10,7 @@ body {
 
 .container-auction{
     width: 100%;
-    border: black 2px;
+    border: gray 2px solid;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: 10px;
