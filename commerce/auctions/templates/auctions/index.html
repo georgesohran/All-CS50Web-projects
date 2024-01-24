@@ -7,7 +7,7 @@
 
     <div class="container-fluid">
         {% for auction in auctions %}
-            <form class="row">
+            <form class="row" enctype="multipart/form-data">
                 <div><img src="{{auction.auction_data.image}}"></div>
                 <div>{{auction.bid_data}}</div>
             </form>
