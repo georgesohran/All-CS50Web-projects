@@ -3,7 +3,7 @@ body {
 }
 
 img {
-    border: gray 2px solid;
+    border: #bbbbbb 2px solid;
     border-radius: 15px;
 }
 
@@ -15,9 +15,13 @@ img {
 
 .container-auction{
     width: 100%;
-    border: gray 2px solid;
+    border: #bbbbbb 1px solid;
     border-radius: 15px;
     padding-right: 40px; padding-left:40px; padding-top:10px; padding-bottom:10px;
     margin: 2%;
     width: 95%;
+}
+
+.auction-short-description{
+    margin-left:20px
 }
