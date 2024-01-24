@@ -8,7 +8,7 @@
     <div class="container-fluid">
         {% for auction in auctions %}
             <form class="row">
-                <div><img src={{auction.auction_data.image.url}}></div>
+                <div><img src={{MEDIA_URL}}{{auction.auction_data.image}}></div>
                 <div>{{auction.bid_data}}</div>
             </form>
         {% empty %}
