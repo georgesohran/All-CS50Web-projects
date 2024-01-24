@@ -5,10 +5,10 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    <div class="grid" style="--bs-columns: 10;">
+    <div class="container-fluid">
         {% for auction in auctions %}
-            <form class="row align-items-start">
-                <div>{{auction.auction_data.image}}</div>
+            <form class="row">
+                <div><img src={{auction.auction_data.image}}></div>
                 <div>{{auction.bid_data}}</div>
             </form>
         {% empty %}
