@@ -8,8 +8,8 @@
     <div class="grid" style="--bs-columns: 10;">
         {% for auction in auctions %}
             <form class="row align-items-start">
-                <div class="g-col-2">{{auction.auction_data.image}}</div>
-                <div class="g-col-8">{{auction.bid_data}}</div>
+                <div>{{auction.auction_data.image}}</div>
+                <div>{{auction.bid_data}}</div>
             </form>
         {% empty %}
             <h5>No listings are active right now</h5>
