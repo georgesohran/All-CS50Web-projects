@@ -11,7 +11,7 @@ class Auction(models.Model):
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
     category = models.CharField(max_length=64, blank=True)
-    image = models.ImageField(blank=True,upload_to="media")
+    image = models.ImageField(blank=True,upload_to="images/")
     time = models.DateTimeField()
 
     def __str__(self):
