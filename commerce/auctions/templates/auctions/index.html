@@ -5,11 +5,11 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    <div class="container text-center">
+    <div class="grid" style="--bs-columns: 10;">
         {% for auction in auctions %}
             <form class="row align-items-start">
-                <div class="col">{{auction.auction_data.image}}</div>
-                <div class="col">{{auction.bid_data}}</div>
+                <div class="g-col-2">{{auction.auction_data.image}}</div>
+                <div class="g-col-8">{{auction.bid_data}}</div>
             </form>
         {% empty %}
             <h5>No listings are active right now</h5>
