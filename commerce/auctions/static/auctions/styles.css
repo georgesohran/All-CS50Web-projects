@@ -9,6 +9,10 @@ body {
 }
 
 .container-auction{
-    width:580px;
-    height:100px
+    width: 100%;
+    border: black 2px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
