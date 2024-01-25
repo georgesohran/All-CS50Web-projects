@@ -20,6 +20,7 @@ def index(request):
 
     final_contents = []
 
+    #finding latest bids and therefor prices for each auction
     for auction in auctions:
         auct_bids = Bid.objects.filter(auction=auction)
         if not auct_bids:
@@ -29,6 +30,7 @@ def index(request):
             price = auct_bids.get(time=time)
             auction_prices[auction.id] = price
 
+    #making final contents with all the fields
     for auct in auctions:
         d = {"product":auct.product,
              "id":auct.id,
@@ -103,6 +105,7 @@ def listings(request, listing_id):
 
     watchlist = Watchlist.objects.filter(auction=auction)
 
+    #checking if current user have watchlisted it
     watchlisted = False
     for w in watchlist:
         if w.user == request.user:
