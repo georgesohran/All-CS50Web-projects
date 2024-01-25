@@ -100,10 +100,12 @@ def register(request):
 @login_required(login_url="/login")
 def listings(request, listing_id):
     auction = Auction.objects.get(pk=listing_id)
-    
+
+    watchlist = Watchlist.objects.get(auction=auction)
+
     return render(request, "auctions/listing.html",{
         "auction":auction,
-        "watchlist":"c"
+        "watchlist":"watchlist"
     })
 
 
