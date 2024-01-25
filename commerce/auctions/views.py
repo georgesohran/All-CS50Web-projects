@@ -99,10 +99,9 @@ def register(request):
 
 @login_required(login_url="/login")
 def listings(request, listing_id):
-    
     auction = Auction.objects.get(pk=listing_id)
 
-    watchlist = Watchlist.objects.get(auction=auction)
+    watchlist = Watchlist.objects.get(auction=auction, user=request.user)
 
     bid_count = Bid.objects.filter(auction=auction)
 
