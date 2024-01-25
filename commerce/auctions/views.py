@@ -112,9 +112,9 @@ def listings(request, listing_id):
             watchlisted = True
             break
 
-    bid_count = Bid.objects.filter(auction=auction).count()
-
-    price = get_latest_time(bid_count)
+    bids = Bid.objects.filter(auction=auction)
+    bid_count = bids.count()
+    price = get_latest_time(bids)
 
     return render(request, "auctions/listing.html",{
         "auction":auction,
