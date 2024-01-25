@@ -94,10 +94,13 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
+
+
 @login_required(login_url="/login")
 def listings(request, listing_id):
     auction = Auction.objects.get(pk=listing_id)
     return render(request, "auctions/layout.html")
+
 
 
 @login_required(login_url="/login")
@@ -105,9 +108,11 @@ def categories(request):
     return render(request, "auctions/layout.html")
 
 
+
 @login_required(login_url="/login")
 def watchlist(request):
     return render(request, "auctions/layout.html")
+
 
 
 @login_required(login_url="/login")
