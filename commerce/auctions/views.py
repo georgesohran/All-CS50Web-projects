@@ -103,15 +103,19 @@ def listings(request, listing_id):
 
     watchlist = Watchlist.objects.filter(auction=auction)
 
+    watchlisted = False
     for w in watchlist:
         if w.user == request.user:
             watchlisted = True
+            break
 
-    bid_count = Bid.objects.filter(auction=auction)
+    bid_count = Bid.objects.filter(auction=auction).count()
 
     return render(request, "auctions/listing.html",{
         "auction":auction,
-        "watchlist":watchlist
+        "watchlist":watchlist,
+        "bid_count":bid_count,
+        "watchlisted":watchlisted
     })
 
 
