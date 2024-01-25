@@ -101,13 +101,17 @@ def register(request):
 def listings(request, listing_id):
     auction = Auction.objects.get(pk=listing_id)
 
-    watchlist = Watchlist.objects.get(auction=auction, user=request.user)
+    watchlist = Watchlist.objects.filter(auction=auction)
+
+    for w in watchlist:
+        if w.user == request.user:
+            watchlisted = True
 
     bid_count = Bid.objects.filter(auction=auction)
 
     return render(request, "auctions/listing.html",{
         "auction":auction,
-        "watchlist":"watchlist"
+        "watchlist":watchlist
     })
 
 
