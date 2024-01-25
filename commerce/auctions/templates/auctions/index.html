@@ -9,7 +9,7 @@
         {% for auction in auctions %}
             <form class="row" enctype="multipart/form-data">
                 <div><img src="{{auction.auction_data.image.url}}"></div>
-                <div>{{auction.bid_data}}</div>
+                <div class="auction-short-description">{{auction.bid_data}}</div>
             </form>
         {% empty %}
             <h5>No listings are active right now</h5>
