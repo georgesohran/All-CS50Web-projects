@@ -31,6 +31,7 @@ def index(request):
 
     for auct in auctions:
         d = {"product":auct.product,
+             "id":auct.id,
              "time":auct.time,
              "image":auct.image,
              "description":auct.description,
