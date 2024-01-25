@@ -114,11 +114,14 @@ def listings(request, listing_id):
 
     bid_count = Bid.objects.filter(auction=auction).count()
 
+    price = get_latest_time(bid_count)
+
     return render(request, "auctions/listing.html",{
         "auction":auction,
         "watchlist":watchlist,
         "bid_count":bid_count,
-        "watchlisted":watchlisted
+        "watchlisted":watchlisted,
+        "price":price
     })
 
 
