@@ -30,7 +30,12 @@ def index(request):
             auction_prices[auction.id] = price
 
     for auct in auctions:
-        d = {"auction_data":auct, "price":auction_prices[auct.id].bid_price}
+        d = {"product":auct.product,
+             "time":auct.time,
+             "image":auct.image,
+             "description":auct.description,
+             "category":auct.category,
+             "price":auction_prices[auct.id].bid_price}
         final_contents.append(d)
 
     return render(request, "auctions/index.html",{
