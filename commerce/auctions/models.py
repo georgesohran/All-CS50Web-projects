@@ -22,7 +22,7 @@ class Bid(models.Model):
     auction = models.ForeignKey(Auction, models.CASCADE)
     user = models.ForeignKey(User, models.CASCADE)
     time = models.DateTimeField()
-    bid_price = models.IntegerField()
+    bid_price = models.FloatField()
 
     def __str__(self):
         return f"user: {self.user_id},bid_price: {self.bid_price}"
