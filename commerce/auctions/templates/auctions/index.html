@@ -10,7 +10,10 @@
             <form class="row" enctype="multipart/form-data">
                 <div><img src="{{auction.auction_data.image.url}}"></div>
                 <div class="auction-short-description">
-                    <h5>{{auction.bid_data.product}}</h5>
+                    <h5>{{auction.auction_data.product}}</h5>
+                    <br>
+                    <span><b>Price:</b>{{auction.bid_data.price}}</span>
+                    <br>
                 </div>
             </form>
         {% empty %}
