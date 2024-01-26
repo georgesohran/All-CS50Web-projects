@@ -122,6 +122,7 @@ def listings(request, listing_id):
 
     if request.method == "POST":
         form = BidForm(request.POST)
+        print(form)
         if form.is_valid():
             if form.bid_price < price:
                 return render(request, "auctions/listing.html",{
