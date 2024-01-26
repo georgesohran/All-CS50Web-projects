@@ -112,11 +112,11 @@ def listings(request, listing_id):
             watchlisted = True
             break
 
+    #getting number of nids and current price of the pruduct, by filtering for the latest bid
     bids = Bid.objects.filter(auction=auction)
     bid_count = bids.count()
-    print(bids)
-    price = bids.get(time=get_latest_time(bids)).
-    print(price)
+    price = bids.get(time=get_latest_time(bids)).bid_price
+
     return render(request, "auctions/listing.html",{
         "auction":auction,
         "watchlist":watchlist,
