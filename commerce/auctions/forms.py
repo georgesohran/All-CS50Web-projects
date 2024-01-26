@@ -5,4 +5,4 @@ from .models import Bid
 class BidForm(ModelForm):
     class Meta:
         model = Bid
-        fields = ["bid_price"]
+        fields = "__all__"
