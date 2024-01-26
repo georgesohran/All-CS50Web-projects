@@ -24,7 +24,16 @@
 
 <h3>Price: {{price|floatformat:2}}$</h3>
 <br>
+<h4>Details</h4>
 <p style="font-size:20px">{{auction.description}}</p>
-
-
+<ul>
+    <li>
+        Listed by
+        {% for user in watchlist %} {{user.user}} {% endfor %}
+    </li>
+    <li>
+        Category:
+        {% if auction.category %} {{auction.category}} {% endif %}
+    </li>
+</ul>
 {% endblock %}
