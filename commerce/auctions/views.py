@@ -103,7 +103,8 @@ def register(request):
 @login_required(login_url="/login")
 def listings(request, listing_id):
     if request.method == "POST":
-        ...
+        form = BidForm(request.POST)
+
     else:
         auction = Auction.objects.get(pk=listing_id)
         watchlist = Watchlist.objects.filter(auction=auction)
