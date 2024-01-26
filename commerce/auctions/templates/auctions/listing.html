@@ -12,6 +12,10 @@
 
 <div><img src="{{auction.image.url}}" width=300px height=300px></div>
 
-<h3>Price: {{price}}</h3>
+<h3>Price: {{price|floatformat:2}}$</h3>
+
+<form method="POST">
+    
+</form>
 
 {% endblock %}
