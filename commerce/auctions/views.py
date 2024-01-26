@@ -104,6 +104,9 @@ def register(request):
 def listings(request, listing_id):
     if request.method == "POST":
         form = BidForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return render(request, "auction/listing.html")
 
     else:
         auction = Auction.objects.get(pk=listing_id)
