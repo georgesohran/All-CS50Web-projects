@@ -8,7 +8,7 @@
     <div class="container-auction">
         {% for auction in auctions %}
             <form class="row" enctype="multipart/form-data" action="{% url 'listing' auction.id %}">
-                <div><a href="{% url 'listing' auction.id %}"><img src="{{auction.image.url}}"></a></div>
+                <div style="width:400px;text-align:center"><a href="{% url 'listing' auction.id %}"><img src="{{auction.image.url}}"></a></div>
                 <div class="auction-short-description">
                     <h4>{{auction.product}}</h4>
                     <p><b>Price: </b>{{auction.price|floatformat:2}}$</p>
