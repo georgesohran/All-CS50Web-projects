@@ -39,7 +39,8 @@ def index(request):
              "image":auct.image,
              "description":auct.description,
              "category":auct.category,
-             "price":auction_prices[auct.id].bid_price}
+             "price":auction_prices[auct.id].bid_price,
+             "messege":None}
         final_contents.append(d)
 
     return render(request, "auctions/index.html",{
