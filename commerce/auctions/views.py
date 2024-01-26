@@ -103,12 +103,26 @@ def register(request):
 
 @login_required(login_url="/login")
 def listings(request, listing_id):
+
+    auction = Auction.objects.get(pk=listing_id)
+    watchlist = Watchlist.objects.filter(auction=auction)
+
+    #checking if current user have watchlisted it
+    watchlisted = False
+    for w in watchlist:
+        if w.user == request.user:
+            watchlisted = True
+            break
+
+    #getting number of nids and current price of the pruduct, by filtering for the latest bid
+    bids = Bid.objects.filter(auction=auction)
+    bid_count = bids.count()
+    price = bids.get(time=get_latest_time(bids)).bid_price
+    form = BidForm()
+
     if request.method == "POST":
         form = BidForm(request.POST)
         if form.is_valid():
-            auction = Auction.objects.get(pk=listing_id)
-            bids = Bid.objects.filter(auction=auction)
-            price = bids.get(time=get_latest_time(bids)).bid_price
             if form.bid_price < price:
                 return render(request, "auctions/listing.html",{
                     "auction":auction,
@@ -117,29 +131,15 @@ def listings(request, listing_id):
                     "watchlisted":watchlisted,
                     "price":price,
                     "form":form,
-                })
+                    "messege":"Invalid bid"
+                    })
+            else:
+                form.save()
+                return HttpResponseRedirect(reverse("index"))
 
-            form.save()
         return HttpResponseRedirect(reverse("index"))
 
     else:
-        auction = Auction.objects.get(pk=listing_id)
-        watchlist = Watchlist.objects.filter(auction=auction)
-
-        #checking if current user have watchlisted it
-        watchlisted = False
-        for w in watchlist:
-            if w.user == request.user:
-                watchlisted = True
-                break
-
-        #getting number of nids and current price of the pruduct, by filtering for the latest bid
-        bids = Bid.objects.filter(auction=auction)
-        bid_count = bids.count()
-        price = bids.get(time=get_latest_time(bids)).bid_price
-
-        form = BidForm()
-
         return render(request, "auctions/listing.html",{
             "auction":auction,
             "watchlist":watchlist,

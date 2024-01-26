@@ -6,6 +6,10 @@
 
 <h2>Listing:{{auction.product}}</h2>
 
+{% if messege %}
+<p style="color:red">{{messege}}</p>
+{% endif %}
+
 {% if watchlisted %}
 <p class="badge bg-secondary" style="color:white">watchlist</p>
 {% endif %}
