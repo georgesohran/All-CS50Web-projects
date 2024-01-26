@@ -102,32 +102,34 @@ def register(request):
 
 @login_required(login_url="/login")
 def listings(request, listing_id):
-    auction = Auction.objects.get(pk=listing_id)
+    if request.method == "POST":
+        ...
+    else:
+        auction = Auction.objects.get(pk=listing_id)
+        watchlist = Watchlist.objects.filter(auction=auction)
 
-    watchlist = Watchlist.objects.filter(auction=auction)
+        #checking if current user have watchlisted it
+        watchlisted = False
+        for w in watchlist:
+            if w.user == request.user:
+                watchlisted = True
+                break
 
-    #checking if current user have watchlisted it
-    watchlisted = False
-    for w in watchlist:
-        if w.user == request.user:
-            watchlisted = True
-            break
+        #getting number of nids and current price of the pruduct, by filtering for the latest bid
+        bids = Bid.objects.filter(auction=auction)
+        bid_count = bids.count()
+        price = bids.get(time=get_latest_time(bids)).bid_price
 
-    #getting number of nids and current price of the pruduct, by filtering for the latest bid
-    bids = Bid.objects.filter(auction=auction)
-    bid_count = bids.count()
-    price = bids.get(time=get_latest_time(bids)).bid_price
+        form = BidForm()
 
-    form = BidForm()
-
-    return render(request, "auctions/listing.html",{
-        "auction":auction,
-        "watchlist":watchlist,
-        "bid_count":bid_count,
-        "watchlisted":watchlisted,
-        "price":price,
-        "form":form,
-    })
+        return render(request, "auctions/listing.html",{
+            "auction":auction,
+            "watchlist":watchlist,
+            "bid_count":bid_count,
+            "watchlisted":watchlisted,
+            "price":price,
+            "form":form,
+        })
 
 
 
