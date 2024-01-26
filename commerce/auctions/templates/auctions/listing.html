@@ -10,8 +10,8 @@
 <p class="badge bg-secondary" style="color:white">watchlist</p>
 {% endif %}
 
-<div><img src="{{auction.image.url}}" width=300px height=300px></div>
-<div>
+<div class="row">
+    <img src="{{auction.image.url}}" width=300px height=300px>
     <form method="POST">
         {{form}}
         <input type="submit" class="btn btn-primary" value="Place bid">
