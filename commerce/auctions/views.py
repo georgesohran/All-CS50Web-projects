@@ -105,16 +105,21 @@ def register(request):
 def listings(request, listing_id):
     if request.method == "POST":
         form = BidForm(request.POST)
-
         if form.is_valid():
             auction = Auction.objects.get(pk=listing_id)
             bids = Bid.objects.filter(auction=auction)
             price = bids.get(time=get_latest_time(bids)).bid_price
             if form.bid_price < price:
-                return
+                return render(request, "auctions/listing.html",{
+                    "auction":auction,
+                    "watchlist":watchlist,
+                    "bid_count":bid_count,
+                    "watchlisted":watchlisted,
+                    "price":price,
+                    "form":form,
+                })
 
             form.save()
-
         return HttpResponseRedirect(reverse("index"))
 
     else:
