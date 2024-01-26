@@ -13,11 +13,13 @@
 <div class="row">
     <img src="{{auction.image.url}}" width=300px height=300px>
 
-    
+    <div style="padding-top: 70px ; margin-left:30px">
+    <p>{{bid_count}} bid(s) so far.</p>
     <form method="POST">
         {{form}}
         <input type="submit" class="btn btn-primary" value="Place bid">
     </form>
+    </div>
 </div>
 
 <h3>Price: {{price|floatformat:2}}$</h3>
