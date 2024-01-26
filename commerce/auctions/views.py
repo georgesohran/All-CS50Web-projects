@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
 from .models import *
+from .forms import *
 from .util import *
 
 import datetime
@@ -117,12 +118,15 @@ def listings(request, listing_id):
     bid_count = bids.count()
     price = bids.get(time=get_latest_time(bids)).bid_price
 
+    form = BidForm()
+
     return render(request, "auctions/listing.html",{
         "auction":auction,
         "watchlist":watchlist,
         "bid_count":bid_count,
         "watchlisted":watchlisted,
-        "price":price
+        "price":price,
+        "form":form,
     })
 
 

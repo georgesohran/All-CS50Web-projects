@@ -1,7 +1,8 @@
 from django.forms import ModelForm
-from models import Bid
+from .models import Bid
 
 
 class BidForm(ModelForm):
     class Meta:
-        model =
+        model = Bid
+        fields = ["bid_price"]
