@@ -4,7 +4,7 @@
 
 {% block body %}
     <h2>Active Listings</h2>
-
+    <br>
     <div class="container-auction">
         {% for auction in auctions %}
             <form class="row" enctype="multipart/form-data" action="{% url 'listing' auction.id %}">
