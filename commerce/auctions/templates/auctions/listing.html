@@ -7,7 +7,9 @@
 <h2>Listing:{{auction.product}}</h2>
 
 {% if watchlisted %}
-<p class="badge bg-secondary">watchlist</p>
+<p class="badge bg-secondary" style="color:white">watchlist</p>
 {% endif %}
+
+<div><img src="{{auction.image.url}}" style="margin-left:40px"></div>
 
 {% endblock %}
