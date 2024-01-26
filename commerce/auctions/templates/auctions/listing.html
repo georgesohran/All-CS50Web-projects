@@ -11,14 +11,16 @@
 {% endif %}
 
 <div><img src="{{auction.image.url}}" width=300px height=300px></div>
+<div>
+    <form method="POST">
+        {{form}}
+        <input type="submit" class="btn btn-primary" value="Place bid">
+    </form>
+</div>
 
 <h3>Price: {{price|floatformat:2}}$</h3>
 <br>
 <p style="font-size:20px">{{auction.description}}</p>
-<br>
-<form method="POST">
-    {{form}}
-    <input type="submit" class="btn btn-primary" value="Place bid">
-</form>
+
 
 {% endblock %}
