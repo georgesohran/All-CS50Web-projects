@@ -168,7 +168,8 @@ def listings(request, listing_id):
 @login_required(login_url="/login")
 def categories(request):
     if request.method == "POST":
-        return render(request, "auctions/categories.html")
+        cat = request.POST["category"]
+        return HttpResponseRedirect(reverse(f"listings/{cat}"))
     else:
         auctions = Auction.objects.all()
         categor = []

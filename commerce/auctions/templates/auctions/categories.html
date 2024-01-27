@@ -9,7 +9,7 @@
 {% for cat in categories %}
 <form method="POST" class="container-fluid">
     {% csrf_token %}
-    <input type="submit" value = {{cat}} class="category">
+    <input type="submit" name="category" value = {{cat}} class="category">
 </form>
 {% endfor %}
 
