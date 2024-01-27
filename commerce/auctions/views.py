@@ -14,21 +14,21 @@ utc=pytz.UTC
 
 
 @login_required(login_url="/login")
-def index(request, category):
+def index(request, category=None):
     if not category:
         auctions = Auction.objects.all()
     else:
         auctions = Auction.objects.filter(category)
 
-    final_contents = []
 
+    final_contents = []
     for auct in auctions:
         auct_bids = Bid.objects.filter(auction=auct)
 
         if not auct_bids:
             price = 0
         else:
-            price = auct_bids.filter(time=get_latest_time(auct_bids))
+            price = auct_bids.filter(time=get_latest_time(auct_bids))[0].bid_price
 
         d = {"product":auct.product,
              "id":auct.id,
