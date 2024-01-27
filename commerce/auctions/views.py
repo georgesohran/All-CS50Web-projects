@@ -18,8 +18,7 @@ def index(request, category=None):
     if not category:
         auctions = Auction.objects.all()
     else:
-        auctions = Auction.objects.filter(category)
-
+        auctions = Auction.objects.filter(category=category)
 
     final_contents = []
     for auct in auctions:
@@ -161,7 +160,7 @@ def listings(request, listing_id):
 def categories(request):
     if request.method == "POST":
         cat = request.POST["category"]
-        return HttpResponseRedirect(reverse("index", args=(cat,)))
+        return HttpResponseRedirect(reverse("index_cat", args=(cat,)))
 
     else:
         auctions = Auction.objects.all()
