@@ -21,7 +21,7 @@
     <p>{{bid_count}} bid(s) so far.</p>
     <form method="POST">
         {% csrf_token %}
-        {{form}}
+        {{form.as_p}}
         <input type="hidden" value="{{auction.id}}">
         <input type="submit" class="btn btn-primary" value="Place bid">
     </form>
