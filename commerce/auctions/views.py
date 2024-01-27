@@ -156,7 +156,7 @@ def listings(request, listing_id):
 @login_required(login_url="/login")
 def categories(request):
     if request.method == "POST":
-        
+        return render(request, "auctions/categories.html", categor)
     else:
         auctions = Auction.objects.all()
         categor = []
