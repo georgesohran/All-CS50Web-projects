@@ -161,7 +161,8 @@ def listings(request, listing_id):
 def categories(request):
     if request.method == "POST":
         cat = request.POST["category"]
-        return HttpResponseRedirect(reverse("index_cat"))
+        return HttpResponseRedirect(reverse("index", args=(cat,)))
+
     else:
         auctions = Auction.objects.all()
         categor = []
