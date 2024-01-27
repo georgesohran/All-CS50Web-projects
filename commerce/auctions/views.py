@@ -10,7 +10,7 @@ from .forms import *
 from .util import *
 
 import datetime
-
+utc=pytz.UTC
 
 
 @login_required(login_url="/login")
@@ -134,7 +134,7 @@ def listings(request, listing_id):
                     "messege":"Invalid bid"
                     })
             else:
-                bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
+                bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now(tzinfo=utc))
                 form.save()
 
                 return HttpResponseRedirect(reverse("index"))
