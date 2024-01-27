@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+<h1>Categories</h1>
+
+{% for cat in categories %}
+
+<form>
+    
+    <input type="submit" value = cat>
+</form>
+
+{% endfor %}
+
+{% endblock %}
