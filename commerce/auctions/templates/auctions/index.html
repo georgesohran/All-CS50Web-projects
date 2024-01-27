@@ -5,10 +5,18 @@
 {% block body %}
     <h2>Active Listings</h2>
     <br>
-    <div class="container-auction">
-        {% for auction in auctions %}
+    {% for auction in auctions %}
+        <div class="container-auction">
             <form class="row" enctype="multipart/form-data" action="{% url 'listing' auction.id %}">
-                <div style="width:400px;text-align:center"><a href="{% url 'listing' auction.id %}"><img src="{{auction.image.url}}"></a></div>
+                <div style="width:400px;text-align:center">
+                    {% if auction.image %}
+                    <a href="{% url 'listing' auction.id %}">
+                    <img src="{{auction.image.url}}">
+                    </a>
+                    {% else %}
+                    <p>No image</p>
+                    {% endif %}
+                </div>
                 <div class="auction-short-description">
                     <h4>{{auction.product}}</h4>
                     <p><b>Price: </b>{{auction.price|floatformat:2}}$</p>
@@ -18,9 +26,10 @@
                     <input type="submit" class="btn btn-primary" value="Visit this auction">
                 </div>
             </form>
+        </div>
         {% empty %}
             <h5>No listings are active right now</h5>
         {% endfor %}
-    </div>
+
 
 {% endblock %}

@@ -19,6 +19,7 @@ body {
 
 .container-auction{
     width: 100%;
+    margin-top:20px;
     border: #bbbbbb 1px solid;
     border-radius: 15px;
     padding-right: 40px; padding-left:40px; padding-top:10px; padding-bottom:10px;
