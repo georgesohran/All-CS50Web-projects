@@ -26,12 +26,10 @@ def index(request, category):
 
     #finding latest bids and therefor prices for each auction
     for auction in auctions:
-        auct_bids = Bid.objects.filter(auction=auction)
+        auct_bids = Bid.objects.filter(auction=auction,time=get_latest_time(auct_bids))
         if not auct_bids:
             continue
         else:
-            time = get_latest_time(auct_bids)
-            price = auct_bids.get(time=time)
             auction_prices[auction.id] = price
 
     #making final contents with all the fields
