@@ -14,8 +14,11 @@ utc=pytz.UTC
 
 
 @login_required(login_url="/login")
-def index(request):
-    auctions = Auction.objects.all()
+def index(request, category):
+    if not category:
+        auctions = Auction.objects.all()
+    else:
+        auctions = Auction.objects.filter(category)
 
     auction_prices = {}
 
