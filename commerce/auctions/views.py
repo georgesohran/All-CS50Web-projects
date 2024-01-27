@@ -103,7 +103,6 @@ def register(request):
 
 @login_required(login_url="/login")
 def listings(request, listing_id):
-
     auction = Auction.objects.get(pk=listing_id)
     watchlist = Watchlist.objects.filter(auction=auction)
 
@@ -135,6 +134,7 @@ def listings(request, listing_id):
                     "messege":"Invalid bid"
                     })
             else:
+                bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
                 form.save()
 
                 return HttpResponseRedirect(reverse("index"))
