@@ -158,7 +158,7 @@ def categories(request):
     if request.method == "POST":
         ...
     else:
-        auctions = Auction.object.get()
+        auctions = Auction.objects.filter()
         return render(request, "auctions/categories.html")
 
 
