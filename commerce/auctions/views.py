@@ -170,7 +170,7 @@ def categories(request):
     if request.method == "POST":
         cat = request.POST["category"]
         return render(request, "auctions/index.html", {
-            
+
         })
     else:
         auctions = Auction.objects.all()
