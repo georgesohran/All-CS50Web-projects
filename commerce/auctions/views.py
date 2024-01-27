@@ -135,8 +135,8 @@ def listings(request, listing_id):
                     "messege":"Invalid bid"
                     })
             else:
-                form.save(commit=False)
-                
+                form.save()
+
                 return HttpResponseRedirect(reverse("index"))
 
         return HttpResponseRedirect(reverse("index"))
