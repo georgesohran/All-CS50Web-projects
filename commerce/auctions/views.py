@@ -158,7 +158,8 @@ def categories(request):
     if request.method == "POST":
         ...
     else:
-        
+        categor = Auction.objects.()
+
         return render(request, "auctions/categories.html")
 
 
