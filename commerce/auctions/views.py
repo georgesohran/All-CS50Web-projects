@@ -20,27 +20,23 @@ def index(request, category):
     else:
         auctions = Auction.objects.filter(category)
 
-    auction_prices = {}
-
     final_contents = []
 
-    #finding latest bids and therefor prices for each auction
-    for auction in auctions:
-        auct_bids = Bid.objects.filter(auction=auction,time=get_latest_time(auct_bids))
-        if not auct_bids:
-            auction_prices[auction.id] = 0
-        else:
-            auction_prices[auction.id] = auct_bids.price
-
-    #making final contents with all the fields
     for auct in auctions:
+        auct_bids = Bid.objects.filter(auction=auct)
+
+        if not auct_bids:
+            price = 0
+        else:
+            price = auct_bids.filter(time=get_latest_time(auct_bids))
+
         d = {"product":auct.product,
              "id":auct.id,
              "time":auct.time,
              "image":auct.image,
              "description":auct.description,
              "category":auct.category,
-             "price":auction_prices[auct.id],
+             "price":price,
              "messege":None}
         final_contents.append(d)
 
