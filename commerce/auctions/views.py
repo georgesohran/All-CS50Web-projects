@@ -37,7 +37,7 @@ def index(request):
             price = auction_prices[auct.id].bid_price
         except KeyError:
             price = 0
-            
+
         d = {"product":auct.product,
              "id":auct.id,
              "time":auct.time,
@@ -121,7 +121,14 @@ def listings(request, listing_id):
     #getting number of nids and current price of the pruduct, by filtering for the latest bid
     bids = Bid.objects.filter(auction=auction)
     bid_count = bids.count()
-    price = bids.get(time=get_latest_time(bids)).bid_price
+
+    #checking wether this auction has any bids or not
+    if not bids.filter(time=get_latest_time(bids)):
+        price = 0
+    else:
+        price = bids.get(time=get_latest_time(bids)).bid_price
+    print(price)
+
     form = BidForm()
 
     if request.method == "POST":

@@ -34,8 +34,12 @@
 <p style="font-size:20px">{{auction.description}}</p>
 <ul>
     <li>
+        {% if not watchlist %}
+            Nobody listed it yet.
+        {% else %}
         Listed by
-        {% for user in watchlist %} {{user.user}} {% endfor %}
+        {% for user in watchlist %} {{user.user}}, {% endfor %}
+        {% endif %}
     </li>
     <li>
         Category:
