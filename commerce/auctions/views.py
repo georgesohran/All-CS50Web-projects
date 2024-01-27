@@ -120,7 +120,8 @@ def listings(request, listing_id):
     form = BidForm()
 
     if request.method == "POST":
-        form = BidForm(request.POST)
+        bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
+        form = BidForm(request.POST, instance=bid)
         print(form)
         if form.is_valid():
             if float(request.POST["bid_price"]) < price:
@@ -134,7 +135,6 @@ def listings(request, listing_id):
                     "messege":"Invalid bid"
                     })
             else:
-                bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now(tzinfo=utc))
                 form.save()
 
                 return HttpResponseRedirect(reverse("index"))
