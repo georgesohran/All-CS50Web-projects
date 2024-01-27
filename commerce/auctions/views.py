@@ -155,7 +155,11 @@ def listings(request, listing_id):
 
 @login_required(login_url="/login")
 def categories(request):
-    return render(request, "auctions/layout.html")
+    if request.method == "POST":
+        ...
+    else:
+
+    return render(request, "auctions/categories.html")
 
 
 
