@@ -6,13 +6,11 @@
 
 <h1>Categories:</h1>
 
-<div>
 {% for cat in categories %}
-<form method="POST">
+<form method="POST" class="container-fluid">
     {% csrf_token %}
     <input type="submit" value = {{cat}} class="category">
 </form>
 {% endfor %}
-</div>
 
 {% endblock %}
