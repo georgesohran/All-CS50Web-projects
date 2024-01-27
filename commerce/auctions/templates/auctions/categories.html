@@ -6,13 +6,13 @@
 
 <h1>Categories:</h1>
 
-<span>
+<div style="display: inline-block">
 {% for cat in categories %}
 <form method="POST">
     {% csrf_token %}
     <input type="submit" value = {{cat}} class="category">
 </form>
 {% endfor %}
-</span>
+</div>
 
 {% endblock %}
