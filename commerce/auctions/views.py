@@ -33,13 +33,17 @@ def index(request):
 
     #making final contents with all the fields
     for auct in auctions:
+        try:
+            price = auction_prices[auct.id].bid_price
+        except KeyError:
+            price = 0
         d = {"product":auct.product,
              "id":auct.id,
              "time":auct.time,
              "image":auct.image,
              "description":auct.description,
              "category":auct.category,
-             "price":auction_prices[auct.id].bid_price ? true,
+             "price":price,
              "messege":None}
         final_contents.append(d)
 
