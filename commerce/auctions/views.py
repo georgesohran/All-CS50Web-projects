@@ -37,6 +37,7 @@ def index(request):
             price = auction_prices[auct.id].bid_price
         except KeyError:
             price = 0
+            
         d = {"product":auct.product,
              "id":auct.id,
              "time":auct.time,
