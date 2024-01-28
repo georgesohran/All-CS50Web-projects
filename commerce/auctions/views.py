@@ -106,7 +106,6 @@ def listings(request, listing_id):
     if auction.host == request.user:
         is_host = True
 
-
     #checking if current user have watchlisted it
     watchlisted = False
     for w in watchlist:
@@ -128,9 +127,12 @@ def listings(request, listing_id):
     form = BidForm()
 
     if request.method == "POST":
+        if "close" in request.POST:
+
+
         bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
         form = BidForm(request.POST, instance=bid)
-        print(form)
+
         if form.is_valid():
             if float(request.POST["bid_price"]) < price:
                 return render(request, "auctions/listing.html",{
@@ -140,6 +142,7 @@ def listings(request, listing_id):
                     "watchlisted":watchlisted,
                     "price":price,
                     "form":form,
+                    "is_host":is_host,
                     "messege":"Invalid bid"
                     })
             else:
@@ -157,6 +160,7 @@ def listings(request, listing_id):
             "watchlisted":watchlisted,
             "price":price,
             "form":form,
+            "is_host":is_host
         })
 
 
