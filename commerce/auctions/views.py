@@ -152,7 +152,6 @@ def listings(request, listing_id):
                     })
             else:
                 form.save()
-
                 return HttpResponseRedirect(reverse("index"))
 
         return HttpResponseRedirect(reverse("index"))
