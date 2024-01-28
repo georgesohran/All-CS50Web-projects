@@ -128,7 +128,10 @@ def listings(request, listing_id):
 
     if request.method == "POST":
         if "close" in request.POST:
-            
+            winner = bids.get(time=get_latest_time(bids)).user
+            auction.winner = winner
+            auction.save()
+            return HttpResponseRedirect(reverse("index"))
 
         bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
         form = BidForm(request.POST, instance=bid)
