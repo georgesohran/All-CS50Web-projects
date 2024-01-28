@@ -7,8 +7,8 @@ class User(AbstractUser):
 
 
 class Auction(models.Model):
-    host = models.ForeignKey(User, models.CASCADE)
-    winner = models.ForeignKey(User, models.CASCADE, blank=True)
+    host = models.ForeignKey(User, models.CASCADE, related_name="host")
+    winner = models.ForeignKey(User, models.CASCADE, related_name="winner", blank=True)
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
     category = models.CharField(max_length=64, blank=True)
