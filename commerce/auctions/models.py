@@ -14,7 +14,6 @@ class Auction(models.Model):
     image = models.ImageField(blank=True,upload_to="images/")
     time = models.DateTimeField()
 
-
     def __str__(self):
         return f"host: {self.host_id},product: {self.product},time: {self.time}"
 
