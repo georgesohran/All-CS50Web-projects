@@ -41,6 +41,7 @@ def index(request, category=None):
              "category":auct.category,
              "price":price,
              "closed":closed,
+             "winner":auct.winner,
              "messege":None}
         final_contents.append(d)
 
