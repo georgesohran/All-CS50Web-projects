@@ -130,8 +130,7 @@ def listings(request, listing_id):
         #if the user is trying to close an auction
         if "close" in request.POST and is_host:
             winner = bids.get(time=get_latest_time(bids)).user
-            auction.winner = winner
-            auction.save()
+
             return HttpResponseRedirect(reverse("index"))
 
 
