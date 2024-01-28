@@ -8,11 +8,13 @@ class User(AbstractUser):
 
 class Auction(models.Model):
     host = models.ForeignKey(User, models.CASCADE)
+    winner = models.ForeignKey(User, models.CASCADE, blank=True)
     product = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
     category = models.CharField(max_length=64, blank=True)
     image = models.ImageField(blank=True,upload_to="images/")
     time = models.DateTimeField()
+
 
     def __str__(self):
         return f"host: {self.host_id},product: {self.product},time: {self.time}"
