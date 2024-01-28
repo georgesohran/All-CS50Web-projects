@@ -102,6 +102,11 @@ def listings(request, listing_id):
     auction = Auction.objects.get(pk=listing_id)
     watchlist = Watchlist.objects.filter(auction=auction)
 
+    is_host = False
+    if auction.host == request.user:
+        is_host = True
+
+
     #checking if current user have watchlisted it
     watchlisted = False
     for w in watchlist:
