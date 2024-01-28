@@ -17,13 +17,20 @@
                     <p>No image</p>
                     {% endif %}
                 </div>
+
                 <div class="auction-short-description">
+                    {% if auction.closed %}
+                    <h4>{{auction.product}}</h4>
+                    <h4>CLOSED</h4>
+                    <input type="submit" class="btn btn-primary" value="Visit this auction">
+                    {% else %}
                     <h4>{{auction.product}}</h4>
                     <p><b>Price: </b>{{auction.price|floatformat:2}}$</p>
                     <br>
                     <p>{{auction.description}}</p>
                     <p style="font-size:90%; color:gray">Created: {{auction.time}}</p>
                     <input type="submit" class="btn btn-primary" value="Visit this auction">
+                    {% endif %}
                 </div>
             </form>
         </div>
