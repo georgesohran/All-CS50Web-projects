@@ -24,6 +24,10 @@ def index(request, category=None):
     for auct in auctions:
         auct_bids = Bid.objects.filter(auction=auct)
 
+        closed = False
+        if auct.winner:
+            closed = True
+
         if not auct_bids:
             price = 0
         else:
@@ -36,6 +40,7 @@ def index(request, category=None):
              "description":auct.description,
              "category":auct.category,
              "price":price,
+             "closed":closed,
              "messege":None}
         final_contents.append(d)
 
