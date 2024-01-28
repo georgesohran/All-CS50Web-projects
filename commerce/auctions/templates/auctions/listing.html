@@ -12,7 +12,12 @@
 
 {% if watchlisted %}
 <p class="badge bg-secondary" style="color:white">watchlist</p>
+{% else %}
+<input type="submit" name="wlist" class="btn btn-primary" value="watchlist">
+<br>
+<br>
 {% endif %}
+
 
 <div class="row">
     <img src="{{auction.image.url}}" width=300px height=300px>

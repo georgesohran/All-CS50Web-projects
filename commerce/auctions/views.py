@@ -32,7 +32,7 @@ def index(request, category=None):
             price = 0
         else:
             price = auct_bids.filter(time=get_latest_time(auct_bids))[0].bid_price
-
+            
         d = {"product":auct.product,
              "id":auct.id,
              "time":auct.time,
@@ -108,6 +108,7 @@ def listings(request, listing_id):
     auction = Auction.objects.get(pk=listing_id)
     watchlist = Watchlist.objects.filter(auction=auction)
 
+    #checking if the current user is the host
     is_host = False
     if auction.host == request.user:
         is_host = True
