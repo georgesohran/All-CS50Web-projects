@@ -32,7 +32,7 @@ def index(request, category=None):
             price = 0
         else:
             price = auct_bids.filter(time=get_latest_time(auct_bids))[0].bid_price
-            
+
         d = {"product":auct.product,
              "id":auct.id,
              "time":auct.time,
@@ -141,6 +141,20 @@ def listings(request, listing_id):
             auction.save()
             return HttpResponseRedirect(reverse("index"))
 
+        #if user presses the watchlist button adding him to watchlisted users
+        if "wlist" in request.POST:
+            new_watchlist = Watchlist(auction=auction, user=request.user)
+            
+            new_watchlist.save()
+            return render(request, "auctions/listing.html",{
+                "auction":auction,
+                "watchlist":watchlist,
+                "bid_count":bid_count,
+                "watchlisted":watchlisted,
+                "price":price,
+                "form":form,
+                "is_host":is_host,
+            })
 
         bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
         form = BidForm(request.POST, instance=bid)

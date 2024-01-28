@@ -13,7 +13,10 @@
 {% if watchlisted %}
 <p class="badge bg-secondary" style="color:white">watchlist</p>
 {% else %}
-<input type="submit" name="wlist" class="btn btn-primary" value="watchlist">
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" name="wlist" class="btn btn-primary" value="watchlist">
+</form>
 <br>
 <br>
 {% endif %}
@@ -53,6 +56,7 @@
 
 {% if is_host %}
 <form method="POST">
+    {% csrf_token %}
     <input type="submit" class="btn btn-primary" name="close" value="Close this auction">
 </form>
 {% endif %}
