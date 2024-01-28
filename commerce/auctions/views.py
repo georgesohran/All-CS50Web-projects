@@ -128,7 +128,7 @@ def listings(request, listing_id):
 
     if request.method == "POST":
         if "close" in request.POST:
-
+            
 
         bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
         form = BidForm(request.POST, instance=bid)
