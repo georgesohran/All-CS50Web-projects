@@ -143,7 +143,7 @@ def listings(request, listing_id):
 
         #if user presses the watchlist button adding him to watchlisted users
         if "wlist" in request.POST:
-            new_watchlist = Watchlistauction=auction, user=request.user()
+            new_watchlist = Watchlist(auction=auction, user=request.user)
             new_watchlist.save()
             return render(request, "auctions/listing.html",{
                 "auction":auction,
