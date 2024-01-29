@@ -50,7 +50,7 @@
     </li>
     <li>
         Category:
-        {% if auction.category %} {{auction.category}} {% endif %}
+        {% if auction.category %} {{auction.category}} {% else %} {{no category listed}} {% endif %}
     </li>
 </ul>
 
