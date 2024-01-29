@@ -18,6 +18,14 @@
                     <p>No image</p>
                     {% endif %}
                 </div>
+                <div class="auction-short-description">
+                    <h4>{{auction.product}}</h4>
+                    <p><b>Price: </b>{{auction.price|floatformat:2}}$</p>
+                    <br>
+                    <p>{{auction.description}}</p>
+                    <p style="font-size:90%; color:gray">Created: {{auction.time}}</p>
+                    <input type="submit" class="btn btn-primary" value="Visit this auction">
+                </div>
             </form>
         </div>
         {% endif %}
