@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<h2>Listing:{{auction.product}} {% if winner %} CLOSED! {% endif %}</h2>
+<h2>Listing:{{auction.product}} {% if winner %} <span style="color:red"> CLOSED! </span> {% endif %}</h2>
 
 {% if messege %}
 <p style="color:red">{{messege}}</p>
@@ -23,6 +23,12 @@
 <div class="row">
     <img src="{{auction.image.url}}" width=300px height=300px>
     <div style="padding-top: 70px ; margin-left:30px">
+
+    {% if winner %}
+    <p> Auction is closed </p>
+    <br>
+    <p> Winner of this auction is {{winner}}</p>
+    {% else %}
     <p>{{bid_count}} bid(s) so far.</p>
     <form method="POST">
         {% csrf_token %}
@@ -30,10 +36,12 @@
         <input type="hidden" value="{{auction.id}}">
         <input type="submit" class="btn btn-primary" value="Place bid">
     </form>
+    {% endif %}
+
     </div>
 </div>
 
-
+{% if not winner %}
 <h3>Price: {{price|floatformat:2}}$</h3>
 <br>
 <h4>Details</h4>
@@ -49,7 +57,7 @@
     </li>
     <li>
         Category:
-        {% if auction.category %} {{auction.category}} {% else %} {{no category listed}} {% endif %}
+        {% if auction.category %} {{auction.category}} {% else %} no category listed {% endif %}
     </li>
 </ul>
 
@@ -59,6 +67,9 @@
     <input type="submit" class="btn btn-primary" name="close" value="Close this auction">
 </form>
 {% endif %}
+
+{% endif %}
+
 
 <h3>Comments</h3>
 <br>

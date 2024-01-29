@@ -197,7 +197,6 @@ def categories(request):
     if request.method == "POST":
         cat = request.POST["category"]
         return HttpResponseRedirect(reverse("index_cat", args=(cat,)))
-
     else:
         auctions = Auction.objects.all()
         categor = []
@@ -213,7 +212,7 @@ def categories(request):
 
 @login_required(login_url="/login")
 def watchlist(request):
-    return render(request, "auctions/layout.html")
+    return render(request, "auctions/watchlist.html")
 
 
 
