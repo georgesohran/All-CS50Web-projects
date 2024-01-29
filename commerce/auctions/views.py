@@ -212,7 +212,35 @@ def categories(request):
 
 @login_required(login_url="/login")
 def watchlist(request):
-    return render(request, "auctions/watchlist.html")
+    auctions = Auction.objects.all()
+
+    final_contents = []
+    for auct in auctions:
+        auct_bids = Bid.objects.filter(auction=auct)
+
+        closed = False
+        if auct.winner:
+            closed = True
+
+        if not auct_bids:
+            price = 0
+        else:
+            price = auct_bids.filter(time=get_latest_time(auct_bids))[0].bid_price
+        d = {"product":auct.product,
+             "id":auct.id,
+             "time":auct.time,
+             "image":auct.image,
+             "description":auct.description,
+             "category":auct.category,
+             "price":price,
+             "closed":closed,
+             "winner":auct.winner,
+             "messege":None}
+        final_contents.append(d)
+
+    return render(request, "auctions/watchlist.html",{
+        "auctions":final_contents
+    })
 
 
 
