@@ -3,5 +3,40 @@
 {% block body %}
 
 <h1>Listed auctions:</h1>
+{% for auction in auctions %}
+
+    <div class="container-auction">
+        <form class="row" enctype="multipart/form-data" action="{% url 'listing' auction.id %}">
+            <div style="width:400px;text-align:center">
+                {% if auction.image %}
+                <a href="{% url 'listing' auction.id %}">
+                <img src="{{auction.image.url}}">
+                </a>
+                {% else %}
+                <p>No image</p>
+                {% endif %}
+            </div>
+            {% if not auction.winner %}
+            <div class="auction-short-description">
+                <h4>{{auction.product}}</h4>
+                <p><b>Price: </b>{{auction.price|floatformat:2}}$</p>
+                <br>
+                <p>{{auction.description}}</p>
+                <p style="font-size:90%; color:gray">Created: {{auction.time}}</p>
+                <input type="submit" class="btn btn-primary" value="Visit this auction">
+            </div>
+            {% else %}
+            <div class="auction-short-description">
+                <h4>{{auction.product}}:CLOSED</h4>
+                <p><b>This auction winner is {{auction.winner}}</b></p>
+                <input type="submit" class="btn btn-primary" value="Visit this auction">
+            </div>
+            {% endif %}
+        </form>
+    </div>
+
+    {% empty %}
+        <h5>No listings are active right now</h5>
+    {% endfor %}
 
 {% endblock %}

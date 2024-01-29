@@ -218,8 +218,6 @@ def watchlist(request):
     for wl in wlist:
         auctions.append(wl.auction)
 
-    print(auctions)
-
     final_contents = []
     for auct in auctions:
         auct_bids = Bid.objects.filter(auction=auct)
