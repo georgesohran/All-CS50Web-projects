@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<h2>Listing:{{auction.product}}</h2>
+<h2>Listing:{{auction.product}} {% if winner %} CLOSED! {% endif %}</h2>
 
 {% if messege %}
 <p style="color:red">{{messege}}</p>
@@ -17,13 +17,11 @@
     {% csrf_token %}
     <input type="submit" name="wlist" class="btn btn-primary" value="watchlist">
 </form>
-<br>
-<br>
+<br><br>
 {% endif %}
 
 <div class="row">
     <img src="{{auction.image.url}}" width=300px height=300px>
-
     <div style="padding-top: 70px ; margin-left:30px">
     <p>{{bid_count}} bid(s) so far.</p>
     <form method="POST">
@@ -34,6 +32,7 @@
     </form>
     </div>
 </div>
+
 
 <h3>Price: {{price|floatformat:2}}$</h3>
 <br>

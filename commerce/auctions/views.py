@@ -153,6 +153,7 @@ def listings(request, listing_id):
                 "price":price,
                 "form":form,
                 "is_host":is_host,
+                "winner":auction.winner,
             })
 
         bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
@@ -168,6 +169,7 @@ def listings(request, listing_id):
                     "price":price,
                     "form":form,
                     "is_host":is_host,
+                    "winner":auction.winner,
                     "messege":"Invalid bid"
                     })
             else:
@@ -184,7 +186,8 @@ def listings(request, listing_id):
             "watchlisted":watchlisted,
             "price":price,
             "form":form,
-            "is_host":is_host
+            "is_host":is_host,
+            "winner":auction.winner,
         })
 
 
