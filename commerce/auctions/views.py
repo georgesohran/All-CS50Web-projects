@@ -212,7 +212,13 @@ def categories(request):
 
 @login_required(login_url="/login")
 def watchlist(request):
-    auctions = Auction.objects.all()
+    wlist = Watchlist.objects.filter(user=request.user)
+
+    auctions = []
+    for wl in wlist:
+        auctions.append(wl.auction)
+
+    print(auctions)
 
     final_contents = []
     for auct in auctions:
