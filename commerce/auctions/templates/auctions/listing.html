@@ -29,7 +29,7 @@
         <br>
         {% if is_winner %}
         <h5>Congatulations, you are the winner of the auction</h5>
-        <p> Now you have to pay {{price}}</p>
+        <p> Now you have to pay {{price|floatformat:2}}$</p>
         {% else %}
         <p> Winner of this auction is {{winner}}</p>
         {% endif %}
