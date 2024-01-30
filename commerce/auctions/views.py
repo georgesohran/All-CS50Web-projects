@@ -137,7 +137,7 @@ def listings(request, listing_id):
         #if the user is trying to close an auction
         if "close" in request.POST and is_host:
             winner = bids.get(time=get_latest_time(bids)).user
-            auction = auction.winner = winner
+            auction.winner = winner
             auction.save()
             return HttpResponseRedirect(reverse("index"))
 
@@ -145,6 +145,21 @@ def listings(request, listing_id):
         if "wlist" in request.POST:
             new_watchlist = Watchlist(auction=auction, user=request.user)
             new_watchlist.save()
+            return render(request, "auctions/listing.html",{
+                "auction":auction,
+                "watchlist":watchlist,
+                "bid_count":bid_count,
+                "watchlisted":watchlisted,
+                "price":price,
+                "form":form,
+                "is_host":is_host,
+                "winner":auction.winner,
+            })
+
+        if "comment" in request.POST:
+            new_comment = Comment(auction=Auction(pk=listing_id), user=request.user)
+            new_comment.contents = request["contents"]
+            new_comment.save()
             return render(request, "auctions/listing.html",{
                 "auction":auction,
                 "watchlist":watchlist,
