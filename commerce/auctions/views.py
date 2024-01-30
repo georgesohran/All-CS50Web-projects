@@ -158,6 +158,7 @@ def listings(request, listing_id):
                 "comments":comments,
             })
 
+        #if the user tries to write a comment we save it
         if "comment" in request.POST:
             new_comment = Comment(auction=auction, user=request.user)
             new_comment.contents = request.POST["contents"]
