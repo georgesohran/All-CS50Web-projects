@@ -132,7 +132,9 @@ def listings(request, listing_id):
 
     comments = Comment.objects.filter(auction=auction)
 
-    is_current_
+    current_user_is_winner = False
+    if request.user == auction.winner:
+        current_user_is_winner = True
 
     form = BidForm()
 
