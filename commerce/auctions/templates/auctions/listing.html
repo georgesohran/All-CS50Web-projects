@@ -42,36 +42,40 @@
 </div>
 
 {% if not winner %}
-<h3>Price: {{price|floatformat:2}}$</h3>
-<br>
-<h4>Details</h4>
-<p style="font-size:20px">{{auction.description}}</p>
-<ul>
-    <li>
-        {% if not watchlist %}
-            Nobody listed it yet.
-        {% else %}
-        Listed by
-        {% for user in watchlist %} {{user.user}}, {% endfor %}
-        {% endif %}
-    </li>
-    <li>
-        Category:
-        {% if auction.category %} {{auction.category}} {% else %} no category listed {% endif %}
-    </li>
-</ul>
 
-{% if is_host %}
-<form method="POST">
-    {% csrf_token %}
-    <input type="submit" class="btn btn-primary" name="close" value="Close this auction">
-</form>
-{% endif %}
+    <h3>Price: {{price|floatformat:2}}$</h3>
+    <br>
+    <h4>Details</h4>
+    <p style="font-size:20px">{{auction.description}}</p>
+    <ul>
+        <li>
+            {% if not watchlist %}
+                Nobody listed it yet.
+            {% else %}
+            Listed by
+            {% for user in watchlist %} {{user.user}}, {% endfor %}
+            {% endif %}
+        </li>
+        <li>
+            Category:
+            {% if auction.category %} {{auction.category}} {% else %} no category listed {% endif %}
+        </li>
+    </ul>
+
+    {% if is_host %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" name="close" value="Close this auction">
+    </form>
+    {% endif %}
 
 {% endif %}
 
 
 <h3>Comments</h3>
 <br>
+<div>
+    
+</div>
 
 {% endblock %}
