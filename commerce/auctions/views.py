@@ -160,7 +160,7 @@ def listings(request, listing_id):
 
         if "comment" in request.POST:
             new_comment = Comment(auction=auction, user=request.user)
-            new_comment.contents = request["contents"]
+            new_comment.contents = request.POST["contents"]
             new_comment.save()
             return render(request, "auctions/listing.html",{
                 "auction":auction,
