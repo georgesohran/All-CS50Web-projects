@@ -25,9 +25,14 @@
     <div style="padding-top: 70px ; margin-left:30px">
 
     {% if winner %}
-    <p> Auction is closed </p>
-    <br>
-    <p> Winner of this auction is {{winner}}</p>
+        <p> Auction is closed </p>
+        <br>
+        {% if is_winner %}
+        <h5>Congatulations, you are the winner of the auction</h5>
+        <p> Now you have to pay {{price}}</p>
+        {% else %}
+        <p> Winner of this auction is {{winner}}</p>
+        {% endif %}
     {% else %}
     <p>{{bid_count}} bid(s) so far.</p>
     <form method="POST">
