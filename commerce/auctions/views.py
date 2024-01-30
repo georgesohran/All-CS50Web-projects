@@ -129,7 +129,8 @@ def listings(request, listing_id):
         price = 0
     else:
         price = bids.get(time=get_latest_time(bids)).bid_price
-    print(price)
+
+    comments = Comment.objects.filter(auction=auction)
 
     form = BidForm()
 
@@ -154,10 +155,11 @@ def listings(request, listing_id):
                 "form":form,
                 "is_host":is_host,
                 "winner":auction.winner,
+                "comments":comments,
             })
 
         if "comment" in request.POST:
-            new_comment = Comment(auction=Auction(pk=listing_id), user=request.user)
+            new_comment = Comment(auction=auction, user=request.user)
             new_comment.contents = request["contents"]
             new_comment.save()
             return render(request, "auctions/listing.html",{
@@ -169,6 +171,7 @@ def listings(request, listing_id):
                 "form":form,
                 "is_host":is_host,
                 "winner":auction.winner,
+                "comments":comments,
             })
 
         bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
@@ -185,6 +188,7 @@ def listings(request, listing_id):
                     "form":form,
                     "is_host":is_host,
                     "winner":auction.winner,
+                    "comments":comments,
                     "messege":"Invalid bid"
                     })
             else:
@@ -203,6 +207,7 @@ def listings(request, listing_id):
             "form":form,
             "is_host":is_host,
             "winner":auction.winner,
+            "comments":comments,
         })
 
 

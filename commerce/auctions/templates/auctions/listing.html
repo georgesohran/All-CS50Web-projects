@@ -75,14 +75,22 @@
 <h3>Comments</h3>
 <br>
 
-<div>
-
+{% for comment in comments %}
+<div class="container-comment">
+<h5> {{comments.user}}: </h5>
+<p> {{comment.contents}} </p>
 </div>
+{% empty %}
 
+<p>No comments posted yet</p>
+
+{% endfor %}
+
+<h3>Leave your comment</h3>
 <form method="POST">
     <textarea rows="5" cols="128" placeholder="Write your comment here" name="contents"></textarea>
     <br>
-    <input type="submit" class="btn btn-primary" value="Post comment" name="comment">
+    <input type="submit" class="btn btn-primary" value="Post a comment" name="comment">
 </form>
 
 {% endblock %}
