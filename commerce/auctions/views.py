@@ -160,6 +160,7 @@ def listings(request, listing_id):
                 "is_host":is_host,
                 "winner":auction.winner,
                 "comments":comments,
+                "is_winner":current_user_is_winner,
             })
 
         #if the user tries to write a comment we save it
@@ -177,6 +178,7 @@ def listings(request, listing_id):
                 "is_host":is_host,
                 "winner":auction.winner,
                 "comments":comments,
+                "is_winner":current_user_is_winner,
             })
 
         bid = Bid(auction=auction, user=request.user, time = datetime.datetime.now())
@@ -194,6 +196,7 @@ def listings(request, listing_id):
                     "is_host":is_host,
                     "winner":auction.winner,
                     "comments":comments,
+                    "is_winner":current_user_is_winner,
                     "messege":"Invalid bid"
                     })
             else:
@@ -214,6 +217,7 @@ def listings(request, listing_id):
             "is_host":is_host,
             "winner":auction.winner,
             "comments":comments,
+            "is_winner":current_user_is_winner,
         })
 
 
