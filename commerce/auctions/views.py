@@ -199,6 +199,7 @@ def listings(request, listing_id):
         return HttpResponseRedirect(reverse("index"))
 
     else:
+        
         return render(request, "auctions/listing.html",{
             "auction":auction,
             "watchlist":watchlist,
