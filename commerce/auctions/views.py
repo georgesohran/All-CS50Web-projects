@@ -132,6 +132,8 @@ def listings(request, listing_id):
 
     comments = Comment.objects.filter(auction=auction)
 
+    is_current_
+
     form = BidForm()
 
     if request.method == "POST":
@@ -199,7 +201,7 @@ def listings(request, listing_id):
         return HttpResponseRedirect(reverse("index"))
 
     else:
-        
+
         return render(request, "auctions/listing.html",{
             "auction":auction,
             "watchlist":watchlist,
