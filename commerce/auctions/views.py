@@ -280,4 +280,8 @@ def watchlist(request):
 
 @login_required(login_url="/login")
 def create_listing(request):
-    return render(request, "auctions/layout.html")
+    if request.method == "POST":
+        ...
+    else:
+
+        return render(request, "auctions/.html")
