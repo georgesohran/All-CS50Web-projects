@@ -285,6 +285,9 @@ def create_listing(request):
     else:
         form = AuctionForm()
 
+        for obj in form:
+            print(obj)
+
         return render(request, "auctions/create_listing.html", {
             "form":form
         })
