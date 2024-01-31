@@ -14,7 +14,7 @@ class AuctionForm(ModelForm):
         widgets = {
             "product": TextInput(),
             "description": TextInput(),
-            "category": TextInput,
-            "image": TextInput,
-            "time":TextInput
+            "category": TextInput(),
+            "image": Input(),
+            "time":TextInput()
         }
