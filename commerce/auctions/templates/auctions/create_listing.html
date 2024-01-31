@@ -5,7 +5,8 @@
 <h1> Create Listing </h1>
 
 <form method="POST">
-
+    {% csrf_token %}
+    {{ form.as_p }}
 </form>
 
 {% endblock %}
