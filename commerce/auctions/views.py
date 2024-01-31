@@ -285,8 +285,6 @@ def create_listing(request):
     else:
         form = AuctionForm()
 
-        form.product
-
         return render(request, "auctions/create_listing.html", {
             "form":form
         })
