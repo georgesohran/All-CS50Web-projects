@@ -4,14 +4,17 @@
 
 <h1> Create Listing </h1>
 
-<div class="container-form">
+<div>
     <form method="POST">
         {% csrf_token %}
         {% for field in form %}
-
-        <p><span style="font-size:120%">{{field.label_tag}}</span>  {{field}} </p>
+        <p style="font-size:120%">{{field.label_tag}}</p>
+        {{field}}
+        <br>
 
         {% endfor %}
+        <br>
+        <input type="submit" class="btn btn-primary" value="Create listing">
     </form>
 </div>
 

@@ -1,4 +1,4 @@
-from django.forms import ModelForm, TextInput, FileInput
+from django.forms import ModelForm, TextInput, FileInput, Textarea
 from .models import Bid, Auction
 
 
@@ -12,8 +12,8 @@ class AuctionForm(ModelForm):
         model = Auction
         exclude = ["host", "winner", "time"]
         widgets = {
-            "product": TextInput(attrs={}),
-            "description": TextInput(attrs={}),
+            "product": TextInput(attrs={"size":50}),
+            "description": Textarea(attrs={}),
             "category": TextInput(attrs={}),
             "image": FileInput(attrs={}),
         }
