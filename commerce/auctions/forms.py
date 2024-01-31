@@ -12,8 +12,8 @@ class AuctionForm(ModelForm):
         model = Auction
         exclude = ["host", "winner", "time"]
         widgets = {
-            "product": TextInput(attrs={"style":"text-align:center"}),
-            "description": TextInput(attrs={"style":"text-align:center"}),
-            "category": TextInput(attrs={"style":"text-align:center"}),
-            "image": FileInput(attrs={"style":"text-align:center"}),
+            "product": TextInput(attrs={}),
+            "description": TextInput(attrs={}),
+            "category": TextInput(attrs={}),
+            "image": FileInput(attrs={}),
         }
