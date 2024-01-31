@@ -11,7 +11,6 @@ class AuctionForm(ModelForm):
     class Meta:
         model = Auction
         exclude = ["host", "winner", "time"]
-        widgets = {
             "product": TextInput(attrs={}),
             "description": TextInput(attrs={}),
             "category": TextInput(attrs={}),
