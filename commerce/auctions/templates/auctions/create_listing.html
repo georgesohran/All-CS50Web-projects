@@ -7,7 +7,11 @@
 <div class="container-form">
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% for field in form %}
+
+        <p><span style="font-size:120%">{{field.label_tag}}</span>  {{field}} </p>
+
+        {% endfor %}
     </form>
 </div>
 
