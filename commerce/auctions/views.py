@@ -284,4 +284,4 @@ def create_listing(request):
         ...
     else:
 
-        return render(request, "auctions/.html")
+        return render(request, "auctions/create_listing.html")
