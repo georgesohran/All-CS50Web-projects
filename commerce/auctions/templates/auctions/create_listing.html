@@ -4,9 +4,11 @@
 
 <h1> Create Listing </h1>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-</form>
+<div class="container-form">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+</div>
 
 {% endblock %}
