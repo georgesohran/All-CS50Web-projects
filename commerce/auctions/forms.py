@@ -10,4 +10,4 @@ class BidForm(ModelForm):
 class AuctionForm(ModelForm):
     class Meta:
         model = Auction
-        
+        exclude = ["host", "winner", ]
