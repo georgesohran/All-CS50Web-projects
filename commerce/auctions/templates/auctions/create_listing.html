@@ -8,10 +8,10 @@
     <form method="POST">
         {% csrf_token %}
         {% for field in form %}
-        <p style="font-size:120%"><b>{{field.label_tag}}</b></p>
-        {{field}}
-        <br>
-        <br>
+            <p style="font-size:120%"><b>{{field.label_tag}}</b></p>
+            {{field}}
+            <br>
+            <br>
         {% endfor %}
         <br>
         <input type="submit" class="btn btn-primary" value="Create listing">
