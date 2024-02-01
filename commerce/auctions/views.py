@@ -281,7 +281,10 @@ def watchlist(request):
 @login_required(login_url="/login")
 def create_listing(request):
     if request.method == "POST":
-        form = AuctionForm(request.POST)
+        auction = Auction(host=request.user, time=datetime.datetime.now())
+        form = AuctionForm(request.POST, instance=auction)
+        form.save()
+        return HttpResponseRedirect(reverse("index"))
     else:
         form = AuctionForm()
 
