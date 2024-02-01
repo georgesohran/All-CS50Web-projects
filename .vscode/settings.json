@@ -10,5 +10,6 @@
         "dictionary.h": "c",
         "stdbool.h": "c",
         "strings.h": "c"
-    }
+    },
+    "remote.autoForwardPortsFallback": 0
 }
