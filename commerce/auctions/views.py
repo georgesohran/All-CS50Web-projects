@@ -281,9 +281,15 @@ def watchlist(request):
 @login_required(login_url="/login")
 def create_listing(request):
     if request.method == "POST":
+        start_bid = request.POST["start_bid"]
+
         auction = Auction(host=request.user, time=datetime.datetime.now())
-        form = AuctionForm(request.POST, instance=auction)
+        form = AuctionForm(request.POST, request.FILES, instance=auction)
         form.save()
+
+        bid = Bid(auction=auction, user=request.user, time=datetime.datetime.now(), bid_price=float(start_bid))
+        bid.save()
+
         return HttpResponseRedirect(reverse("index"))
     else:
         form = AuctionForm()

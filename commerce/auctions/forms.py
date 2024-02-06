@@ -15,5 +15,4 @@ class AuctionForm(ModelForm):
             "product": TextInput(attrs={"size":"60"}),
             "description": Textarea(attrs={"cols":"63"}),
             "category": TextInput(attrs={"size":"60"}),
-            "image": FileInput(attrs={}),
         }

@@ -23,10 +23,10 @@
 <div class="row">
     {% if auction.image %}
     <img src="{{auction.image.url}}" width=300px height=300px>
-    <div style="padding-top: 70px ; margin-left:30px">
     {% else %}
     <p style="width:300px; height:300px"> No Image </p>
     {% endif %}
+    <div style="padding-top: 70px ; margin-left:30px">
 
     {% if winner %}
         <p> Auction is closed </p>
