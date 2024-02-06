@@ -146,6 +146,7 @@ def listings(request, listing_id):
         if "wlist" in request.POST:
             new_watchlist = Watchlist(auction=auction, user=request.user)
             new_watchlist.save()
+            watchlisted = True
             return render(request, "auctions/listing.html",{
                 "auction":auction,
                 "watchlist":watchlist,
