@@ -124,11 +124,7 @@ def listings(request, listing_id):
     bids = Bid.objects.filter(auction=auction)
     bid_count = bids.count()
 
-    #checking wether this auction has any bids or not
-    if not bids.filter(time=get_latest_time(bids)):
-        price = 0
-    else:
-        price = bids.get(time=get_latest_time(bids)).bid_price
+    price = bids.get(time=get_latest_time(bids)).bid_price
 
     comments = Comment.objects.filter(auction=auction)
 
