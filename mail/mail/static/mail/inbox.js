@@ -29,7 +29,7 @@ function load_mailbox(mailbox) {
   document.querySelector('#compose-view').style.display = 'none';
 
   fetch(`email/${mailbox}`).then(response => response.json()).then(emails => {
-    console.log(emails)
+    for()
   })
 
   // Show the mailbox name
