@@ -28,6 +28,7 @@ function load_mailbox(mailbox) {
 
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
+  document.querySelector('#emails-view').innerHTML = ''
   document.querySelector('#compose-view').style.display = 'none';
 
   // Show the mailbox name
@@ -35,9 +36,7 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
-      let limail = document.createElement('li')
-      limail.innerHTML = `<div class="emails-list-element"><span><h3>${email.sender}</h3>${email.subject}</span></div>`
-      document.querySelector('#emails-list').append(limail);
+      
     }
   })
 
