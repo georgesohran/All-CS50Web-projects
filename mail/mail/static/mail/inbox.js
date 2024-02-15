@@ -32,6 +32,8 @@ function load_mailbox(mailbox) {
   document.querySelector('#compose-view').style.display = 'none';
 
   // Show the mailbox name
+  let heading
+
   document.querySelector('#emails-header').innerHTML = `${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}`;
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
