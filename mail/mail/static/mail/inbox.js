@@ -39,9 +39,9 @@ function load_mailbox(mailbox) {
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
       let list = document.createElement('ul')
-      list.setAttribute('id','emails-list')
 
       let newEmail = document.createElement('li')
+      document.querySelector('#emails-view')
     }
   })
 
