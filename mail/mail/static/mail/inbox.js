@@ -30,14 +30,15 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';
 
+  // Show the mailbox name
+  document.querySelector('#emails-header').innerHTML = `${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}`;
+
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
       console.log(email)
     }
   })
 
-  // Show the mailbox name
-  document.querySelector('#emails-header').innerHTML = `${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}`;
 }
 
 function load_email(email) {
