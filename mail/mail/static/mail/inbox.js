@@ -35,12 +35,8 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
-      //making a nice box for email to appear in.
-      let boxEmail = document.createElement()
-
       let limail = document.createElement('li')
-      limail.append()
-
+      limail.innerHTML = '<>'
       document.querySelector('#emails-list').append(limail);
     }
   })
