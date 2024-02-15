@@ -10,10 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
   load_mailbox('inbox');
 });
 
-function Email() {
-  return <div><p>Email</p></div>
-}
-
 function compose_email() {
 
   // Show compose view and hide other views
@@ -36,7 +32,7 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
-      ReactDOM.render(<Email/>, document.querySelector('#emails-view'))
+      console.log(email)
     }
   })
 
