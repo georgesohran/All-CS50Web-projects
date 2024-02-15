@@ -30,7 +30,7 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';
 
-  document.querySelector('#emails-view').innerHTML = mailbox;
+  document.querySelector('#emails-view').child= mailbox;
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
