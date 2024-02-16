@@ -11,15 +11,17 @@ textarea {
 }
 
 .email-info-cell {
+    margin-right: 15px;
     position: relative;
     float:left;
 }
 .email-info-time {
     font-size:120%;
-    top: 50%;
+    color:gray;
+    padding:18px;
+    top: 0;
     right:0;
     bottom: 0;
-    color:gray;
     position: absolute;
-    float: right;
+
 }
