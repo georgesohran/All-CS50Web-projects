@@ -41,7 +41,7 @@ function load_mailbox(mailbox) {
       let newEmail = document.createElement('div')
       newEmail.setAttribute('class', 'container text-center')
       newEmail.innerHTML = `
-        <div class="row justify-content-md-center">
+        <div class="email-list-element">
           <div class="col col-lg-2"><b>${email.sender}</b></div>
           <div class="col col-lg-2"><span>${email.subject}</span></div>
           <div class="col">${email.timestamp}</div>
