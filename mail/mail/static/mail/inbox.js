@@ -44,8 +44,8 @@ function load_mailbox(mailbox) {
         <div class="email-info-cell">
           <b>${email.sender}</b>
           <span>${email.subject}</span>
-          <span class="email-info-time">${email.timestamp}</span>
         </div>
+        <div class="email-info-time">${email.timestamp}</div>
       `;
 
       document.querySelector('#emails-view').append(newEmail)
