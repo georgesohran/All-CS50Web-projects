@@ -17,5 +17,5 @@ textarea {
 .email-info-time {
     font-size:120%;
     color:gray;
-    float:right;
+    position: absolute; float: right;
 }

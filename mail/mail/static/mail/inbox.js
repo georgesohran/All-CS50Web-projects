@@ -43,7 +43,7 @@ function load_mailbox(mailbox) {
       newEmail.innerHTML = `
         <div class="email-list-element">
           <div class="email-info-cell"><b>${email.sender}</b></div>
-          <div class="email-info-cell">${email.subject}</div>
+          <div class="email-info-cell"><span>${email.subject}</span></div>
           <div class="email-info-time">${email.timestamp}</div>
         </div>
       `;
