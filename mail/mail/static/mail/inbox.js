@@ -39,13 +39,13 @@ function load_mailbox(mailbox) {
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
       let newEmail = document.createElement('div')
-      newEmail.setAttribute('class', 'email-list-element')
+      newEmail.setAttribute('class', 'container text-center')
       newEmail.innerHTML = `
-        <div class="email-info-cell">
-          <b>${email.sender}</b>
-          <span>${email.subject}</span>
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2"><b>${email.sender}</b></div>
+          <div class="col col-lg-2"><span>${email.subject}</span></div>
+          <div class="col">${email.timestamp}</div>
         </div>
-        <div class="email-info-time">${email.timestamp}</div>
       `;
 
       document.querySelector('#emails-view').append(newEmail)
