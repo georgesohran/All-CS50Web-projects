@@ -14,5 +14,5 @@ textarea {
 }
 .email-info-time {
     display: table-cell;
-    float: right;
+    position: relative;
 }
