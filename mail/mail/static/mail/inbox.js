@@ -41,10 +41,11 @@ function load_mailbox(mailbox) {
       let newEmail = document.createElement('div')
       newEmail.setAttribute('class', 'email-list-element')
       newEmail.innerHTML = `
-        <span>
+        <div class="email-info-cell">
           <b>${email.sender}</b>
-          <p>${email.timestamp}</p>
-        </span>
+          <span>${email.subject}</span>
+          <span class="email-info-time">${email.timestamp}</span>
+        </div>
       `;
 
       document.querySelector('#emails-view').append(newEmail)
