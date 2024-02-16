@@ -13,6 +13,6 @@ textarea {
     position: relative;
 }
 .email-info-time {
-    display: table-cell;
-    right: 0;
+
+    float:right;
 }
