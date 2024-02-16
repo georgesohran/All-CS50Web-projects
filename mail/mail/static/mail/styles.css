@@ -3,6 +3,8 @@ textarea {
 }
 
 .email-list-element {
-    margin:30px;
-    padding:20px;
+    margin: 30px;
+    padding: 20px;
+    border-width: 2px;
+    border-color: black;
 }

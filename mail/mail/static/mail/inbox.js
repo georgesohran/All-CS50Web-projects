@@ -38,10 +38,16 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
-      let list = document.createElement('ul')
+      let newEmail = document.createElement('div')
+      newEmail.setAttribute('class', 'email-list-element')
+      newEmail.innerHTML = `
+        <span>
+          <b>${email.sender}</b>
+          <p>${email.}</p>
+        </span>
+      `;
 
-      let newEmail = document.createElement('li')
-      document.querySelector('#emails-view')
+      document.querySelector('#emails-view').append(newEmail)
     }
   })
 
