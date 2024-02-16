@@ -14,8 +14,10 @@ textarea {
 .email-info-cell {
     display: table-cell;
     position: relative;
+    float:left;
 }
 .email-info-time {
+    position: relative;
     font-size:120%;
     color:gray;
     float:right;
