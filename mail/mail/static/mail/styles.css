@@ -6,7 +6,6 @@ textarea {
     margin-top: 30px;
     padding: 20px;
     border: 2px solid black;
-    position:relative;
 }
 
 .email-info-cell {
@@ -15,5 +14,5 @@ textarea {
 }
 .email-info-time {
     display: table-cell;
-    position:absolute;
+    position: relative;
 }
