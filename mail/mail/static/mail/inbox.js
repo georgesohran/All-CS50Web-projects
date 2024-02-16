@@ -43,7 +43,7 @@ function load_mailbox(mailbox) {
       newEmail.innerHTML = `
         <span>
           <b>${email.sender}</b>
-          <p>${email.}</p>
+          <p>${email.timestamp}</p>
         </span>
       `;
 
