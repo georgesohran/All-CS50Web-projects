@@ -22,8 +22,20 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
-function load_email(email) {
-  //TODO
+function load_email(email_id) {
+  console.log(email_id)
+
+  document.querySelector('#email-view').style.display = 'block';
+  document.querySelector('#email-view').innerHTML = '';
+  document.querySelector('#compose-view').style.display = 'none';
+  document.querySelector('#emails-view').style.display = 'none';
+
+  fetch(`email/${email_id}`).then(response => response.json()).then(email => {
+    let test = document.createElement('p')
+    test.innerHTML = 'Hello, this is test mail'
+    document.querySelector('#email-view').append(test)
+  })
+
 }
 
 function load_mailbox(mailbox) {
@@ -36,8 +48,6 @@ function load_mailbox(mailbox) {
   document.querySelector('#compose-view').style.display = 'none';
 
   // Show the mailbox name
-  let heading
-
   document.querySelector('#emails-view').innerHTML = `<h4>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h4b>`;
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
@@ -45,6 +55,7 @@ function load_mailbox(mailbox) {
       let newEmail = document.createElement('div')
       newEmail.innerHTML = `
         <div class="email-list-element">
+          <div class="email-info-cell"><button class="btn btn-primary" onclick="load_email(${email.id})"> See inside </button></div>
           <div class="email-info-cell"><b>${email.sender}</b></div>
           <div class="email-info-cell"><span style="font-size:110%">${email.subject}</span></div>
           <div class="email-info-time">${email.timestamp}</div>
