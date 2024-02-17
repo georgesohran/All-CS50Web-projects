@@ -22,6 +22,10 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
+function load_email(email) {
+  //TODO
+}
+
 function load_mailbox(mailbox) {
 
   console.log(mailbox)
@@ -53,6 +57,4 @@ function load_mailbox(mailbox) {
 
 }
 
-function load_email(email) {
-//TODO
-}
+
