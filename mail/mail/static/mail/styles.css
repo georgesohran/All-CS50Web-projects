@@ -30,4 +30,6 @@ textarea {
 .email-details-block {
     display:flex;
     position: relative;
+    border: 2px solid #222222;
+    position:relative;
 }
