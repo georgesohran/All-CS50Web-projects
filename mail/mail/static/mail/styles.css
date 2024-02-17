@@ -25,3 +25,9 @@ textarea {
     position: absolute;
 
 }
+
+
+.email-details-block {
+    display:flex;
+    position: relative;
+}
