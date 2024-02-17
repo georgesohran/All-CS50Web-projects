@@ -30,7 +30,7 @@ function load_email(email_id) {
   document.querySelector('#compose-view').style.display = 'none';
   document.querySelector('#emails-view').style.display = 'none';
 
-  fetch(`email/${email_id}`).then(response => response.json()).then(email => {
+  fetch(`emails/${email_id}`).then(response => response.json()).then(email => {
     let test = document.createElement('p')
     test.innerHTML = 'Hello, this is test mail'
     document.querySelector('#email-view').append(test)
