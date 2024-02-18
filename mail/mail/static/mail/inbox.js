@@ -43,7 +43,7 @@ function load_email(email_id) {
             return ls
           }()}
         </p>
-        <p>${email.subject}</p>
+        <p><b>On timestamp</b>${email.timestamp}</p>
         <p>${email.timestamp}</p>
     `;
     document.querySelector('#email-details-view').append(email_content)
