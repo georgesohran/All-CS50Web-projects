@@ -21,6 +21,10 @@ function compose_email() {
   document.querySelector('#compose-recipients').value = '';
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
+
+  document.querySelector('#submit-button').addEventListener('click', () => {
+    fetch('emails/')
+  })
 }
 
 function load_email(email_id) {
