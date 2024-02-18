@@ -34,13 +34,15 @@ function load_email(email_id) {
   fetch(`emails/${parseInt(email_id)}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
     email_content.innerHTML = `
-      <p><b>From:</b>${email.sender} <b>to:</b>${() => {
-        ls = ""
-        for(const reciver of email.recipients) {
-          ls = ls + parseStr(reciver)
-        }
-        return ls
-      }}</p>
+      <p><b>From:</b>${email.sender} <b>to:</b>
+        ${() => {
+          ls = ''
+          for(const reciver of email.recipients) {
+            ls = ls + reciver + ','
+          }
+          return ls
+        }}
+      </p>
       <p>${email.subject}</p>
       <p>${email.timestamp}</p>
     `;
