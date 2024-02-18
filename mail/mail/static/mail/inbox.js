@@ -33,7 +33,9 @@ function compose_email() {
     .then(response => response.json())
     .then(result => {
       console.log(result);
-    })
+      let msg_display = document.querySelector('#message')
+      
+      })
     })
   })
 }
