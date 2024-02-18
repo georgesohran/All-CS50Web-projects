@@ -34,7 +34,8 @@ function load_email(email_id) {
   fetch(`emails/${parseInt(email_id)}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
     email_content.innerHTML = `
-        <p><b>From:</b> ${email.sender} <b>to:</b>
+        <p style="font-size:110%"><b>From:</b> ${email.sender}</p>
+        <p style="font-size:110%"><b>To:</b>
           ${function() {
             ls = ''
             for(const reciver of email.recipients) {
@@ -43,8 +44,8 @@ function load_email(email_id) {
             return ls
           }()}
         </p>
-        <p><b>On timestamp</b>${email.timestamp}</p>
-        <p>${email.timestamp}</p>
+        <p style="font-size:110%"><b>On timestamp:</b> ${email.timestamp}</p>
+        <p style="font-size:110%"><b>Subject:</b> ${email.subject}</p>
     `;
     document.querySelector('#email-details-view').append(email_content)
   })
