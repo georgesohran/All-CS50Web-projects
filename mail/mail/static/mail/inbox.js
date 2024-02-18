@@ -34,8 +34,11 @@ function compose_email() {
     .then(result => {
       console.log(result);
       let msg_display = document.querySelector('#message')
-      if(result.hasOwnProperty('message')){
-        
+      if (result.hasOwnProperty('message')){
+        msg_display.style.color = 'red'
+        msg_display.innerHTML = ''
+      } else if (result.hasOwnProperty('message')) {
+
       }
       })
     })
