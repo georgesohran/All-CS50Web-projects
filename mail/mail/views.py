@@ -31,6 +31,7 @@ def compose(request):
 
     # Check recipient emails
     data = json.loads(request.body)
+    print(data)
     emails = [email.strip() for email in data.get("recipients").split(",")]
     if emails == [""]:
         return JsonResponse({
@@ -74,7 +75,7 @@ def compose(request):
 
 @login_required
 def mailbox(request, mailbox):
-    
+
     # Filter emails returned based on mailbox
     if mailbox == "inbox":
         emails = Email.objects.filter(
