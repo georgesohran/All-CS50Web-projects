@@ -34,7 +34,9 @@ function load_email(email_id) {
   fetch(`emails/${parseInt(email_id)}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
     email_content.innerHTML = `
-      <p>${email.}</p>
+      <p>${email.sender}</p>
+      <p>${email.subject}</p>
+      <p>${email.timestamp}</p>
     `;
     document.querySelector('#email-details-view').append(email_content)
   })
