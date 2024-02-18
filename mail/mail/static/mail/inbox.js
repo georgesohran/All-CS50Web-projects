@@ -23,7 +23,10 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 
   document.querySelector('#submit-button').addEventListener('click', () => {
-    fetch('emails/')
+    fetch('emails/', {
+      method:'POST',
+      
+    })
   })
 }
 
