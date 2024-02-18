@@ -33,8 +33,10 @@ function load_email(email_id) {
 
   fetch(`emails/${parseInt(email_id)}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
-    test.innerHTML = ``
-    document.querySelector('#email-view').append(test)
+    email_content.innerHTML = `
+      <p>${email.}</p>
+    `;
+    document.querySelector('#email-details-view').append(email_content)
   })
 
 }
