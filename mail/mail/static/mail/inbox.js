@@ -24,8 +24,10 @@ function compose_email() {
 
   document.querySelector('#submit-button').addEventListener('click', () => {
     fetch('emails/', {
-      method:'POST',
-      
+      method: 'POST',
+      body: JSON.stringify({
+        
+      })
     })
   })
 }
