@@ -34,21 +34,20 @@ function load_email(email_id) {
   fetch(`emails/${parseInt(email_id)}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
     email_content.innerHTML = `
-      <p><b>From:</b>${email.sender} <b>to:</b>
-        ${() => {
-          ls = ''
-          for(const reciver of email.recipients) {
-            ls = ls + reciver + ','
-          }
-          return ls
-        }}
-      </p>
-      <p>${email.subject}</p>
-      <p>${email.timestamp}</p>
+        <p><b>From:</b> ${email.sender} <b>to:</b>
+          ${function() {
+            ls = ''
+            for(const reciver of email.recipients) {
+              ls = ls + reciver + ','
+            }
+            return ls
+          }()}
+        </p>
+        <p>${email.subject}</p>
+        <p>${email.timestamp}</p>
     `;
     document.querySelector('#email-details-view').append(email_content)
   })
-
 }
 
 function load_mailbox(mailbox) {
@@ -68,12 +67,12 @@ function load_mailbox(mailbox) {
     for(const email of emails) {
       let newEmail = document.createElement('div')
       newEmail.innerHTML = `
-        <div class="email-list-element">
-          <div class="email-info-cell"><button class="btn btn-primary" onclick="load_email(${email.id})"> See inside </button></div>
-          <div class="email-info-cell"><b>${email.sender}</b></div>
-          <div class="email-info-cell"><span style="font-size:110%">${email.subject}</span></div>
-          <div class="email-info-time">${email.timestamp}</div>
-        </div>
+          <div class="email-list-element">
+            <div class="email-info-cell"><button class="btn btn-primary" onclick="load_email(${email.id})"> See inside </button></div>
+            <div class="email-info-cell"><b>${email.sender}</b></div>
+            <div class="email-info-cell"><span style="font-size:110%">${email.subject}</span></div>
+            <div class="email-info-time">${email.timestamp}</div>
+          </div>
       `;
 
       document.querySelector('#emails-view').append(newEmail)
