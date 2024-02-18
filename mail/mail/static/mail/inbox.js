@@ -76,7 +76,7 @@ function load_mailbox(mailbox) {
       newEmail.innerHTML = `
           <div class="email-list-element">
             <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
-            <div class="email-info-cell" style="padding-top:5px">
+            <div class="email-info-cell" style="padding-top:2px">
               <b>${email.sender}</b>:&nbsp&nbsp
               <span style="font-size:110%">${email.subject}</span>
             </div>
