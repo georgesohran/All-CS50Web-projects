@@ -76,6 +76,10 @@ function load_email(email_id) {
     `;
     document.querySelector('#email-details-view').append(email_content)
   })
+  fetch(`email/${email_id}`, {
+    method: 'PUT'
+    body: JSON.stringify({read:true})
+  })
 }
 
 function load_mailbox(mailbox) {
