@@ -34,11 +34,12 @@ function compose_email() {
     .then(result => {
       console.log(result);
       let msg_display = document.querySelector('#message')
-      if (result.hasOwnProperty('message')){
+      if (result.hasOwnProperty('error')){
         msg_display.style.color = 'red'
-        msg_display.innerHTML = ''
+        msg_display.innerHTML = result.error
       } else if (result.hasOwnProperty('message')) {
-
+        msg_display.style.color = 'black'
+        msg_display.innerHTML = result.message
       }
       })
     })
