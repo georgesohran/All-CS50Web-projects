@@ -73,6 +73,7 @@ function load_email(email_id) {
         <p style="font-size:120%">
           ${email.body}
         </p>
+        <button class="btn btn-primary" onclick="">Archive this email</button>
     `;
     document.querySelector('#email-details-view').append(email_content)
   })

@@ -27,7 +27,7 @@ def compose(request):
 
     # Composing a new email must be via POST
     if request.method != "POST":
-        return JsonResponse({"message": "POST request required."}, status=400)
+        return JsonResponse({"error": "POST request required."}, status=400)
 
     # Check recipient emails
     print(request.body)
@@ -36,7 +36,7 @@ def compose(request):
     emails = [email.strip() for email in data.get("recipients").split(",")]
     if emails == [""]:
         return JsonResponse({
-            "message": "At least one recipient required."
+            "error": "At least one recipient required."
         }, status=400)
 
     # Convert email addresses to users
@@ -47,7 +47,7 @@ def compose(request):
             recipients.append(user)
         except User.DoesNotExist:
             return JsonResponse({
-                "message": f"User with email {email} does not exist."
+                "error": f"User with email {email} does not exist."
             }, status=400)
 
     # Get contents of email
