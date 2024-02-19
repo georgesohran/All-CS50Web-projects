@@ -38,6 +38,8 @@ function compose_email() {
       })
     })
   })
+
+  
 }
 
 function load_email(email_id) {
