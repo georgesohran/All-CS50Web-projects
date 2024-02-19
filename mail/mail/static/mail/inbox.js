@@ -39,7 +39,7 @@ function compose_email() {
     })
   })
 
-  
+
 }
 
 function load_email(email_id) {
@@ -55,13 +55,15 @@ function load_email(email_id) {
     email_content.innerHTML = `
         <p style="font-size:110%"><b>From:</b> ${email.sender}</p>
         <p style="font-size:110%"><b>To:</b>
-          ${function() {
+          ${
+            function() {
             ls = ''
             for(const reciver of email.recipients) {
               ls = ls + reciver + ','
             }
             return ls
-          }()}
+            }()
+          }
         </p>
         <p style="font-size:110%"><b>On timestamp:</b> ${email.timestamp}</p>
         <p style="font-size:110%"><b>Subject:</b> ${email.subject}</p>
