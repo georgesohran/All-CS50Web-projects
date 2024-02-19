@@ -38,8 +38,13 @@ function compose_email() {
       })
     })
   })
+}
 
-
+function archaive_email(email_id, action) {
+  fetch(`emails/${email_id}`, {
+    method: 'PUT',
+    body: JSON.stringify({archived:action})
+  })
 }
 
 function load_email(email_id) {
@@ -73,11 +78,11 @@ function load_email(email_id) {
         <p style="font-size:120%">
           ${email.body}
         </p>
-        <button class="btn btn-primary" onclick="">Archive this email</button>
+        <button class="btn btn-primary" onclick="() => archive_email(${email_id}, true)">Archive this email</button>
     `;
     document.querySelector('#email-details-view').append(email_content)
   })
-  fetch(`email/${email_id}`, {
+  fetch(`emails/${email_id}`, {
     method: 'PUT'
     body: JSON.stringify({read:true})
   })
@@ -113,7 +118,6 @@ function load_mailbox(mailbox) {
       document.querySelector('#emails-view').append(newEmail)
     }
   })
-
 }
 
 
