@@ -80,13 +80,13 @@ function load_email(email_id) {
         </p>
         <button class="btn btn-primary" onclick="() => archive_email(${email_id}, true)">Archive this email</button>
     `;
-    if(email.read) {
+    document.querySelector('#email-details-view').append(email_content)
+    if(!email.read) {
       return fetch(`emails/${email_id}`, {
         method: 'PUT',
         body: JSON.stringify({read:true})
       })
     }
-    document.querySelector('#email-details-view').append(email_content)
   });
 
 }
@@ -106,21 +106,19 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
-      if((email.archived && mailbox == 'archive')) {
-        let newEmail = document.createElement('div')
-        newEmail.innerHTML = `
-            <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
-              <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
-              <div class="email-info-cell" style="padding-top:2px">
-                <b>${email.sender}</b>:&nbsp&nbsp
-                <span style="font-size:110%">${email.subject}</span>
-                ${email.read ? '&nbsp&nbsp&nbsp<span style="font-size:110%">READ</span>':''}
-              </div>
-              <div class="email-info-time">${email.timestamp}</div>
+      let newEmail = document.createElement('div')
+      newEmail.innerHTML = `
+          <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
+            <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
+            <div class="email-info-cell" style="padding-top:2px">
+              <b>${email.sender}</b>:&nbsp&nbsp
+              <span style="font-size:110%">${email.subject}</span>
+              ${email.read ? '&nbsp&nbsp&nbsp<span style="font-size:110%">READ</span>':''}
             </div>
-        `;
-        document.querySelector('#emails-view').append(newEmail)
-      } else if()
+            <div class="email-info-time">${email.timestamp}</div>
+          </div>
+      `;
+      document.querySelector('#emails-view').append(newEmail)
     }
   })
 }
