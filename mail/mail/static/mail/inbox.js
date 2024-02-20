@@ -105,6 +105,7 @@ function load_mailbox(mailbox) {
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
       let newEmail = document.createElement('div')
+      
       newEmail.innerHTML = `
           <div class="email-list-element">
             <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
