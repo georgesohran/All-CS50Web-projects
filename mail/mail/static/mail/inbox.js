@@ -80,13 +80,15 @@ function load_email(email_id) {
         </p>
         <button class="btn btn-primary" onclick="() => archive_email(${email_id}, true)">Archive this email</button>
     `;
+    if(email.read) {
+      fetch(`emails/${email_id}`, {
+        method: 'PUT',
+        body: JSON.stringify({read:true})
+      })
+    }
     document.querySelector('#email-details-view').append(email_content)
   });
 
-  fetch(`emails/${email_id}`, {
-    method: 'PUT',
-    body: JSON.stringify({read:true})
-  })
 }
 
 function load_mailbox(mailbox) {
