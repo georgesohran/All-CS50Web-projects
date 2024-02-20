@@ -41,12 +41,10 @@ function compose_email() {
 }
 
 function archaive_email(email_id, action) {
-  console.log('call')
   fetch(`emails/${email_id}`, {
     method: 'PUT',
     body: JSON.stringify({archived:action})
   })
-  console.log('call end')
 }
 
 function load_email(email_id) {
