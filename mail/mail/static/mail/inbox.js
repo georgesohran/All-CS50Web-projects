@@ -104,8 +104,7 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
-      if((email.archived && mailbox === 'archive') || (!email.archived && mailbox !== 'archive'))
-      {
+      if((email.archived && mailbox == 'archive')) {
         let newEmail = document.createElement('div')
         newEmail.innerHTML = `
             <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
@@ -119,7 +118,7 @@ function load_mailbox(mailbox) {
             </div>
         `;
         document.querySelector('#emails-view').append(newEmail)
-      }
+      } else if()
     }
   })
 }
