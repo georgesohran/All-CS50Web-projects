@@ -104,6 +104,7 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
+      if(email.archived)
       let newEmail = document.createElement('div')
       newEmail.innerHTML = `
           <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
