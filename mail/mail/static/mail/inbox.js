@@ -40,6 +40,13 @@ function compose_email() {
   })
 }
 
+function archaive_email(email_id, action) {
+  fetch(`emails/${email_id}`, {
+    method: 'PUT',
+    body: JSON.stringify({archived:action})
+  })
+}
+
 function load_email(email_id) {
   console.log(email_id)
 
@@ -71,12 +78,7 @@ function load_email(email_id) {
         <p style="font-size:120%">
           ${email.body}
         </p>
-        <button class="btn btn-primary" onclick="() =>
-        ${fetch(`emails/${email_id}`, {
-          method: 'PUT',
-          body: JSON.stringify({archived:action})
-          })}
-        ">Archive this email</button>
+        <button class="btn btn-primary" onclick="async() => {archive_email(${email_id}, true)}">Archive this email</button>
     `;
     document.querySelector('#email-details-view').append(email_content)
     if(!email.read) {
