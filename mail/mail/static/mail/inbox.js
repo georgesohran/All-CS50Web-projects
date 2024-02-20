@@ -83,7 +83,7 @@ function load_email(email_id) {
     document.querySelector('#email-details-view').append(email_content)
   })
   fetch(`emails/${email_id}`, {
-    method: 'PUT'
+    method: 'PUT',
     body: JSON.stringify({read:true})
   })
 }
