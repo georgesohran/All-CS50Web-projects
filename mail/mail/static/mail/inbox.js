@@ -87,7 +87,7 @@ function load_email(email_id) {
       })
     }
     document.querySelector('#email-details-view').append(email_content)
-  }).then();
+  });
 
 }
 
