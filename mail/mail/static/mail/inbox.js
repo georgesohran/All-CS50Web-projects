@@ -81,7 +81,8 @@ function load_email(email_id) {
         <button class="btn btn-primary" onclick="() => archive_email(${email_id}, true)">Archive this email</button>
     `;
     document.querySelector('#email-details-view').append(email_content)
-  })
+  });
+  
   fetch(`emails/${email_id}`, {
     method: 'PUT',
     body: JSON.stringify({read:true})
