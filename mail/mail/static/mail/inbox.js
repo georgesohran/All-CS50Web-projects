@@ -35,7 +35,7 @@ function compose_email() {
       console.log(result);
       let msg_display = document.querySelector('#message')
       msg_display.innerHTML = result.message;
-      
+
       })
     })
   })
