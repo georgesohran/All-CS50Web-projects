@@ -46,6 +46,7 @@ function archaive_email(email_id, action) {
     method: 'PUT',
     body: JSON.stringify({archived:action})
   })
+  action ? load_mailbox('archive') : load_mailbox('inbox')
 }
 
 function load_email(email_id) {
@@ -83,9 +84,9 @@ function load_email(email_id) {
     document.querySelector('#email-details-view').append(email_content)
 
     let archive_button = document.createElement('button')
-    archive_button.classList.add('btn btn-primary')
+    archive_button.className = 'btn btn-primary'
     archive_button.innerHTML = email.archived ? 'Unarchive this email' : 'Archive this email'
-    archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
+    archive_button.addEventListener('click', () => archaive_email(email_id, !email.archived))
     document.querySelector('#email-details-view').append(archive_button)
 
     if(!email.read) {
