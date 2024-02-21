@@ -24,6 +24,7 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 
   document.querySelector('#submit-button').addEventListener('click', () => {
+    console.log('click')
     fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
