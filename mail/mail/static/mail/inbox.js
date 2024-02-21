@@ -124,6 +124,7 @@ function load_mailbox(mailbox) {
                 <b>${email.sender}</b>:&nbsp&nbsp
                 <span style="font-size:110%">${email.subject}</span>
                 ${email.read ? '&nbsp&nbsp&nbsp<span style="font-size:110%">READ</span>':''}
+                ${email.archived ? '&nbsp&nbsp&nbsp<span style="font-size:110%">ARCHIVED</span>':''}
               </div>
               <div class="email-info-time">${email.timestamp}</div>
             </div>
