@@ -23,7 +23,7 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 
   document.querySelector('#submit-button').addEventListener('click', () => {
-    fetch('emails/', {
+    fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
         recipients: document.querySelector('#compose-recipients').value,
@@ -42,7 +42,7 @@ function compose_email() {
 }
 
 function archaive_email(email_id, action) {
-  fetch(`emails/${email_id}`, {
+  fetch(`/emails/${email_id}`, {
     method: 'PUT',
     body: JSON.stringify({archived:action})
   })
