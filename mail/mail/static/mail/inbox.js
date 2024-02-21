@@ -114,7 +114,6 @@ function load_mailbox(mailbox) {
 
   fetch(`emails/${mailbox}`).then(response => response.json()).then(emails => {
     for(const email of emails) {
-      console.log(email.archived)
       let newEmail = document.createElement('div')
 
       if(email.archived && mailbox === 'archive') {
