@@ -26,17 +26,15 @@ function compose_email() {
     fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
-          recipients: 'baz@example.com',
-          subject: 'Meeting time',
-          body: 'How about we meet tomorrow at 3pm?'
+        recipients: document.querySelector('#compose-recipients').value,
+        subject: document.querySelector('#compose-subject').value,
+        body: document.querySelector('compose-body').value,
       })
-    })
     .then(response => response.json())
     .then(result => {
       console.log(result);
       let msg_display = document.querySelector('#message')
       msg_display.innerHTML = result.message;
-
       })
     })
   })
