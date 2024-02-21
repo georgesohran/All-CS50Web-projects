@@ -5,24 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
   document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
   document.querySelector('#compose').addEventListener('click', compose_email);
-  
-  document.querySelector('#submit-button').addEventListener('click', () => {
-    fetch('/emails', {
-      method: 'POST',
-      body: JSON.stringify({
-        recipients: document.querySelector('#compose-recipients').value,
-        subject: document.querySelector('#compose-subject').value,
-        body: document.querySelector('compose-body').value,
-      })
-    .then(response => response.json())
-    .then(result => {
-      console.log(result);
-      let msg_display = document.querySelector('#message')
-      msg_display.innerHTML = result.message;
-      })
-    })
-  })
-
 
   // By default, load the inbox
   load_mailbox('inbox');
@@ -41,6 +23,22 @@ function compose_email() {
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
 
+  document.querySelector('#submit-button').addEventListener('click', () => {
+    fetch('/emails', {
+      method: 'POST',
+      body: JSON.stringify({
+        recipients: document.querySelector('#compose-recipients').value,
+        subject: document.querySelector('#compose-subject').value,
+        body: document.querySelector('compose-body').value,
+      })
+    .then(response => response.json())
+    .then(result => {
+      console.log(result);
+      let msg_display = document.querySelector('#message')
+      msg_display.innerHTML = result.message;
+      })
+    })
+  })
 }
 
 function archaive_email(email_id, action) {
