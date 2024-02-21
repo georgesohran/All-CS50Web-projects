@@ -80,10 +80,12 @@ function load_email(email_id) {
         </p>
     `;
     document.querySelector('#email-details-view').append(email_content)
+
     let archive_button = document.createElement('')
     archive_button.class = 'btn btn-primary'
     archive_button.innerHTML = email.archived ? 'Unarchive this email' : 'Archive this email'
-    archive
+    archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
+    document.querySelector('#email-details-view').append()
 
     if(!email.read) {
       return fetch(`emails/${email_id}`, {
