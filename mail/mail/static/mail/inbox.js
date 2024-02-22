@@ -149,7 +149,6 @@ function load_mailbox(mailbox) {
       }
 
       document.querySelector('#emails-view').append(newEmail)
-
     }
   })
 };
