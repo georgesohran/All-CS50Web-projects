@@ -50,7 +50,7 @@ function archaive_email(email_id, action) {
   .then(response => response.json())
   .then(result => {
     console.log(result)
-    action ? load_mailbox('archive') : load_mailbox('inbox')
+    load_mailbox('inbox')
   })
 }
 
