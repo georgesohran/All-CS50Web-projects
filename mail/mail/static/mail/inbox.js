@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
-          recipients: 'baz@example.com',
-          subject: 'Meeting time',
-          body: 'How about we meet tomorrow at 3pm?'
+          recipients: document.querySelector('#compose-recipients').value,
+          subject: document.querySelector('#compose-subject').value,
+          body: document.querySelector('#compose-body').value
       })
     })
     .then(response => response.json())
@@ -37,7 +37,7 @@ function archaive_email(email_id, action) {
 
   // By default, load the inbox
   load_mailbox('inbox');
-});
+}
 
 
 function compose_email() {
