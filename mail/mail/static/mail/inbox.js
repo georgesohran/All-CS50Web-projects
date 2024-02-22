@@ -31,15 +31,12 @@ function compose_email() {
           recipients: 'baz@example.com',
           subject: 'Meeting time',
           body: 'How about we meet tomorrow at 3pm?'
-        })
+      })
     })
     .then(response => response.json())
     .then(result => {
-      console.log(result);
-      let msg_display = document.querySelector('#message')
-      msg_display.innerHTML = result.message;
-      })
-  })
+        console.log(result);
+    });
 }
 
 function archaive_email(email_id, action) {
