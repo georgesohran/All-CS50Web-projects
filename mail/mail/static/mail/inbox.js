@@ -135,6 +135,18 @@ function load_mailbox(mailbox) {
               <div class="email-info-time">${email.timestamp}</div>
             </div>
         `;
+      } else if(mailbox == 'sent'){
+        newEmail.innerHTML = `
+            <div class="email-list-element">
+              <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
+              <div class="email-info-cell" style="padding-top:2px">
+                <b>${email.sender}</b>:&nbsp&nbsp
+                <span style="font-size:110%">${email.subject}</span>
+                ${email.archived ? '&nbsp&nbsp&nbsp<span style="font-size:110%">ARCHIVED</span>':''}
+              </div>
+              <div class="email-info-time">${email.timestamp}</div>
+            </div>
+        `;
       } else if(!email.archived && mailbox != 'archive') {
         newEmail.innerHTML = `
             <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
