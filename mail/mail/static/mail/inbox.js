@@ -100,7 +100,6 @@ function load_email(email_id) {
       })
     }
   });
-
 }
 
 function load_mailbox(mailbox) {
