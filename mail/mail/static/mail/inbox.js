@@ -27,11 +27,11 @@ function compose_email() {
     console.log('click')
     fetch('/emails', {
       method: 'POST',
-      body: JSON.stringify({
+      body: `
           recipients: 'baz@example.com',
           subject: 'Meeting time',
           body: 'How about we meet tomorrow at 3pm?'
-      }),
+      `,
       headers: {
         "Content-type": "application/json; charset=UTF-8"
       }
