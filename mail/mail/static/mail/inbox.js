@@ -47,7 +47,11 @@ function archaive_email(email_id, action) {
     method: 'PUT',
     body: JSON.stringify({archived:action})
   })
-  action ? load_mailbox('archive') : load_mailbox('inbox')
+  .then(response => response.json())
+  .then(result => {
+    console.log(result)
+    action ? load_mailbox('archive') : load_mailbox('inbox')
+  })
 }
 
 function load_email(email_id) {
