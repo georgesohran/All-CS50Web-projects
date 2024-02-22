@@ -31,7 +31,10 @@ function compose_email() {
           recipients: 'baz@example.com',
           subject: 'Meeting time',
           body: 'How about we meet tomorrow at 3pm?'
-      })
+      }),
+      headers: {
+        Content-type: "application/json; charset=UTF-8"
+      }
     })
     .then(response => response.json())
     .then(result => {
