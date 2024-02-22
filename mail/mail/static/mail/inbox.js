@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(result => {
-        console.log(result);
+        document.querySelector('#message').innerHTML = result.message;
     });
   })
 })
