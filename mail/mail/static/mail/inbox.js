@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(result);
     });
   })
-}
+})
 
 function archaive_email(email_id, action) {
   fetch(`/emails/${email_id}`, {
