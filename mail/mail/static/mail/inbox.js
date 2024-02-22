@@ -56,7 +56,6 @@ function archaive_email(email_id, action) {
 
 function load_email(email_id) {
   console.log(email_id)
-
   document.querySelector('#email-details-view').style.display = 'block';
   document.querySelector('#email-details-view').innerHTML = '';
   document.querySelector('#compose-view').style.display = 'none';
