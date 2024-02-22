@@ -23,7 +23,21 @@ function compose_email() {
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
 
-  document.querySelector('#submit-button').addEventListener('click', send_email)
+  document.querySelector('#compose-form').addEventListener('submit', () => {
+    console.log('click')
+    fetch('/emails', {
+      method: 'POST',
+      body: JSON.stringify({
+          recipients: 'baz@example.com',
+          subject: 'Meeting time',
+          body: 'How about we meet tomorrow at 3pm?'
+      })
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result);
+    });
+  })
 }
 
 function archaive_email(email_id, action) {
@@ -36,22 +50,6 @@ function archaive_email(email_id, action) {
     console.log(result)
     return action ? load_mailbox('archive') : load_mailbox('inbox')
   })
-}
-
-function send_email(event) {
-  event.preventDefault()
-  fetch('/emails', {
-    method: 'POST',
-    body: JSON.stringify({
-        recipients: 'baz@example.com',
-        subject: 'Meeting time',
-        body: 'How about we meet tomorrow at 3pm?'
-    })
-  })
-  .then(response => response.json())
-  .then(result => {
-      console.log(result);
-  });
 }
 
 function load_email(email_id) {
