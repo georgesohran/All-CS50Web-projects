@@ -40,7 +40,8 @@ function compose_email() {
     .then(result => {
         console.log(result);
     });
-})
+  })
+}
 
 function archaive_email(email_id, action) {
   fetch(`/emails/${email_id}`, {
@@ -100,7 +101,7 @@ function load_email(email_id) {
       })
     }
   });
-}}
+}
 
 function load_mailbox(mailbox) {
 
