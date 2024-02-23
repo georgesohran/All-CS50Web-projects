@@ -33,7 +33,6 @@ function archaive_email(email_id, action) {
 }
 
 function compose_email() {
-
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#email-details-view').style.display = 'none';
@@ -115,6 +114,7 @@ function load_mailbox(mailbox) {
       let newEmail = document.createElement('div')
 
       if(mailbox == 'archive') {
+        
         newEmail.innerHTML = `
             <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
               <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
