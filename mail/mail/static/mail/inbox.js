@@ -87,7 +87,7 @@ function load_email(email_id) {
     archive_button.addEventListener('click', () => archaive_email(email_id, !email.archived))
     document.querySelector('#email-details-view').append(archive_button)
 
-    if(!email.read) {
+    if(!email.read && email.sender) {
       return fetch(`emails/${email_id}`, {
         method: 'PUT',
         body: JSON.stringify({read:true})
