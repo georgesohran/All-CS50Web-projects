@@ -138,7 +138,7 @@ function load_mailbox(mailbox) {
               <div class="email-info-time">${email.timestamp}</div>
             </div>
         `;
-      } else if(mailbox == 'sent'){
+      } else if(mailbox == 'sent' && !email.archived){
         newEmail.innerHTML = `
             <div class="email-list-element">
               <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
