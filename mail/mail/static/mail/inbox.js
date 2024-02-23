@@ -35,7 +35,7 @@ function archive_email(email_id, action) {
   }).then(() => {action ? load_mailbox('archive') : load_mailbox('inbox')})
 }
 
-function compose_email({message = '', error = ''}={}) {
+function compose_email({message='', error='', recipients='', subject='', body=''}={}) {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#email-details-view').style.display = 'none';
@@ -44,9 +44,9 @@ function compose_email({message = '', error = ''}={}) {
   document.querySelector('#error').innerHTML = error;
 
   // Clear out composition fields
-  document.querySelector('#compose-recipients').value = '';
-  document.querySelector('#compose-subject').value = '';
-  document.querySelector('#compose-body').value = '';
+  document.querySelector('#compose-recipients').value = recipients;
+  document.querySelector('#compose-subject').value = subject;
+  document.querySelector('#compose-body').value = body;
 }
 
 function load_email(email_id, sent) {
@@ -97,13 +97,13 @@ function load_email(email_id, sent) {
       reply_button.className = 'btn btn-primary'
       reply_button.innerHTML = 'Reply to this email'
       reply_button.addEventListener('click', () => {
-        document.querySelector('#compose-recipients').value = '';
-        document.querySelector('#compose-subject').value = '';
-        document.querySelector('#compose-body').value = '';
-        
+        compose_email({message='Replying to an email', error='',
+          recipients='',
+          subject='',
+          body=''})
       })
+      document.querySelector('#email-details-view').append(reply_button)
     }
-
 
     if(!email.read) {
       return fetch(`emails/${email_id}`, {
