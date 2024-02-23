@@ -20,11 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(result => {
       if(result.message){
         document.querySelector('#message').innerHTML = result.message;
+        return load_mailbox('sent')
       } else if(result.error) {
         document.querySelector('#error').innerHTML = result.error;
+        return compose_email()
       }
     })
-    load_mailbox('sent')});
   })
 })
 
