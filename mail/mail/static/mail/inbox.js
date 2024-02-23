@@ -60,6 +60,7 @@ function load_email(email_id, {message = '', error = ''}={}) {
 
   fetch(`emails/${email_id}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
+    console.log(email.body)
     email_content.innerHTML = `
         <p style="font-size:110%"><b>From:</b> ${email.sender}</p>
         <p style="font-size:110%"><b>To:</b>
@@ -78,9 +79,9 @@ function load_email(email_id, {message = '', error = ''}={}) {
 
         <p style="font-size:110%"><b>Contents:</b></p>
         <hr>
-        <p style="font-size:120%">
+        <div style="font-size:120%">
           ${email.body}
-        </p>
+        </div>
     `;
     document.querySelector('#email-details-view').append(email_content)
 
