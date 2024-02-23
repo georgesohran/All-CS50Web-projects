@@ -45,6 +45,8 @@ function compose_email() {
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#email-details-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
+  document.querySelector('#message').innerHTML = '';
+  document.querySelector('#error').innerHTML = '';
 
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
@@ -62,6 +64,8 @@ function load_email(email_id) {
   document.querySelector('#email-details-view').innerHTML = '';
   document.querySelector('#compose-view').style.display = 'none';
   document.querySelector('#emails-view').style.display = 'none';
+  document.querySelector('#message').innerHTML = '';
+  document.querySelector('#error').innerHTML = '';
 
   fetch(`emails/${email_id}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
@@ -113,6 +117,8 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').innerHTML = ''
   document.querySelector('#email-details-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'none';
+  document.querySelector('#message').innerHTML = '';
+  document.querySelector('#error').innerHTML = '';
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h4>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h4b>`;
