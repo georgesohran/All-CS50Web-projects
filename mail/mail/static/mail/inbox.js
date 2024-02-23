@@ -134,7 +134,7 @@ function load_mailbox(mailbox, {message = '', error = ''}={}) {
 
           <div class="email-info-cell">
             <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button>
-            <button class="btn btn-sm btn-outline-primary" onclick="archive_email(${email.id},${email.archived})"> ${email.archived ? 'Unarchive' : 'Archive'}</button>
+            <button class="btn btn-sm btn-outline-primary" onclick="archive_email(${email.id},${!email.archived})"> ${email.archived ? 'Unarchive' : 'Archive'}</button>
           </div>
           <div class="email-info-cell" style="padding-top:2px">
             <b>${email.sender}</b>:&nbsp&nbsp
