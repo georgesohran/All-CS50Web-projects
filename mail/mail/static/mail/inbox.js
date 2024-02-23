@@ -152,7 +152,6 @@ function load_mailbox(mailbox) {
             </div>
         `;
       }
-
       document.querySelector('#emails-view').append(newEmail)
     }
   })
