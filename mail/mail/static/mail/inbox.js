@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(result => {
         document.querySelector('#message').innerHTML = result.message;
+        document.querySelector('#error').innerHTML = result.error;
     });
   })
 })
