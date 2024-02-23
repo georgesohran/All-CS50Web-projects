@@ -32,8 +32,7 @@ function archaive_email(email_id, action) {
   fetch(`/emails/${email_id}`, {
     method: 'PUT',
     body: JSON.stringify({archived:action})
-  })
-  action ? load_mailbox('archive') : load_mailbox('inbox')
+  }).then(() => {action ? load_mailbox('archive') : load_mailbox('inbox')})
 }
 
 function compose_email() {
