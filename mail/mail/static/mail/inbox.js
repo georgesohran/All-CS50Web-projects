@@ -36,12 +36,12 @@ function archaive_email(email_id, action) {
   }).then(() => {action ? load_mailbox('archive') : load_mailbox('inbox')})
 }
 
-function compose_email() {
+function compose_email({message = '', error = ''}) {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#email-details-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
-  document.querySelector('#message').innerHTML = '';
+  document.querySelector('#message').innerHTML = message;
   document.querySelector('#error').innerHTML = '';
 
   // Clear out composition fields
