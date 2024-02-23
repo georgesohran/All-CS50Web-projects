@@ -49,14 +49,14 @@ function compose_email({message = '', error = ''}={}) {
   document.querySelector('#compose-body').value = '';
 }
 
-function load_email(email_id, {message = '', error = ''}={}) {
+function load_email(email_id, sent) {
   console.log(email_id)
   document.querySelector('#email-details-view').style.display = 'block';
   document.querySelector('#email-details-view').innerHTML = '';
   document.querySelector('#compose-view').style.display = 'none';
   document.querySelector('#emails-view').style.display = 'none';
-  document.querySelector('#message').innerHTML = message;
-  document.querySelector('#error').innerHTML = error;
+  document.querySelector('#message').innerHTML = '';
+  document.querySelector('#error').innerHTML = '';
 
   fetch(`emails/${email_id}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
@@ -66,11 +66,11 @@ function load_email(email_id, {message = '', error = ''}={}) {
         <p style="font-size:110%"><b>To:</b>
           ${
             function() {
-            ls = ''
-            for(const reciver of email.recipients) {
-              ls = ls + reciver + ','
-            }
-            return ls
+              ls = ''
+              for(const reciver of email.recipients) {
+                ls = ls + reciver + ','
+              }
+              return ls
             }()
           }
         </p>
@@ -85,12 +85,13 @@ function load_email(email_id, {message = '', error = ''}={}) {
     `;
     document.querySelector('#email-details-view').append(email_content)
 
-
-    let archive_button = document.createElement('button')
-    archive_button.className = 'btn btn-primary'
-    archive_button.innerHTML = email.archived ? 'Unarchive this email' : 'Archive this email'
-    archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
-    document.querySelector('#email-details-view').append(archive_button)
+    if(!sent){
+      let archive_button = document.createElement('button')
+      archive_button.className = 'btn btn-primary'
+      archive_button.innerHTML = email.archived ? 'Unarchive this email' : 'Archive this email'
+      archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
+      document.querySelector('#email-details-view').append(archive_button)
+    }
 
     if(!email.read) {
       return fetch(`emails/${email_id}`, {
@@ -121,7 +122,7 @@ function load_mailbox(mailbox, {message = '', error = ''}={}) {
         newEmail.innerHTML = `
         <div class="email-list-element">
           <div class="email-info-cell">
-            <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button>
+            <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id}, true)"> See inside </button>
           </div>
           <div class="email-info-cell" style="padding-top:2px">
             <b>${email.sender}</b>:&nbsp&nbsp
@@ -134,7 +135,7 @@ function load_mailbox(mailbox, {message = '', error = ''}={}) {
         newEmail.innerHTML = `
         <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
           <div class="email-info-cell">
-            <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button>
+            <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id}, false)"> See inside </button>
             <button class="btn btn-sm btn-outline-primary" onclick="archive_email(${email.id},${!email.archived})"> ${email.archived ? 'Unarchive' : 'Archive'}</button>
           </div>
           <div class="email-info-cell" style="padding-top:2px">
