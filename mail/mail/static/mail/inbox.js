@@ -79,7 +79,7 @@ function load_email(email_id, {message = '', error = ''}={}) {
 
         <p style="font-size:110%"><b>Contents:</b></p>
         <hr>
-        <div style="font-size:120%">
+        <div style="font-size:120%; white-space: pre-line">
           ${email.body}
         </div>
     `;
