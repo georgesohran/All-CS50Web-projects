@@ -42,7 +42,7 @@ function compose_email({message = '', error = ''}) {
   document.querySelector('#email-details-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
   document.querySelector('#message').innerHTML = message;
-  document.querySelector('#error').innerHTML = '';
+  document.querySelector('#error').innerHTML = error;
 
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
@@ -50,7 +50,7 @@ function compose_email({message = '', error = ''}) {
   document.querySelector('#compose-body').value = '';
 }
 
-function load_email(email_id) {
+function load_email(email_id, {message = '', error = ''}) {
   console.log(email_id)
   document.querySelector('#email-details-view').style.display = 'block';
   document.querySelector('#email-details-view').innerHTML = '';
@@ -100,7 +100,7 @@ function load_email(email_id) {
   });
 }
 
-function load_mailbox(mailbox) {
+function load_mailbox(mailbox, {message = '', error = ''}) {
 
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
