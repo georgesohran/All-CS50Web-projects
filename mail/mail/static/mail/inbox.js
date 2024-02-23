@@ -82,6 +82,7 @@ function load_email(email_id, sent) {
         <div style="font-size:120%; white-space: pre-line">
           ${email.body}
         </div>
+        <br>
     `;
     document.querySelector('#email-details-view').append(email_content)
 
@@ -91,7 +92,18 @@ function load_email(email_id, sent) {
       archive_button.innerHTML = email.archived ? 'Unarchive this email' : 'Archive this email'
       archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
       document.querySelector('#email-details-view').append(archive_button)
+
+      let reply_button = document.createElement('button')
+      reply_button.className = 'btn btn-primary'
+      reply_button.innerHTML = 'Reply to this email'
+      reply_button.addEventListener('click', () => {
+        document.querySelector('#compose-recipients').value = '';
+        document.querySelector('#compose-subject').value = '';
+        document.querySelector('#compose-body').value = '';
+        
+      })
     }
+
 
     if(!email.read) {
       return fetch(`emails/${email_id}`, {
