@@ -83,6 +83,7 @@ function load_email(email_id, {message = '', error = ''}={}) {
     `;
     document.querySelector('#email-details-view').append(email_content)
 
+    
     let archive_button = document.createElement('button')
     archive_button.className = 'btn btn-primary'
     archive_button.innerHTML = email.archived ? 'Unarchive this email' : 'Archive this email'
