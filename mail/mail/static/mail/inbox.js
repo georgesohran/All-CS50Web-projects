@@ -58,6 +58,8 @@ function load_email(email_id, sent) {
   document.querySelector('#message').innerHTML = '';
   document.querySelector('#error').innerHTML = '';
 
+  let email
+
   fetch(`emails/${email_id}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
     console.log(email.body)
@@ -98,9 +100,9 @@ function load_email(email_id, sent) {
       reply_button.innerHTML = 'Reply to this email'
       reply_button.addEventListener('click', () => {
         compose_email({message='Replying to an email', error='',
-          recipients='',
-          subject='',
-          body=''})
+          recipients: email.recipients,
+          subject: email.subject,
+          body: email.body})
       })
       document.querySelector('#email-details-view').append(reply_button)
     }
