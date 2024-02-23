@@ -18,8 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(result => {
+      if(result.message){
         document.querySelector('#message').innerHTML = result.message;
+      } else if(result.error) {
         document.querySelector('#error').innerHTML = result.error;
+      }
     });
   })
 })
@@ -123,7 +126,7 @@ function load_mailbox(mailbox) {
           <div class="email-info-time">${email.timestamp}</div>
         </div>
         `;
-      } else if {
+      } else {
         newEmail.innerHTML = `
         <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
           <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
