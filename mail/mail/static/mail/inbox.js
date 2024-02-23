@@ -100,7 +100,7 @@ function load_email(email_id, sent) {
       reply_button.innerHTML = 'Reply to this email'
       reply_button.addEventListener('click', () => {
         compose_email({message='Replying to an email', error='',
-          recipients: email.recipients,
+          recipients: 'Re:' + email.recipients,
           subject: email.subject,
           body: email.body})
       })
