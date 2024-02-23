@@ -31,7 +31,6 @@ def compose(request):
 
     # Check recipient emails
     data = json.loads(request.body)
-    print(data)
 
     emails = [email.strip() for email in data.get("recipients").split(",")]
     if emails == [""]:
@@ -70,6 +69,7 @@ def compose(request):
         for recipient in recipients:
             email.recipients.add(recipient)
         email.save()
+        print(email.body)
 
     return JsonResponse({"message": "Email sent successfully."}, status=201)
 
