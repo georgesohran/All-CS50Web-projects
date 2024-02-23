@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.querySelector('#compose-form').addEventListener('submit', (event) => {
     event.preventDefault()
-    console.log('click')
     fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
@@ -36,7 +35,6 @@ function archaive_email(email_id, action) {
   })
 
   // By default, load the inbox
-  load_mailbox('inbox');
 }
 
 
