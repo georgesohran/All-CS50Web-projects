@@ -34,8 +34,6 @@ function archaive_email(email_id, action) {
     console.log(result)
     return action ? load_mailbox('archive') : load_mailbox('inbox')
   })
-
-  // By default, load the inbox
 }
 
 
