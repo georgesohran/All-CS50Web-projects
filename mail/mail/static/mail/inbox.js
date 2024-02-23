@@ -36,7 +36,7 @@ function archaive_email(email_id, action) {
   }).then(() => {action ? load_mailbox('archive') : load_mailbox('inbox')})
 }
 
-function compose_email({message = '', error = ''}) {
+function compose_email({message = '', error = ''}={}) {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#email-details-view').style.display = 'none';
@@ -50,14 +50,14 @@ function compose_email({message = '', error = ''}) {
   document.querySelector('#compose-body').value = '';
 }
 
-function load_email(email_id, {message = '', error = ''}) {
+function load_email(email_id, {message = '', error = ''}={}) {
   console.log(email_id)
   document.querySelector('#email-details-view').style.display = 'block';
   document.querySelector('#email-details-view').innerHTML = '';
   document.querySelector('#compose-view').style.display = 'none';
   document.querySelector('#emails-view').style.display = 'none';
-  document.querySelector('#message').innerHTML = '';
-  document.querySelector('#error').innerHTML = '';
+  document.querySelector('#message').innerHTML = message;
+  document.querySelector('#error').innerHTML = error;
 
   fetch(`emails/${email_id}`).then(response => response.json()).then(email => {
     let email_content = document.createElement('div')
@@ -100,15 +100,15 @@ function load_email(email_id, {message = '', error = ''}) {
   });
 }
 
-function load_mailbox(mailbox, {message = '', error = ''}) {
+function load_mailbox(mailbox, {message = '', error = ''}={}) {
 
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#emails-view').innerHTML = ''
   document.querySelector('#email-details-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'none';
-  document.querySelector('#message').innerHTML = '';
-  document.querySelector('#error').innerHTML = '';
+  document.querySelector('#message').innerHTML = message;
+  document.querySelector('#error').innerHTML = error;
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h4>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h4b>`;
