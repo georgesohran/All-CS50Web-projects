@@ -102,7 +102,7 @@ function load_email(email_id, sent) {
         compose_email({message='Replying to an email', error='',
           recipients: email.recipients,
           subject: email.subject.includes('Re')? 'Re:'+email.subject : email.subject,
-          body: `On ${email.timestamp}: ${email.sender} wrote: ${email.body}`})
+          body: `On ${email.timestamp}: ${email.sender} wrote: <span style="white-space: pre-line">${email.body}</span>`})
       })
       document.querySelector('#email-details-view').append(reply_button)
     }
