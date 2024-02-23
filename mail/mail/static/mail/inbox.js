@@ -19,11 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(result => {
       if(result.message){
-        document.querySelector('#message').innerHTML = result.message;
-        return load_mailbox('sent')
+        return load_mailbox('sent',{message: result.message, error: ''})
       } else if(result.error) {
-        document.querySelector('#error').innerHTML = result.error;
-        return compose_email()
+        return compose_email({message: '', error: result.error})
       }
     })
   })
