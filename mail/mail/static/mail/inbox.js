@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 })
 
-function archaive_email(email_id, action) {
+function archive_email(email_id, action) {
   fetch(`/emails/${email_id}`, {
     method: 'PUT',
     body: JSON.stringify({archived:action})
@@ -83,11 +83,11 @@ function load_email(email_id, {message = '', error = ''}={}) {
     `;
     document.querySelector('#email-details-view').append(email_content)
 
-    
+
     let archive_button = document.createElement('button')
     archive_button.className = 'btn btn-primary'
     archive_button.innerHTML = email.archived ? 'Unarchive this email' : 'Archive this email'
-    archive_button.addEventListener('click', () => archaive_email(email_id, !email.archived))
+    archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
     document.querySelector('#email-details-view').append(archive_button)
 
     if(!email.read) {
@@ -118,7 +118,9 @@ function load_mailbox(mailbox, {message = '', error = ''}={}) {
       if(mailbox == 'sent') {
         newEmail.innerHTML = `
         <div class="email-list-element">
-          <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
+          <div class="email-info-cell">
+            <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button>
+          </div>
           <div class="email-info-cell" style="padding-top:2px">
             <b>${email.sender}</b>:&nbsp&nbsp
             <span style="font-size:110%">${email.subject}</span>
@@ -129,7 +131,11 @@ function load_mailbox(mailbox, {message = '', error = ''}={}) {
       } else {
         newEmail.innerHTML = `
         <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
-          <div class="email-info-cell"><button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button></div>
+
+          <div class="email-info-cell">
+            <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button>
+            <button class="btn btn-sm btn-outline-primary" onclick="archive_email(${email.id},${email.archived})"> ${email.archived ? 'Unarchive' : 'Archive'}</button>
+          </div>
           <div class="email-info-cell" style="padding-top:2px">
             <b>${email.sender}</b>:&nbsp&nbsp
             <span style="font-size:110%">${email.subject}</span>
