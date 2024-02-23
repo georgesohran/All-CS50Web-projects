@@ -99,8 +99,6 @@ function load_email(email_id) {
 
 function load_mailbox(mailbox) {
 
-  console.log(mailbox)
-
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#emails-view').innerHTML = ''
