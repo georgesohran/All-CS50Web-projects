@@ -32,10 +32,9 @@ function archaive_email(email_id, action) {
   .then(response => response.json())
   .then(result => {
     console.log(result)
-    return action ? load_mailbox('archive') : load_mailbox('inbox')
+    action ? load_mailbox('archive') : load_mailbox('inbox')
   })
 }
-
 
 function compose_email() {
 
@@ -50,10 +49,6 @@ function compose_email() {
   document.querySelector('#compose-recipients').value = '';
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
-}
-
-function send_email(event) {
-  event.prevent(deafault)
 }
 
 function load_email(email_id) {
