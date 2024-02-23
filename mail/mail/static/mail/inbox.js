@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if(result.error) {
         document.querySelector('#error').innerHTML = result.error;
       }
-    });
+    })
+    .then(() => {load_mailbox('sent')});
   })
 })
 
