@@ -131,13 +131,9 @@ function load_mailbox(mailbox, {message = '', error = ''}={}) {
       } else {
         newEmail.innerHTML = `
         <div class="email-list-element" ${email.read ? 'style="color:gray;border-color:gray"':''}>
-
           <div class="email-info-cell">
-          <table>
-          <tr>
             <button class="btn btn-sm btn-outline-primary" onclick="load_email(${email.id})"> See inside </button>
             <button class="btn btn-sm btn-outline-primary" onclick="archive_email(${email.id},${!email.archived})"> ${email.archived ? 'Unarchive' : 'Archive'}</button>
-          <table>
           </div>
           <div class="email-info-cell" style="padding-top:2px">
             <b>${email.sender}</b>:&nbsp&nbsp
