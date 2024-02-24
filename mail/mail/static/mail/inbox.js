@@ -95,6 +95,10 @@ function load_email(email_id, sent) {
       archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
       document.querySelector('#email-details-view').append(archive_button)
 
+      let sp = document.createElemnt('span')
+      sp.innerHTML = '&nbsp&nbsp&nbsp&nbsp'
+      document.querySelector('#email-details-view').append(sp)
+
       let reply_button = document.createElement('button')
       reply_button.className = 'btn btn-primary'
       reply_button.innerHTML = 'Reply to this email'
