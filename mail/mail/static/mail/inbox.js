@@ -105,7 +105,7 @@ function load_email(email_id, sent) {
       reply_button.addEventListener('click', () => {
         compose_email({message:'Replying to an email', error:'',
           recipients: email.sender,
-          subject: email.subject.includes('Re')? 'Re:'+email.subject : email.subject,
+          subject: email.subject.includes('Re')? email.subject : `Re: ${email.subject}`,
           body: `On ${email.timestamp}: ${email.sender} wrote:\n${email.body}`})
       })
       document.querySelector('#email-details-view').append(reply_button)
