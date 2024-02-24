@@ -95,7 +95,7 @@ function load_email(email_id, sent) {
       archive_button.addEventListener('click', () => archive_email(email_id, !email.archived))
       document.querySelector('#email-details-view').append(archive_button)
 
-      let sp = document.createElemnt('span')
+      let sp = document.createElement('span')
       sp.innerHTML = '&nbsp&nbsp&nbsp&nbsp'
       document.querySelector('#email-details-view').append(sp)
 
@@ -104,7 +104,7 @@ function load_email(email_id, sent) {
       reply_button.innerHTML = 'Reply to this email'
       reply_button.addEventListener('click', () => {
         compose_email({message:'Replying to an email', error:'',
-          recipients: email.recipients,
+          recipients: email.sender,
           subject: email.subject.includes('Re')? 'Re:'+email.subject : email.subject,
           body: `On ${email.timestamp}: ${email.sender} wrote:\n${email.body}`})
       })
