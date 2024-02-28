@@ -3,6 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    image = models.ImageField()
+    image = models.ImageField(blank=True,upload_to="images/")
+    
 
 
