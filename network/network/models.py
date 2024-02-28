@@ -9,8 +9,7 @@ class User(AbstractUser):
 
 class Posts(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator")
+    timestamp = models.DateTimeField()
 
 
-class Followers(models.Model):
-    folower = models.ManyToManyField()
 
