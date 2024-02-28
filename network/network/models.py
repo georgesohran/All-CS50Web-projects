@@ -10,6 +10,14 @@ class User(AbstractUser):
 class Posts(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator")
     timestamp = models.DateTimeField()
+    body = models.CharField()
+    title = models.CharField()
+
+
+class Comments(models.Model):
+    creator = models.ForeignKey(User, models.CASCADE, related_name="creator")
+    commented_post = models.ForeignKey(User, models.CASCADE, related_name="com_post")
+    
 
 
 
