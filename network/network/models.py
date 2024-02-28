@@ -3,6 +3,6 @@ from django.db import models
 
 
 class User(AbstractUser):
-    pass
+    image = models.ImageField()
 
 
