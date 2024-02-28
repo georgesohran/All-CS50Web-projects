@@ -10,3 +10,7 @@ class User(AbstractUser):
 class Posts(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator")
 
+
+class Followers(models.Model):
+    folower = Many
+
