@@ -12,5 +12,5 @@ class Posts(models.Model):
 
 
 class Followers(models.Model):
-    folower = Many
+    folower = models.ManyToManyField()
 
