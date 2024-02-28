@@ -17,6 +17,7 @@ class Posts(models.Model):
 class Comments(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator")
     commented_post = models.ForeignKey(User, models.CASCADE, related_name="com_post")
+    contents = models.CharField()
     
 
 
