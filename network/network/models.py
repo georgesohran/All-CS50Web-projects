@@ -12,13 +12,13 @@ class Posts(models.Model):
     timestamp = models.DateTimeField()
     body = models.CharField()
     title = models.CharField()
+    likes = models.Field
 
 
 class Comments(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator")
     commented_post = models.ForeignKey(User, models.CASCADE, related_name="com_post")
     contents = models.CharField()
-
 
 
 
