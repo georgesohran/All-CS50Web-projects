@@ -4,7 +4,7 @@ from django.db import models
 
 class User(AbstractUser):
     image = models.ImageField(blank=True,upload_to="images/")
-    folowers = models.ManyToManyField("self")
+    folowers = models.ManyToManyField("self", blank=True, null=True)
 
 
 class Posts(models.Model):
