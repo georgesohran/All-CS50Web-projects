@@ -81,7 +81,8 @@ def following(request):
         posts.append(p)
 
     posts = sorted(
-        chain()
+        chain(*posts),
+        key=attrgetter("timestamp")
     )
 
     return render(request, "network/following.html", {
