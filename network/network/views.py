@@ -67,7 +67,7 @@ def register(request):
 
 
 def index(request):
-    posts = Posts.objects.all()
+    posts = Post.objects.all()
     return render(request, "network/index.html", {
         "posts":posts
     })
@@ -80,7 +80,7 @@ def following(request):
         posts = []
 
         for followed in user.followers:
-            p = Posts.objects.filter(creator=followed)
+            p = Post.objects.filter(creator=followed)
             posts.append(p)
 
         final_posts = sorted(

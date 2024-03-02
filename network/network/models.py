@@ -10,7 +10,7 @@ class User(AbstractUser):
         return f"{self.email}"
 
 
-class Posts(models.Model):
+class Post(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_post")
     timestamp = models.DateTimeField(auto_now_add=True)
     body = models.CharField(max_length=1024)
@@ -22,7 +22,7 @@ class Posts(models.Model):
         return f"{self.creator}, {self.title} : {self.timestamp}"
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_comment")
     commented_post = models.ForeignKey(User, models.CASCADE, related_name="commented_post")
     body = models.CharField(max_length=1024)
