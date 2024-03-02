@@ -13,7 +13,7 @@ class User(AbstractUser):
 class Post(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_post")
     timestamp = models.DateTimeField(auto_now_add=True)
-    body = models.CharField(max_length=1024)
+    body = models.TextField(max_length=1024)
     title = models.CharField(max_length=64)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
@@ -25,7 +25,7 @@ class Post(models.Model):
 class Comment(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_comment")
     commented_post = models.ForeignKey(User, models.CASCADE, related_name="commented_post")
-    body = models.CharField(max_length=1024)
+    body = models.TextField(max_length=1024)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
     timestamp = models.DateTimeField(auto_now_add=True)
