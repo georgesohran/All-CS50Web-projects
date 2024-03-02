@@ -3,5 +3,9 @@
 {% block script %} <script scr="{% static 'network/index.js' %}"></script> {% endblock %}
 
 {% block body %}
-    TODO
+    {% for post in posts %}
+        <p>{{post.title}}</p>
+        <p>{{post.timestamp}}</p>
+        <p>{{post.creator}}</p>
+    {% endfor %}
 {% endblock %}
