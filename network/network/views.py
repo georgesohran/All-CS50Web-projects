@@ -71,6 +71,11 @@ def index(request):
 @login_required(login_url="/login")
 def following(request):
     user = User.objects.get(id=request.user.id)
+    posts = []
+
+    for followed in user.followers:
+        posts.append(Posts.objects.filter(creator=followed))
+
     return render(request, "network/following.html", {
         "followed": user.followers
     })
