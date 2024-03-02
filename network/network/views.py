@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import *
 
@@ -81,3 +82,8 @@ def profile(request, id):
     })
 
 # API routes are here:
+
+@csrf_exempt
+@login_required
+def api_make_post(request):
+    return
