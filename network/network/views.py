@@ -79,7 +79,7 @@ def following(request):
         user = User.objects.get(id=request.user.id)
         posts = []
 
-        for followed in user.followers:
+        for followed in user.followers.all():
             p = Post.objects.filter(creator=followed)
             posts.append(p)
 
