@@ -12,7 +12,7 @@ class User(AbstractUser):
 
 class Posts(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_post")
-    timestamp = models.DateTimeField()
+    timestamp = models.DateTimeField(auto_now_add=True)
     body = models.CharField(max_length=1024)
     title = models.CharField(max_length=64)
     likes = models.IntegerField()
@@ -28,7 +28,7 @@ class Comments(models.Model):
     body = models.CharField(max_length=1024)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
-    timestamp = models.DateTimeField()
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.creator} : {self.timestamp}"
