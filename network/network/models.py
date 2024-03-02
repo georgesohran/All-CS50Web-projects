@@ -15,8 +15,8 @@ class Post(models.Model):
     title = models.CharField(max_length=64)
     image = models.ImageField(blank=True, upload_to="images/")
     body = models.TextField(max_length=1024)
-    likes = models.IntegerField()
-    dislikes = models.IntegerField()
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -27,8 +27,8 @@ class Comment(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_comment")
     commented_post = models.ForeignKey(User, models.CASCADE, related_name="commented_post")
     body = models.TextField(max_length=1024)
-    likes = models.IntegerField()
-    dislikes = models.IntegerField()
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
