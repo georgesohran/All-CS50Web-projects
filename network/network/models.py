@@ -7,7 +7,7 @@ class User(AbstractUser):
     followers = models.ManyToManyField("self", blank=True, null=True)
 
     def __str__(self):
-        return f"{self.email}"
+        return f"{self.username}"
 
 
 class Post(models.Model):
@@ -20,7 +20,7 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.creator}, {self.title}, {self.timestamp}"
+        return f"{self.title}, {self.creator}, {self.timestamp}"
 
 
 class Comment(models.Model):
