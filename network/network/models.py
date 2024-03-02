@@ -20,7 +20,7 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.creator}, {self.title} : {self.timestamp}"
+        return f"{self.creator}, {self.title}, {self.timestamp}"
 
 
 class Comment(models.Model):
