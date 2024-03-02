@@ -12,12 +12,12 @@ class User(AbstractUser):
 
 class Post(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_post")
-    image = models.ImageField(blank=True, upload_to="images/")
-    timestamp = models.DateTimeField(auto_now_add=True)
-    body = models.TextField(max_length=1024)
     title = models.CharField(max_length=64)
+    image = models.ImageField(blank=True, upload_to="images/")
+    body = models.TextField(max_length=1024)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.creator}, {self.title} : {self.timestamp}"
