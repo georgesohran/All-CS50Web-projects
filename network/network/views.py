@@ -67,6 +67,7 @@ def register(request):
 
 @login_required(login_url="/login")
 def following(request):
+    followed_users = User.objects.get()
     return render(request, "network/following.html")
 
 
