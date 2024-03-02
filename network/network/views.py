@@ -74,7 +74,8 @@ def following(request):
     posts = []
 
     for followed in user.followers:
-        posts.append(Posts.objects.filter(creator=followed))
+        p = Posts.objects.filter(creator=followed).order_by("-timestamp").all()
+        posts.append(p)
 
     return render(request, "network/following.html", {
         "posts": posts
