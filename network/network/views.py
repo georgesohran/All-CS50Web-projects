@@ -67,4 +67,8 @@ def register(request):
 def following(request):
     return render(request, "network/following.html")
 
+
+def profile(request, id):
+    return render(request, "network/profile.html")
+
 # API routes are here:
