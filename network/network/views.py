@@ -67,9 +67,9 @@ def register(request):
 
 @login_required(login_url="/login")
 def following(request):
-    user = User.objects.get(id=request.user.id).
+    user = User.objects.get(id=request.user.id)
     return render(request, "network/following.html", {
-        "followed": user.
+        "followed": user.followers
     })
 
 
