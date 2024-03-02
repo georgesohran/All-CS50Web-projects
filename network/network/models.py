@@ -25,7 +25,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_comment")
-    commented_post = models.ForeignKey(User, models.CASCADE, related_name="commented_post")
+    commented_post = models.ForeignKey(Post, models.CASCADE, related_name="commented_post")
     body = models.TextField(max_length=1024)
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
