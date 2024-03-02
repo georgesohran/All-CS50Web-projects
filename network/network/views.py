@@ -66,7 +66,6 @@ def register(request):
         return render(request, "network/register.html")
 
 
-@login_required(login_url="/login")
 def index(request):
     return render(request, "network/index.html")
 
