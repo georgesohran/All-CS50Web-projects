@@ -72,6 +72,9 @@ def following(request):
 
 @login_required(login_url="/login")
 def profile(request, id):
-    return render(request, "network/profile.html")
+    user = User.objects.get(id=id)
+    return render(request, "network/profile.html", {
+        "user":user
+    })
 
 # API routes are here:
