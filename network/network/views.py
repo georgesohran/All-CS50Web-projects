@@ -67,7 +67,10 @@ def register(request):
 
 
 def index(request):
-    return render(request, "network/index.html")
+    posts = Posts.objects.all()
+    return render(request, "network/index.html", {
+        "posts":posts
+    })
 
 
 @login_required(login_url="/login")
