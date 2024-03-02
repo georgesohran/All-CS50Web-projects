@@ -10,9 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import *
 
 
-def index(request):
-    return render(request, "network/index.html")
-
 
 def login_view(request):
     if request.method == "POST":
@@ -64,6 +61,11 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "network/register.html")
+
+
+@login_required(login_url="/login")
+def index(request):
+    return render(request, "network/index.html")
 
 
 @login_required(login_url="/login")
