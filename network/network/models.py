@@ -12,6 +12,7 @@ class User(AbstractUser):
 
 class Post(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_post")
+    image = models.ImageField(blank=True, upload_to="images/")
     timestamp = models.DateTimeField(auto_now_add=True)
     body = models.TextField(max_length=1024)
     title = models.CharField(max_length=64)
