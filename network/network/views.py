@@ -77,7 +77,7 @@ def following(request):
         posts.append(Posts.objects.filter(creator=followed))
 
     return render(request, "network/following.html", {
-        "followed": user.followers
+        "posts": posts
     })
 
 
