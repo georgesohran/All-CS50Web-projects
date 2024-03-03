@@ -18,8 +18,11 @@
     animation-name: appear-from-aside;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom:10px;
     padding:10px;
+    width:70%;
     border: solid #aaaaaa 2px;
     border-radius:6px;
 }
