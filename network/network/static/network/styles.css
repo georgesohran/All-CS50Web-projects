@@ -34,8 +34,8 @@
 }
 
 .profile-image-box {
-    width:400px;
+    width:300px;
     border: solid black 2px;
-    border-radius:200px;
+    border-radius:150px;
     margin:5px;
 }
