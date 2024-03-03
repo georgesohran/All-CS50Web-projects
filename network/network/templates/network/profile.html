@@ -8,7 +8,7 @@
         {% if user.image %}
             <img class="profile-image-box" src="{{user.image.url}}" width="300px" height="300px">
         {% else %}
-            <image class="profile-image-box" style="color:gray" width="300px" height="300px">No image</image>
+            <div class="no-profile-picture">No Image</div>
         {% endif %}
     </div>
 {% endblock %}
