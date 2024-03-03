@@ -67,7 +67,7 @@ def register(request):
 
 
 def index(request):
-    posts = Post.objects.all().exclude(creator=request.user)
+    posts = Post.objects.all().exclude(creator=request.user).order_by("-timestamp")
     return render(request, "network/index.html", {
         "posts":posts
     })
