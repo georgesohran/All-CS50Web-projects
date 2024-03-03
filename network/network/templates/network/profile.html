@@ -6,9 +6,7 @@
 {% block body %}
     <div class="profile-container" enctype="multipart/form-data">
         {% if user.image %}
-            <div class="image-box">
-                <image src="{{user.image.url}}"></image>
-            </div>
+            <image class="profile-image-box" src="{{user.image.url}}"></image>
         {% endif %}
     </div>
 {% endblock %}

@@ -33,9 +33,9 @@
     border-radius:6px;
 }
 
-.image-box {
-    width:100px;
+.profile-image-box {
+    width:400px;
     border: solid black 2px;
-    border-radius:50px;
+    border-radius:200px;
     margin:5px;
 }
