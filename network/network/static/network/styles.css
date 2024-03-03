@@ -33,13 +33,7 @@
     border-radius:6px;
 }
 
-.profile-image-box {
-    border: solid black 2px;
-    border-radius:50%;
-    margin-top:10px;
-}
-
-.no-profile-picture {
+.profile-picture {
     width: 300px;
     height: 300px;
     line-height: 300px;
