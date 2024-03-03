@@ -21,14 +21,14 @@
             {% endif %}
         </div>
     </div>
-    <div>
-        {% for post in posts %}
-            <div class="post-container">
-                <h5>{{post.creator}}</h5>
-                <div style="white-space:pre-line">{{post.body}}</div>
-                <p style="color:gray">{{post.timestamp}}</p>
-                <button class="btn btn-outline-primary" id="comment-button">Comment</button>
-            </div>
-        {% endfor %}
-    </div>
+    <br>
+    <h2 style="width:70%; margin-left:auto; margin-right:auto">My Posts:</h2>
+    {% for post in posts %}
+        <div class="profile-post-container">
+            <h5>{{post.creator}}</h5>
+            <div style="white-space:pre-line">{{post.body}}</div>
+            <p style="color:gray">{{post.timestamp}}</p>
+            <button class="btn btn-outline-primary" id="comment-button">Comment</button>
+        </div>
+    {% endfor %}
 {% endblock %}

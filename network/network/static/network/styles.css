@@ -9,6 +9,17 @@
     }
 }
 
+@keyframes appear-from-the-bottom {
+    from {
+        margin-top:50px;
+        opacity:0
+    }
+    to {
+        margin-top:10px;
+        opacity:1
+    }
+}
+
 
 .body {
     margin:30px
@@ -33,7 +44,17 @@
     border-radius:6px;
 }
 
-.profile-post-c
+.profile-post-container {
+    animation-name: appear-from-the-bottom;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    margin-left: auto;
+    margin-right: auto;
+    width:70%;
+    padding:10px;
+    border: solid #aaaaaa 2px;
+    border-radius:6px;
+}
 
 .profile-picture {
     width: 300px;
