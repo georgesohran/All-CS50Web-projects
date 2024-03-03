@@ -36,10 +36,9 @@
 .profile-image-box {
     margin-left: auto;
     margin-right: auto;
-    width:300px;
     border: solid black 2px;
     border-radius:50%;
-    margin:5px;
+    margin-top:10px;
 }
 
 .no-profile-picture {
@@ -51,5 +50,6 @@
     border: solid black 2px;
     border-radius: 50%;
     text-align: center;
-    background: #eeeeee
+    background: #eeeeee;
+    margin-top:10px;
 }
