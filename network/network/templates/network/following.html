@@ -3,11 +3,12 @@
 
 {% block body %}
     {% for post in posts %}
-        <div class="post-container">
-            <p>{{post.title}}</p>
-            <p>{{post.timestamp}}</p>
-            <p>{{post.creator}}</p>
-        </div>
+    <div class="post-container">
+        <h5>{{post.title}}</h5>
+        <p>{{post.creator}}</p>
+        <p style="color:gray">{{post.timestamp}}</p>
+        <button class="btn btn-outline-primary" id="comment-button">Comment</button>
+    </div>
     {% endfor %}
 {% endblock %}
 
