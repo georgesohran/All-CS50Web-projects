@@ -3,7 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    image = models.ImageField(blank=True,upload_to="images/")
+    image = models.ImageField(blank=True, null=True, upload_to="images/")
     followers = models.ManyToManyField("self", blank=True, null=True)
 
     def __str__(self):
