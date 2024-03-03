@@ -85,7 +85,8 @@ def following(request):
 
         final_posts = sorted(
             chain(*posts),
-            key=attrgetter("timestamp")
+            key=attrgetter("timestamp"),
+            reverse=True
         )
 
         return render(request, "network/following.html", {
