@@ -10,6 +10,13 @@
         {% else %}
             <div class="no-profile-picture">No Image</div>
         {% endif %}
-        <h2 style="margin-left:10px; margin-top:100px">{{user.username}}</h2>
+        <div style="margin-left:10px; margin-top:100px">
+            <h1>{{user.username}}</h1>
+            {% if user.about_me %}
+                <p>{{user.about_me}}</p>
+            {% else %}
+                <p>No Info</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
