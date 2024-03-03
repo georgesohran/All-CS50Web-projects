@@ -1,3 +1,25 @@
+@keyframes appear-from-aside {
+    from {
+        margin-left:50px;
+        opacity:0
+    }
+    to {
+        margin-left:0px;
+        opacity:1
+    }
+}
+
+
 .body {
     margin:30px
+}
+
+.post-container {
+    animation-name: appear-from-aside;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    margin-bottom:10px;
+    padding:10px;
+    border: solid #aaaaaa 2px;
+    border-radius:6px;
 }

@@ -1,9 +1,17 @@
 {% extends "network/layout.html" %}
+{% load static %}
 
 {% block body %}
     {% for post in posts %}
-        <p>{{post.title}}</p>
-        <p>{{post.timestamp}}</p>
-        <p>{{post.creator}}</p>
+        <div class="post-container">
+            <p>{{post.title}}</p>
+            <p>{{post.timestamp}}</p>
+            <p>{{post.creator}}</p>
+        </div>
     {% endfor %}
+{% endblock %}
+
+
+{% block script %}
+    <script scr="{% static 'network/following.js' %}"></script>
 {% endblock %}

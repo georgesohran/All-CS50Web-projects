@@ -4,9 +4,12 @@
 
 {% block body %}
     {% for post in posts %}
-        <p>{{post.title}}</p>
-        <p>{{post.timestamp}}</p>
-        <p>{{post.creator}}</p>
+        <div class="post-container">
+            <h5>{{post.title}}</h5>
+            <p>{{post.creator}}</p>
+            <p style="color:gray">{{post.timestamp}}</p>
+            
+        </div>
     {% endfor %}
 {% endblock %}
 
