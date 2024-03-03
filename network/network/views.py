@@ -67,7 +67,7 @@ def register(request):
 
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.exclude(user=request.user)
     return render(request, "network/index.html", {
         "posts":posts
     })
