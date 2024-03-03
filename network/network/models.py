@@ -12,7 +12,6 @@ class User(AbstractUser):
 
 class Post(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_post")
-    title = models.CharField(max_length=64)
     image = models.ImageField(blank=True, upload_to="images/")
     body = models.TextField(max_length=1024)
     likes = models.IntegerField(default=0)
