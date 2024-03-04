@@ -7,7 +7,7 @@
     <h2>All Posts</h2>
     {% for post in posts %}
     <div class="post-container">
-        <a href="{% url 'profile' post.creator.id %}"><h5>{{post.creator}}</h5></a>
+        <a href="{% url 'profile' post.creator.id %}" style="color:black;"><h5>{{post.creator}}</h5></a>
         <div style="white-space:pre-line">{{post.body}}</div>
         <p style="color:gray">{{post.timestamp}}</p>
         <button class="btn btn-outline-primary" id="comment-button">Comment</button>
