@@ -101,10 +101,10 @@ def following(request):
 
 @login_required(login_url="/login")
 def profile(request, id):
-    user = User.objects.get(id=id)
-    posts = Post.objects.filter(creator=user)
+    see_user = User.objects.get(id=id)
+    posts = Post.objects.filter(creator=see_user)
     return render(request, "network/profile.html", {
-        "user":user,
+        "see_user":see_user,
         "posts":posts
     })
 
