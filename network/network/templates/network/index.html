@@ -5,6 +5,10 @@
 
 {% block body %}
     <h2>All Posts</h2>
+    <div class="post-container">
+        <h4>New post</h4>
+        <textarea ></textarea>
+    </div>
     {% for post in posts %}
     <div class="post-container">
         <a href="{% url 'profile' post.creator.id %}" style="color:black;"><h5>{{post.creator}}</h5></a>
