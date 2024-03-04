@@ -5,6 +5,9 @@
 
 {% block body %}
     <h2>All Posts</h2>
+    {% if message %}
+        <p>message</p>
+    {% endif %}
     <form id="new-post-form" class="post-container" method="POST" action="{% url 'api_make_post' %}">
         <h4>New post</h4>
         <textarea name="contents" class="form-control" rows="5" placeholder="Your post goes here"></textarea>

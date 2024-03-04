@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.urls import reverse
@@ -115,5 +115,5 @@ def profile(request, id):
 def api_make_post(request):
     contents = request.POST["contents"]
     if not contents:
-        return JsonResponse()
+        return JsonResponse({"messege":"insert your content first"})
     return
