@@ -5,13 +5,11 @@
 
 {% block body %}
     <div class="profile-container" enctype="multipart/form-data">
-        <div class="profile-picture">
-            {% if see_user.image %}
-                <img src="{{see_user.image.url}}" width="300px" height="300px" style="border-radius: 50%;">
-            {% else %}
-                No Image
-            {% endif %}
-        </div>
+        {% if see_user.image %}
+            <img  src="{{see_user.image.url}}" width="294px" height="294px" class="profile-picture" style="border-radius: 50%">
+        {% else %}
+            <div class="profile-picture">No Image</div>
+        {% endif %}
         <div style="margin-left:10px; margin-top:100px">
             <h1>{{see_user.username}}</h1>
             {% if see_user.about_me %}
