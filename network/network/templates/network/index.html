@@ -5,9 +5,10 @@
 
 {% block body %}
     <h2>All Posts</h2>
-    <form class="post-container">
+    <form id="new-post-form" class="post-container" method="POST" action="{% url 'api_make_post' %}">
         <h4>New post</h4>
-        <textarea rows="5" cols="160" placeholder="Your post goes here"></textarea>
+        <textarea class="form-control" rows="5" placeholder="Your post goes here"></textarea>
+        <button type="submit"></button>
     </form>
     {% for post in posts %}
     <div class="post-container">

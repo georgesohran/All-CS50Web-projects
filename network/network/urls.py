@@ -9,5 +9,7 @@ urlpatterns = [
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),
     path("following", views.following, name="following"),
-    path("profile/<int:id>", views.profile, name="profile")
+    path("profile/<int:id>", views.profile, name="profile"),
+    #API rputes
+    path("api_make_post", views.api_make_post, name="api_make_post")
 ]
