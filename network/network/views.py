@@ -116,4 +116,14 @@ def api_make_post(request):
     contents = request.POST["contents"]
     if not contents:
         return JsonResponse({"messege":"insert your content first"})
-    return
+
+    try:
+        new_post = Post(body=contents, creator=request.user)
+        new_post.save()
+    except IntegrityError:
+        return JsonResponse({"messege":"something went wrong..."})
+
+    posts = Post.objects.all().exclude(creator=request.user).order_by("-timestamp")
+    return render(request, "network/index.html", {
+        "posts":posts
+    })
