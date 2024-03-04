@@ -7,7 +7,7 @@
     <h2>Following</h2>
     {% for post in posts %}
     <div class="post-container">
-        <h5>{{post.creator}}</h5>
+        <a href="{% url 'profile' post.creator.id %}" style="color:black;"><h5>{{post.creator}}</h5></a>
         <p>{{post.body}}</p>
         <p style="color:gray">{{post.timestamp}}</p>
         <button class="btn btn-outline-primary" id="comment-button">Comment</button>

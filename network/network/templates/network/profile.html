@@ -7,7 +7,7 @@
     <div class="profile-container" enctype="multipart/form-data">
         <div class="profile-picture">
             {% if see_user.image %}
-                <img src="{{user.image.url}}" width="300px" height="300px">
+                <img src="{{see_user.image.url}}" width="300px" height="300px">
             {% else %}
                 No Image
             {% endif %}
