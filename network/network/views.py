@@ -114,4 +114,6 @@ def profile(request, id):
 @login_required
 def api_make_post(request):
     contents = request.POST["contents"]
+    if not contents:
+        return JsonResponse()
     return
