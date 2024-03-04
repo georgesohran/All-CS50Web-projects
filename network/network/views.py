@@ -123,7 +123,4 @@ def api_make_post(request):
     except IntegrityError:
         return JsonResponse({"messege":"something went wrong..."})
 
-    posts = Post.objects.all().exclude(creator=request.user).order_by("-timestamp")
-    return render(request, "network/index.html", {
-        "posts":posts
-    })
+    return JsonResponse({"messege":"ok"})
