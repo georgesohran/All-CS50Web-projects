@@ -9,13 +9,14 @@ document.addEventListener('DOMContentLoaded' () => {
             c_text.style.display = 'block'
             comment_button.onclick = make_comment
 
-            container.getElementById('cancel-button').onclick = cancel_comment(comment_button)
+            c_button.onclick = () => {cancel_comment(c_button, c_text); }
         }
     })
 })
 
-function cancel_comment(btn, ) {
-
+function cancel_comment(btn, txt) {
+    btn.style.display = 'none'
+    txt.style.display = 'none'
 }
 
 function make_comment() {
