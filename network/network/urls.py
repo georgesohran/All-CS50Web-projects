@@ -11,5 +11,5 @@ urlpatterns = [
     path("following", views.following, name="following"),
     path("profile/<int:id>", views.profile, name="profile"),
     #API rputes
-    path("api_make_post", views.api_make_post, name="api_make_post")
+    path("api_make_post", views.api_make_post, name="make_post")
 ]
