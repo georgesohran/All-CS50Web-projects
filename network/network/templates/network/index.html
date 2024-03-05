@@ -15,15 +15,15 @@
         <button type="submit" class="btn btn-primary">Post</button>
     </form>
     {% for post in posts %}
-    <div class="post-container" id='post-container-n' data-num={{post.id}}">
+    <div class="post-container" id='post-container-n' data-num="{{post.id}}">
         <a href="{% url 'profile' post.creator.id %}" style="color:black;"><h5>{{post.creator}}</h5></a>
         <div style="white-space:pre-line">{{post.body}}</div>
         <p style="color:gray">{{post.timestamp}}</p>
-        <textarea id="comment-text" data-num="{{post.id}}"   style="display:none" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
+        <textarea id="comment-text-{{post.id}}"   style="display:none" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
         <span>
-            <button class="btn btn-outline-primary" id="comment-button" data-num="{{post.id}}">Comment</button>
+            <button id="comment-button-{{post.id}}" class="btn btn-outline-primary">Comment</button>
             &nbsp&nbsp&nbsp
-            <button class="btn btn-outline-primary" id="cancel-button" data-num="{{post.id}}" style="display:none">Cancel</button>
+            <button id="cancel-button-{{post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
         </span>
     </div>
     {% endfor %}
