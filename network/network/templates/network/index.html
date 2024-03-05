@@ -22,7 +22,7 @@
         <textarea id="comment-text" style="display:none" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
         <span>
             <button class="btn btn-outline-primary" id="comment-button">Comment</button>
-            <button class="btn btn-outline-primary" id="cancel-button">Cancel</button>
+            <button class="btn btn-outline-primary" id="cancel-button" style="display:none">Cancel</button>
         </span>
     </div>
     {% endfor %}
@@ -31,5 +31,5 @@
 
 {% block script %}
     <script src="{% static 'network/index.js' %}"></script>
-    <script src="{% static 'network/comment.js' %}"></script>
+    <script src="{% static 'network/comments.js' %}"></script>
 {% endblock %}
