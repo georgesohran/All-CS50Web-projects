@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded' () => {
 
 
 function make_comment() {
-    document.querySelectorAll('cancel-button').forEach((button) => {
+    document.querySelectorAll('#cancel-button').forEach((button) => {
         button.style.display = 'block'
         button.onclick = () => {
             button.style.display = 'none'
         }
     })
 
-    document.querySelectorAll('comment-text').forEach((textarea) => {
+    document.querySelectorAll('#comment-text').forEach((textarea) => {
         textarea.style.display = 'block'
         document.querySelectorAll('#comment-button').forEach((button) => {
             button.onclick = () => {
