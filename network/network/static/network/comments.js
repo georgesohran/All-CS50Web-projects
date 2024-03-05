@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded' () => {
 
 
 function make_comment() {
-    document.querySelectorAll('comment-text').forEach((text))
+    document.querySelectorAll('comment-text').forEach((textarea) => {
+        textarea.style.display = 'block'
+        
+    })
+
 }
 
 
