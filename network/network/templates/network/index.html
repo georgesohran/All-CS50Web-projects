@@ -9,6 +9,7 @@
     <div id="message"></div>
 
     <form id="new-post-form" class="post-container" method="POST">
+        {% csrf_token %}
         <h4>New post</h4>
         <textarea name="contents" class="form-control" rows="5" placeholder="Your post goes here"></textarea>
         <br>
