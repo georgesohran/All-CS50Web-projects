@@ -1,23 +1,11 @@
 document.addEventListener('DOMContentLoaded' () => {
     document.querySelectorAll('#post-container').forEach((container) => {
-        let comment_button = container.getElementById('')
+        let comment_button = container.getElementById('comment-button')
+        comment_button.onclick = () => {
+            container.getElementById('cancel-button').style.display = 'block'
+            container.getElementById('comment-text').style.display = 'block'
+            
+        }
     })
 })
-
-
-function make_comment() {
-    document.querySelectorAll('#comment-text').forEach((textarea) => {
-        textarea.style.display = 'block'
-        document.querySelectorAll('#comment-button').forEach((button) => {
-            button.onclick = () => {
-                //fetch stuff to the server
-            }
-        })
-    })
-}
-
-
-function like() {
-
-}
 
