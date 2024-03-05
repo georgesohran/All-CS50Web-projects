@@ -9,6 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from itertools import chain
 from operator import attrgetter
+import json
 
 from .models import *
 
@@ -114,16 +115,17 @@ def profile(request, id):
 @login_required
 def api_make_post(request):
     if request.method == "POST":
-        contents = request.POST["contents"]
-        if not contents:
+        data = json.loads(request.body)
+        if not data.get("contents"):
             return JsonResponse({"message":"insert your content first"})
 
+        contents = data.get("contents")
         try:
             new_post = Post(body=contents, creator=request.user)
             new_post.save()
         except IntegrityError:
             return JsonResponse({"message":"something went wrong..."})
 
-        return JsonResponse({"message":"ok"})
+        return JsonResponse({"message":"making a new post was successful"})
     else:
         return JsonResponse({"message":"invalid request"})
