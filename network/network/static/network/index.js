@@ -3,10 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault()
         console.log('click')
         fetch('/api_make_post', {
-            {
                 method:"POST",
-                contents:document.getElementById('contents').value
-            }
+                body:JSON.stringify({contents : document.getElementById('contents').value})
+                
         }).then(response => response.json()).then((result) => {
             console.log(result)
         })
