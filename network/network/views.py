@@ -125,3 +125,5 @@ def api_make_post(request):
             return JsonResponse({"message":"something went wrong..."})
 
         return JsonResponse({"message":"ok"})
+    else:
+        return JsonResponse({"message":"invalid request"})
