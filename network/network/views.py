@@ -113,14 +113,15 @@ def profile(request, id):
 @csrf_exempt
 @login_required
 def api_make_post(request):
-    contents = request.POST["contents"]
-    if not contents:
-        return JsonResponse({"messege":"insert your content first"})
+    if request.method == "POST":
+        contents = request.POST["contents"]
+        if not contents:
+            return JsonResponse({"message":"insert your content first"})
 
-    try:
-        new_post = Post(body=contents, creator=request.user)
-        new_post.save()
-    except IntegrityError:
-        return JsonResponse({"messege":"something went wrong..."})
+        try:
+            new_post = Post(body=contents, creator=request.user)
+            new_post.save()
+        except IntegrityError:
+            return JsonResponse({"message":"something went wrong..."})
 
-    return JsonResponse({"messege":"ok"})
+        return JsonResponse({"message":"ok"})
