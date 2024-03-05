@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded' () => {
 
 
 function make_comment() {
-    document.
+    document.querySelectorAll('comment-text').forEach((text))
 }
 
 
