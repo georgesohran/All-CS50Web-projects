@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('/api_make_post', {
             {
                 method:"POST",
-                contents:""
+                contents:document.getElementById('contents').value
             }
         }).then(response => response.json()).then((result) => {
             console.log(result)
