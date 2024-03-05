@@ -8,6 +8,4 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('message').innerHTML = result.message
         })
     })
-
-    
 })
