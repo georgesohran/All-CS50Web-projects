@@ -16,11 +16,10 @@ class Post(models.Model):
     image = models.ImageField(blank=True, null=True, upload_to="images/")
     body = models.TextField(max_length=1024)
     likes = models.IntegerField(default=0)
-    dislikes = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.title}, {self.creator}, {self.timestamp}"
+        return f"{self.creator}, {self.body}, {self.timestamp}"
 
 
 class Comment(models.Model):
