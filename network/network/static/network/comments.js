@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let cancel_button = document.querySelector(`#cancel-button-${num}`)
         let comment_text = document.querySelector(`#comment-text-${num}`)
 
-        console.log(comment_button)
+        //track events on all of this stuff
+        //and update the ui acordinly
     })
 })
 
