@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 method:"POST",
                 body:JSON.stringify({contents : document.getElementById('contents').value})
         }).then(response => response.json()).then((result) => {
-
             document.getElementById('message').innerHTML = result.message
         })
     })
+
+    
 })
