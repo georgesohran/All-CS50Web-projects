@@ -20,7 +20,10 @@
         <div style="white-space:pre-line">{{post.body}}</div>
         <p style="color:gray">{{post.timestamp}}</p>
         <textarea id="comment-text" style="display:none" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
-        <button class="btn btn-outline-primary" id="comment-button">Comment</button>
+        <span>
+            <button class="btn btn-outline-primary" id="comment-button">Comment</button>
+            <button class="btn btn-outline-primary" id="cancel-button">Cancel</button>
+        </span>
     </div>
     {% endfor %}
 {% endblock %}
