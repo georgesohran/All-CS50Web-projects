@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded' () => {
     document.querySelectorAll('#post-container').forEach((container) => {
-        
+        let comment_button = container.getElementById('')
     })
 })
 
