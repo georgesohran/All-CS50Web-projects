@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded' () => {
         comment_button.onclick = () => {
             container.getElementById('cancel-button').style.display = 'block'
             container.getElementById('comment-text').style.display = 'block'
-            
+            comment_button.onclick =
         }
     })
 })
 
+function make_comment() {
+    
+}
