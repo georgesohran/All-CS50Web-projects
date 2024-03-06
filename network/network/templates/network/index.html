@@ -23,6 +23,7 @@
         <p style="font-size:120%">Comments:</p>
         {% for comment in post_data.comments %}
         <div class="comment-container">
+            <p><b>{{comment.creator}}</b>
             <p>{{comment.body}}</p>
         </div>
         {% endfor %}

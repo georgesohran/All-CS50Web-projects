@@ -19,7 +19,7 @@ function show_comment_field(num) {
             })
         }).then(response => response.json()).then((result) => {
             console.log(result)
-            reload(true)
+            location.reload()
         })
     }
 }
