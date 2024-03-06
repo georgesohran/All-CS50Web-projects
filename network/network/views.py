@@ -148,7 +148,8 @@ def api_make_comment(request):
         contents = data.get("contents")
         post_id = data.get("commented_post_id")
         try:
-            new_post = Comment(body=contents, creator=request.user)
+            commented_post = Post.objects.get(id=post_id)
+            new_post = Comment(body=contents, creator=request.user, commented_post=commented_post)
             new_post.save()
         except IntegrityError:
             return JsonResponse({"message":"something went wrong..."})
