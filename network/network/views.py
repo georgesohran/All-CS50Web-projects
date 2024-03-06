@@ -142,15 +142,19 @@ def api_make_comment(request):
         if not data.get("contents"):
             return JsonResponse({"message":"insert your comment first"})
 
+        if not data.get("commented_post_id"):
+            return JsonResponse({"message":"How did you create a comment without a post id?"})
+
         contents = data.get("contents")
+        post_id = data.get("commented_post_id")
         try:
-            new_post = Post(body=contents, creator=request.user)
+            new_post = Comment(body=contents, creator=request.user)
             new_post.save()
         except IntegrityError:
             return JsonResponse({"message":"something went wrong..."})
 
         return JsonResponse({"message":"making a comment was successful"})
-    
+
     else:
-        return JsonResponse("message":"invalid request")
+        return JsonResponse({"message":"invalid request"})
 
