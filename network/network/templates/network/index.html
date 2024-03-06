@@ -16,14 +16,21 @@
     </form>
     {% for post in posts %}
     <div class="post-container" id='post-container-n' data-num="{{post.id}}">
-        <a href="{% url 'profile' post.creator.id %}" style="color:black;"><h5>{{post.creator}}</h5></a>
-        <div style="white-space:pre-line">{{post.body}}</div>
-        <p style="color:gray">{{post.timestamp}}</p>
-        <textarea id="comment-text-{{post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
+        <a href="{% url 'profile' post.post.creator.id %}" style="color:black;"><h5>{{post.post.creator}}</h5></a>
+        <div style="white-space:pre-line">{{post.post.body}}</div>
+        <p style="color:gray">{{post.post.timestamp}}</p>
+
+        {% for comment in post.comments %}
+        <div class="comment-container">
+            <p>{{comment.body}}</p>
+        </div>
+        {% endfor %}
+
+        <textarea id="comment-text-{{post.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
         <span style="display:flex">
-            <button id="comment-button-{{post.id}}" class="btn btn-outline-primary">Comment</button>
+            <button id="comment-button-{{post.post.id}}" class="btn btn-outline-primary">Comment</button>
             &nbsp&nbsp&nbsp
-            <button id="cancel-button-{{post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
+            <button id="cancel-button-{{post.post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
         </span>
     </div>
     {% endfor %}
