@@ -68,9 +68,14 @@ def register(request):
 
 
 def index(request):
+    context = []
     posts = Post.objects.all().order_by("-timestamp")
+    for post in posts:
+        comments = Comment.objects.filter(commented_post=post)
+        d = {"post":post, "comments":comments}
+
     return render(request, "network/index.html", {
-        "posts":posts
+        "posts":context
     })
 
 
