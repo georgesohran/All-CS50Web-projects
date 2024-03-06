@@ -11,7 +11,7 @@ function show_comment_field(num) {
     document.querySelector(`#cancel-button-${num}`).style.display = 'block'
 
     document.querySelector(`#comment-button-${num}`).onclick = () => {
-        fetch('api_make_comment',{
+        fetch('/api_make_comment',{
             method:'POST',
             body:JSON.stringify({
                 contents: document.querySelector(`#comment-text-${num}`).value,
