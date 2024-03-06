@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function show_comment_field(num) {
     document.querySelector(`#comment-text-${num}`).style.display = 'block'
-    document.querySelector(`#cancel-button-${num}`).style.display = 'block'
+    document.querySelector(`#cancel-button-${num}`).style.display = 'flex'
 
     document.querySelector(`#comment-button-${num}`).onclick = () => {
         //fetch something idk
