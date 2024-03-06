@@ -127,5 +127,30 @@ def api_make_post(request):
             return JsonResponse({"message":"something went wrong..."})
 
         return JsonResponse({"message":"making a new post was successful"})
+
+    elif request.method == "PUT":
+        #basicly eddit post
+        return JsonResponse({"message":"work in progress..."})
+
     else:
         return JsonResponse({"message":"invalid request"})
+
+
+def api_make_comment(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        if not data.get("contents"):
+            return JsonResponse({"message":"insert your comment first"})
+
+        contents = data.get("contents")
+        try:
+            new_post = Post(body=contents, creator=request.user)
+            new_post.save()
+        except IntegrityError:
+            return JsonResponse({"message":"something went wrong..."})
+
+        return JsonResponse({"message":"making a comment was successful"})
+    
+    else:
+        return JsonResponse("message":"invalid request")
+

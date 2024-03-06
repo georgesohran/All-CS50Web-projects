@@ -19,8 +19,8 @@
         <a href="{% url 'profile' post.creator.id %}" style="color:black;"><h5>{{post.creator}}</h5></a>
         <div style="white-space:pre-line">{{post.body}}</div>
         <p style="color:gray">{{post.timestamp}}</p>
-        <textarea id="comment-text-{{post.id}}"   style="display:none" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
-        <span>
+        <textarea id="comment-text-{{post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
+        <span style="display:flex">
             <button id="comment-button-{{post.id}}" class="btn btn-outline-primary">Comment</button>
             &nbsp&nbsp&nbsp
             <button id="cancel-button-{{post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
