@@ -135,7 +135,8 @@ def api_make_post(request):
     else:
         return JsonResponse({"message":"invalid request"})
 
-
+@csrf_exempt
+@login_required
 def api_make_comment(request):
     if request.method == "POST":
         data = json.loads(request.body)
