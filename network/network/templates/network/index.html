@@ -14,17 +14,13 @@
         <br>
         <button type="submit" class="btn btn-primary">Post</button>
     </form>
-    {% for post in posts %}
+    {% for post_data in posts %}
     <div class="post-container" id='post-container-n' data-num="{{post.id}}">
-        <a href="{% url 'profile' post.post.creator.id %}" style="color:black;"><h5>{{post.post.creator}}</h5></a>
-        <div style="white-space:pre-line">{{post.post.body}}</div>
-        <p style="color:gray">{{post.post.timestamp}}</p>
+        <a href="{% url 'profile' post.post.creator.id %}" style="color:black;"><h5>{{post_data.post.creator}}</h5></a>
+        <div style="white-space:pre-line">{{post_data.post.body}}</div>
+        <p style="color:gray">{{post_data.post.timestamp}}</p>
 
-        {% for comment in post.comments %}
-        <div class="comment-container">
-            <p>{{comment.body}}</p>
-        </div>
-        {% endfor %}
+        
 
         <textarea id="comment-text-{{post.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
         <span style="display:flex">

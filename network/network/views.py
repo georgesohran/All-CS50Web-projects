@@ -73,6 +73,7 @@ def index(request):
     for post in posts:
         comments = Comment.objects.filter(commented_post=post)
         d = {"post":post, "comments":comments}
+        print(d)
 
     return render(request, "network/index.html", {
         "posts":context
