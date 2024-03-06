@@ -20,7 +20,7 @@
         <div style="white-space:pre-line">{{post_data.post.body}}</div>
         <p style="color:gray">{{post_data.post.timestamp}}</p>
 
-        <span class="badge badge-light"></span>
+        <p class="badge badge-light" style="font-size:130%">❤️ {{post_data.post.likes}}</p>
 
         <p style="font-size:120%">Comments:</p>
         {% for comment in post_data.comments %}
