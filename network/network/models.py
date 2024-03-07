@@ -33,4 +33,4 @@ class Comment(models.Model):
 
 class Like(models.Model):
     user = models.ForeignKey(User, models.CASCADE, related_name="like")
-    like_post = models.ForeignKey(Post, models.CASCADE, related_name="liked_post")
+    liked_post = models.ForeignKey(Post, models.CASCADE, related_name="liked_post")
