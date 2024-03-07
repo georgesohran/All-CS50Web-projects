@@ -176,19 +176,19 @@ def api_make_comment(request):
 
 @csrf_exempt
 @login_required
-def api_like(request):
+def api_like(request, post_id):
     if request.method != "POST":
         return JsonResponse({"message":"wrong request method"})
 
-    data = json.loads(request.body)
-    post_id = data.get('post_id')
-
+    try
     post = Post.objects.get(id=post_id)
     user_like = Like.objects.filter(user=request.user, liked_post=post)
 
     if user_like:
         user_like[0].delete()
+        return JsonResponse({"message":"unliked this post successfuly!"})
     else:
         like = Like(user=request.user, liked_post=post)
         like.save()
+        return JsonResponse({"message":"liked this post successfuly!"})
 
