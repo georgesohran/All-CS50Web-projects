@@ -195,3 +195,8 @@ def api_like(request, post_id):
         like.save()
         return JsonResponse({"message":"liked this post successfuly!"})
 
+
+@csrf_exempt
+@login_required
+def api_edit(request, post_id):
+    return JsonResponse()

@@ -8,4 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('message').innerHTML = result.message
         })
     })
+
+    document.querySelectorAll('#post-container-n').forEach((container) => {
+        const num = container.dataset.num
+    })
 })
