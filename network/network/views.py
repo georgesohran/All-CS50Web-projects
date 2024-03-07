@@ -201,12 +201,12 @@ def api_like(request, post_id):
     if user_like:
         user_like[0].delete()
         total_likes = Like.objects.filter(liked_post=post).count()
-        return JsonResponse({"message":"unliked this post successfuly!","likes":total_likes. })
+        return JsonResponse({"message":"unliked this post successfuly!", "likes":total_likes, "user_like":False})
     else:
         like = Like(user=request.user, liked_post=post)
         like.save()
         total_likes = Like.objects.filter(liked_post=post).count()
-        return JsonResponse({"message":"liked this post successfuly!","likes":total_likes})
+        return JsonResponse({"message":"liked this post successfuly!","likes":total_likes, "user_like":True})
 
 
 @csrf_exempt

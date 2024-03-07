@@ -47,6 +47,6 @@ function cancel_comment(num) {
 function like(num) {
     fetch(`/api_like/${num}`, {method:'POST'}).then(response => response.json()).then((result) => {
         console.log(result)
-        location.reload()
+        like_element = document.querySelector(`#like-button-${num}`)
     })
 }
