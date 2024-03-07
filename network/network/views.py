@@ -185,8 +185,10 @@ def api_like(request):
 
     post = Post.objects.get(id=post_id)
     user_like = Like.objects.filter(user=request.user, liked_post=post)
-    if not user_like:
+
+    if user_like:
+        user_like[0].delete()
+    else:
         like = Like(user=request.user, liked_post=post)
         like.save()
-    else:
-        user_like[0].delete()
+
