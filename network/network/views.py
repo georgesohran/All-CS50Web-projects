@@ -170,12 +170,12 @@ def api_make_comment(request):
         post_id = data.get("commented_post_id")
         try:
             commented_post = Post.objects.get(id=post_id)
-            new_post = Comment(body=contents, creator=request.user, commented_post=commented_post)
-            new_post.save()
+            comment = Comment(body=contents, creator=request.user, commented_post=commented_post)
+            comment.save()
         except IntegrityError:
             return JsonResponse({"message":"something went wrong..."})
 
-        return JsonResponse({"message":"making a comment was successful", })
+        return JsonResponse({"message":"making a comment was successful", "comment":comment})
 
     else:
         return JsonResponse({"message":"invalid request"})
