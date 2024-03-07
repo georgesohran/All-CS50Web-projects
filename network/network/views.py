@@ -180,8 +180,11 @@ def api_like(request, post_id):
     if request.method != "POST":
         return JsonResponse({"message":"wrong request method"})
 
-    try
-    post = Post.objects.get(id=post_id)
+    try:
+        post = Post.objects.get(id=post_id)
+    except IntegrityError:
+        return JsonResponse({"message":"invalid post id"})
+    
     user_like = Like.objects.filter(user=request.user, liked_post=post)
 
     if user_like:
