@@ -48,5 +48,7 @@ function like(num) {
     fetch(`/api_like/${num}`, {method:'POST'}).then(response => response.json()).then((result) => {
         console.log(result)
         like_element = document.querySelector(`#like-button-${num}`)
+        like_element.className = result.user_like ? 'badge badge-primary' : 'badge badge-light'
+        
     })
 }
