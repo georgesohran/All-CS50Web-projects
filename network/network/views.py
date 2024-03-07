@@ -176,7 +176,7 @@ def api_make_comment(request):
             return JsonResponse({"message":"something went wrong..."})
 
         return JsonResponse({"message":"making a comment was successful",
-                             "comment":{"creator":comment.creator,
+                             "comment":{"creator":comment.creator.username,
                                         "timestamp":comment.timestamp,
                                         "body":comment.body}
                             })
