@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const num = container.dataset.num
         document.querySelector(`#cancel-button-${num}`).onclick = () => {cancel_comment(num)}
         document.querySelector(`#comment-button-${num}`).onclick = () => {show_comment_field(num)}
+
+        let user_like = document.querySelector(`#user-like-${num}`).value
     })
 })
 
