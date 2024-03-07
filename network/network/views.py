@@ -190,7 +190,6 @@ def api_make_comment(request):
 def api_like(request, post_id):
     if request.method != "POST":
         return JsonResponse({"message":"wrong request method"})
-
     try:
         post = Post.objects.get(id=post_id)
     except IntegrityError:
