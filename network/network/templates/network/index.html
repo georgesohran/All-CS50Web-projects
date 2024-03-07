@@ -28,7 +28,7 @@
 
         <p style="font-size:120%">Comments:</p>
 
-        <a href="javascript:document.querySelector('#')">Show comments</a>
+        <a href="javascript:document.querySelector('#comments-{{post_data.post.id}}').style.display = block">Show comments</a>
         <div id="comments-{{post_data.post.id}}" style="display:none">
             {% for comment in post_data.comments %}
             <div class="comment-container">
@@ -36,6 +36,7 @@
                 <p style="white-space:pre-line">{{comment.body}}</p>
             </div>
             {% endfor %}
+            <a href="javascript:"></a>
         </div>
 
         <textarea id="comment-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
