@@ -49,6 +49,6 @@ function like(num) {
         console.log(result)
         like_element = document.querySelector(`#like-button-${num}`)
         like_element.className = result.user_like ? 'badge badge-primary' : 'badge badge-light'
-        
+        like_element.innerHTML = `❤️ ${result.likes}`
     })
 }
