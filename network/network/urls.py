@@ -12,5 +12,5 @@ urlpatterns = [
     #API rputes
     path("api_make_post", views.api_make_post, name="make_post"),
     path("api_make_comment", views.api_make_comment, name="make_comment"),
-    path("api_like/<int:id>", views.api_like, name="like")
+    path("api_like/<int:post_id>", views.api_like, name="like")
 ]
