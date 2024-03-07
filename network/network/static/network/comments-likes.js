@@ -29,7 +29,8 @@ function show_comment_field(num) {
                     <p><b>${result.comment.creator}</b> --- <span style="color:gray">${result.comment.timestamp}</span><p>
                     <p>${result.comment.body}</p>
                 `
-                document.querySelector(`#comment-${num}`).append(comment)
+                document.querySelector(`#comments-${num}`).append(comment)
+                cancel_comment(num)
             }
         })
     }
