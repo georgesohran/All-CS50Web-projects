@@ -21,9 +21,9 @@
         <p style="color:gray">{{post_data.post.timestamp}}</p>
 
         {% if user_like %}
-        <button class="badge badge-light" style="font-size:130%; border: none;" onclick="unlike()">❤️ {{post_data.likes_num}}</button>
+        <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
         {% else %}
-        <button class="badge badge-light" style="font-size:130%; border: none;" onclick="like()">❤️ {{post_data.likes_num}}</button>
+        <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
         {% endif %}
 
         <p style="font-size:120%">Comments:</p>
