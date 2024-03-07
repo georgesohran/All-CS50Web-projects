@@ -30,3 +30,12 @@ function cancel_comment(num) {
 
     document.querySelector(`#comment-button-${num}`).onclick = () => {show_comment_field(num)}
 }
+
+
+function like(num) {
+
+}
+
+function unlike(num) {
+
+}
