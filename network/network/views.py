@@ -175,7 +175,11 @@ def api_make_comment(request):
         except IntegrityError:
             return JsonResponse({"message":"something went wrong..."})
 
-        return JsonResponse({"message":"making a comment was successful", "comment":comment})
+        return JsonResponse({"message":"making a comment was successful",
+                             "comment":{"creator":comment.creator,
+                                        "timestamp":comment.timestamp,
+                                        "body":comment.body}
+                            })
 
     else:
         return JsonResponse({"message":"invalid request"})
