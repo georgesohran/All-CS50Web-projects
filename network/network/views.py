@@ -89,28 +89,35 @@ def index(request):
 
 @login_required(login_url="/login")
 def following(request):
-    if request.method == "GET":
-        user = User.objects.get(id=request.user.id)
-        posts = []
+    context = []
+    user = User.objects.get(id=request.user.id)
+    posts = []
 
-        for followed in user.followers.all():
-            p = Post.objects.filter(creator=followed)
-            posts.append(p)
+    for followed in user.followers.all():
+        p = Post.objects.filter(creator=followed)
+        posts.append(p)
 
-        final_posts = sorted(
-            chain(*posts),
-            key=attrgetter("timestamp"),
-            reverse=True
-        )
+    posts = sorted(
+        chain(*posts),
+        key=attrgetter("timestamp"),
+        reverse=True
+    )
 
-        return render(request, "network/following.html", {
-            "posts": final_posts
-        })
+    for post in posts:
+        likes = Like.objects.filter(liked_post=post)
+        likes_num = likes.count()
 
-    else:
-        return render(request, "network/following.html", {
-            "posts": final_posts
-        })
+        user_like = True
+        if not likes.filter(user=request.user):
+            user_like = False
+
+        comments = Comment.objects.filter(commented_post=post)
+        d = {"post":post, "comments":comments, "likes_num":likes_num, "user_like":user_like}
+        context.append(d)
+
+    return render(request, "network/following.html", {
+        "posts": context
+    })
 
 
 @login_required(login_url="/login")

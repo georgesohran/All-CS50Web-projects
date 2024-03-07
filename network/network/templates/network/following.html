@@ -5,7 +5,7 @@
 
 {% block body %}
     <h2>Following</h2>
-    {% for post in posts %}
+    {% for post_data in posts %}
     <div class="post-container" id='post-container-n' data-num="{{post_data.post.id}}">
         <a href="{% url 'profile' post_data.post.creator.id %}" style="color:black;"><h5>{{post_data.post.creator}}</h5></a>
         <div style="white-space:pre-line">{{post_data.post.body}}</div>
