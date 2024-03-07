@@ -20,7 +20,11 @@
         <div style="white-space:pre-line">{{post_data.post.body}}</div>
         <p style="color:gray">{{post_data.post.timestamp}}</p>
 
+        {% if post_data.user_like %}
         <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
+        {% else %}
+        <button id="like-button-{{post_data.post.id}}" class="badge badge-primary" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
+        {% endif %}
 
         <p style="font-size:120%">Comments:</p>
         {% for comment in post_data.comments %}
