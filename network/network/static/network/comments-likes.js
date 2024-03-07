@@ -37,6 +37,7 @@ function cancel_comment(num) {
 
 function like(num) {
     fetch(`/like/${num}`, {method:'POST'}).then(response => response.json()).then((result) => {
-
+        console.log(result)
+        location.reload()
     })
 }
