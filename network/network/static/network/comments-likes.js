@@ -4,13 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector(`#cancel-button-${num}`).onclick = () => {cancel_comment(num)}
         document.querySelector(`#comment-button-${num}`).onclick = () => {show_comment_field(num)}
 
-        let user_like = document.querySelector(`#user-like-${num}`).value
-
-        if(user_like == 'False'){
-            document.querySelector(`#like-button-${num}`).onclick = () => {like(num)}
-        } else {
-            document.querySelector(`#like-button-${num}`).onclick = () => {unlike(num)}
-        }
+        document.querySelector(`#like-button-${num}`).onclick = () => {like(num)}
 
     })
 })
@@ -44,12 +38,8 @@ function cancel_comment(num) {
 function like(num) {
     fetch('/like', {
         method:'POST',
-        
+
     }).then(response => response.json()).then((result) => {
 
     })
-}
-
-function unlike(num) {
-
 }
