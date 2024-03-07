@@ -19,12 +19,15 @@
         {% endif %}
 
         <p style="font-size:120%">Comments:</p>
-        {% for comment in post_data.comments %}
-        <div class="comment-container">
-            <p><b>{{comment.creator}}</b> --- <span style="color:gray">{{comment.timestamp}}</span><p>
-            <p>{{comment.body}}</p>
+
+        <div id="comments-{{post_data.post.id}}">
+            {% for comment in post_data.comments %}
+            <div class="comment-container">
+                <p><b>{{comment.creator}}</b> --- <span style="color:gray">{{comment.timestamp}}</span><p>
+                <p>{{comment.body}}</p>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
 
         <textarea id="comment-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
         <span style="display:flex">
