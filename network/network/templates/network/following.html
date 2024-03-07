@@ -22,11 +22,11 @@
 
         <p style="font-size:120%">Comments:</p>
 
-        <div id="comments-{{post_data.post.id}}">
+        <div id="comments-{{post_data.post.id}}" >
             {% for comment in post_data.comments %}
             <div class="comment-container">
                 <p><b>{{comment.creator}}</b> --- <span style="color:gray">{{comment.timestamp}}</span><p>
-                <p>{{comment.body}}</p>
+                <p style="white-space:pre-line">{{comment.body}}</p>
             </div>
             {% endfor %}
         </div>
@@ -43,5 +43,5 @@
 
 
 {% block script %}
-    <script scr="{% static 'network/comments-likes.js' %}"></script>
+    <script src="{% static 'network/comments-likes.js' %}"></script>
 {% endblock %}
