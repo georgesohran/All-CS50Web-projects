@@ -28,7 +28,9 @@
 
         <p style="font-size:120%">Comments:</p>
 
-        <a href="javascript:document.querySelector('#comments-{{post_data.post.id}}').style.display = 'block'">Show comments</a>
+        <a>Show comments</a>
+        <br>
+        <br>
         <div id="comments-{{post_data.post.id}}" style="display:none">
             {% for comment in post_data.comments %}
             <div class="comment-container">

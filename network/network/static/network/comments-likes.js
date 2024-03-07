@@ -52,3 +52,7 @@ function like(num) {
         like_element.innerHTML = `❤️ ${result.likes}`
     })
 }
+
+function show_comments() {
+    //show comments
+}
