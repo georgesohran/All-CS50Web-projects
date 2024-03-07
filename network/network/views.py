@@ -71,9 +71,10 @@ def index(request):
     context = []
     posts = Post.objects.all().order_by("-timestamp")
     for post in posts:
-        likes = Like.objects.filter(liked_post=post).count()
+        likes_num = Like.objects.filter(liked_post=post).count()
+        if likes_num.filter
         comments = Comment.objects.filter(commented_post=post)
-        d = {"post":post, "comments":comments, "likes":likes}
+        d = {"post":post, "comments":comments, "likes_num":likes_num}
         context.append(d)
 
     return render(request, "network/index.html", {
