@@ -26,10 +26,11 @@ class Comment(models.Model):
     creator = models.ForeignKey(User, models.CASCADE, related_name="creator_comment")
     commented_post = models.ForeignKey(Post, models.CASCADE, related_name="commented_post")
     body = models.TextField(max_length=1024)
-    likes = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.creator} : {self.timestamp}"
 
-
+class Like(models.Model):
+    user = models.ForeignKey(User, models.CASCADE, related_name="like")
+    like_post = models.ForeignKey(Post, models.CASCADE, related_name="liked_post")
