@@ -71,8 +71,9 @@ def index(request):
     context = []
     posts = Post.objects.all().order_by("-timestamp")
     for post in posts:
-        likes_num = Like.objects.filter(liked_post=post).count()
-        if likes_num.filter
+        likes = Like.objects.filter(liked_post=post)
+        likes_num = likes.count()
+        if not likes.get(user=request.user)
         comments = Comment.objects.filter(commented_post=post)
         d = {"post":post, "comments":comments, "likes_num":likes_num}
         context.append(d)
