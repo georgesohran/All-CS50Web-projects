@@ -27,8 +27,8 @@
         {% endif %}
 
         <p style="font-size:120%">Comments:</p>
-        
-        <div id=comments>
+
+        <div id="comments-{{post_data.post.id}}">
             {% for comment in post_data.comments %}
             <div class="comment-container">
                 <p><b>{{comment.creator}}</b> --- <span style="color:gray">{{comment.timestamp}}</span><p>

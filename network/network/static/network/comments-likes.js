@@ -24,7 +24,12 @@ function show_comment_field(num) {
             console.log(result)
             if('comment' in result) {
                 comment = document.createElement('div')
-                comment.className
+                comment.className = 'comment-container'
+                comment.innerHTML =  `
+                    <p><b>${result.comment.creator}</b> --- <span style="color:gray">${result.comment.timestamp}</span><p>
+                    <p>${result.comment.body}</p>
+                `
+                document.querySelector(`#comment-${num}`).append(comment)
             }
         })
     }
