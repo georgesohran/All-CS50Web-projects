@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector(`#comment-button-${num}`).onclick = () => {show_comment_field(num)}
 
         let user_like = document.querySelector(`#user-like-${num}`).value
+        console.log(user_like)
+        document.querySelector(`#like-button-${num}`).onclick = () => {like(num)}
     })
 })
 
