@@ -20,7 +20,11 @@
         <div style="white-space:pre-line">{{post_data.post.body}}</div>
         <p style="color:gray">{{post_data.post.timestamp}}</p>
 
-        <button class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.post.likes}}</button>
+        {% if user_like %}
+        <button class="badge badge-light" style="font-size:130%; border: none;" onclick = >❤️ {{post_data.likes_num}}</button>
+        {% else %}
+
+        {% endif %}
 
         <p style="font-size:120%">Comments:</p>
         {% for comment in post_data.comments %}
@@ -44,4 +48,5 @@
 {% block script %}
     <script src="{% static 'network/index.js' %}"></script>
     <script src="{% static 'network/comments.js' %}"></script>
+    <script src="{% static 'network/like.js' %}"></script>
 {% endblock %}

@@ -73,9 +73,13 @@ def index(request):
     for post in posts:
         likes = Like.objects.filter(liked_post=post)
         likes_num = likes.count()
-        if not likes.get(user=request.user)
+
+        user_like = True
+        if not likes.filter(user=request.user):
+            user_like = False
+
         comments = Comment.objects.filter(commented_post=post)
-        d = {"post":post, "comments":comments, "likes_num":likes_num}
+        d = {"post":post, "comments":comments, "likes_num":likes_num, "user_like":user_like}
         context.append(d)
 
     return render(request, "network/index.html", {
