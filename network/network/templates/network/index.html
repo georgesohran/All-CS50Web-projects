@@ -28,7 +28,8 @@
 
         <p style="font-size:120%">Comments:</p>
 
-        <div id="comments-{{post_data.post.id}}">
+        <a></a>
+        <div id="comments-{{post_data.post.id}}" style="display:none">
             {% for comment in post_data.comments %}
             <div class="comment-container">
                 <p><b>{{comment.creator}}</b> --- <span style="color:gray">{{comment.timestamp}}</span><p>
