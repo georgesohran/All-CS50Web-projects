@@ -189,4 +189,4 @@ def api_like(request):
         like = Like(user=request.user, liked_post=post)
         like.save()
     else:
-        user_like[0]
+        user_like[0].delete()
