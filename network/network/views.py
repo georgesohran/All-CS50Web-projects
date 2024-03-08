@@ -169,7 +169,13 @@ def api_make_post(request):
             return JsonResponse({"message":"insert your edited contents first"})
 
         new_contents = data.get("new_contents")
-    
+        post_id = data.get("post_id")
+
+        try:
+            post = Post.objects.get(id=post_id)
+            post.
+        except IntegrityError:
+            return JsonResponse({"message":"invalid post id"})
 
         return JsonResponse({"message":"work in progress..."})
 
