@@ -31,13 +31,10 @@
     {% for post_data in posts %}
     <div class="profile-post-container" id='post-container-n' data-num="{{post_data.post.id}}">
 
-        {% if see_user == user %}
-
-        <button class="btn btn-Link">Edit</button>
-
-        {% endif %}
-
         <h5>{{post_data.post.creator}}</h5>
+        {% if see_user == user %}
+            <button class="btn btn-Link">Edit</button>
+        {% endif %}
         <div style="white-space:pre-line">{{post_data.post.body}}</div>
         <p style="color:gray">{{post_data.post.timestamp}}</p>
 
