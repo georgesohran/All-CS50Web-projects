@@ -26,20 +26,22 @@
         <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
         {% endif %}
 
-        <div style="font-size:120%; margin-top:20px; margin-left:13px">Comments:</div>
+        {% if post_data.comments %}
+            <div style="font-size:120%; margin-top:20px; margin-left:13px">Comments:</div>
 
-        <button id="show-comments-{{post_data.post.id}}" class="btn btn-link" style="margin:0px">Show comments</button>
-        <br>
-        <br>
-        <div id="comments-{{post_data.post.id}}" style="display:none">
-            {% for comment in post_data.comments %}
-            <div class="comment-container">
-                <p><b>{{comment.creator}}</b> --- <span style="color:gray">{{comment.timestamp}}</span><p>
-                <p style="white-space:pre-line">{{comment.body}}</p>
+            <button id="show-comments-{{post_data.post.id}}" class="btn btn-link" style="margin:0px">Show comments</button>
+            <br>
+            <div id="comments-{{post_data.post.id}}" style="display:none">
+                {% for comment in post_data.comments %}
+                <div class="comment-container">
+                    <p><b>{{comment.creator}}</b> --- <span style="color:gray">{{comment.timestamp}}</span><p>
+                    <p style="white-space:pre-line">{{comment.body}}</p>
+                </div>
+                {% endfor %}
+                <a href="javascript:"></a>
             </div>
-            {% endfor %}
-            <a href="javascript:"></a>
-        </div>
+        {% endif %}
+        <br>
 
         <textarea id="comment-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
         <span style="display:flex">
