@@ -20,10 +20,9 @@
         <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
         {% endif %}
 
-        <p style="font-size:120%">Comments:</p>
+        <div style="font-size:120%; margin-top:20px; margin-left:13px">Comments:</div>
 
-        <a>Show comments</a>
-        <br>
+        <button id="show-comments-{{post_data.post.id}}" class="btn btn-link" style="margin:0px">Show comments</button>
         <br>
         <div id="comments-{{post_data.post.id}}" style="display:none">
             {% for comment in post_data.comments %}
@@ -32,15 +31,14 @@
                 <p style="white-space:pre-line">{{comment.body}}</p>
             </div>
             {% endfor %}
-            <a href="javascript:"></a>
+            <textarea id="comment-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
+            <span style="display:flex">
+                <button id="comment-button-{{post_data.post.id}}" class="btn btn-outline-primary">Comment</button>
+                &nbsp&nbsp&nbsp
+                <button id="cancel-button-{{post_data.post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
+            </span>
         </div>
 
-        <textarea id="comment-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
-        <span style="display:flex">
-            <button id="comment-button-{{post_data.post.id}}" class="btn btn-outline-primary">Comment</button>
-            &nbsp&nbsp&nbsp
-            <button id="cancel-button-{{post_data.post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
-        </span>
     </div>
     {% endfor %}
 {% endblock %}

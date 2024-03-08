@@ -124,9 +124,24 @@ def following(request):
 def profile(request, id):
     see_user = User.objects.get(id=id)
     posts = Post.objects.filter(creator=see_user)
+
+    full_posts_data = []
+
+    for post in posts:
+        likes = Like.objects.filter(liked_post=post)
+        likes_num = likes.count()
+
+        user_like = True
+        if not likes.filter(user=request.user):
+            user_like = False
+
+        comments = Comment.objects.filter(commented_post=post)
+        d = {"post":post, "comments":comments, "likes_num":likes_num, "user_like":user_like}
+        full_posts_data.append(d)
+
     return render(request, "network/profile.html", {
         "see_user":see_user,
-        "posts":posts
+        "posts":full_posts_data
     })
 
 # API routes are here:
