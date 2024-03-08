@@ -26,9 +26,9 @@
         <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
         {% endif %}
 
-        <p style="font-size:120%">Comments:</p>
+        <div style="font-size:120%; margin-top:20px; margin-left:13px">Comments:</div>
 
-        <a id="show-comments-{{post_data.post.id}}" href="javascript:void(0);">Show comments</a>
+        <button id="show-comments-{{post_data.post.id}}" class="btn btn-link" style="margin:0px">Show comments</button>
         <br>
         <br>
         <div id="comments-{{post_data.post.id}}" style="display:none">
