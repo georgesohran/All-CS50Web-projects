@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#post-container-n').forEach((container) => {
         const num = container.dataset.num
 
-        document.querySelector(`#show-comments-${num}`),onclick = () => {show_comments(num)}
+        document.querySelector(`#show-comments-${num}`).onclick = () => {show_comments(num)}
 
         document.querySelector(`#cancel-button-${num}`).onclick = () => {cancel_comment(num)}
         document.querySelector(`#comment-button-${num}`).onclick = () => {show_comment_field(num)}
@@ -59,7 +59,14 @@ function like(num) {
 
 
 function show_comments(num) {
-    console.log('click')
-    comments = document.querySelector(`#comments-${num}`)
-    comments.style.display = 'block'
+    document.querySelector(`#comments-${num}`).style.display = 'block'
+
+    document.querySelector(`#show-comments-${num}`).innerHTML = 'Hide comments'
+    document.querySelector(`#show-comments-${num}`).onclick = () => {hide_comments(num)}
+}
+function hide_comments(num) {
+    document.querySelector(`#comments-${num}`).style.display = 'none'
+
+    document.querySelector(`#show-comments-${num}`).innerHTML = 'Show comments'
+    document.querySelector(`#show-comments-${num}`).onclick = () => {show_comments(num)}
 }
