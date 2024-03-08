@@ -164,7 +164,13 @@ def api_make_post(request):
         return JsonResponse({"message":"making a new post was successful"})
 
     elif request.method == "PUT":
-        #basicly eddit post
+        data = json.loads(request.body)
+        if not data.get("new_contents"):
+            return JsonResponse({"message":"insert your edited contents first"})
+
+        new_contents = data.get("new_contents")
+    
+
         return JsonResponse({"message":"work in progress..."})
 
     else:
