@@ -30,7 +30,6 @@
 
         <button id="show-comments-{{post_data.post.id}}" class="btn btn-link" style="margin:0px">Show comments</button>
         <br>
-        <br>
         <div id="comments-{{post_data.post.id}}" style="display:none">
             {% for comment in post_data.comments %}
             <div class="comment-container">
@@ -38,15 +37,14 @@
                 <p style="white-space:pre-line">{{comment.body}}</p>
             </div>
             {% endfor %}
-            <a href="javascript:"></a>
+            <textarea id="comment-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
+            <span style="display:flex">
+                <button id="comment-button-{{post_data.post.id}}" class="btn btn-outline-primary">Comment</button>
+                &nbsp&nbsp&nbsp
+                <button id="cancel-button-{{post_data.post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
+            </span>
         </div>
 
-        <textarea id="comment-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5" placeholder="Write your comment here"></textarea>
-        <span style="display:flex">
-            <button id="comment-button-{{post_data.post.id}}" class="btn btn-outline-primary">Comment</button>
-            &nbsp&nbsp&nbsp
-            <button id="cancel-button-{{post_data.post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
-        </span>
     </div>
     {% endfor %}
 {% endblock %}
