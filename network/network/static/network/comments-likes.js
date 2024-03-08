@@ -33,7 +33,7 @@ function show_comment_field(num) {
                     <p>${result.comment.body}</p>
                 `
                 let comment_button = document.querySelector(`comment-button-${num}`)
-                document.querySelector(`#comments-${num}`).insertBefore(comment, comment_button)
+                document.querySelector(`#comments-${num}`).insertBefore(comment_button, comment)
                 cancel_comment(num)
             }
         })
