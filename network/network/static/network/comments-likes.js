@@ -56,5 +56,6 @@ function like(num) {
 }
 
 function show_comments(num) {
+    console.log('click')
     document.querySelector(`#comments-${num}`).style.display = 'block'
 }
