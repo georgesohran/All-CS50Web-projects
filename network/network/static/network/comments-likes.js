@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+
 function show_comment_field(num) {
     document.querySelector(`#comment-text-${num}`).style.display = 'block'
     document.querySelector(`#cancel-button-${num}`).style.display = 'block'
@@ -38,6 +39,7 @@ function show_comment_field(num) {
     }
 }
 
+
 function cancel_comment(num) {
     document.querySelector(`#comment-text-${num}`).style.display = 'none'
     document.querySelector(`#cancel-button-${num}`).style.display = 'none'
@@ -55,7 +57,8 @@ function like(num) {
     })
 }
 
+
 function show_comments(num) {
-    console.log('click')
     document.querySelector(`#comments-${num}`).style.display = 'block'
+    return
 }
