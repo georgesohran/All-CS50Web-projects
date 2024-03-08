@@ -173,11 +173,12 @@ def api_make_post(request):
 
         try:
             post = Post.objects.get(id=post_id)
-            post.
+            post.body = new_contents
+            post.save()
+            return JsonResponse({"message":"edditing post was successful!!"})
+
         except IntegrityError:
             return JsonResponse({"message":"invalid post id"})
-
-        return JsonResponse({"message":"work in progress..."})
 
     else:
         return JsonResponse({"message":"invalid request"})
