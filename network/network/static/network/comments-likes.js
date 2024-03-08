@@ -32,8 +32,8 @@ function show_comment_field(num) {
                     <p><b>${result.comment.creator}</b> --- <span style="color:gray">${result.comment.timestamp}</span><p>
                     <p>${result.comment.body}</p>
                 `
-                let comment_button = document.querySelector(`comment-button-${num}`)
-                document.querySelector(`#comments-${num}`).insertBefore(comment_button, comment)
+                let comment_txt = document.querySelector(`comment-text-${num}`)
+                document.querySelector(`#comments-${num}`).insertBefore(comment, comment_txt)
                 cancel_comment(num)
             }
         })
