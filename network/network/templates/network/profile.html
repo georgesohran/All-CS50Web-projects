@@ -33,10 +33,10 @@
 
         <h5>{{post_data.post.creator}}</h5>
         {% if see_user == user %}
-            <button class="btn btn-link" id="edit-button-{{post_dat.post.id}}">Edit</button>
+            <button class="btn btn-link" id="edit-button-{{post_data.post.id}}">Edit</button>
         {% endif %}
 
-        <div class="comment-container">
+        <div class="comment-container" id="post-body-{{post_data.post.id}}">
             <div style="white-space:pre-line">{{post_data.post.body}}</div>
             <p style="color:gray">{{post_data.post.timestamp}}</p>
 
@@ -45,6 +45,9 @@
             {% else %}
             <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
             {% endif %}
+        </div>
+        <div class="comment-container" id="edit-field-{{post_data.post.id}}">
+            <textarea></textarea>
         </div>
 
         <div style="font-size:120%; margin-top:20px; margin-left:13px">Comments:</div>
