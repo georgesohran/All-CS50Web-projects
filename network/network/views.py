@@ -168,11 +168,11 @@ def api_make_post(request):
 
         return JsonResponse({"message":"making a new post was successful",
                              "post":{
-                                 "creator_user_name":post.creator,
-                                 "creator_id":post.body,
-                                 "time_stamp":post.timestamp.strftime("%b %d %Y, %I:%M %p"),
-                                 "body":post.creator,
-                                 "id":post.id,
+                                 "creator_user_name":new_post.creator,
+                                 "creator_id":new_post.body,
+                                 "time_stamp":new_post.timestamp.strftime("%b %d %Y, %I:%M %p"),
+                                 "body":new_post.creator,
+                                 "id":new_post.id,
                              }})
 
     elif request.method == "PUT":
