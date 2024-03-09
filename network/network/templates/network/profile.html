@@ -37,7 +37,7 @@
         {% endif %}
 
         <div class="comment-container" id="post-body-{{post_data.post.id}}">
-            <div style="white-space:pre-line">{{post_data.post.body}}</div>
+            <div style="white-space:pre-line" id="main-post-contents-{{post_data.post.id}}">{{post_data.post.body}}</div>
             <p style="color:gray">{{post_data.post.timestamp}}</p>
 
             {% if post_data.user_like %}
@@ -47,7 +47,7 @@
             {% endif %}
         </div>
         <div class="comment-container" id="edit-field-{{post_data.post.id}}" style="display:none">
-            <textarea id="edit-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5"></textarea>
+            <textarea id="edit-text-{{post_data.post.id}}" style="margin-bottom:20px" class="form-control" rows="5"></textarea>
             <span>
                 <button id="save-edit-button-{{post_data.post.id}}" class="btn btn-primary">Save Changes</button>
                 <button id="cancel-edit-button-{{post_data.post.id}}" class="btn btn-primary">Cancel</button>
