@@ -6,10 +6,12 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
 
 from itertools import chain
 from operator import attrgetter
 import json
+import datetime
 
 from .models import *
 
@@ -175,6 +177,7 @@ def api_make_post(request):
             post = Post.objects.get(id=post_id)
             post.body = new_contents
             post.edited = True
+            post.timestamp = timezone.now()
             post.save()
             return JsonResponse({"message":"edditing post was successful!!"})
 
