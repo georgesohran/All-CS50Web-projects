@@ -174,6 +174,7 @@ def api_make_post(request):
         try:
             post = Post.objects.get(id=post_id)
             post.body = new_contents
+            post.edited = True
             post.save()
             return JsonResponse({"message":"edditing post was successful!!"})
 

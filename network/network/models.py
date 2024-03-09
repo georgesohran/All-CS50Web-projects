@@ -16,7 +16,7 @@ class Post(models.Model):
     image = models.ImageField(blank=True, null=True, upload_to="images/")
     body = models.TextField(max_length=1024)
     likes = models.IntegerField(default=0)
-    edited = models.BooleanField(default=False)
+    edited = models.BooleanField(blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
