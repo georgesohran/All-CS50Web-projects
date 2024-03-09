@@ -170,7 +170,7 @@ def api_make_post(request):
                              "post":{
                                  "creator_username":new_post.creator.username,
                                  "creator_id":new_post.creator.id,
-                                 "time_stamp":new_post.timestamp.strftime("%b %d %Y, %I:%M %p"),
+                                 "timestamp":new_post.timestamp.strftime("%b %d %Y, %I:%M %p"),
                                  "body":new_post.body,
                                  "id":new_post.id,
                              }})
