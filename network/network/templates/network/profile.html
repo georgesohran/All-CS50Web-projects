@@ -40,9 +40,9 @@
             <div style="white-space:pre-line" id="main-post-contents-{{post_data.post.id}}">{{post_data.post.body}}</div>
 
             {% if post_data.post.edited %}
-                <p style="color:gray">Edited - {{post_data.post.timestamp}}</p>
+                <p style="color:gray" id="timestamp-{{post_data.post.id}}">Edited - {{post_data.post.timestamp}}</p>
             {% else %}
-                <p style="color:gray">{{post_data.post.timestamp}}</p>
+                <p style="color:gray" id="timestamp-{{post_data.post.id}}">{{post_data.post.timestamp}}</p>
             {% endif %}
 
 

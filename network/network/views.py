@@ -177,9 +177,10 @@ def api_make_post(request):
             post = Post.objects.get(id=post_id)
             post.body = new_contents
             post.edited = True
-            post.timestamp = timezone.now()
+            edit_timestamp = timezone.now()
+            post.timestamp = edit_timestamp
             post.save()
-            return JsonResponse({"message":"edditing post was successful!!"})
+            return JsonResponse({"message":"edditing post was successful!!","new_timestamp":edit_timestamp})
 
         except IntegrityError:
             return JsonResponse({"message":"invalid post id"})
@@ -249,7 +250,5 @@ def follow(request, user_id):
     followed_user = User.objects.get(id=user_id)
     if request.user == followed_user:
         return JsonResponse({"message":"you can not follow yourself"})
-
-    
 
     return JsonResponse()
