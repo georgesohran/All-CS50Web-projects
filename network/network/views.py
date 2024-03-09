@@ -126,7 +126,7 @@ def following(request):
 @login_required(login_url="/login")
 def profile(request, id):
     see_user = User.objects.get(id=id)
-    posts = Post.objects.filter(creator=see_user)
+    posts = Post.objects.filter(creator=see_user).order_by("-timestamp")
 
     full_posts_data = []
 
@@ -147,7 +147,9 @@ def profile(request, id):
         "posts":full_posts_data
     })
 
+
 # API routes are here:
+
 
 @csrf_exempt
 @login_required
