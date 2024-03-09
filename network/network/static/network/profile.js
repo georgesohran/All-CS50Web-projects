@@ -30,8 +30,5 @@ function save_edit(num) {
         document.querySelector(`#post-body-${num}`).style.display = 'block'
         document.querySelector(`#edit-field-${num}`).style.display = 'none'
         document.querySelector(`#main-post-contents-${num}`).innerHTML = new_contents
-
-        document.querySelector(`#timestamp-${num}`).prepend('Edited - ')
-
     })
 }

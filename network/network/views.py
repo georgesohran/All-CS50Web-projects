@@ -69,6 +69,7 @@ def register(request):
         return render(request, "network/register.html")
 
 
+@login_required(login_url="/login")
 def index(request):
     context = []
     posts = Post.objects.all().order_by("-timestamp")
