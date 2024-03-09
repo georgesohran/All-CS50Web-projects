@@ -167,7 +167,13 @@ def api_make_post(request):
             return JsonResponse({"message":"something went wrong..."})
 
         return JsonResponse({"message":"making a new post was successful",
-                             })
+                             "post":{
+                                 "creator":post.creator,
+                                 "body":post.body,
+                                 "creator":post.,
+                                 "creator":post.creator,
+                                 "body":post.creator,
+                             }})
 
     elif request.method == "PUT":
         data = json.loads(request.body)
