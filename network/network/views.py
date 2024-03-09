@@ -166,7 +166,8 @@ def api_make_post(request):
         except IntegrityError:
             return JsonResponse({"message":"something went wrong..."})
 
-        return JsonResponse({"message":"making a new post was successful"})
+        return JsonResponse({"message":"making a new post was successful",
+                             })
 
     elif request.method == "PUT":
         data = json.loads(request.body)
