@@ -41,9 +41,27 @@
                 <button id="cancel-button-{{post_data.post.id}}" class="btn btn-outline-primary" style="display:none">Cancel</button>
             </span>
         </div>
-
     </div>
     {% endfor %}
+    <hr>
+    <p style="text-align:center; font-size:130%">Page {{posts.number}} out of {{posts.paginator.num_pages}}</p>
+    <ul class="pagination pagination-lg justify-content-center">
+        {% if posts.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts.previous_page_number}}">&laquo;</a>
+            </li>
+        {% endif %}
+
+        <li class="page-item">
+            <a class="page-link">. . .</a>
+        </li>
+
+        {% if posts.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts.next_page_number}}">&raquo;</a>
+            </li>
+        {% endif %}
+    </ul>
 {% endblock %}
 
 

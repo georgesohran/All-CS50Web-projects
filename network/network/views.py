@@ -87,7 +87,6 @@ def index(request):
 
     pages = Paginator(context,2)
     page = request.GET.get("page")
-
     posts = pages.get_page(page)
 
     return render(request, "network/index.html", {
@@ -123,8 +122,12 @@ def following(request):
         d = {"post":post, "comments":comments, "likes_num":likes_num, "user_like":user_like}
         context.append(d)
 
+    pages = Paginator(context,2)
+    page = request.GET.get("page")
+    posts = pages.get_page(page)
+
     return render(request, "network/following.html", {
-        "posts": context
+        "posts": posts
     })
 
 
