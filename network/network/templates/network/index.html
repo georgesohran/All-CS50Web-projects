@@ -19,7 +19,7 @@
         <div class="post-container" id='post-container-n' data-num="{{post_data.post.id}}">
             <a href="{% url 'profile' post_data.post.creator.id %}" style="color:black;"><h5>{{post_data.post.creator}}</h5></a>
             <div class="comment-container">
-                <div style="white-space:pre-line" class="">{{post_data.post.body}}</div>
+                <div style="white-space:pre-line" >{{post_data.post.body}}</div>
                 <p style="color:gray">{{post_data.post.timestamp}}</p>
 
                 {% if post_data.user_like %}
