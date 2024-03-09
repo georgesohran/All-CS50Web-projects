@@ -7,4 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+function show_edit_field(num) {
 
+}
+
+function cancel_edit_(num) {
+
+}
