@@ -88,8 +88,10 @@ def index(request):
     pages = Paginator(context,2)
     page = request.GET.get("page")
 
+    posts = pages.get_page(page)
+
     return render(request, "network/index.html", {
-        "posts":pages
+        "posts":posts
     })
 
 
