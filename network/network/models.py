@@ -35,3 +35,6 @@ class Comment(models.Model):
 class Like(models.Model):
     user = models.ForeignKey(User, models.CASCADE, related_name="like")
     liked_post = models.ForeignKey(Post, models.CASCADE, related_name="liked_post")
+
+    def __str__(self):
+        return f"{self.user} - {self.liked_post.body}"
