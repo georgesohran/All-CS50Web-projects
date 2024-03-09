@@ -242,5 +242,10 @@ def api_like(request, post_id):
 
 @csrf_exempt
 @login_required
-def api_edit(request, post_id):
+def follow(request, user_id):
+    if request.method != 'POST':
+        return JsonResponse({"message":"invalid request"})
+
+    
+
     return JsonResponse()
