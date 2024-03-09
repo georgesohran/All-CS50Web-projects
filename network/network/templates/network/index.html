@@ -52,15 +52,19 @@
     </div>
     <hr>
     <ul class="pagination pagination-lg justify-content-center">
+        {% if posts.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?">&laquo;</a>
+            </li>
+        {% endif %}
         <li class="page-item">
-            <a class="page-link" href="?">&laquo;</a>
+            <p>Page {{posts.number}} out of {{posts.paginator.num_pages}}</p>
         </li>
-        <li class="page-item">
-            <a class="page-link" href="?">{{posts.number}}</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="?">&raquo;</a>
-        </li>
+        {% if posts.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?">&raquo;</a>
+            </li>
+        {% endif %}
     </ul>
 {% endblock %}
 
