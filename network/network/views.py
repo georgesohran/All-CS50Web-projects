@@ -86,6 +86,7 @@ def index(request):
         context.append(d)
 
     pages = Paginator(context,2)
+    page = request.GET.get("page")
 
     return render(request, "network/index.html", {
         "posts":pages
