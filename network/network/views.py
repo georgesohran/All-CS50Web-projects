@@ -183,7 +183,7 @@ def api_make_post(request):
             edit_timestamp = timezone.now()
             post.timestamp = edit_timestamp
             post.save()
-            return JsonResponse({"message":"edditing post was successful!!","new_timestamp":edit_timestamp})
+            return JsonResponse({"message":"edditing post was successful!!","new_timestamp":edit_timestamp.strftime("%b %d %Y, %I:%M %p")})
 
         except IntegrityError:
             return JsonResponse({"message":"invalid post id"})
