@@ -46,8 +46,12 @@
             <button id="like-button-{{post_data.post.id}}" class="badge badge-light" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
             {% endif %}
         </div>
-        <div class="comment-container" id="edit-field-{{post_data.post.id}}">
-            <textarea></textarea>
+        <div class="comment-container" id="edit-field-{{post_data.post.id}}" style="display:none">
+            <textarea id="edit-text-{{post_data.post.id}}" style="display:none;margin-bottom:20px" class="form-control" rows="5"></textarea>
+            <span>
+                <button id="save-edit-button-{{post_data.post.id}}" class="btn btn-primary">Save Changes</button>
+                <button id="cancel-edit-button-{{post_data.post.id}}" class="btn btn-primary">Cancel</button>
+            </span>
         </div>
 
         <div style="font-size:120%; margin-top:20px; margin-left:13px">Comments:</div>
