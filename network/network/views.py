@@ -246,6 +246,10 @@ def follow(request, user_id):
     if request.method != 'POST':
         return JsonResponse({"message":"invalid request"})
 
+    followed_user = User.objects.get(id=user_id)
+    if request.user == followed_user:
+        return JsonResponse({"message":"you can not follow yourself"})
+
     
 
     return JsonResponse()
