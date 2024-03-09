@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let post = document.createElement('div')
                 post.className = 'post-container'
                 post.innerHTML = `
-                    <a href="/profile/${result.post.creator_id}" style="color:black;"><h5>{{post_data.post.creator}}</h5></a>
+                    <a href="/profile/${result.post.creator_id}" style="color:black;"><h5>${result.post.creator_username}</h5></a>
                     <div class="comment-container">
                         <div style="white-space:pre-line" class="">${result.post.body}</div>
                         <p style="color:gray">${result.post.timestamp}</p>
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </span>
                     </div>
                 `
-                document.querySelector('posts').prepend(post)
+                document.querySelector('#posts').prepend(post)
             }
         })
     })
