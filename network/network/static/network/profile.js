@@ -40,5 +40,7 @@ function save_edit(num) {
 }
 
 function follow() {
-    fetch(`/api_follow/` {method:'POST'})
+    fetch(`/api_follow/${}`, {method:'POST'}).then(response => response.json()).then((result) => {
+
+    })
 }
