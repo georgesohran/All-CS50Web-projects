@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    document.querySelector('#follow-button').onclick = follow
+    if(document.querySelector('#follow-button')) {
+        document.querySelector('#follow-button').onclick = follow
+    }
 
     document.querySelectorAll('#post-container-n').forEach((container) => {
         const num = container.dataset.num
