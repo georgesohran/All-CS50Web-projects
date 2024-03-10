@@ -269,8 +269,9 @@ def api_follow(request, user_id):
     if request.user == followed_user:
         return JsonResponse({"message":"you can not follow yourself"})
 
+    if request.user in followed_user.followers:
+        
     followed_user.followers.add(request.user)
-
-    
+    followed_user.save()
 
     return JsonResponse()
