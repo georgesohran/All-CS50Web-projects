@@ -4,6 +4,7 @@
 {% block title %}Profile{% endblock %}
 
 {% block body %}
+    <p id="message"></p>
     <input id="see_user_id" type="hidden" value="{{see_user.id}}">
     <div class="profile-container" enctype="multipart/form-data">
         {% if see_user.image %}

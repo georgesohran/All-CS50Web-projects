@@ -269,10 +269,12 @@ def api_follow(request, user_id):
     if request.user == followed_user:
         return JsonResponse({"message":"you can not follow yourself"})
 
-    if request.user in followed_user.followers:
+    if request.user in followed_user.followers.all():
         followed_user.followers.remove(request.user)
+        followed = False
     else:
         followed_user.followers.add(request.user)
+        followed = True
     followed_user.save()
 
-    return JsonResponse({"message":"followed user successfully"})
+    return JsonResponse({"message":"followed/unfollowed user successfully", "followed":followed})
