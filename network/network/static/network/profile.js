@@ -44,6 +44,7 @@ function save_edit(num) {
 function follow() {
     let followed_user_id = document.querySelector('#see_user_id').value
     fetch(`/api_follow/${followed_user_id}`, {method:'POST'}).then(response => response.json()).then((result) => {
+        document.getElementById('message').innerHTML = result.message
         if('followed' in result) {
             document.querySelector('#follow-button').innerHTML = result.followed ? 'Unfollow' : 'Follow'
         }
