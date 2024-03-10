@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    document.querySelector('#follow-button').onclick = () => {follow()}
+    document.querySelector('#follow-button').onclick = follow
 
     document.querySelectorAll('#post-container-n').forEach((container) => {
         const num = container.dataset.num
@@ -40,5 +40,5 @@ function save_edit(num) {
 }
 
 function follow() {
-
+    fetch(`/api_follow/` {method:'POST'})
 }

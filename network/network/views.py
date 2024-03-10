@@ -261,12 +261,13 @@ def api_like(request, post_id):
 
 @csrf_exempt
 @login_required
-def follow(request, user_id):
+def api_follow(request, user_id):
     if request.method != 'POST':
         return JsonResponse({"message":"invalid request"})
 
     followed_user = User.objects.get(id=user_id)
     if request.user == followed_user:
         return JsonResponse({"message":"you can not follow yourself"})
+    followed_user
 
     return JsonResponse()
