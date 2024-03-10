@@ -60,12 +60,20 @@
         {% endif %}
 
         <li class="page-item">
+            <a class="page-link" href="?page={{posts.start_index}}"></a>
+        </li>
+        <li class="page-item">
             <a class="page-link">. . .</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{posts.end_index}}"></a>
         </li>
 
         {% if posts.has_next %}
             <li class="page-item">
                 <a class="page-link" href="?page={{posts.next_page_number}}">&raquo;</a>
+            </li>
+            <li>
             </li>
         {% endif %}
     </ul>
