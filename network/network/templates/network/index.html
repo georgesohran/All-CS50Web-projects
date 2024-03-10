@@ -18,7 +18,11 @@
             <a href="{% url 'profile' post_data.post.creator.id %}" style="color:black;"><h5>{{post_data.post.creator}}</h5></a>
             <div class="comment-container">
                 <div style="white-space:pre-line" >{{post_data.post.body}}</div>
-                <p style="color:gray">{{post_data.post.timestamp}}</p>
+                {% if post_data.post.edited %}
+                    <p style="color:gray">Edited - {{post_data.post.timestamp}}</p>
+                {% else %}
+                    <p style="color:gray">{{post_data.post.timestamp}}</p>
+                {% endif %}
 
                 {% if post_data.user_like %}
                 <button id="like-button-{{post_data.post.id}}" class="badge badge-primary" style="font-size:130%; border: none;">❤️ {{post_data.likes_num}}</button>
@@ -55,23 +59,21 @@
             <li class="page-item">
                 <a class="page-link" href="?page={{posts.previous_page_number}}">&laquo;</a>
             </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts.start_index}}">1</a>
+            </li>
         {% endif %}
 
         <li class="page-item">
-            <a class="page-link" href="?page={{posts.start_index}}">1</a>
-        </li>
-        <li class="page-item">
             <a class="page-link">...</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="?page={{posts.end_index}}">{{posts.paginator.num_pages}}</a>
         </li>
 
         {% if posts.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{posts.next_page_number}}">&raquo;</a>
+                <a class="page-link" href="?page={{posts.end_index}}">{{posts.paginator.num_pages}}</a>
             </li>
-            <li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts.next_page_number}}">&raquo;</a>
             </li>
         {% endif %}
     </ul>
