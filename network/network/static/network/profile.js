@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    document.querySelector('#follow-button').onclick = () => {follow()}
+
     document.querySelectorAll('#post-container-n').forEach((container) => {
         const num = container.dataset.num
 
@@ -34,4 +37,8 @@ function save_edit(num) {
             document.querySelector(`#timestamp-${num}`).innerHTML = 'Edited - ' + result.new_timestamp
         }
     })
+}
+
+function follow() {
+
 }
