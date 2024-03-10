@@ -19,8 +19,11 @@
             {% endif %}
 
             {% if user != see_user %}
-                {%  %}
+                {% if see_user not in see_user.followers %}
                 <button class="btn btn-primary" id="follow-button">Follow</button>
+                {% else %}
+                <button class="btn btn-primary" id="follow-button">Unfollow</button>
+                {% endif %}
             {% endif %}
         </div>
     </div>
