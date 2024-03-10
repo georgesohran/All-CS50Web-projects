@@ -4,7 +4,6 @@
 {% block title %}Profile{% endblock %}
 
 {% block body %}
-    <p id="message"></p>
     <input id="see_user_id" type="hidden" value="{{see_user.id}}">
     <div class="profile-container" enctype="multipart/form-data">
         {% if see_user.image %}
@@ -14,11 +13,6 @@
         {% endif %}
         <div style="margin-left:10px; margin-top:100px">
             <h1>{{see_user.username}}</h1>
-            {% if see_user.about_me %}
-                <p>{{see_user.about_me}}</p>
-            {% else %}
-                <p>No Info</p>
-            {% endif %}
 
             {% if user != see_user %}
                 {% if user not in see_user.followers.all %}
