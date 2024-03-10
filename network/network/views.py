@@ -228,7 +228,7 @@ def api_make_comment(request):
 
         return JsonResponse({"message":"making a comment was successful",
                              "comment":{"creator":comment.creator.username,
-                                        "timestamp":comment.timestamp,
+                                        "timestamp":comment.timestamp.strftime("%b %d %Y, %I:%M %p"),
                                         "body":comment.body}
                             })
 
