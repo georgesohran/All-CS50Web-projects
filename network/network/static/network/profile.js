@@ -25,7 +25,7 @@ function cancel_edit(num) {
 }
 
 function save_edit(num) {
-    new_contents = document.querySelector(`#edit-text-${num}`).value
+    let new_contents = document.querySelector(`#edit-text-${num}`).value
     fetch(`/api_make_post`, {
         method:'PUT',
         body:JSON.stringify({new_contents:new_contents, post_id:num})
@@ -40,8 +40,8 @@ function save_edit(num) {
 }
 
 function follow() {
-    
-    fetch(`/api_follow/${}`, {method:'POST'}).then(response => response.json()).then((result) => {
-
+    let followed_user_id = document.querySelector('#see_user_id').value
+    fetch(`/api_follow/${followed_user_id}`, {method:'POST'}).then(response => response.json()).then((result) => {
+        console.log(result)
     })
 }

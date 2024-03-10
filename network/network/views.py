@@ -275,4 +275,4 @@ def api_follow(request, user_id):
         followed_user.followers.add(request.user)
     followed_user.save()
 
-    return JsonResponse()
+    return JsonResponse({"message":"followed user successfully"})

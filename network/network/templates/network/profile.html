@@ -4,7 +4,7 @@
 {% block title %}Profile{% endblock %}
 
 {% block body %}
-    <input id="user_id" type="hidden" value="{{see_user.id}}">
+    <input id="see_user_id" type="hidden" value="{{see_user.id}}">
     <div class="profile-container" enctype="multipart/form-data">
         {% if see_user.image %}
             <img  src="{{see_user.image.url}}" width="294px" height="294px" class="profile-picture" style="border-radius: 50%">
